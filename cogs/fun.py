@@ -13,7 +13,7 @@ class FunCommands(commands.Cog):
 )
   
     async def rickroll(self, interaction: discord.Interaction):
-    """Sends a youtube link to rickroll the user."""
+        """Sends a youtube link to rickroll the user."""
         await interaction.response.send_message(
         "CLICK ME ---> ||<https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1>||",
         ephemeral=True)
