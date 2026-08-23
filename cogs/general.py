@@ -9,7 +9,7 @@ class GeneralCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-      @discord.app_commands.command(
+    @discord.app_commands.command(
         name="hello",
         description="It pings you & says hello!",
   )
