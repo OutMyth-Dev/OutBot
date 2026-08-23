@@ -54,5 +54,6 @@ async def cogs():
     await bot.load_extension("cogs.information")
     await bot.load_extension("cogs.fun")
 
+cogs()
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
