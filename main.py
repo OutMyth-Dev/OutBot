@@ -6,6 +6,20 @@ import os
 from discord.ext import commands
 from dotenv import load_dotenv
 
+
+# |======|
+# | Cogs |
+# |======|
+
+class LoadCogs(commands.Bot):
+    async def cogs(self):
+        await bot.load_extension("cogs.fun")
+        await bot.load_extension("cogs.general")
+        await bot.load_extension("cogs.information")
+        await bot.load_extension("cogs.links")
+        await bot.load_extension("cogs.rules")
+
+
 # |===============|
 # | Discord cofig |
 # |===============|
@@ -36,24 +50,11 @@ bot = commands.Bot(command_prefix=None, intents=intents)
 
 @bot.event
 async def on_ready():
-    synced = await self.tree.sync()
+    synced = await bot.tree.sync()
     print()
     print("OutBot is ready to be used.")
     print()
     print(f"Synced {len(synced)} slash commands.")
 
-# |======|
-# | Cogs |
-# |======|
-
-
-async def cogs():
-    await bot.load_extension("cogs.general")
-    await bot.load_extension("cogs.rules")
-    await bot.load_extension("cogs.links")
-    await bot.load_extension("cogs.information")
-    await bot.load_extension("cogs.fun")
-
-cogs()
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
