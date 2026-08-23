@@ -48,11 +48,11 @@ async def on_ready():
 
 
 async def cogs():
-    await bot.load_extension("cog.general")
-    await bot.load_extension("cog.rules")
-    await bot.load_extension("cog.links")
-    await bot.load_extension("cog.information")
-    await bot.load_extension("cog.fun")
+    await bot.load_extension("cogs.general")
+    await bot.load_extension("cogs.rules")
+    await bot.load_extension("cogs.links")
+    await bot.load_extension("cogs.information")
+    await bot.load_extension("cogs.fun")
 
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
