@@ -2,7 +2,7 @@ import discord
 
 from discord.ext import commands
 
-class InformationCommands(commands.Cog)
+class InformationCommands(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -11,7 +11,7 @@ class InformationCommands(commands.Cog)
         name="help",
         description="Command guide",
 )
-      async def help(interaction: discord.Interaction):
+    async def help(interaction: discord.Interaction):
         """It is Split into 3 parts of 5 commands to bypass discord's 2000 character limit."""
         part1 = """## OutBot Commands (1 - 5)
 
