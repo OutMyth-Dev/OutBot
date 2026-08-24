@@ -2,7 +2,7 @@ import discord
 import logging
 import os
 
-from extensions import cogs
+from extension import extensions
 from discord.ext import commands
 from dotenv import load_dotenv
 
@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()
 discord_token = os.getenv("DISCORD_TOKEN")
 if not discord_token:
+    logging.exception("Discord token is none. Please enter you discord bot's token.")
     raise RuntimeError("Discord token not found. Please enter you discod bot's token.")
 
 handler = logging.FileHandler(
@@ -28,13 +29,13 @@ handler = logging.FileHandler(
 class OutBot(commands.Bot):
 
     async def setup_hook(self):
-        for cog in cogs:
-            await self.load_extension(cog)
+        for extension in extensions:
+            await self.load_extension(extension)
 
 
-# |========|
-# | Intents|
-# |========|
+# |=========|
+# | Intents |
+# |=========|
 
 intents = discord.Intents.default()
 

@@ -1,4 +1,4 @@
-cogs = [
+extensions = [
     "cogs.fun",
     "cogs.general",
     "cogs.information",
