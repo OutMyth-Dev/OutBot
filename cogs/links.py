@@ -23,7 +23,7 @@ class LinksCommands(commands.Cog):
         name="serverlink", description="OutMyth's Discord server invite link."
 )
 
-    async def serverlink(interaction):
+    async def serverlink(self, interaction: discord.Interaction):
         await interaction.response.send_message(f"""OutMyth's Discord Server:
 
 https://discord.gg/Sc5vAvTJtc
@@ -34,12 +34,12 @@ https://discord.gg/Sc5vAvTJtc
         name="invite",
         description="Invite link for OutBot",
 )
-    async def invite(self, interaction: discord.Interation):
+    async def invite(self, interaction: discord.Interaction):
         await interaction.response.send_message(f"""Outbot Invite Link:
     
     <https://discord.com/oauth2/authorize?client_id=1525595736706781384>
     
     {interaction.user.mention}""")
 
-    async def setup(bot):
-        await bot.add_cog(LinksCommands(bot))
+async def setup(bot):
+    await bot.add_cog(LinksCommands(bot))
