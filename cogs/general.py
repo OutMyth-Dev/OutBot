@@ -88,11 +88,13 @@ class GeneralCommands(commands.Cog):
         if len(title) > 50:
             await interaction.response.send_message("Your title is too long. Please make it under 50 characters.",
             ephemeral=True,
-            )
+        )
             return
         
         if len(question) > 1999:
-            await interaction.response.send_message("Your question is too long. Please make it under 1999 characters.")
+            await interaction.response.send_message("Your question is too long. Please make it under 1999 characters.",
+            ephemeral=True,
+        )
 
         try:    
             embed = discord.Embed(title=title, description=question)
