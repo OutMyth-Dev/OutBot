@@ -1,71 +1,125 @@
 import discord
+import logging
 
 from discord.ext import commands
 
 class RulesCommands(commands.Cog):
   
-    def __init__(self, bot: OutBot):
+    def __init__(
+        self,
+        bot: commands.Bot
+):
         self.bot = bot
 
   
     @discord.app_commands.command(
-        name="omrules",
+        name="outmythrules",
         description="OutMyth Discord Server Rules.",
 )
 
-    async def rules(self, interaction: discord.Interaction):
+    async def outmythrules(
+        self,
+        interaction: discord.Interaction
+):
         """These can be found in the channel "rules", in OutMyth's Discord server."""
-        await interaction.response.send_message(f"""## :scroll: **Rules**
+        try:
+            await interaction.response.send_message(f"""## :scroll: **Rules**
 
-## 1. :x:** NO** NSFW And **NO** Malicious Content.
+        ## 1. :x:** NO** NSFW And **NO** Malicious Content.
 
-- :underage: Absolutely **NO** NSFW content, pornography, sexual content, or malicious links.
+        - :underage: Absolutely **NO** NSFW content, pornography, sexual content, or malicious links.
 
-## 2. :x: **NO** Swearing / Offensive Language
+        ## 2. :x: **NO** Swearing / Offensive Language
 
-- :speaking_head: Use common sense when chatting.
+        - :speaking_head: Use common sense when chatting.
 
-- :no_entry_sign: Check out Censored Words.
+        - :no_entry_sign: Check out Censored Words.
 
-## 3. :white_check_mark: Respect Privacy
+        ## 3. :white_check_mark: Respect Privacy
 
-- :lock: Do **NOT** dox or share anyone’s personal information.
+        - :lock: Do **NOT** dox or share anyone’s personal information.
 
-- :mailbox_with_mail: Do **NOT** Dm anyone without a valid reason.
+        - :mailbox_with_mail: Do **NOT** Dm anyone without a valid reason.
 
-## 4. :x: No Self Promotion
+        ## 4. :x: No Self Promotion
 
-- :loudspeaker: **NO** advertising in Dms or channels.
+        - :loudspeaker: **NO** advertising in Dms or channels.
 
-- :no_entry_sign: This applies to **EVERYONE**, including staff and owners.
+        - :no_entry_sign: This applies to **EVERYONE**, including staff and owners.
 
-## 5. :white_check_mark: Use Mentions Responsibly
+        ## 5. :white_check_mark: Use Mentions Responsibly
 
-#- :zap: **DON’T** ping @everyone; @here; any other types of mass pinging or message spam.
+        #- :zap: **DON’T** ping @everyone; @here; any other types of mass pinging or message spam.
 
-## 6. :ticket: Tickets
+        ## 6. :ticket: Tickets
 
-- :tickets: Do **NOT** open tickets without a valid reason. 
+        - :tickets: Do **NOT** open tickets without a valid reason. 
 
-## 7. :people_hugging:  Behaviour
+        ## 7. :people_hugging:  Behaviour
 
-- :handshake: Be kind, respectful, and helpful to everyone.
-    {interaction.user.mention}""")
+        - :handshake: Be kind, respectful, and helpful to everyone.
+        {interaction.user.mention}""")
+    
+        except discord.HTTPException:
+            logging.exception("Discord's API failed for command /outmythrules") 
+            
+            if interaction.response.is_done():
+                await interaction.followup.send(
+                "Discord's API failed.",
+                ephemeral=True
+)
+            else:
+                await interaction.response.send_message(
+                    "Discord's API failed.",
+                        ephemeral=True
+)
 
+        except Exception:
+            logging.exception("An unexpected error happened when using /outmythrules")
+            
+            if interaction.response.is_done():
+                await interaction.followup.send("An unexpected error occurred when using /outmythrules. Please open a ticket.",
+                ephemeral=True
+)
+            else:
+                await interaction.response.send_message("An unexpected error occurred when using /outmythrules. Please open a ticket.",
+                ephemeral=True
+)
     
     @discord.app_commands.command(
-        name="botrules",
+        name="outbotrules",
         description="OutBot's Rules!",
 )
     
-    async def botrules(self, interaction: discord.Interaction):
-        await interaction.response.send_message(f"""## Bot Rules
+    async def outbotrules(
+        self,
+        interaction: discord.Interaction
+):
+        try:
+            await interaction.response.send_message(f"""## Bot Rules
     - 1. Use the bot for its intended purpose.
     - 2. Only use OutBot in the channels command or chatbot.
     - 3. Do NOT try to exploit OutBot.
     - 4. Please try to find bugs and report them by opening a ticket.
     - 5. Do **NOT** make the bot DM you something offensive or make the bot say something offensive
 ## - {interaction.user.mention}""")
+    
+        except discord.HTTPException:
+            logging.exception("Discord's API failed for command /outbotrules") 
+            await interaction.followup.send("Discord's API failed.",
+            ephemeral=True
+)
+
+        except Exception:
+            logging.exception("An unexpected error happened when using /outbotrules")
+            if interaction.response.is_done():
+                await interaction.followup.send("An unexpected error occurred when using /outbotrules. Please open a ticket.",
+                ephemeral=True
+)
+            else:
+                await interaction.response.send_message("An unexpected error occurred when using /outbotrules. Please open a ticket.",
+                ephemeral=True
+)
 
 
 async def setup(bot):
