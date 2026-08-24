@@ -73,10 +73,10 @@ OutMod will be a **moderation bot focused with user privacy in mind**. Whilst Ou
 # ⚙️ Cogs
 OutBot has *5 cogs*
 
-- 🎮 fun.py | commands that exists for the user to have fun eg: /rickroll
+- 🎮 fun.py | commands that exists for users to have fun eg: /rickroll
 - ⚙️ general.py | for commands that do not fit in any other category eg: /hello
-- ℹ️ information.py | useful information about OutBot/Outmyth eg: /help
-- 🔗 links.py | useful links about OutBot/Outmyth eg: /youtube
+- ℹ️ information.py | useful information about OutBot/OutMyth eg: /help
+- 🔗 links.py | useful links about OutBot/OutmMyth eg: /youtube
 - 🎉 rules.py | rules for OutBot/OutMyth eg: /omrules
 
 ```text
@@ -87,7 +87,7 @@ OutBot/
 │   ├── information.py
 │   ├── links.py
 │   └── rules.py
-├── .env
+├── .env.example
 ├── .gitignore
 ├── emojis.py
 ├── main.py
