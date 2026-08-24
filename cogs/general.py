@@ -41,7 +41,7 @@ class GeneralCommands(commands.Cog):
 
         except Exception:
             logging.exception("Unexpected error in /dm")
-            await interaction.response.send_message("An unexpected error occured. Please open a ticket.",
+            await interaction.response.send_message("An unexpected error occurred. Please open a ticket.",
             ephemeral=True
         )
 
@@ -70,7 +70,7 @@ class GeneralCommands(commands.Cog):
 
         except Exception:
             logging.exception("Unexpected error in /say")
-            await interaction.response.send_message("An unexpected error occured. Please open a ticket.",
+            await interaction.response.send_message("An unexpected error occurred. Please open a ticket.",
             ephemeral=True
         )
 
@@ -86,7 +86,7 @@ class GeneralCommands(commands.Cog):
         name="poll",
         description="Create a new poll.",
     )
-    async def poll(self, interaction, title: str, question: str):
+    async def poll(self, interaction: discord.Interaction, title: str, question: str):
         """20 reactions to allow the user to pick a reaction of their choice. 20 reactions is the max amount of reactions a Discord message 
         can have."""
         if len(title) > 50:
@@ -105,10 +105,14 @@ class GeneralCommands(commands.Cog):
 
             await interaction.response.send_message(embed=embed)
             poll_msg = await interaction.original_response()
+            
+            try:
+                for emoji in emojis:
+                    await poll_msg.add_reaction(emoji)
+            
+            except discord.HTTPException:
+                await interaction.response.send_message("Failed adding emojis. Please open a ticket.")
 
-            for emoji in emojis:
-                await poll_msg.add_reaction(emoji)
-        
         except discord.HTTPException:
             await interaction.response.send_message("Discord API faliure.",
             ephemeral=True
