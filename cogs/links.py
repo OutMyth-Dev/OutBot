@@ -3,7 +3,9 @@ import discord
 from discord.ext import commands
 
 class LinksCommands(commands.Cog):
-    def __init__(self, bot: OutBot):
+    def __init__(
+        self, bot: commands.Bot
+):
         self.bot = bot
 
 
@@ -12,7 +14,11 @@ class LinksCommands(commands.Cog):
         description="OutMyth's YouTube channel link",
 )
 
-    async def youtube(self, interaction: discord.Interaction):
+    async def youtube(
+        self, 
+        interaction: discord.Interaction
+):
+
         await interaction.response.send_message(f"""OutMyth's YouTube Channel:
     
 <https://www.youtube.com/channel/UCGjkPP8sjN8WanIY6hhAeKw>
@@ -20,10 +26,14 @@ class LinksCommands(commands.Cog):
 
 
     @discord.app_commands.command(
-        name="serverlink", description="OutMyth's Discord server invite link."
+        name="serverlink", 
+        description="OutMyth's Discord server invite link."
 )
 
-    async def serverlink(self, interaction: discord.Interaction):
+    async def serverlink(self, 
+    interaction: discord.Interaction
+):
+
         await interaction.response.send_message(f"""OutMyth's Discord Server:
 
 https://discord.gg/Sc5vAvTJtc
@@ -34,7 +44,11 @@ https://discord.gg/Sc5vAvTJtc
         name="invite",
         description="Invite link for OutBot",
 )
-    async def invite(self, interaction: discord.Interaction):
+    async def invite(
+        self, 
+        interaction: discord.Interaction
+):
+
         await interaction.response.send_message(f"""Outbot Invite Link:
     
     <https://discord.com/oauth2/authorize?client_id=1525595736706781384>

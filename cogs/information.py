@@ -4,14 +4,20 @@ from discord.ext import commands
 
 class InformationCommands(commands.Cog):
 
-    def __init__(self, bot: OutBot):
+    def __init__(
+        self, 
+        bot: commands.Bot
+):
         self.bot = bot
 
     @discord.app_commands.command(
         name="help",
         description="Command guide",
 )
-    async def help(self, interaction: discord.Interaction):
+    async def help(
+        self, 
+        interaction: discord.Interaction
+):
         """It is Split into 3 parts of 5 commands to bypass discord's 2000 character limit."""
         part1 = """## OutBot Commands (1 - 5)
 
@@ -62,9 +68,18 @@ class InformationCommands(commands.Cog):
         /roadmap will show you OutBot's planned features!
         {interaction.user.mention}"""
 
-        await interaction.response.send_message(part1, ephemeral=True)
-        await interaction.followup.send(part2, ephemeral=True)
-        await interaction.followup.send(part3, ephemeral=True)
+        await interaction.response.send_message(
+            part1,
+            ephemeral=True
+)
+        await interaction.followup.send(
+            part2, 
+            ephemeral=True
+)
+        await interaction.followup.send(
+            part3, 
+            ephemeral=True
+)
 
 
     @discord.app_commands.command(
@@ -72,7 +87,9 @@ class InformationCommands(commands.Cog):
         description="Information about OutBot!",
 )
 
-    async def outbot(self, interaction: discord.Interaction):
+    async def outbot(
+        self, interaction: discord.Interaction
+):
         await interaction.response.send_message(f"""## OutBot
 ## - Bot Version = 0.4
 ## - Developers = mythordian & aardappel1
@@ -88,7 +105,11 @@ class InformationCommands(commands.Cog):
         description="OutBot's Planned Features!",
 )
   
-    async def roadmap(self, interaction: discord.Interaction):
+    async def roadmap(
+        self, 
+        interaction: discord.Interaction
+):
+
         await interaction.response.send_message(f"""## OutBot's Planned features!
     - Assign/Remove onboarding roles
     - Error handling
