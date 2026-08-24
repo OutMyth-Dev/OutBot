@@ -26,7 +26,7 @@ handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="a"
 # |======|
 
 
-class outbot(commands.Bot):
+class OutBot(commands.Bot):
     async def setup_hook(self):
         await self.load_extension("cogs.fun")
         await self.load_extension("cogs.general")
