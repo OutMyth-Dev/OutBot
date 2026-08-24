@@ -41,7 +41,9 @@ class GeneralCommands(commands.Cog):
 
         except Exception:
             logging.exception("Unexpected error in /dm")
-            await interaction.response.send_message("An unexpected error occured. Please open a ticket.")
+            await interaction.response.send_message("An unexpected error occured. Please open a ticket.",
+            ephemeral=True
+        )
 
     @discord.app_commands.command(
         name="say",
@@ -68,7 +70,9 @@ class GeneralCommands(commands.Cog):
 
         except Exception:
             logging.exception("Unexpected error in /say")
-            await interaction.response.send_message("An unexpected error occured. Please open a ticket.")
+            await interaction.response.send_message("An unexpected error occured. Please open a ticket.",
+            ephemeral=True
+        )
 
 
     @discord.app_commands.command(
