@@ -24,8 +24,7 @@ class GeneralCommands(commands.Cog):
     async def dm(self, interaction: discord.Interaction, msg: str):
         if len(msg) > 1999:
             await interaction.response.send_message(
-                """Your message was more than characters 2000. This means your message is too long to send. Please make your message 
-                shorter""",
+                "Your message was too long. Please make it less than 1999 characters.",
                 ephemeral=True,
             )
             return
@@ -36,12 +35,13 @@ class GeneralCommands(commands.Cog):
 
         except discord.Forbidden:
             await interaction.response.send_message(
-                """I could not send you a Dm. This is because you have them turned off. Please turn them on to allow me to send you a dm""",
+                "I could not send you a Dm. This is because you have them turned off. Please turn them on to allow me to send you a dm",
                 ephemeral=True,
             )
 
         except Exception:
             logging.exception("Unexpected error in /dm")
+            await interaction.response.send_message("An unexpected error occured. Please open a ticket.")
 
     @discord.app_commands.command(
         name="say",
@@ -50,7 +50,7 @@ class GeneralCommands(commands.Cog):
     async def say(self, interaction: discord.Interaction, say: str):
         if len(say) > 1999:
             await interaction.response.send_message(
-                "Your message was too long. Please make it shorter. To allow me to send you a DM.",
+                "Your message was too long. Please make it under 1999 characters.",
                 ephemeral=True,
             )
             return
@@ -60,13 +60,16 @@ class GeneralCommands(commands.Cog):
                 f"{interaction.user.mention} told me to say: ||{say}||"
             )
 
-        except discord.HTTPException as e:
+        except discord.HTTPException:
             await interaction.response.send_message(
-                "Discord API failure", ephemeral=True
+                "Discord API failure",
+                ephemeral=True
             )
 
         except Exception:
             logging.exception("Unexpected error in /say")
+            await interaction.response.send_message("An unexpected error occured. Please open a ticket.")
+
 
     @discord.app_commands.command(
         name="ping",
@@ -79,16 +82,31 @@ class GeneralCommands(commands.Cog):
         name="poll",
         description="Create a new poll.",
     )
-    async def poll(interaction, title: str, question: str):
-        """20 reactions to allow the user to pick a reaction of their choice. 20 reactions is the max amount of reactions aDiscord message can have.The poll title and
-        question are both strings."""
-        embed = discord.Embed(title=title, description=question)
+    async def poll(self, interaction, title: str, question: str):
+        """20 reactions to allow the user to pick a reaction of their choice. 20 reactions is the max amount of reactions a Discord message 
+        can have."""
+        if len(title >= 50):
+            await interaction.response.send_message("Your title is too long. Please make it under 50 characters.",
+            ephemeral=True,
+            )
+            return
+        
+        if len(question > 1999):
+            await interaction.response.send_message("Your question is too long. Please make it under 1999 characters.")
 
-        await interaction.response.send_message(embed=embed)
-        poll_msg = await interaction.original_response()
+        try:    
+            embed = discord.Embed(title=title, description=question)
 
-        for emoji in emojis:
-            await poll_msg.add_reaction(emoji)
+            await interaction.response.send_message(embed=embed)
+            poll_msg = await interaction.original_response()
+
+            for emoji in emojis:
+                await poll_msg.add_reaction(emoji)
+        
+        except discord.HTTPException:
+            await interaction.response.send_message("Discord API faliure.",
+            ephemeral=True
+        )
 
 
 async def setup(bot):
