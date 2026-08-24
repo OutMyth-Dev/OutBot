@@ -1,4 +1,4 @@
 .env
-**/__pycashe__/
-*.psc
+**/__pycache__/
+*.pyc
 discord.log
