@@ -56,8 +56,10 @@ The following commands have Ephemeral = True:
 
 ### 🛡️ OutMod
 
+```text
 A separate Discord moderation bot is planned for the future.
-OutMod will be a **moderation bot focused with user privacy in mind**, while OutBot will as a **fun bot**.
+OutMod will be a **moderation bot focused with user privacy in mind**. Whilst OutBot will focus on **everything except moderation**.
+```
 
 --------------
 
@@ -77,19 +79,22 @@ OutBot has *5 cogs*
 - 🔗 links.py | useful links about OutBot/Outmyth eg: /youtube
 - 🎉 rules.py | rules for OutBot/OutMyth eg: /omrules
 
+```text
 OutBot/
-│
+├── cogs/
+│   ├── fun.py
+│   ├── general.py
+│   ├── information.py
+│   ├── links.py
+│   └── rules.py
 ├── .env
 ├── .gitignore
-...
-│
-└── cogs/
-    │
-    ├── fun.py
-    ├── general.py
-    ├── information.py
-    ├── links.py
-    └── rules.py
+├── emojis.py
+├── main.py
+├── README.md
+├── requirements.txt
+└── UPDATES.md
+```
 
 To report any issues please open a ticket on OutMyth - https://discord.gg/Sc5vAvTJtc or, please open a GitHub issue.
 **Thanks for using OutBot! ❤️**
