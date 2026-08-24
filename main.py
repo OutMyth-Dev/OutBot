@@ -21,29 +21,27 @@ if not token:
 handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="a")
 
 
+# |======|
+# | Cogs |
+# |======|
+
+
+class outbot(commands.Bot):
+    async def setup_hook(self):
+        await self.load_extension("cogs.fun")
+        await self.load_extension("cogs.general")
+        await self.load_extension("cogs.information")
+        await self.load_extension("cogs.links")
+        await self.load_extension("cogs.rules")
+
+
 # |=========|
 # | Intents |
 # |=========|
 
 
 intents = discord.Intents.default()
-bot = commands.Bot(command_prefix=None, intents=intents)
-
-
-# |======|
-# | Cogs |
-# |======|
-
-
-class OutOut(commands.Bot):
-    async def setup_hook(self, bot):
-        self.bot = bot
-
-        await bot.load_extension("cogs.fun_commands")
-        await bot.load_extension("cogs.general_commands")
-        await bot.load_extension("cogs.information_commands")
-        await bot.load_extension("cogs.links_commands")
-        await bot.load_extension("cogs.rules_commands")
+bot = outbot(command_prefix=None, intents=intents)
 
 
 # |========|
