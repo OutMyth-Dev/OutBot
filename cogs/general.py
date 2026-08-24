@@ -7,7 +7,7 @@ from emojis import emojis
 
 class GeneralCommands(commands.Cog):
 
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot: OutBot):
         self.bot = bot
 
     @discord.app_commands.command(

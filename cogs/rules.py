@@ -4,7 +4,7 @@ from discord.ext import commands
 
 class RulesCommands(commands.Cog):
   
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot: OutBot):
         self.bot = bot
 
   
