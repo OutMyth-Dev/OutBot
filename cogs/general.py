@@ -75,7 +75,7 @@ class GeneralCommands(commands.Cog):
     async def ping(self, interaction: discord.Interaction):
         await interaction.response.send_message(f"{interaction.user.mention}")
 
-    @dsicord.app_commands.command(
+    @discord.app_commands.command(
         name="poll",
         description="Create a new poll.",
     )
