@@ -9,7 +9,6 @@ class FunCommands(commands.Cog):
         self, 
         bot: commands.Bot
 ):
-
         self.bot = bot
 
     @discord.app_commands.command(
@@ -20,7 +19,6 @@ class FunCommands(commands.Cog):
         self,
         interaction: discord.Interaction
 ):
-
         """Sends a youtube link to rickroll the user."""
         
         try:
@@ -40,6 +38,7 @@ class FunCommands(commands.Cog):
                 await interaction.followup.send("An unexpected error occurred when using /rickroll. Please open a ticket.",
             ephemeral=True
 )
+
             else:
                 await interaction.response.send_message("An unexpected error occurred when using /rickroll. Please open a ticket.",
             ephemeral=True
