@@ -74,7 +74,7 @@ OutMod will be a **moderation bot focused with user privacy in mind**. Whilst Ou
 OutBot has *5 cogs*
 
 - 🎮 fun.py | commands that exists for the user to have fun eg: /rickroll
-- ⚙️ general.py | for commands that do not fit in any other catagory eg: /hello
+- ⚙️ general.py | for commands that do not fit in any other category eg: /hello
 - ℹ️ information.py | useful information about OutBot/Outmyth eg: /help
 - 🔗 links.py | useful links about OutBot/Outmyth eg: /youtube
 - 🎉 rules.py | rules for OutBot/OutMyth eg: /omrules
