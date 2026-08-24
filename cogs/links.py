@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 
 class LinksCommands(commands.Cog):
-    def __init__(self, bot: OutBots):
+    def __init__(self, bot: OutBot):
         self.bot = bot
 
 
