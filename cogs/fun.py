@@ -4,7 +4,7 @@ from discord.ext import commands
 
 class FunCommands(commands.Cog):
 
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
 
     @discord.app_commands.command(

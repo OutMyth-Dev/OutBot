@@ -38,7 +38,7 @@ class OutBot(commands.Bot):
 
 intents = discord.Intents.default()
 
-bot = OutBot(
+bot = commands.Bot(
     command_prefix=None,
     intents=intents
 )
