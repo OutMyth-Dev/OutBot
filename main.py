@@ -7,19 +7,6 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 
-# |======|
-# | Cogs |
-# |======|
-
-class LoadCogs(commands.Bot):
-    async def cogs(self):
-        await bot.load_extension("cogs.fun")
-        await bot.load_extension("cogs.general")
-        await bot.load_extension("cogs.information")
-        await bot.load_extension("cogs.links")
-        await bot.load_extension("cogs.rules")
-
-
 # |===============|
 # | Discord cofig |
 # |===============|
@@ -40,8 +27,24 @@ handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="a"
 
 
 intents = discord.Intents.default()
-intents.members = True
 bot = commands.Bot(command_prefix=None, intents=intents)
+
+
+# |======|
+# | Cogs |
+# |======|
+
+
+class OutOut(commands.Bot):
+    async def setup_hook(self, bot):
+        self.bot = bot
+
+        await bot.load_extension("cogs.fun_commands")
+        await bot.load_extension("cogs.general_commands")
+        await bot.load_extension("cogs.information_commands")
+        await bot.load_extension("cogs.links_commands")
+        await bot.load_extension("cogs.rules_commands")
+
 
 # |========|
 # | Events |
@@ -54,7 +57,7 @@ async def on_ready():
     print()
     print("OutBot is ready to be used.")
     print()
-    print(f"Synced {len(synced)} slash commands.")
+    print(f"Synced {len(synced)} /commands.")
 
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
