@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 
+from config.bot_info import BOT_VERSION, CREATED_DATE, LAST_MAJOUR_UPDATED, GITHUB, DEVELOPERS
+
 
 class InformationCommands(commands.Cog):
     @discord.app_commands.command(
@@ -13,7 +15,7 @@ class InformationCommands(commands.Cog):
     ) -> None:
         await interaction.response.send_message(
             "# 📋 OutBot's Command List\n\n"
-            "## 🎉 Fun Commands\n\n"
+            "## 🎉 Fun ommands\n\n"
             "- **/rickroll** - Sends a youtube link to rickroll you.\n\n"
             "## ⚙️ General Commands\n\n"
             "- ** 👋 /hello** - Says hello to the user\n"
@@ -42,11 +44,11 @@ class InformationCommands(commands.Cog):
 
         await interaction.response.send_message(
             "## 🤖 OutBot\n\n"
-            "## - Bot Version = 0.4\n"
-            "## - Developers = mythordian & aardappel1\n"
-            "## - Date Started = July 11th 2026\n"
-            "## - Last update = July 28nd 2026\n"
-            "## - GitHub = <https://github.com/OuyMyth-Dev/OutBot/>\n\n"
+            f"## - {BOT_VERSION}\n"
+            f"## - {CREATED_DATE}\n"
+            f"## - {LAST_MAJOUR_UPDATED}\n"
+            f"## - {GITHUB}\n"
+            f"## - {DEVELOPERS}\n\n"
             f"## - {interaction.user.mention}"
         )
 
