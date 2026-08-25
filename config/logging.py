@@ -6,4 +6,4 @@ log_handler = logging.FileHandler(
     mode="a",
 )
 
-log_level=logging.DEBUG
+log_level = logging.DEBUG

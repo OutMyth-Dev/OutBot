@@ -3,5 +3,5 @@ extensions = [
     "cogs.general",
     "cogs.information",
     "cogs.links",
-    "cogs.rules"
+    "cogs.rules",
 ]
