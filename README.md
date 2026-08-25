@@ -105,4 +105,4 @@ OutBot/
 - **`outbotrules`**
 
 To report any issues please open a ticket on OutMyth - https://discord.gg/Sc5vAvTJtc or, please open a GitHub issue.
-**Thanks for using OutBot! ❤️**
+**Thanks for using OutBot!**
