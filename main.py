@@ -18,7 +18,7 @@ if not DISCORD_TOKEN:
     raise RuntimeError("Discord token not found. Please enter you discod bot's token.")
     print("Enter your discord bot's token.")
 
-handler = logging.FileHandler(
+log_handler = logging.FileHandler(
     filename="discord.log",
     encoding="utf-8",
     mode="a",
@@ -33,7 +33,6 @@ class OutBot(commands.Bot):
     async def setup_hook(self):
         for extension in extensions:
             await self.load_extension(extension)
-
 
 # |=========|
 # | Intents |
@@ -64,6 +63,6 @@ async def on_ready():
 
 bot.run(
     DISCORD_TOKEN,
-    log_handler=handler,
+    log_handler=log_handler,
     log_level=logging.DEBUG,
 )
