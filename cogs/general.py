@@ -19,7 +19,7 @@ class GeneralCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                "Hello,"
+                "Hello",
                 f"{interaction.user.mention}!",
 )
     
@@ -70,7 +70,7 @@ class GeneralCommands(commands.Cog):
             await interaction.user.send(f"Dm: ||{msg}||")
             await interaction.response.send_message(
                 "Check your Dms!", 
-                phemeral=True,
+                ephemeral=True,
 ),
 
         except discord.Forbidden:
