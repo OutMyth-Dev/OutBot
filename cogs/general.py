@@ -148,16 +148,17 @@ class GeneralCommands(commands.Cog):
 )
 
     async def poll(self, interaction: discord.Interaction, title: str, question: str):
-        """20 reactions to allow the user to pick a reaction of their choice. 20 reactions is the max amount of reactions a Discord message 
-        can have."""
+        """10 reactions to allow the user to pick a reaction of their choice. """
 
         if len(title) > 50:
+            logging.exception("Poll title was too long.")
             await interaction.response.send_message("Your title is too long. Please make it under 50 characters.",
             ephemeral=True,
 )
             return
         
         if len(question) > 1999:
+            logging.exception("Poll question was too long.")
             await interaction.response.send_message("Your question is too long. Please make it under 1999 characters.",
             ephemeral=True,
 )
