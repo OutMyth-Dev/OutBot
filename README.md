@@ -22,7 +22,6 @@ The following commands have Ephemeral=True:
 - 📩 **`/dm`**
 - 🆘 **`/help`**
 - 🥸 **`/rickroll`**
-- ⚠️ **`/say`** — Error messages are ephemeral.
 
 > ⚠️ Error messages from the bot are also private and can only be seen by the user who triggered the command.
 
