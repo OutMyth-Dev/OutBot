@@ -12,7 +12,7 @@ OutBot does **not** use prefix commands, so there is no command prefix required.
 
 --------------
 
-# 🔒 Ephemeral Messages
+# 🔒 What are Ephemeral Messages?
 
 Ephemeral messages can **only be seen by the user who triggered the command**.
 When Ephemeral=True, **only the user who sent the command can see the message displayed by the bot**.
@@ -31,7 +31,6 @@ The following commands have Ephemeral=True:
 
 - 🐍 **Python**
 - 🤖 **Discord.py**
-- ❤️ **Love**
 
 --------------
 
@@ -39,10 +38,8 @@ The following commands have Ephemeral=True:
 
 ### 🛡️ OutMod
 
-```
 A separate Discord moderation bot is planned for the future.
 OutMod will be a **moderation bot with user privacy in mind**. Whilst OutBot will focus on **everything except moderation**.
-```
 
 --------------
 
@@ -62,6 +59,7 @@ OutBot has *5 cogs*
 - **links.py** | useful links about OutBot/OutmMyth eg: /youtube
 - **rules.py** | rules for OutBot/OutMyth eg: /outmythrules
 
+(OutBot File structure)
 ```text
 OutBot/
 ├── cogs/
@@ -70,8 +68,8 @@ OutBot/
 │   ├── information.py
 │   ├── links.py
 │   └── rules.py
-├── .env.example
-├── .gitignore
+├── .env.example # Please change this to .env
+├── .gitignore 
 ├── emojis.py
 ├── main.py
 ├── README.md
