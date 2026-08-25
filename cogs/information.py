@@ -95,8 +95,6 @@ class InformationCommands(commands.Cog):
 ## - Developers = mythordian & aardappel1
 ## - Date Started = July 11th 2026
 ## - Last update = July 28nd 2026
-## - TOS = Coming Soon
-## - Privacy Policy = Coming Soon
 ## - GitHub = <https://github.com/OuyMyth-Dev/OutBot/>
 ## - {interaction.user.mention}""")
 
