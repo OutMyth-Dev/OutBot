@@ -96,7 +96,6 @@ OutBot/
 │   ├── links.py
 │   └── rules.py
 ├── config/
-│   ├── .env
 │   ├── .env.example
 │   ├── emojis.py
 │   ├── extensions.py
