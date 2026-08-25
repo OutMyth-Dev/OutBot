@@ -3,7 +3,13 @@ import logging
 import discord
 from discord.ext import commands
 
-from config.bot_info import OUTMYTH_YOUTUBE_CHANNEL_LINK, DISCORD_SERVER_INVITE_LINK, OUTBOT_INVITE_LINK
+from config.bot_info import (
+    DISCORD_SERVER_INVITE_LINK,
+    OUTBOT_INVITE_LINK,
+    OUTMYTH_YOUTUBE_CHANNEL_LINK,
+)
+
+
 class LinksCommands(commands.Cog):
     @discord.app_commands.command(
         name="youtube",

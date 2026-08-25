@@ -1,4 +1,3 @@
-import logging
 import os
 
 from discord.ext import commands
@@ -25,6 +24,7 @@ class OutBot(commands.Bot):
         for extension in extensions:
             await self.load_extension(extension)
 
+
 # Command Prefixes And Intents
 
 
@@ -42,6 +42,7 @@ async def on_ready():
     commands_synced = await bot.tree.sync()
 
     print(f"\nOutBot is ready and has {len(commands_synced)} synced /commands.")
+
 
 # Bot Initialization
 

@@ -1,7 +1,13 @@
 import discord
 from discord.ext import commands
 
-from config.bot_info import BOT_VERSION, CREATED_DATE, LAST_MAJOUR_UPDATED, GITHUB_LINK, DEVELOPERS
+from config.bot_info import (
+    BOT_VERSION,
+    CREATED_DATE,
+    DEVELOPERS,
+    GITHUB_LINK,
+    LAST_MAJOUR_UPDATED,
+)
 
 
 class InformationCommands(commands.Cog):

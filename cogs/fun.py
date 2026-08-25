@@ -3,7 +3,7 @@ import logging
 import discord
 from discord.ext import commands
 
-from config.bot_info import RICKROLL_USER
+logger = logging.getLogger(__name__)
 
 
 class FunCommands(commands.Cog):
@@ -17,6 +17,11 @@ class FunCommands(commands.Cog):
     ) -> None:
         """Sends the user a YouTube link to Rickroll them."""
 
+        logger.info(
+            "/rickroll was used by %s",
+            interaction.user,
+        )
+
         try:
             await interaction.response.send_message(
                 "CLICK ME ---> ||RICKROLL_USER||",
@@ -24,11 +29,13 @@ class FunCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logging.exception("Discord's API failed when using /rickroll")
+            logger.exception(
+                "Discord's API failed when using /rickroll %s", interaction.user
+            )
             await interaction.followup.send("Discord's API failed.")
 
         except Exception:
-            logging.exception("Unexpected error in /rickroll")
+            logger.exception("Unexpected error in /rickroll%s", interaction.user)
 
             if interaction.response.is_done():
                 await interaction.followup.send(
