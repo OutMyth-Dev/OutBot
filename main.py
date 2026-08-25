@@ -10,10 +10,10 @@ from config.logging import custom_logger
 from config.prefixes import command_prefix
 
 # Set Up Logger
+
 custom_logger()
 
 logger = logging.getLogger(__name__)
-
 
 # Discord Configuration
 

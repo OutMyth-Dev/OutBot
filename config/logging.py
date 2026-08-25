@@ -2,6 +2,7 @@ import logging
 
 
 def custom_logger() -> None:
+
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)
 
@@ -12,7 +13,7 @@ def custom_logger() -> None:
     )
 
     formatter = logging.Formatter(
-        "Time = %(asctime)s | File and dir name = %(name)s | Log Level = %(levelname)s | Who used command = %(message)s"
+        "Time = %(asctime)s | Logger/Module Name = %(name)s | Log Level = %(levelname)s | Your Messge = %(message)s"
     )
 
     file_handler.setFormatter(formatter)
