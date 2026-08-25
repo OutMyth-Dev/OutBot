@@ -12,58 +12,56 @@ class InformationCommands(commands.Cog):
 
     @discord.app_commands.command(
         name="help",
-        description="Command guide",
+        description="OutBot's Command Guide",
 )
     async def help(
         self, 
         interaction: discord.Interaction
 ):
         await interaction.response.send_message(
-        "# OutBot's Command List\n\n"
+        "# 📋 OutBot's Command List\n\n"
 
-        "## Fun Commands\n\n"
+        "## 🎉 Fun Commands\n\n"
         
         "- **/rickroll** - Sends a youtube link to rickroll you.\n\n"
 
-        "## General Commands\n\n"
+        "## ⚙️ General Commands\n\n"
 
-        "- **/hello** - Says hello to the user\n"
-        "- **/dm** - DMs the user\n"
-        "- **/say** - You tell the bot what to say!\n"
-        "- **/poll** - Creates a poll\n\n"
+        "- ** 👋 /hello** - Says hello to the user\n"
+        "- ** ✉️ /dm** - DMs the user\n"
+        "- ** 🗣️ /say** - You tell the bot what to say!\n"
+        "- ** 📊 /poll** - Creates a poll\n\n"
 
-        "## Information Commands\n\n"
+        "## 🧠 Information Commands\n\n"
         
-        "- **/help** - Command Guide\n"
-        "- **/outbot** - Useful information about OutBot.\n"
-        "- **/roadmap** - OutBot's planned features\n\n"
+        "- ** ❓ /help** - Command Guide\n"
+        "- ** 🤖 /outbot** - Useful information about OutBot.\n"
+        "- ** 🗺️ /roadmap** - OutBot's planned features\n\n"
 
-        "## Links Commands\n\n"
+        "## 🔗 Links Commands\n\n"
 
-        "- **/youtube** - OutMyth's YouTube channel link\n"
-        "- **/serverlink** - OutMyth's D iscord server invite link\n"
-        "- **/invite - OutBot's invite link**\n\n"
+        "- ** ▶️ /youtube** - OutMyth's YouTube channel link\n"
+        "- ** 💬 /serverlink** - OutMyth's D iscord server invite link\n"
+        "- ** 🔗 /invite - OutBot's invite link**\n\n"
 
-        "## Rules Commands\n\n"
+        "## ⚖️ Rules Commands\n\n"
 
-        "- **outmythrules** - OutMyth's Rules\n"
-        "- **outbotrules** - OutBot's Rules \n\n"
+        "- ** 📖 outmythrules** - OutMyth's Rules\n"
+        "- ** 📄 outbotrules** - OutBot's Rules \n\n"
 
         f"{interaction.user.mention}"
 )
 
-
-
     @discord.app_commands.command(
         name="outbot",
-        description="Information about OutBot!",
+        description="Useful Information About OutBot!",
 )
 
     async def outbot(
         self, interaction: discord.Interaction
 ):
         await interaction.response.send_message(
-            "## OutBot\n\n"
+            "## 🤖 OutBot\n\n"
 
             "## - Bot Version = 0.4\n"
             "## - Developers = mythordian & aardappel1\n"
@@ -76,9 +74,9 @@ class InformationCommands(commands.Cog):
 
     @discord.app_commands.command(
         name="roadmap",
-        description="OutBot's Planned Features!",
+        description="Planned Features For OutBot!",
 )
-  
+
     async def roadmap(
         self, 
         interaction: discord.Interaction
@@ -86,17 +84,17 @@ class InformationCommands(commands.Cog):
 
         await interaction.response.send_message(
 
-            "## OutBot's Planned features!\n\n"
-            "- Assign/Remove onboarding roles\n"
-            "- Error handling\n"
-            "- TOS & Privacy Policy\n"
-            "- Bot Settings Commands\n"
-            "- Role Information\n"
-            "- Improved Quality Of Existing Commands\n\n"
+            "## OutBot's Planned Features!\n\n"
+
+            "- **Assign/Remove onboarding roles**\n"
+            "- **Error handling**\n"
+            "- **TOS & Privacy Policy**\n"
+            "- **Bot Settings Commands**\n"
+            "- **Role Information**\n"
+            "- **Improved Quality Of Existing Commands**\n\n"
 
             f"{interaction.user.mention}"
 )
-
 
 async def setup(bot):
     await bot.add_cog(InformationCommands(bot))

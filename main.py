@@ -6,17 +6,25 @@ from discord.ext import commands
 from extensions import extensions
 from dotenv import load_dotenv
 
-# |===============|
-# | Discord cofig |
-# |===============|
+# |=======================|
+# |-Discord Configuration-|
+# |=======================|
 
 load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 if not DISCORD_TOKEN:
-    logging.exception("Discord token is none. Please enter you discord bot's token.")
-    raise RuntimeError("Discord token not found. Please enter you discod bot's token.")
-    print("Enter your discord bot's token.")
+    logging.error(
+    "Discord token is none."
+    "Please enter you Discord bot's token."
+)
+
+    raise RuntimeError(
+        "Discord token not found.\n"
+        "Please enter you Discod bot's token."
+)
+
+    print("Enter your Discord bot's token.")
 
 log_handler = logging.FileHandler(
     filename="discord.log",
@@ -25,7 +33,7 @@ log_handler = logging.FileHandler(
 )
 
 # |======|
-# | Cogs |
+# |-Cogs-|
 # |======|
 
 class OutBot(commands.Bot):
@@ -35,7 +43,7 @@ class OutBot(commands.Bot):
             await self.load_extension(extension)
 
 # |=========|
-# | Intents |
+# |-Intents-|
 # |=========|
 
 intents = discord.Intents.default()
@@ -45,9 +53,9 @@ bot = OutBot(
     intents=intents
 )
 
-# |======|
-# |Events|
-# |======|
+# |========|
+# |-Events-|
+# |========|
 
 @bot.event
 async def on_ready():
@@ -57,9 +65,9 @@ async def on_ready():
     print("\nOutBot is ready.\n")
     print(f"Synced {len(commands_synced)} /commands.")
 
-# |===========|
-# | Bot Start |
-# |===========|
+# |====================|
+# |-Bot Initialization-|
+# |====================|
 
 bot.run(
     DISCORD_TOKEN,
