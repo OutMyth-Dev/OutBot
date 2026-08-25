@@ -18,68 +18,40 @@ class InformationCommands(commands.Cog):
         self, 
         interaction: discord.Interaction
 ):
-        """It is Split into 3 parts of 5 commands to bypass discord's 2000 character limit."""
-        part1 = """## OutBot Commands (1 - 5)
-
-        - Command 1: /hello
-        To use the /hello command, type /hello in commands/chatbot, or in the bot's DMs.
-        Says Hello to the user and ping the user.
-        - Command 2: /dm
-        To use /dm, type /dm in the channels commands/chatbot followed by what you want to be Dmed. 
-        Eg: /dm Hello. The bot will DM me Hello) Please make sure your DMs are turned on. If they are not on, the command will not work.
-        - Command 3: /say
-        To use /say, type /say in the bot's DMs, in the channels commands or chatbot. /say say anything you want it to say.
-        - Command 4: /poll
-        To use /poll, type /poll in the Bot's DMs or in the channels commands/chatbot followed by what you want your poll to be about.
-        Eg: /poll Do you like to sleep?
-        - Command 5: /outbot
-        To use the command: /outbot, type /outbot in the Bot's DMs or in the channels commands/chatbot.
-        The command outbot will show the bots developers, GitHub page, TOS etc.Please only use OutBot in the channel chatbot, commands or in the bots DMs."""
-    
-        part2 = """OutBot Commands (6 - 10)
-
-        - Command 6: /youtube
-        To use /youtube, type /youtube in the bot's DMs or in the channels commands/chatbot.
-        /youtube will give you the link to OutMyth's YouTube channel.
-        - Command 7: /serverlink
-        To use /serverlink, type /serverlink in the bot's DMs or in the channels commands/chatbot.
-        /serverlink will give you the invite link to OutMyth's discord server.
-        - Command 8: /omrules
-        To use /omrules, type /omrules in the bot's DMs or in the channels command/chatbot.
-        /omrules will display OutMyth's discord server rules.
-        - Command 9: /botrules
-        To use /botrules, type /botrules in the bot's DMs or in the channels commands/chatbot.
-        The command: /botrules will display the rules on how to use OutBot
-        - Command 10: /ping
-        To use /ping, type /ping in the bot's DMs or in the channels commands/chatbot.
-        The command: /ping will ping the user who called the command."""
-
-    
-        part3 = f"""Outbot Commands (11 - 13)
-
-        - Command 11: ||/rickroll||
-        To use ||/rickroll||, type ||/rickroll|| in the bot's DMs or in the channels command/chatbot.
-        The command will send you a special link...
-        - Command 12: /invite
-        To use /invite, type /invite in the bot's DMs or in the channels commands/chatbot.
-        The command will send you the invite link for OutBot
-        -Command 13: /roadmap
-        To use /roadmap, type /roadmap in the bot's DMs or in the channels commands/chatbot.
-        /roadmap will show you OutBot's planned features!
-        {interaction.user.mention}"""
-
         await interaction.response.send_message(
-            part1,
-            ephemeral=True
+        "# OutBot's Command List\n\n"
+
+        "## Fun Commands\n\n"
+        
+        "- **/rickroll** - Sends a youtube link to rickroll you.\n\n"
+
+        "## General Commands\n\n"
+
+        "- **/hello** - Says hello to the user\n"
+        "- **/dm** - DMs the user\n"
+        "- **/say** - You tell the bot what to say!\n"
+        "- **/poll** - Creates a poll\n\n"
+
+        "## Information Commands\n\n"
+        
+        "- **/help** - Command Guide\n"
+        "- **/outbot** - Useful information about OutBot.\n"
+        "- **/roadmap** - OutBot's planned features\n\n"
+
+        "## Links Commands\n\n"
+
+        "- **/youtube** - OutMyth's YouTube channel link\n"
+        "- **/serverlink** - OutMyth's D iscord server invite link\n"
+        "- **/invite - OutBot's invite link**\n\n"
+
+        "## Rules Commands\n\n"
+
+        "- **outmythrules** - OutMyth's Rules\n"
+        "- **outbotrules** - OutBot's Rules \n\n"
+
+        f"{interaction.user.mention}"
 )
-        await interaction.followup.send(
-            part2, 
-            ephemeral=True
-)
-        await interaction.followup.send(
-            part3, 
-            ephemeral=True
-)
+
 
 
     @discord.app_commands.command(
@@ -90,13 +62,17 @@ class InformationCommands(commands.Cog):
     async def outbot(
         self, interaction: discord.Interaction
 ):
-        await interaction.response.send_message(f"""## OutBot
-## - Bot Version = 0.4
-## - Developers = mythordian & aardappel1
-## - Date Started = July 11th 2026
-## - Last update = July 28nd 2026
-## - GitHub = <https://github.com/OuyMyth-Dev/OutBot/>
-## - {interaction.user.mention}""")
+        await interaction.response.send_message(
+            "## OutBot\n\n"
+
+            "## - Bot Version = 0.4\n"
+            "## - Developers = mythordian & aardappel1\n"
+            "## - Date Started = July 11th 2026\n"
+            "## - Last update = July 28nd 2026\n"
+            "## - GitHub = <https://github.com/OuyMyth-Dev/OutBot/>\n\n"
+            
+            f"## - {interaction.user.mention}"
+)
 
     @discord.app_commands.command(
         name="roadmap",
@@ -108,14 +84,18 @@ class InformationCommands(commands.Cog):
         interaction: discord.Interaction
 ):
 
-        await interaction.response.send_message(f"""## OutBot's Planned features!
-    - Assign/Remove onboarding roles
-    - Error handling
-    - TOS & Privacy Policy
-    - Bot Settings Commands
-    - Role Information
-    - Improved Quality Of Existing Commands
-    {interaction.user.mention}""")
+        await interaction.response.send_message(
+
+            "## OutBot's Planned features!\n\n"
+            "- Assign/Remove onboarding roles\n"
+            "- Error handling\n"
+            "- TOS & Privacy Policy\n"
+            "- Bot Settings Commands\n"
+            "- Role Information\n"
+            "- Improved Quality Of Existing Commands\n\n"
+
+            f"{interaction.user.mention}"
+)
 
 
 async def setup(bot):
