@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 # |===============|
 
 load_dotenv()
-os.getenv("DISCORD_TOKEN")
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 if not DISCORD_TOKEN:
     logging.exception("Discord token is none. Please enter you discord bot's token.")
@@ -18,7 +18,7 @@ if not DISCORD_TOKEN:
     print("Enter your discord bot's token.")
 
 handler = logging.FileHandler(
-    filename="outbot_discord.log",
+    filename="discord.log",
     encoding="utf-8",
     mode="a",
 )
