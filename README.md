@@ -88,6 +88,7 @@ OutBot has *5 cogs*
 
 # OutBot's File structure
 
+```text
 OutBot/
 ├── cogs/
 │   ├── fun.py
@@ -108,6 +109,7 @@ OutBot/
 ├── main.py
 ├── README.md
 └── requirements.txt
+```
 
 To report any issues please open a ticket on OutMyth - https://discord.gg/Sc5vAvTJtc or, please open a GitHub issue.
 **Thanks for using OutBot!**
