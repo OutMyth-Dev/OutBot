@@ -13,15 +13,13 @@ from config.prefixes import command_prefix
 # |-Discord Configuration-|
 # |=======================|
 
-load_dotenv()
+load_dotenv("config/.env")
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 if not DISCORD_TOKEN:
     logging.error("Discord token is none.Please enter you Discord bot's token.")
 
     raise RuntimeError("Discord token not found.\nPlease enter you Discod bot's token.")
-
-    print("Enter your Discord bot's token.")
 
 # |===========|
 # |-Load Cogs-|

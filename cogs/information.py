@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-from config.bot_info import BOT_VERSION, CREATED_DATE, LAST_MAJOUR_UPDATED, GITHUB, DEVELOPERS
+from config.bot_info import BOT_VERSION, CREATED_DATE, LAST_MAJOUR_UPDATED, GITHUB_LINK, DEVELOPERS
 
 
 class InformationCommands(commands.Cog):
@@ -47,7 +47,7 @@ class InformationCommands(commands.Cog):
             f"## - {BOT_VERSION}\n"
             f"## - {CREATED_DATE}\n"
             f"## - {LAST_MAJOUR_UPDATED}\n"
-            f"## - {GITHUB}\n"
+            f"## - {GITHUB_LINK}\n"
             f"## - {DEVELOPERS}\n\n"
             f"## - {interaction.user.mention}"
         )
