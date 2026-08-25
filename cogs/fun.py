@@ -3,6 +3,8 @@ import logging
 import discord
 from discord.ext import commands
 
+from config.bot_info import RICKROLL_USER
+
 
 class FunCommands(commands.Cog):
     @discord.app_commands.command(
@@ -17,7 +19,7 @@ class FunCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                "CLICK ME ---> ||<https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1>||",
+                "CLICK ME ---> ||RICKROLL_USER||",
                 ephemeral=True,
             )
 
