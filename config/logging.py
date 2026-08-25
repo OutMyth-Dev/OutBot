@@ -3,7 +3,7 @@ import logging
 
 def custom_logger() -> None:
 
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
 
     file_handler = logging.FileHandler(
