@@ -1,12 +1,19 @@
+import discord
+import logging
 import os
 
 from discord.ext import commands
 from dotenv import load_dotenv
 
 from config.extensions import extensions
-from config.intents import intents
-from config.logging import log_handler, log_level
+from config.logging import custom_logger
 from config.prefixes import command_prefix
+
+# Set Up Logger
+custom_logger()
+
+logger = logging.getLogger(__name__)
+
 
 # Discord Configuration
 
@@ -30,7 +37,7 @@ class OutBot(commands.Bot):
 
 bot = OutBot(
     command_prefix=command_prefix,
-    intents=intents,
+    intents=discord.Intents.default(),
 )
 
 # Events
@@ -39,9 +46,14 @@ bot = OutBot(
 @bot.event
 async def on_ready():
 
+    logger.info("OutBot is online.")
+
     commands_synced = await bot.tree.sync()
 
-    print(f"\nOutBot is ready and has {len(commands_synced)} synced /commands.")
+    logger.info(
+        "Synced %d commands",
+        len(commands_synced),
+    )
 
 
 # Bot Initialization
@@ -49,6 +61,4 @@ async def on_ready():
 
 bot.run(
     DISCORD_TOKEN,
-    log_handler=log_handler,
-    log_level=log_level,
 )
