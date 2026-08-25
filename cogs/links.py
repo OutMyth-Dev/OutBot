@@ -3,7 +3,7 @@ import logging
 import discord
 from discord.ext import commands
 
-
+from config.bot_info import OUTMYTH_YOUTUBE_CHANNEL_LINK, DISCORD_SERVER_INVITE_LINK, OUTBOT_INVITE_LINK
 class LinksCommands(commands.Cog):
     @discord.app_commands.command(
         name="youtube",
@@ -17,7 +17,7 @@ class LinksCommands(commands.Cog):
         try:
             await interaction.response.send_message(
                 "# OutMyth's YouTube Channel:\n\n"
-                "<https://www.youtube.com/channel/UCGjkPP8sjN8WanIY6hhAeKw>\n\n"
+                f"{OUTMYTH_YOUTUBE_CHANNEL_LINK}\n\n"
                 f"{interaction.user.mention}"
             )
         except discord.HTTPException:
@@ -62,7 +62,7 @@ class LinksCommands(commands.Cog):
         try:
             await interaction.response.send_message(
                 "# OutMyth's Discord Server:\n\n"
-                "https://discord.gg/Sc5vAvTJtc\n\n"
+                f"{DISCORD_SERVER_INVITE_LINK}\n\n"
                 f"{interaction.user.mention}"
             )
 
@@ -107,8 +107,8 @@ class LinksCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                f"Outbot Invite Link:\n\n"
-                "<https://discord.com/oauth2/authorize?client_id=1525595736706781384>\n\n"
+                "Outbot Invite Link:\n\n"
+                f"{OUTBOT_INVITE_LINK}\n\n"
                 f"{interaction.user.mention}"
             )
 

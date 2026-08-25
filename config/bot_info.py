@@ -1,5 +1,9 @@
 BOT_VERSION = 0.4
 CREATED_DATE = "July 11th 2026"
 LAST_MAJOUR_UPDATED = "July 28nd 2026"
-GITHUB = "<https://github.com/OuyMyth-Dev/OutBot/>"
 DEVELOPERS = "mythordian & aardappel1"
+
+GITHUB_LINK = "<https://github.com/OuyMyth-Dev/OutBot/>"
+OUTMYTH_YOUTUBE_CHANNEL_LINK = "<https://www.youtube.com/channel/UCGjkPP8sjN8WanIY6hhAeKw>"
+DISCORD_SERVER_INVITE_LINK = "https://discord.gg/Sc5vAvTJtc"
+OUTBOT_INVITE_LINK = "<https://discord.com/oauth2/authorize?client_id=1525595736706781384>"
