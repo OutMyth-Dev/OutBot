@@ -1,10 +1,16 @@
 import discord
+
 import logging
+
 import os
 
+from config.intents import intents
+from config.logging import log_handler, log_level
+from config.prefixes import command_prefix
+
 from discord.ext import commands
-from extensions import extensions
 from dotenv import load_dotenv
+from config.extensions import extensions
 
 # |=======================|
 # |-Discord Configuration-|
@@ -26,15 +32,9 @@ if not DISCORD_TOKEN:
 
     print("Enter your Discord bot's token.")
 
-log_handler = logging.FileHandler(
-    filename="discord.log",
-    encoding="utf-8",
-    mode="a",
-)
-
-# |======|
-# |-Cogs-|
-# |======|
+# |===========|
+# |-Load Cogs-|
+# |===========|
 
 class OutBot(commands.Bot):
 
@@ -42,15 +42,13 @@ class OutBot(commands.Bot):
         for extension in extensions:
             await self.load_extension(extension)
 
-# |=========|
-# |-Intents-|
-# |=========|
-
-intents = discord.Intents.default()
+# |==============================|
+# |-Command Prefixes And Intents-|
+# |==============================|
 
 bot = OutBot(
-    command_prefix=None,
-    intents=intents
+    command_prefix=command_prefix, 
+    intents=intents,
 )
 
 # |========|
@@ -62,8 +60,7 @@ async def on_ready():
 
     commands_synced = await bot.tree.sync()
 
-    print("\nOutBot is ready.\n")
-    print(f"Synced {len(commands_synced)} /commands.")
+    print(f"\nOutBot is ready and has {len(commands_synced)} synced /commands.")
 
 # |====================|
 # |-Bot Initialization-|
@@ -72,5 +69,5 @@ async def on_ready():
 bot.run(
     DISCORD_TOKEN,
     log_handler=log_handler,
-    log_level=logging.DEBUG,
+    log_level=log_level,
 )

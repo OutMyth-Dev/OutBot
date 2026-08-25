@@ -59,24 +59,6 @@ OutBot has *5 cogs*
 - **links.py** | useful links about OutBot/OutmMyth eg: /youtube
 - **rules.py** | rules for OutBot/OutMyth eg: /outmythrules
 
-(OutBot File structure)
-```text
-OutBot/
-├── cogs/
-│   ├── fun.py
-│   ├── general.py
-│   ├── information.py
-│   ├── links.py
-│   └── rules.py
-├── .env.example # Please change this to .env
-├── .gitignore 
-├── emojis.py
-├── main.py
-├── README.md
-├── requirements.txt
-└── UPDATES.md
-```
-
 ### ❓ What commands does each cog contain?
 
 ### cogs/fun.py
@@ -103,6 +85,30 @@ OutBot/
 
 - **`outmythrules`**
 - **`outbotrules`**
+
+# OutBot's File structure
+
+OutBot/
+├── cogs/
+│   ├── fun.py
+│   ├── general.py
+│   ├── information.py
+│   ├── links.py
+│   └── rules.py
+├── config/
+│   ├── .env
+│   ├── .env.example
+│   ├── emojis.py
+│   ├── extensions.py
+│   ├── intents.py
+│   ├── logging.py
+│   └── prefixes.py
+├── information/
+│   └── UPDATES.md
+├── .gitignore
+├── main.py
+├── README.md
+└── requirements.txt
 
 To report any issues please open a ticket on OutMyth - https://discord.gg/Sc5vAvTJtc or, please open a GitHub issue.
 **Thanks for using OutBot!**

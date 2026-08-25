@@ -1,8 +1,10 @@
 import discord
+
 import logging
 
 from discord.ext import commands
-from emojis import emojis
+
+from config.emojis import emojis
 
 
 class GeneralCommands(commands.Cog):
