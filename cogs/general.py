@@ -103,9 +103,7 @@ class GeneralCommands(commands.Cog):
 ):
         if len(say) > 1999:
             await interaction.response.send_message(
-                "Your message was too long. Please make it under 1999 characters.",
-                ephemeral=True,
-)
+                "Your message was too long. Please make it under 1999 characters.")
             return
 
         try:
