@@ -9,21 +9,15 @@ from config.intents import intents
 from config.logging import log_handler, log_level
 from config.prefixes import command_prefix
 
-# |=======================|
-# |-Discord Configuration-|
-# |=======================|
+# Discord Configuration
 
 load_dotenv("config/.env")
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 if not DISCORD_TOKEN:
-    logging.error("Discord token is none.Please enter you Discord bot's token.")
-
     raise RuntimeError("Discord token not found.\nPlease enter you Discod bot's token.")
 
-# |===========|
-# |-Load Cogs-|
-# |===========|
+# Load Cogs
 
 
 class OutBot(commands.Bot):
@@ -31,19 +25,15 @@ class OutBot(commands.Bot):
         for extension in extensions:
             await self.load_extension(extension)
 
+# Command Prefixes And Intents
 
-# |==============================|
-# |-Command Prefixes And Intents-|
-# |==============================|
 
 bot = OutBot(
     command_prefix=command_prefix,
     intents=intents,
 )
 
-# |========|
-# |-Events-|
-# |========|
+# Events
 
 
 @bot.event
@@ -53,10 +43,8 @@ async def on_ready():
 
     print(f"\nOutBot is ready and has {len(commands_synced)} synced /commands.")
 
+# Bot Initialization
 
-# |====================|
-# |-Bot Initialization-|
-# |====================|
 
 bot.run(
     DISCORD_TOKEN,
