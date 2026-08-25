@@ -2,6 +2,7 @@ import discord
 import logging
 import os
 
+from discord.ext import comm
 from extensions import extensions
 from dotenv import load_dotenv
 
