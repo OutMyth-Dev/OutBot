@@ -4,6 +4,7 @@ import discord
 from discord.ext import commands
 
 from config.emojis import emojis
+from config.max_chars import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
 
 
 class GeneralCommands(commands.Cog):
@@ -56,7 +57,7 @@ class GeneralCommands(commands.Cog):
         msg: str,
     ) -> None:
 
-        if len(msg) > 1999:
+        if len(msg) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
                 "Your message was too long. ",
                 "Please make it less than 1999 characters.",
@@ -115,7 +116,7 @@ class GeneralCommands(commands.Cog):
         say: str,
     ) -> None:
 
-        if len(say) > 1999:
+        if len(say) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
                 "Your message was too long. ",
                 "Please make it under 1999 characters.",
@@ -172,7 +173,7 @@ class GeneralCommands(commands.Cog):
     ) -> None:
         """10 reactions to allow the user to pick a reaction of their choice or they can pick their own."""
 
-        if len(title) > 50:
+        if len(title) > MAX_TITLE_LENGTH:
             await interaction.response.send_message(
                 "Your title is too long. ",
                 "Please make it under 50 characters.",
@@ -180,7 +181,7 @@ class GeneralCommands(commands.Cog):
             )
             return
 
-        if len(question) > 1999:
+        if len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
                 "Your question is too long. ",
                 "Please make it under 1999 characters.",
