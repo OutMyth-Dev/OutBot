@@ -5,21 +5,16 @@ from discord.ext import commands
 
 class FunCommands(commands.Cog):
 
-    def __init__(
-        self, 
-        bot: commands.Bot
-):
-        self.bot = bot
-
     @discord.app_commands.command(
         name="rickroll",
         description="Don't do it...",
 )
     async def rickroll(
         self,
-        interaction: discord.Interaction
-):
-        """Sends a youtube link to rickroll the user."""
+        interaction: discord.Interaction,
+) -> None:
+
+        """Sends the user a YouTube link to Rickroll them."""
         
         try:
             await interaction.response.send_message(
@@ -27,7 +22,7 @@ class FunCommands(commands.Cog):
                 ephemeral=True,
 )
         
-        except discord.HTTPException():
+        except discord.HTTPException:
             logging.exception("Discord's API failed when using /rickroll")
             await interaction.followup.send("Discord's API failed.")
         
@@ -35,14 +30,18 @@ class FunCommands(commands.Cog):
             logging.exception("Unexpected error in /rickroll")
             
             if interaction.response.is_done():
-                await interaction.followup.send("An unexpected error occurred when using /rickroll. Please open a ticket.",
-            ephemeral=True
+                await interaction.followup.send(
+                    "An unexpected error occurred when using /rickroll. " 
+                    "Please open a ticket.",
+                    ephemeral=True,
 )
 
             else:
-                await interaction.response.send_message("An unexpected error occurred when using /rickroll. Please open a ticket.",
-            ephemeral=True
+                await interaction.response.send_message(
+                    "An unexpected error occurred when using /rickroll. "
+                    "Please open a ticket.",
+                    ephemeral=True,
 )
 
-async def setup(bot):
+async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(FunCommands(bot))
