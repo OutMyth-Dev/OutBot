@@ -6,9 +6,12 @@ from discord.ext import commands
 from config.emojis import emojis
 from config.max_chars import (
     MAX_MESSAGE_LENGTH,
+    MAX_MESSAGE_LENGTH_SENTANCE,
     MAX_QUESTION_LENGTH,
-    MAX_TITLE_AND_QUESTION_LENGTH,
+    MAX_QUESTION_LENGTH_SENTANCE,
+    MAX_TITLE_AND_QUESTION_LENGTH_SENTANCE,
     MAX_TITLE_LENGTH,
+    MAX_TITLE_LENGTH_SENTANCE,
 )
 
 logger = logging.getLogger(__name__)
@@ -26,8 +29,7 @@ class GeneralCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                "Hello, ",
-                f"{interaction.user.mention}!",
+                f"Hello, {interaction.user.mention}!",
             )
 
         except discord.HTTPException:
@@ -64,7 +66,7 @@ class GeneralCommands(commands.Cog):
 
         if len(msg) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
-                f"Your message was too long.{MAX_MESSAGE_LENGTH}",
+                f"Your message was too long.{MAX_MESSAGE_LENGTH_SENTANCE}",
                 ephemeral=True,
             )
             return
@@ -118,7 +120,7 @@ class GeneralCommands(commands.Cog):
 
         if len(say) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
-                f"Your message was too long.{MAX_MESSAGE_LENGTH}",
+                f"Your message was too long.{MAX_MESSAGE_LENGTH_SENTANCE}",
                 ephemeral=True,
             )
             return
@@ -172,21 +174,21 @@ class GeneralCommands(commands.Cog):
 
         if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
-                f"Your title and length are too long. {MAX_TITLE_AND_QUESTION_LENGTH}",
+                f"Your title and length are too long. {MAX_TITLE_AND_QUESTION_LENGTH_SENTANCE}",
                 ephemeral=True,
             )
             return
 
         if len(title) > MAX_TITLE_LENGTH:
             await interaction.response.send_message(
-                f"Your title is too long.{MAX_TITLE_LENGTH}",
+                f"Your title is too long.{MAX_TITLE_LENGTH_SENTANCE}",
                 ephemeral=True,
             )
             return
 
         if len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
-                f"Your question is too long.{MAX_QUESTION_LENGTH}",
+                f"Your question is too long.{MAX_QUESTION_LENGTH_SENTANCE}",
                 ephemeral=True,
             )
             return

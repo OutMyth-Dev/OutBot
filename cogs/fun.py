@@ -1,6 +1,7 @@
 import logging
 
 import discord
+from bot_info import RICKROLL_USER
 from discord.ext import commands
 
 logger = logging.getLogger(__name__)
@@ -24,7 +25,7 @@ class FunCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                "CLICK ME ---> ||RICKROLL_USER||",
+                f"CLICK ME ---> ||{RICKROLL_USER}||",
                 ephemeral=True,
             )
 
