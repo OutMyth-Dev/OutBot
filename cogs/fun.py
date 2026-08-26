@@ -3,7 +3,6 @@ import logging
 import discord
 from discord.ext import commands
 
-from config.bot_info import RICKROLL_USER
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +24,7 @@ class FunCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                f"CLICK ME ---> ||{RICKROLL_USER}||",
+                "CLICK ME ---> ||<https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1>||",
                 ephemeral=True,
             )
 

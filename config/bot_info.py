@@ -11,6 +11,3 @@ DISCORD_SERVER_INVITE_LINK = "https://discord.gg/Sc5vAvTJtc"
 OUTBOT_INVITE_LINK = (
     "<https://discord.com/oauth2/authorize?client_id=1525595736706781384>"
 )
-RICKROLL_USER = (
-    "<https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1>"
-)
