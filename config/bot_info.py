@@ -3,7 +3,7 @@ CREATED_DATE = "July 11th 2026"
 LAST_MAJOR_UPDATED = "July 28th 2026"
 DEVELOPERS = "mythordian & aardappel1"
 
-GITHUB_LINK = "<https://github.com/OuyMyth-Dev/OutBot/>"
+GITHUB_LINK = "<https://github.com/OutMyth-Dev/OutBot/>"
 OUTMYTH_YOUTUBE_CHANNEL_LINK = (
     "<https://www.youtube.com/channel/UCGjkPP8sjN8WanIY6hhAeKw>"
 )
