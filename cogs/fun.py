@@ -36,9 +36,7 @@ class FunCommands(commands.Cog):
             await interaction.followup.send("Discord's API failed.")
 
         except Exception:
-            logger.exception(
-                f"Unexpected error in /rickroll {interaction.user}"
-            )
+            logger.exception(f"Unexpected error in /rickroll {interaction.user}")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
