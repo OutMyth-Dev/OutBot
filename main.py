@@ -27,7 +27,7 @@ if not DISCORD_TOKEN:
 
 
 class OutBot(commands.Bot):
-    async def setup_hook(self):
+    async def setup_hook(self) -> None:
         for extension in extensions:
             await self.load_extension(extension)
 
@@ -44,7 +44,7 @@ bot = OutBot(
 
 
 @bot.event
-async def on_ready():
+async def on_ready() -> None:
 
     logger.info("OutBot is online.")
 
