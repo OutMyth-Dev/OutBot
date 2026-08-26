@@ -5,7 +5,7 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from config.extensions import extensions
+from config.load_cogs import find_cogs
 from config.logging import custom_logger
 
 # Set Up Logger
@@ -30,8 +30,9 @@ if not DISCORD_TOKEN:
 
 class OutBot(commands.Bot):
     async def setup_hook(self) -> None:
-        for extension in extensions:
-            await self.load_extension(extension)
+        for cog in find_cogs:
+            if cog.endswith(".py"):
+                await self.load_extension(f"cogs.{cog[:-3]}")
 
 
 # Command Prefixes And Intents
@@ -54,10 +55,8 @@ async def on_ready() -> None:
     commands_synced = await bot.tree.sync()
 
     logger.info(
-        "Synced %d commands",
-        len(commands_synced),
+        f"Synced commands {len(commands_synced)}",
     )
-    print(f"Synced {commands_synced}.")
 
 
 # Bot Initialization

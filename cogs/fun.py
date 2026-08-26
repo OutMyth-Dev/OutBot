@@ -1,8 +1,9 @@
 import logging
 
 import discord
-from config.bot_info import RICKROLL_USER
 from discord.ext import commands
+
+from config.bot_info import RICKROLL_USER
 
 logger = logging.getLogger(__name__)
 
@@ -19,8 +20,7 @@ class FunCommands(commands.Cog):
         """Sends the user a YouTube link to Rickroll them."""
 
         logger.info(
-            "/rickroll was used by %s",
-            interaction.user,
+            f"/rickroll was used by {interaction.user}",
         )
 
         try:
@@ -31,17 +31,18 @@ class FunCommands(commands.Cog):
 
         except discord.HTTPException:
             logger.exception(
-                "Discord's API failed when using /rickroll %s", interaction.user
+                f"Discord's API failed when using /rickroll {interaction.user}"
             )
             await interaction.followup.send("Discord's API failed.")
 
         except Exception:
-            logger.exception("Unexpected error in /rickroll%s", interaction.user)
+            logger.exception(
+                f"Unexpected error in /rickroll {interaction.user}"
+            )
 
             if interaction.response.is_done():
                 await interaction.followup.send(
-                    "An unexpected error occurred when using /rickroll. "
-                    "Please open a ticket.",
+                    "An unexpected error occurred when using /rickroll. Please open a ticket.",
                     ephemeral=True,
                 )
 
