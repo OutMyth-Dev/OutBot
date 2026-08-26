@@ -1,7 +1,7 @@
 import logging
 
 import discord
-from bot_info import RICKROLL_USER
+from config.bot_info import RICKROLL_USER
 from discord.ext import commands
 
 logger = logging.getLogger(__name__)
