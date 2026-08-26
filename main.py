@@ -21,9 +21,7 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 if not DISCORD_TOKEN:
     logger.error("Discord token was not found.")
-    print(
-        "Discord token was not found. Please enter your Discord bot's token."
-    )
+    print("Discord token was not found. Please enter your Discord bot's token.")
 
 # Load Cogs
 
