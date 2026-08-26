@@ -66,8 +66,8 @@ class InformationCommands(commands.Cog):
 
         await interaction.response.send_message(
             "## OutBot's Planned Features!\n\n"
-            "- **Assign/Remove onboarding roles**\n"
-            "- **Error handling**\n"
+            "- **Assign/Remove Onboarding roles**\n"
+            "- **Improved Error Handling**\n"
             "- **TOS & Privacy Policy**\n"
             "- **Bot Settings Commands**\n"
             "- **Role Information**\n"
