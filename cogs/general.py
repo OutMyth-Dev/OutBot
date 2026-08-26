@@ -175,16 +175,21 @@ class GeneralCommands(commands.Cog):
 
         if len(title) > MAX_TITLE_LENGTH:
             await interaction.response.send_message(
-                "Your title is too long. ",
-                "Please make it under 50 characters.",
+                "Your title is too long. Please make it under 50 characters.",
                 ephemeral=True,
             )
             return
 
         if len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
-                "Your question is too long. ",
-                "Please make it under 1999 characters.",
+                "Your question is too long. Please make it under 1999 .",
+                ephemeral=True,
+            )
+            return
+
+        if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
+            await interaction.response.send_message(
+                "Your title and length are too long. Please make you title under 50 characters and your question is under 1999",
                 ephemeral=True,
             )
             return
