@@ -45,9 +45,7 @@ class FunCommands(commands.Cog):
                 )
 
             else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /rickroll. "
-                    "Please open a ticket.",
+                await interaction.response.send_message("An unexpected error occurred when using /rickroll. Please open a ticket.",
                     ephemeral=True,
                 )
 

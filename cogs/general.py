@@ -6,6 +6,8 @@ from discord.ext import commands
 from config.emojis import emojis
 from config.max_chars import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
 
+logger = logging.getLogger(__name__)
+
 
 class GeneralCommands(commands.Cog):
     @discord.app_commands.command(
@@ -24,26 +26,22 @@ class GeneralCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logging.exception("Discord API failure when using /hello")
+            logger.exception("Discord API failure when using /hello")
             await interaction.followup.send(
                 "Discord API failure.",
                 ephemeral=True,
             )
 
         except Exception:
-            (logging.exception("An unexpected error in /hello"),)
+            logger.exception("An unexpected error in /hello")
 
             if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /hello. ",
-                    "Please open a ticket.",
+                await interaction.followup.send("An unexpected error occurred when using /hello. Please open a ticket.",
                     ephemeral=True,
                 )
 
             else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /hello. ",
-                    "Please open a ticket.",
+                await interaction.response.send_message("An unexpected error occurred when using /hello. Please open a ticket.",
                     ephemeral=True,
                 )
 
@@ -58,9 +56,7 @@ class GeneralCommands(commands.Cog):
     ) -> None:
 
         if len(msg) > MAX_MESSAGE_LENGTH:
-            await interaction.response.send_message(
-                "Your message was too long. ",
-                "Please make it less than 1999 characters.",
+            await interaction.response.send_message("Your message was too long. Please make it less than 1999 characters.",
                 ephemeral=True,
             )
             return
@@ -75,34 +71,27 @@ class GeneralCommands(commands.Cog):
             )
 
         except discord.Forbidden:
-            logging.exception("User had their DMs turned off. (/dm)")
-            await interaction.response.send_message(
-                "I could not send you a Dm. ",
-                "This is because you have them turned off. ",
-                "Please turn your Dms on.",
+            logger.exception("User had their DMs turned off. (/dm)")
+            await interaction.response.send_message("I could not send you a Dm. This is because you have them turned off. Please turn your Dms on.",
                 ephemeral=True,
             )
 
         except discord.HTTPException:
-            logging.exception("Discord API failure in /dm")
+            logger.exception("Discord API failure in /dm")
             await interaction.followup.send(
                 "Discord's API failed.",
                 ephemeral=True,
             )
 
         except Exception:
-            logging.exception("Unexpected error in /dm")
+            logger.exception("Unexpected error in /dm")
             if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /dm. ",
-                    "Please open a ticket.",
+                await interaction.followup.send("An unexpected error occurred when using /dm. Please open a ticket.",
                     ephemeral=True,
                 )
 
             else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /dm. ",
-                    "Please open a ticket.",
+                await interaction.response.send_message("An unexpected error occurred when using /dm. Please open a ticket.",
                     ephemeral=True,
                 )
 
@@ -117,9 +106,7 @@ class GeneralCommands(commands.Cog):
     ) -> None:
 
         if len(say) > MAX_MESSAGE_LENGTH:
-            await interaction.response.send_message(
-                "Your message was too long. ",
-                "Please make it under 1999 characters.",
+            await interaction.response.send_message("Your message was too long. Please make it under 1999 characters.",
                 ephemeral=True,
             )
             return
@@ -130,26 +117,22 @@ class GeneralCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logging.exception("Discord API failure in /say.")
+            logger.exception("Discord API failure in /say.")
             await interaction.followup.send(
                 "Discord API failure",
                 ephemeral=True,
             )
 
         except Exception:
-            logging.exception("Unexpected error in /dm")
+            logger.exception("Unexpected error in /dm")
 
             if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /say. ",
-                    "Please open a ticket.",
+                await interaction.followup.send("An unexpected error occurred when using /say. Please open a ticket.",
                     ephemeral=True,
                 )
 
             else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /say. ",
-                    "Please open a ticket.",
+                await interaction.response.send_message("An unexpected error occurred when using /say. Please open a ticket.",
                     ephemeral=True,
                 )
 
@@ -209,33 +192,27 @@ class GeneralCommands(commands.Cog):
                     await poll_msg.add_reaction(emoji)
 
             except discord.HTTPException:
-                logging.exception("Discords API failure in /poll.")
-                await interaction.followup.send(
-                    "Poll created but failed adding emojis. ",
-                    "Please open a ticket.",
+                logger.exception("Discords API failure in /poll.")
+                await interaction.followup.send("Poll created but failed adding emojis. Please open a ticket.",
                     ephemeral=True,
                 )
 
         except discord.HTTPException:
-            logging.exception("Discord's API failure in /poll")
+            logger.exception("Discord's API failure in /poll")
             await interaction.followup.send(
                 "Discord API failure.",
                 ephemeral=True,
             )
 
         except Exception:
-            logging.exception("Unexpected error in /poll")
+            logger.exception("Unexpected error in /poll")
 
             if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /poll. ",
-                    "Please open a ticket.",
+                await interaction.followup.send("An unexpected error occurred when using /poll. Please open a ticket.",
                     ephemeral=True,
                 )
             else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /poll. ",
-                    "Please open a ticket.",
+                await interaction.response.send_message("An unexpected error occurred when using /poll. Please open a ticket.",
                     ephemeral=True,
                 )
 
