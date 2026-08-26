@@ -3,6 +3,8 @@ import logging
 import discord
 from discord.ext import commands
 
+logger = logging.getLogger(__name__)
+
 
 class RulesCommands(commands.Cog):
     @discord.app_commands.command(
@@ -39,7 +41,7 @@ class RulesCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logging.exception("Discord's API failed for command /outmythrules")
+            logger.exception("Discord's API failed for command /outmythrules")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
@@ -54,7 +56,7 @@ class RulesCommands(commands.Cog):
                 )
 
         except Exception:
-            logging.exception("An unexpected error happened when using /outmythrules")
+            logger.exception("An unexpected error happened when using /outmythrules")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
@@ -89,11 +91,11 @@ class RulesCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logging.exception("Discord's API failed for command /outbotrules")
+            logger.exception("Discord's API failed for command /outbotrules")
             await interaction.followup.send("Discord's API failed.", ephemeral=True)
 
         except Exception:
-            logging.exception("An unexpected error happened when using /outbotrules")
+            logger.exception("An unexpected error happened when using /outbotrules")
             if interaction.response.is_done():
                 await interaction.followup.send(
                     "An unexpected error occurred when using /outbotrules. Please open a ticket.",

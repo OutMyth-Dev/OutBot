@@ -21,6 +21,7 @@ load_dotenv("config/.env")
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 if not DISCORD_TOKEN:
+    logger.error("Discord token was not found.")
     raise RuntimeError(
         "Discord token not found. Please enter your Discord bot's token."
     )
@@ -48,7 +49,7 @@ bot = OutBot(
 @bot.event
 async def on_ready() -> None:
 
-    logger.info("OutBot is online.")
+    logger.info("OutBot can now be used.")
 
     commands_synced = await bot.tree.sync()
 

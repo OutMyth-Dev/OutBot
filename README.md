@@ -23,7 +23,7 @@ The following commands have Ephemeral=True:
 - 🆘 **`/help`**
 - 🥸 **`/rickroll`**
 
-> ⚠️ Error messages from the bot are also private and can only be seen by the user who triggered the command.
+> ⚠️ Error messages from the bot are all Ephemeral=True.
 
 --------------
 
@@ -53,24 +53,27 @@ OutMod will be a **moderation bot with user privacy in mind**. Whilst OutBot wil
 # ⚙️ Cogs
 OutBot has *5 cogs*
 
-- **fun.py** | commands that exists for users to have fun eg: /rickroll
-- **general.py** | for commands that do not fit in any other category eg: /hello
-- **information.py** | useful information about OutBot/OutMyth eg: /help
-- **links.py** | useful links about OutBot/OutmMyth eg: /youtube
-- **rules.py** | rules for OutBot/OutMyth eg: /outmythrules
+- **cogs/fun.py**         | Commands that exists for users to have fun     | eg: /rickroll
+- **cogs/general.py**     | Commands that do not fit in any other category | eg: /hello
+- **cogs/information.py** | Useful information about OutBot/OutMyth        | eg: /help
+- **cogs/links.py**       | Useful links about OutBot/OutmMyth             | eg: /youtube
+- **cogs/rules.py**       | OutBot/OutMyth's Rules                         | eg: /outmythrules
 
 ### ❓ What commands does each cog contain?
 
 ### cogs/fun.py
+
 - **`/rickroll`**
 
 ### cogs/general.py
+
 - **`/hello`**
 - **`/dm`**
 - **`/say`**
-- **`poll`**
+- **`/poll`**
 
 ### cogs/information.py
+
 - **`/help`**
 - **`outbot`**
 -**`/roadmap`**
@@ -98,14 +101,16 @@ OutBot/
 │   └── rules.py
 ├── config/
 │   ├── .env.example
+|   ├── bot_info.py
 │   ├── emojis.py
 │   ├── extensions.py
-│   ├── intents.py
 │   ├── logging.py
+│   ├── max_chars.py
 │   └── prefixes.py
 ├── information/
 │   └── UPDATES.md
 ├── .gitignore
+├── discord.log
 ├── main.py
 ├── README.md
 └── requirements.txt

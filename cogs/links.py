@@ -9,6 +9,8 @@ from config.bot_info import (
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
 )
 
+logger = logging.getLogger(__name__)
+
 
 class LinksCommands(commands.Cog):
     @discord.app_commands.command(
@@ -27,7 +29,7 @@ class LinksCommands(commands.Cog):
                 f"{interaction.user.mention}"
             )
         except discord.HTTPException:
-            logging.exception("Discord's API failed when using /youtube")
+            logger.exception("Discord's API failed when using /youtube")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
@@ -41,7 +43,7 @@ class LinksCommands(commands.Cog):
                 )
 
         except Exception:
-            logging.exception("Unexpected error in /youtube")
+            logger.exception("Unexpected error in /youtube")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
@@ -71,7 +73,7 @@ class LinksCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logging.exception("Discord's API failed when using /serverlink")
+            logger.exception("Discord's API failed when using /serverlink")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
@@ -85,7 +87,7 @@ class LinksCommands(commands.Cog):
                 )
 
         except Exception:
-            logging.exception("Unexpected error in /youtube")
+            logger.exception("Unexpected error in /youtube")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
@@ -115,7 +117,7 @@ class LinksCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logging.exception("Discord's API failed when using /invite")
+            logger.exception("Discord's API failed when using /invite")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
@@ -129,7 +131,7 @@ class LinksCommands(commands.Cog):
                 )
 
         except Exception:
-            logging.exception("Unexpected error in /youtube")
+            logger.exception("Unexpected error in /youtube")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
