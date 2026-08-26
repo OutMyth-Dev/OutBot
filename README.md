@@ -89,7 +89,7 @@ OutBot has *5 cogs*
 - **`outmythrules`**
 - **`outbotrules`**
 
-# OutBot's File structure
+# OutBot's Directory Tree
 
 ```text
 OutBot/
