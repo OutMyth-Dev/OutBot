@@ -22,7 +22,7 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 if not DISCORD_TOKEN:
     logger.error("Discord token was not found.")
     raise RuntimeError(
-        "Discord token not found. Please enter your Discord bot's token."
+        "Discord token was not found. Please enter your Discord bot's token."
     )
 
 # Load Cogs
@@ -49,6 +49,7 @@ bot = OutBot(
 async def on_ready() -> None:
 
     logger.info("OutBot can now be used.")
+    print("OutBot can now be used.")
 
     commands_synced = await bot.tree.sync()
 
@@ -56,6 +57,7 @@ async def on_ready() -> None:
         "Synced %d commands",
         len(commands_synced),
     )
+    print(f"Synced {commands_synced}.")
 
 
 # Bot Initialization
