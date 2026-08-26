@@ -72,7 +72,7 @@ class GeneralCommands(commands.Cog):
             return
 
         try:
-            await interaction.user.send(f"Secret Message: ||{msg}||")
+            await interaction.user.send(f"Secret Message:  ||{msg}||")
             (
                 await interaction.response.send_message(
                     "Check your DMs!",
