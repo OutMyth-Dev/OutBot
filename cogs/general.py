@@ -4,7 +4,12 @@ import discord
 from discord.ext import commands
 
 from config.emojis import emojis
-from config.max_chars import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
+from config.max_chars import (
+    MAX_MESSAGE_LENGTH,
+    MAX_QUESTION_LENGTH,
+    MAX_TITLE_AND_QUESTION_LENGTH,
+    MAX_TITLE_LENGTH,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +26,7 @@ class GeneralCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                "Hello",
+                "Hello, ",
                 f"{interaction.user.mention}!",
             )
 
@@ -59,24 +64,24 @@ class GeneralCommands(commands.Cog):
 
         if len(msg) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
-                f"Your message was too long. Please make it less than {MAX_MESSAGE_LENGTH} characters.",
+                f"Your message was too long.{MAX_MESSAGE_LENGTH}",
                 ephemeral=True,
             )
             return
 
         try:
-            await interaction.user.send(f"Dm: ||{msg}||")
+            await interaction.user.send(f"Secret Message: ||{msg}||")
             (
                 await interaction.response.send_message(
-                    "Check your Dms!",
+                    "Check your DMs!",
                     ephemeral=True,
                 ),
             )
 
         except discord.Forbidden:
-            logger.exception("User had their DMs turned off. (/dm)")
+            logger.exception("User had their DMs turned off.")
             await interaction.response.send_message(
-                "I could not send you a Dm. This is because you have them turned off. Please turn your Dms on.",
+                "I could not send you a DM. This is because you have them turned off.",
                 ephemeral=True,
             )
 
@@ -103,7 +108,7 @@ class GeneralCommands(commands.Cog):
 
     @discord.app_commands.command(
         name="say",
-        description="You tell the Bot what to say!",
+        description="You tell the OutBot what to say!",
     )
     async def say(
         self,
@@ -113,7 +118,7 @@ class GeneralCommands(commands.Cog):
 
         if len(say) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
-                f"Your message was too long. Please make it under {MAX_MESSAGE_LENGTH} characters.",
+                f"Your message was too long.{MAX_MESSAGE_LENGTH}",
                 ephemeral=True,
             )
             return
@@ -167,21 +172,21 @@ class GeneralCommands(commands.Cog):
 
         if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
-                "Your title and length are too long. Please make you title under {MAX_TITLE_LENGTH} characters and your question is under {MAX_QUESTION_LENGTH} characters",
+                f"Your title and length are too long. {MAX_TITLE_AND_QUESTION_LENGTH}",
                 ephemeral=True,
             )
             return
 
         if len(title) > MAX_TITLE_LENGTH:
             await interaction.response.send_message(
-                f"Your title is too long. Please make it under {MAX_TITLE_LENGTH} characters.",
+                f"Your title is too long.{MAX_TITLE_LENGTH}",
                 ephemeral=True,
             )
             return
 
         if len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
-                f"Your question is too long. Please make it under {MAX_QUESTION_LENGTH} characters.",
+                f"Your question is too long.{MAX_QUESTION_LENGTH}",
                 ephemeral=True,
             )
             return
