@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 
 from config.extensions import extensions
 from config.logging import custom_logger
-from config.prefixes import command_prefix
 
 # Set Up Logger
 
@@ -39,7 +38,7 @@ class OutBot(commands.Bot):
 
 
 bot = OutBot(
-    command_prefix=command_prefix,
+    command_prefix=None,
     intents=discord.Intents.default(),
 )
 
