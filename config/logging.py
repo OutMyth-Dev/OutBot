@@ -13,7 +13,7 @@ def custom_logger() -> None:
     )
 
     formatter = logging.Formatter(
-        "Time = %(asctime)s | Logger/Module Name = %(name)s | Log Level = %(levelname)s | Your Messge = %(message)s"
+        "Time = %(asctime)s   ||   Logger/Module Name = %(name)s   ||   Log Level = %(levelname)s   ||   Your Messge = %(message)s"
     )
 
     file_handler.setFormatter(formatter)
