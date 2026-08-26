@@ -57,12 +57,14 @@ class RulesCommands(commands.Cog):
             logging.exception("An unexpected error happened when using /outmythrules")
 
             if interaction.response.is_done():
-                await interaction.followup.send("An unexpected error occurred when using /outmythrules. Please open a ticket.",
+                await interaction.followup.send(
+                    "An unexpected error occurred when using /outmythrules. Please open a ticket.",
                     ephemeral=True,
                 )
 
             else:
-                await interaction.response.send_message("An unexpected error occurred when using /outmythrules. Please open a ticket.",
+                await interaction.response.send_message(
+                    "An unexpected error occurred when using /outmythrules. Please open a ticket.",
                     ephemeral=True,
                 )
 
@@ -93,12 +95,14 @@ class RulesCommands(commands.Cog):
         except Exception:
             logging.exception("An unexpected error happened when using /outbotrules")
             if interaction.response.is_done():
-                await interaction.followup.send("An unexpected error occurred when using /outbotrules. Please open a ticket.",
+                await interaction.followup.send(
+                    "An unexpected error occurred when using /outbotrules. Please open a ticket.",
                     ephemeral=True,
                 )
 
             else:
-                await interaction.response.send_message("An unexpected error occurred when using /outbotrules. Please open a ticket.",
+                await interaction.response.send_message(
+                    "An unexpected error occurred when using /outbotrules. Please open a ticket.",
                     ephemeral=True,
                 )
 

@@ -44,11 +44,13 @@ class LinksCommands(commands.Cog):
             logging.exception("Unexpected error in /youtube")
 
             if interaction.response.is_done():
-                await interaction.followup.send("An unexpected error occurred when using when using /youtube. Please open a ticket.",
+                await interaction.followup.send(
+                    "An unexpected error occurred when using when using /youtube. Please open a ticket.",
                     ephemeral=True,
                 )
             else:
-                await interaction.response.send_message("An unexpected error occurred when using when using /youtube. Please open a ticket.",
+                await interaction.response.send_message(
+                    "An unexpected error occurred when using when using /youtube. Please open a ticket.",
                     ephemeral=True,
                 )
 
@@ -86,11 +88,13 @@ class LinksCommands(commands.Cog):
             logging.exception("Unexpected error in /youtube")
 
             if interaction.response.is_done():
-                await interaction.followup.send("An unexpected error occurred when using when using /serverlink. Please open a ticket.",
+                await interaction.followup.send(
+                    "An unexpected error occurred when using when using /serverlink. Please open a ticket.",
                     ephemeral=True,
                 )
             else:
-                await interaction.response.send_message("An unexpected error occurred when using when using /serverlink. Please open a ticket.",
+                await interaction.response.send_message(
+                    "An unexpected error occurred when using when using /serverlink. Please open a ticket.",
                     ephemeral=True,
                 )
 
@@ -128,11 +132,13 @@ class LinksCommands(commands.Cog):
             logging.exception("Unexpected error in /youtube")
 
             if interaction.response.is_done():
-                await interaction.followup.send("An unexpected error occurred when using when using /invite. Please open a ticket.",
+                await interaction.followup.send(
+                    "An unexpected error occurred when using when using /invite. Please open a ticket.",
                     ephemeral=True,
                 )
             else:
-                await interaction.response.send_message("An unexpected error occurred when using when using /invite. Please open a ticket.",
+                await interaction.response.send_message(
+                    "An unexpected error occurred when using when using /invite. Please open a ticket.",
                     ephemeral=True,
                 )
 

@@ -21,7 +21,9 @@ load_dotenv("config/.env")
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 if not DISCORD_TOKEN:
-    raise RuntimeError("Discord token not found. Please enter your Discord bot's token.")
+    raise RuntimeError(
+        "Discord token not found. Please enter your Discord bot's token."
+    )
 
 # Load Cogs
 
