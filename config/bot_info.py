@@ -1,6 +1,6 @@
 BOT_VERSION = 0.4
 CREATED_DATE = "July 11th 2026"
-LAST_MAJOUR_UPDATED = "July 28nd 2026"
+LAST_MAJOR_UPDATED = "July 28th 2026"
 DEVELOPERS = "mythordian & aardappel1"
 
 GITHUB_LINK = "<https://github.com/OuyMyth-Dev/OutBot/>"

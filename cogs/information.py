@@ -6,7 +6,7 @@ from config.bot_info import (
     CREATED_DATE,
     DEVELOPERS,
     GITHUB_LINK,
-    LAST_MAJOUR_UPDATED,
+    LAST_MAJOR_UPDATED,
 )
 
 
@@ -35,7 +35,7 @@ class InformationCommands(commands.Cog):
             "## 🔗 Links Commands\n\n"
             "- ** ▶️ /youtube** - OutMyth's YouTube channel link\n"
             "- ** 💬 /serverlink** - OutMyth's D iscord server invite link\n"
-            "- ** 🔗 /invite - OutBot's invite link**\n\n"
+            "- ** 🔗 /invite** - OutBot's invite link**\n\n"
             "## ⚖️ Rules Commands\n\n"
             "- ** 📖 outmythrules** - OutMyth's Rules\n"
             "- ** 📄 outbotrules** - OutBot's Rules \n\n"
@@ -52,7 +52,7 @@ class InformationCommands(commands.Cog):
             "## 🤖 OutBot\n\n"
             f"## - {BOT_VERSION}\n"
             f"## - {CREATED_DATE}\n"
-            f"## - {LAST_MAJOUR_UPDATED}\n"
+            f"## - {LAST_MAJOR_UPDATED}\n"
             f"## - {GITHUB_LINK}\n"
             f"## - {DEVELOPERS}\n\n"
             f"## - {interaction.user.mention}"

@@ -59,7 +59,7 @@ class GeneralCommands(commands.Cog):
 
         if len(msg) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
-                "Your message was too long. Please make it less than 1999 characters.",
+                f"Your message was too long. Please make it less than {MAX_MESSAGE_LENGTH} characters.",
                 ephemeral=True,
             )
             return
@@ -113,7 +113,7 @@ class GeneralCommands(commands.Cog):
 
         if len(say) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
-                "Your message was too long. Please make it under 1999 characters.",
+                f"Your message was too long. Please make it under {MAX_MESSAGE_LENGTH} characters.",
                 ephemeral=True,
             )
             return
@@ -131,7 +131,7 @@ class GeneralCommands(commands.Cog):
             )
 
         except Exception:
-            logger.exception("Unexpected error in /dm")
+            logger.exception("Unexpected error in /say")
 
             if interaction.response.is_done():
                 await interaction.followup.send(
@@ -165,23 +165,23 @@ class GeneralCommands(commands.Cog):
     ) -> None:
         """10 reactions to allow the user to pick a reaction of their choice or they can pick their own."""
 
+        if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
+            await interaction.response.send_message(
+                "Your title and length are too long. Please make you title under {MAX_TITLE_LENGTH} characters and your question is under {MAX_QUESTION_LENGTH} characters",
+                ephemeral=True,
+            )
+            return
+
         if len(title) > MAX_TITLE_LENGTH:
             await interaction.response.send_message(
-                "Your title is too long. Please make it under 50 characters.",
+                f"Your title is too long. Please make it under {MAX_TITLE_LENGTH} characters.",
                 ephemeral=True,
             )
             return
 
         if len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
-                "Your question is too long. Please make it under 1999 .",
-                ephemeral=True,
-            )
-            return
-
-        if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
-            await interaction.response.send_message(
-                "Your title and length are too long. Please make you title under 50 characters and your question is under 1999",
+                f"Your question is too long. Please make it under {MAX_QUESTION_LENGTH} characters.",
                 ephemeral=True,
             )
             return
