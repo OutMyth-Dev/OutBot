@@ -1,20 +1,22 @@
 # 🤖 OutBot
 
-Current version: **0.4**
-
 OutBot is a Discord bot created by **Mythordian** and **aardapel1**, built with **Discord.py**.
 OutBot was created to replace other bots for privacy and security reasons.
 
-- It does **not collect user data**. If any user data is collected it is only to **debug**.
+- It does **not collect user data**. OutBot is under an MIT LICENSE: https://github.com/OutMyth-Dev/OutBot/blob/main/LICENSE
 - Logs are kept **local**.
-- User data and logs are **deleted weekly**.
+- Logs are **deleted weekly**.
 - Message content is **NOT** collected.
+- Logs use a logging mode of **a**
+- OutBot is **open source**
+
+Current version: **0.4**
 
 --------------
 
 # 🤖 OutBot Commands
 OutBot currently has **14 slash commands**.
-OutBot does **not** use prefix commands, so there is no command prefix required.
+OutBot does **not** use  prefixcommands, so there is no command prefix required.
 
 --------------
 
@@ -103,7 +105,8 @@ OutBot/
 │   ├── UPDATES.md
 │   └── errors.py
 │   utils/
-│   └── __init__.py
+│   ├── __init__.py
+│   └── errors.py
 ├── .gitignore
 ├── LICENSE
 ├── main.py
@@ -111,7 +114,7 @@ OutBot/
 └── requirements.txt
 ```
 
---------------
+---
 
 To report any issues, open a ticket on OutMyth - https://discord.gg/Sc5vAvTJtc or a GitHub issue - https://github.com/OutMyth-Dev/OutBot/issues.
 Thank **you** for using OutBot!
