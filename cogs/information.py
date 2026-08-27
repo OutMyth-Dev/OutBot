@@ -39,7 +39,6 @@ class InformationCommands(commands.Cog):
             "## ⚖️ Rules Commands\n\n"
             "- ** 📖 outmythrules** - OutMyth's Rules\n"
             "- ** 📄 outbotrules** - OutBot's Rules \n\n"
-            f"{interaction.user.mention}"
         )
 
     @discord.app_commands.command(
@@ -55,7 +54,6 @@ class InformationCommands(commands.Cog):
             f"## - {LAST_MAJOR_UPDATED}\n"
             f"## - {GITHUB_LINK}\n"
             f"## - {DEVELOPERS}\n\n"
-            f"## - {interaction.user.mention}"
         )
 
     @discord.app_commands.command(
@@ -72,7 +70,6 @@ class InformationCommands(commands.Cog):
             "- **Bot Settings Commands**\n"
             "- **Role Information**\n"
             "- **Improved Quality Of Existing Commands**\n\n"
-            f"{interaction.user.mention}"
         )
 
 

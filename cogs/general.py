@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 class GeneralCommands(commands.Cog):
     @discord.app_commands.command(
         name="hello",
-        description="It pings you & says hello!",
+        description="It says hello!",
     )
     async def hello(
         self,
@@ -21,7 +21,7 @@ class GeneralCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                f"Hello, {interaction.user.mention}!",
+                "Hello!",
             )
 
         except discord.HTTPException:

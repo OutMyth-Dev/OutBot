@@ -26,7 +26,6 @@ class LinksCommands(commands.Cog):
             await interaction.response.send_message(
                 "# OutMyth's YouTube Channel:\n\n"
                 f"{OUTMYTH_YOUTUBE_CHANNEL_LINK}\n\n"
-                f"{interaction.user.mention}"
             )
         except discord.HTTPException:
             logger.exception("Discord's API failed when using /youtube")
@@ -69,7 +68,6 @@ class LinksCommands(commands.Cog):
             await interaction.response.send_message(
                 "# OutMyth's Discord Server:\n\n"
                 f"{DISCORD_SERVER_INVITE_LINK}\n\n"
-                f"{interaction.user.mention}"
             )
 
         except discord.HTTPException:
@@ -113,7 +111,6 @@ class LinksCommands(commands.Cog):
             await interaction.response.send_message(
                 "Outbot Invite Link:\n\n"
                 f"{OUTBOT_INVITE_LINK}\n\n"
-                f"{interaction.user.mention}"
             )
 
         except discord.HTTPException:

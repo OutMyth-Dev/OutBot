@@ -36,8 +36,7 @@ class RulesCommands(commands.Cog):
                 "## 6. :ticket: Tickets\n\n"
                 "- :tickets: Do **NOT** open tickets without a valid reason.\n\n"
                 "## 7. :people_hugging:  Behaviour\n\n"
-                "- :handshake: Be kind, respectful, and helpful to everyone.\n\n"
-                f"{interaction.user.mention}"
+                "- :handshake: Be kind, respectful, and helpful to everyone."
             )
 
         except discord.HTTPException:
@@ -85,9 +84,8 @@ class RulesCommands(commands.Cog):
                 "- 1. Use the bot for its intended purpose.\n"
                 "- 2. Only use OutBot in the channels command or chatbot.\n"
                 "- 3. Do NOT try to exploit OutBot.\n"
-                "- 4. Please try to find bugs and report them by opening a ticket.\n"
-                "- 5. Do **NOT** make the bot DM you something offensive or make the bot say something offensive\n"
-                f"## - {interaction.user.mention}"
+                "- 4. Try to find bugs and report them by opening a ticket.\n"
+                "- 5. Do **NOT** make the OutBot DM you something offensive or make the bot say something offensive\n"
             )
 
         except discord.HTTPException:

@@ -17,10 +17,6 @@ class FunCommands(commands.Cog):
     ) -> None:
         """Sends the user a YouTube link to Rickroll them."""
 
-        logger.info(
-            f"/rickroll was used by {interaction.user}",
-        )
-
         try:
             await interaction.response.send_message(
                 "CLICK ME ---> ||<https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1>||",
