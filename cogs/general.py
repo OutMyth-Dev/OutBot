@@ -3,8 +3,7 @@ import logging
 import discord
 from discord.ext import commands
 
-from config.emojis import emojis
-from config.max_chars import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
+from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, emojis
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +20,7 @@ class GeneralCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                "Hello!",
+                "Hello",
             )
 
         except discord.HTTPException:
@@ -53,10 +52,10 @@ class GeneralCommands(commands.Cog):
     async def dm(
         self,
         interaction: discord.Interaction,
-        msg: str,
+        message: str,
     ) -> None:
 
-        if len(msg) > MAX_MESSAGE_LENGTH:
+        if len(message) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
                 f"Your message was too long. Please make it less than {MAX_MESSAGE_LENGTH} characters.",
                 ephemeral=True,
@@ -64,7 +63,7 @@ class GeneralCommands(commands.Cog):
             return
 
         try:
-            await interaction.user.send(f"Secret Message:  ||{msg}||")
+            await interaction.user.send(f"Secret Message:  ||{message}||")
             (
                 await interaction.response.send_message(
                     "Check your DMs!",
@@ -107,10 +106,10 @@ class GeneralCommands(commands.Cog):
     async def say(
         self,
         interaction: discord.Interaction,
-        say: str,
+        you_tell_me_what_to_say: str,
     ) -> None:
 
-        if len(say) > MAX_MESSAGE_LENGTH:
+        if len(you_tell_me_what_to_say) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
                 f"Your message was too long. Please make it less than {MAX_MESSAGE_LENGTH} characters.",
                 ephemeral=True,
@@ -119,7 +118,7 @@ class GeneralCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                f"{interaction.user.mention} told me to say: ||{say}||"
+                f"{interaction.user.mention} Told me to say: ||{you_tell_me_what_to_say}||"
             )
 
         except discord.HTTPException:

@@ -85,7 +85,7 @@ class RulesCommands(commands.Cog):
                 "- 2. Only use OutBot in the channels command or chatbot.\n"
                 "- 3. Do NOT try to exploit OutBot.\n"
                 "- 4. Try to find bugs and report them by opening a ticket.\n"
-                "- 5. Do **NOT** make the OutBot DM you something offensive or make the bot say something offensive\n"
+                "- 5. Do **NOT** make the OutBot DM you something offensive or make the bot say something offensive."
             )
 
         except discord.HTTPException:

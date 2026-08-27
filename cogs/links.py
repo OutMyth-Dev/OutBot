@@ -3,7 +3,7 @@ import logging
 import discord
 from discord.ext import commands
 
-from config.bot_info import (
+from config import (
     DISCORD_SERVER_INVITE_LINK,
     OUTBOT_INVITE_LINK,
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
@@ -65,7 +65,7 @@ class LinksCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                f"# OutMyth's Discord Server:\n\n{DISCORD_SERVER_INVITE_LINK}\n\n"
+                f"# OutMyth's Discord Server:\n\n{DISCORD_SERVER_INVITE_LINK}"
             )
 
         except discord.HTTPException:
@@ -107,7 +107,7 @@ class LinksCommands(commands.Cog):
 
         try:
             await interaction.response.send_message(
-                f"Outbot Invite Link:\n\n{OUTBOT_INVITE_LINK}\n\n"
+                f"Outbot Invite Link:\n\n{OUTBOT_INVITE_LINK}"
             )
 
         except discord.HTTPException:

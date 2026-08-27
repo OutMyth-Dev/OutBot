@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-from config.bot_info import (
+from config import (
     BOT_VERSION,
     CREATED_DATE,
     DEVELOPERS,
@@ -38,7 +38,7 @@ class InformationCommands(commands.Cog):
             "- ** 🔗 /invite** - OutBot's invite link**\n\n"
             "## ⚖️ Rules Commands\n\n"
             "- ** 📖 outmythrules** - OutMyth's Rules\n"
-            "- ** 📄 outbotrules** - OutBot's Rules \n\n"
+            "- ** 📄 outbotrules** - OutBot's Rules"
         )
 
     @discord.app_commands.command(
@@ -69,7 +69,7 @@ class InformationCommands(commands.Cog):
             "- **TOS & Privacy Policy**\n"
             "- **Bot Settings Commands**\n"
             "- **Role Information**\n"
-            "- **Improved Quality Of Existing Commands**\n\n"
+            "- **Improved Quality Of Existing Commands**"
         )
 
 
