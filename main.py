@@ -20,16 +20,15 @@ if not DISCORD_TOKEN:
 
 class OutBot(commands.Bot):
     async def setup_hook(self) -> None:
+
         for cog in find_cogs:
             if cog.endswith(".py"):
                 await self.load_extension(f"cogs.{cog[:-3]}")
-
-        commands_synced = await self.tree.sync()
-
+                
+        commands_synced = await bot.tree.sync()
+        
         logger.info("OutBot can now be used.")
-        logger.info(
-            f"Synced commands {len(commands_synced)}",
-        )
+        logger.info(f"Synced commands {len(commands_synced)}")
 
 
 bot = OutBot(
