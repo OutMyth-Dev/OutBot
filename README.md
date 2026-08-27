@@ -1,5 +1,7 @@
 # 🤖 OutBot
 
+Current version: **0.4**
+
 OutBot is a Discord bot created by **Mythordian** and **aardapel1**, built with **Discord.py**.
 OutBot was created to replace other bots for privacy and security reasons.
 
