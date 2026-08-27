@@ -162,7 +162,7 @@ class GeneralCommands(commands.Cog):
         title: str,
         question: str,
     ) -> None:
-        """10 reactions to allow the user to pick a reaction of their choice or they can pick their own."""
+        """10 reactions allow the user to pick a reaction, while still allowing them to add their own reaction/s."""
 
         if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
