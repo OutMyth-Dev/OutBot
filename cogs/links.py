@@ -9,6 +9,7 @@ from config import (
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
 )
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -26,33 +27,19 @@ class LinksCommands(commands.Cog):
             await interaction.response.send_message(
                 f"# OutMyth's YouTube Channel:\n\n{OUTMYTH_YOUTUBE_CHANNEL_LINK}\n\n"
             )
-        except discord.HTTPException:
-            logger.exception("Discord's API failed when using /youtube")
 
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "Discord API failed when using /youtube.",
-                    ephemeral=True,
-                )
-            else:
-                await interaction.response.send_message(
-                    "Discord API failed when using /youtube",
-                    ephemeral=True,
-                )
+        except discord.HTTPException:
+            logger.exception(
+                "Discord's API failed when using /youtube",
+            )
+            http_error(interaction, "Discord's API failed when using /youtube.")
 
         except Exception:
-            logger.exception("Unexpected error in /youtube")
+            logger.exception("Unexpected error in /youtube.")
 
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using when using /youtube. Please open a ticket.",
-                    ephemeral=True,
-                )
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using when using /youtube. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
     @discord.app_commands.command(
         name="serverlink",
@@ -69,32 +56,17 @@ class LinksCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logger.exception("Discord's API failed when using /serverlink")
-
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "Discord API failed when using /serverlink.",
-                    ephemeral=True,
-                )
-            else:
-                await interaction.response.send_message(
-                    "Discord API failed when using /serverlink",
-                    ephemeral=True,
-                )
+            logger.exception(
+                "Discord's API failed when using /serverlink",
+            )
+            http_error(interaction, "Discord's API failed when using /serverlink.")
 
         except Exception:
-            logger.exception("Unexpected error in /youtube")
+            logger.exception("Unexpected error in /serverlink.")
 
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using when using /serverlink. Please open a ticket.",
-                    ephemeral=True,
-                )
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using when using /serverlink. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
     @discord.app_commands.command(
         name="invite",
@@ -111,32 +83,17 @@ class LinksCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logger.exception("Discord's API failed when using /invite")
-
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "Discord API failed when using /invite.",
-                    ephemeral=True,
-                )
-            else:
-                await interaction.response.send_message(
-                    "Discord API failed when using /invite",
-                    ephemeral=True,
-                )
+            logger.exception(
+                "Discord's API failed when using /invite",
+            )
+            http_error(interaction, "Discord's API failed when using /invite.")
 
         except Exception:
-            logger.exception("Unexpected error in /youtube")
+            logger.exception("Unexpected error in /invite.")
 
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using when using /invite. Please open a ticket.",
-                    ephemeral=True,
-                )
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using when using /invite. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
 
 async def setup(bot: commands.Bot) -> None:

@@ -4,6 +4,7 @@ import discord
 from discord.ext import commands
 
 from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, emojis
+from utils import http_error, exception_error
 
 logger = logging.getLogger(__name__)
 
@@ -24,26 +25,17 @@ class GeneralCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logger.exception("Discord API failure when using /hello")
-            await interaction.followup.send(
-                "Discord API failure.",
-                ephemeral=True,
+            logger.exception(
+                "Discord's API failed when using /hello",
             )
+            http_error(interaction, "Discord's API failed when using /hello.")
 
         except Exception:
-            logger.exception("An unexpected error in /hello")
+            logger.exception("Unexpected error in /hello.")
 
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /hello. Please open a ticket.",
-                    ephemeral=True,
-                )
-
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /hello. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
     @discord.app_commands.command(
         name="dm",
@@ -79,25 +71,17 @@ class GeneralCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logger.exception("Discord API failure in /dm")
-            await interaction.followup.send(
-                "Discord's API failed.",
-                ephemeral=True,
+            logger.exception(
+                "Discord's API failed when using /dm",
             )
+            http_error(interaction, "Discord's API failed when using /dm.")
 
         except Exception:
-            logger.exception("Unexpected error in /dm")
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /dm. Please open a ticket.",
-                    ephemeral=True,
-                )
+            logger.exception("Unexpected error in /dm.")
 
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /dm. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
     @discord.app_commands.command(
         name="say",
@@ -122,34 +106,38 @@ class GeneralCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logger.exception("Discord API failure in /say.")
-            await interaction.followup.send(
-                "Discord API failure",
-                ephemeral=True,
+            logger.exception(
+                "Discord's API failed when using /say",
             )
+            http_error(interaction, "Discord's API failed when using /say.")
 
         except Exception:
-            logger.exception("Unexpected error in /say")
+            logger.exception("Unexpected error in /say.")
 
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /say. Please open a ticket.",
-                    ephemeral=True,
-                )
-
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /say. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
     @discord.app_commands.command(
         name="ping",
         description="Pings you",
     )
     async def ping(self, interaction: discord.Interaction) -> None:
+        try:
+            await interaction.response.send_message(f"{interaction.user.mention}")
 
-        await interaction.response.send_message(f"{interaction.user.mention}")
+        except discord.HTTPException:
+            logger.exception(
+                "Discord's API failed when using /ping",
+            )
+            http_error(interaction, "Discord's API failed when using /ping.")
+
+        except Exception:
+            logger.exception("Unexpected error in /ping")
+
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
     @discord.app_commands.command(
         name="poll",
@@ -199,32 +187,23 @@ class GeneralCommands(commands.Cog):
                     await poll_msg.add_reaction(emoji)
 
             except discord.HTTPException:
-                logger.exception("Discords API failure in /poll.")
-                await interaction.followup.send(
-                    "Poll created but failed adding emojis. Please open a ticket.",
-                    ephemeral=True,
+                logger.exception(
+                    "Discord's API failed when using /poll",
                 )
+                http_error(interaction, "Poll created, but failed to add reactions. ")
 
         except discord.HTTPException:
-            logger.exception("Discord's API failure in /poll")
-            await interaction.followup.send(
-                "Discord API failure.",
-                ephemeral=True,
+            logger.exception(
+                "Discord's API failed when using /poll",
             )
+            http_error(interaction, "Discord's API failed when using /poll.")
 
         except Exception:
             logger.exception("Unexpected error in /poll")
 
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /poll. Please open a ticket.",
-                    ephemeral=True,
-                )
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /poll. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
 
 async def setup(bot: commands.Bot) -> None:

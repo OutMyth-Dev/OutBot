@@ -90,6 +90,7 @@ OutBot/
 │   ├── links.py
 │   └── rules.py
 ├── config/
+│   ├── __init__.py
 │   ├── .env.example
 |   ├── bot_info.py
 │   ├── emojis.py
@@ -97,8 +98,12 @@ OutBot/
 │   ├── logging.py
 │   └── max_chars.py
 ├── information/
-│   └── UPDATES.md
+│   ├── UPDATES.md
+│   └── errors.py
+│   utils/
+│   └── __init__.py
 ├── .gitignore
+├── LICENSE
 ├── main.py
 ├── README.md
 └── requirements.txt

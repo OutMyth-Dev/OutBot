@@ -7,13 +7,11 @@ def custom_logger() -> None:
     logger.setLevel(logging.DEBUG)
 
     file_handler = logging.FileHandler(
-        filename="discord.log",
-        encoding="utf-8",
-        mode="a",
+        filename="discord.log", encoding="utf-8", mode="a"
     )
 
     formatter = logging.Formatter(
-        "Time = %(asctime)s   ||   Logger/Module Name = %(name)s   ||   Log Level = %(levelname)s   |   Information = %(message)s"
+        "Information = %(message)s   -   Logger/Module Name = %(name)s   -   Time = %(asctime)s   -   Log Level = %(levelname)s"
     )
 
     file_handler.setFormatter(formatter)

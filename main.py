@@ -13,10 +13,6 @@ logger = logging.getLogger(__name__)
 load_dotenv("config/.env")
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
-if not DISCORD_TOKEN:
-    logger.error("Discord token was not found.")
-    raise RuntimeError("Bot Token Not Found.")
-
 
 class OutBot(commands.Bot):
     async def setup_hook(self) -> None:
@@ -24,9 +20,9 @@ class OutBot(commands.Bot):
         for cog in find_cogs:
             if cog.endswith(".py"):
                 await self.load_extension(f"cogs.{cog[:-3]}")
-                
+
         commands_synced = await bot.tree.sync()
-        
+
         logger.info("OutBot can now be used.")
         logger.info(f"Synced commands {len(commands_synced)}")
 
@@ -36,4 +32,10 @@ bot = OutBot(
     intents=discord.Intents.default(),
 )
 
-bot.run(DISCORD_TOKEN)
+try:
+    bot.run(DISCORD_TOKEN)
+    logger.info("Logged in.")
+
+except:
+    logger.critical("Please enter your Discord Bot's token.")
+    raise RuntimeError("Bot Token could not be verfied.")

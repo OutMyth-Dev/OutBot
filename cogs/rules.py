@@ -40,34 +40,17 @@ class RulesCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logger.exception("Discord's API failed for command /outmythrules")
-
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "Discord's API failed.",
-                    ephemeral=True,
-                )
-
-            else:
-                await interaction.response.send_message(
-                    "Discord's API failed.",
-                    ephemeral=True,
-                )
+            logger.exception(
+                "Discord's API failed when using /outmythrules",
+            )
+            http_error(interaction, "Discord's API failed when using /outmythrules.")
 
         except Exception:
-            logger.exception("An unexpected error happened when using /outmythrules")
+            logger.exception("Unexpected error in /outmythrules.")
 
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /outmythrules. Please open a ticket.",
-                    ephemeral=True,
-                )
-
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /outmythrules. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
     @discord.app_commands.command(
         name="outbotrules",
@@ -89,22 +72,17 @@ class RulesCommands(commands.Cog):
             )
 
         except discord.HTTPException:
-            logger.exception("Discord's API failed for command /outbotrules")
-            await interaction.followup.send("Discord's API failed.", ephemeral=True)
+            logger.exception(
+                "Discord's API failed when using /outbotrules",
+            )
+            http_error(interaction, "Discord's API failed when using /outbotrules.")
 
         except Exception:
-            logger.exception("An unexpected error happened when using /outbotrules")
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /outbotrules. Please open a ticket.",
-                    ephemeral=True,
-                )
+            logger.exception("Unexpected error in /outbotrules.")
 
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /outbotrules. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
 
 async def setup(bot: commands.Bot):

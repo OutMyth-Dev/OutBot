@@ -3,6 +3,8 @@ import logging
 import discord
 from discord.ext import commands
 
+from utils import http_error, exception_error
+
 logger = logging.getLogger(__name__)
 
 
@@ -25,24 +27,16 @@ class FunCommands(commands.Cog):
 
         except discord.HTTPException:
             logger.exception(
-                f"Discord's API failed when using /rickroll {interaction.user}"
+                "Discord's API failed when using /rickroll",
             )
-            await interaction.followup.send("Discord's API failed.")
+            http_error(interaction, "Discord's API failed when using /rickroll.")
 
         except Exception:
-            logger.exception(f"Unexpected error in /rickroll {interaction.user}")
+            logger.exception("Unexpected error in /rickroll.")
 
-            if interaction.response.is_done():
-                await interaction.followup.send(
-                    "An unexpected error occurred when using /rickroll. Please open a ticket.",
-                    ephemeral=True,
-                )
-
-            else:
-                await interaction.response.send_message(
-                    "An unexpected error occurred when using /rickroll. Please open a ticket.",
-                    ephemeral=True,
-                )
+            exception_error(
+                interaction, "Something went wrong :(. Please open a ticket."
+            )
 
 
 async def setup(bot: commands.Bot) -> None:
