@@ -12,13 +12,9 @@ OutBot was created to replace other bots for privacy and security reasons.
 - OutBot is **open source**
 - OutBot is under an MIT LICENSE: https://github.com/OutMyth-Dev/OutBot/blob/main/LICENSE
 
+If you have any privacy concerns please open a GitHub issue on create a ticket on OutMyth's discord server.
+
 Current version: **0.4**
-
----
-
-# 🤖 OutBot Commands
-OutBot currently has **14 slash commands**.
-OutBot does **not** use  prefixcommands, so there is no command prefix required.
 
 ---
 
@@ -43,14 +39,20 @@ The following commands have Ephemeral=True:
 
 ---
 
+# 🤖 OutBot Commands
+OutBot currently has **14 slash commands**.
+OutBot does **not** use  prefixcommands, so there is no command prefix required.
+
+---
+
 # ⚙️ Cogs
 OutBot has *5 cogs*
 
-- **cogs/fun.py**         | Commands that exist for users to have fun      | eg: /rickroll
-- **cogs/general.py**     | Commands that do not fit in any other category | eg: /hello
-- **cogs/information.py** | Useful information about OutBot/OutMyth        | eg: /help
-- **cogs/links.py**       | Useful links about OutBot/OutMyth              | eg: /youtube
-- **cogs/rules.py**       | OutBot/OutMyth's Rules                         | eg: /outmythrules
+- **cogs/fun.py**         - Commands that exist for users to have fun      - eg: /rickroll
+- **cogs/general.py**     - Commands that do not fit in any other category - eg: /hello
+- **cogs/information.py** - Useful information about OutBot/OutMyth        - eg: /help
+- **cogs/links.py**       - Useful links about OutBot/OutMyth              - eg: /youtube
+- **cogs/rules.py**       - OutBot/OutMyth's Rules                         - eg: /outmythrules
 
 ---
 
@@ -117,6 +119,33 @@ OutBot/
 ```
 
 ---
+
+# How do I install OutBot?
+
+---
+
+## Requirements
+
+- Python 3.14.6 +
+- discord.py 2.7.1 + 
+- Have an IDE (pycharm, vscodium, vscode, etc)
+- git
+
+---
+
+## Installing OutBot
+
+Run the following command in your terminal:
+
+```text
+git clone https://github.com/OutMyth-Dev/OutBot.git
+```
+
+Then run:
+```text
+cd OutBot
+```
+
 
 To report any issues, open a ticket on OutMyth - https://discord.gg/Sc5vAvTJtc or a GitHub issue - https://github.com/OutMyth-Dev/OutBot/issues.
 Thank **you** for using OutBot!
