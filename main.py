@@ -5,7 +5,7 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from config import custom_logger, find_cogs
+from .config import custom_logger, find_cogs
 
 custom_logger()
 logger = logging.getLogger(__name__)

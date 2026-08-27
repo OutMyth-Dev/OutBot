@@ -3,7 +3,7 @@ import logging
 import discord
 from discord.ext import commands
 
-from config import (
+from .config import (
     DISCORD_SERVER_INVITE_LINK,
     OUTBOT_INVITE_LINK,
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
