@@ -12,13 +12,13 @@ OutBot was created to replace other bots for privacy and security reasons.
 
 Current version: **0.4**
 
---------------
+---
 
 # 🤖 OutBot Commands
 OutBot currently has **14 slash commands**.
 OutBot does **not** use  prefixcommands, so there is no command prefix required.
 
---------------
+---
 
 # 🔒 What are Ephemeral Messages?
 
@@ -32,14 +32,14 @@ The following commands have Ephemeral=True:
 
 > ⚠️ Error messages from the bot are all Ephemeral=True.
 
---------------
+---
 
 # 🛠️ Built With
 
 - 🐍 **Python**
 - 🤖 **Discord.py**
 
---------------
+---
 
 # ⚙️ Cogs
 OutBot has *5 cogs*
@@ -50,7 +50,7 @@ OutBot has *5 cogs*
 - **cogs/links.py**       | Useful links about OutBot/OutMyth              | eg: /youtube
 - **cogs/rules.py**       | OutBot/OutMyth's Rules                         | eg: /outmythrules
 
---------------
+---
 
 ### ❓ What commands does each cog contain?
 
