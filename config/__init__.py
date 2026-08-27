@@ -1,6 +1,4 @@
-from logging import custom_logger
-
-from bot_info import (
+from .bot_info import (
     BOT_VERSION,
     CREATED_DATE,
     DEVELOPERS,
@@ -10,6 +8,7 @@ from bot_info import (
     OUTBOT_INVITE_LINK,
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
 )
-from emojis import emojis
-from load_cogs import find_cogs
-from max_chars import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
+from .emojis import emojis
+from .load_cogs import find_cogs
+from .logging import custom_logger
+from .max_chars import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
