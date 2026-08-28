@@ -8,8 +8,6 @@ from config import (
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
 )
-from utils import exception_error as exception_error
-from utils import http_error as http_error
 
 
 class InformationCommands(commands.Cog):
@@ -49,12 +47,14 @@ class InformationCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /help",
             )
-            await http_error(interaction, "Discord's API failed when using /help.")
+            await send_error_message(
+                interaction, "Discord's API failed when using /help."
+            )
 
         except Exception:
             logger.exception("Unexpected error in /help")
 
-            await exception_error(
+            await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -78,12 +78,14 @@ class InformationCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /outbot",
             )
-            await http_error(interaction, "Discord's API failed when using /outbot.")
+            await send_error_message(
+                interaction, "Discord's API failed when using /outbot."
+            )
 
         except Exception:
             logger.exception("Unexpected error in /outbot")
 
-            await exception_error(
+            await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -107,12 +109,14 @@ class InformationCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /roadmap",
             )
-            await http_error(interaction, "Discord's API failed when using /roadmap.")
+            await send_error_message(
+                interaction, "Discord's API failed when using /roadmap."
+            )
 
         except Exception:
             logger.exception("Unexpected error in /roadmap")
 
-            await exception_error(
+            await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 

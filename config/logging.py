@@ -1,6 +1,5 @@
 import logging
 
-from logging.handlers import TimedRotatingFileHandler
 
 def custom_logger() -> None:
 
@@ -14,9 +13,9 @@ def custom_logger() -> None:
     formatter = logging.Formatter(
         "%(asctime)s | %(levelname)s | %(name)s | %(message)s",
     )
-    
+
     logging.handlers.TimedRotatingFileHandler(
-    filename="discord.log", when="d", interval=7, backupCount=0
+        filename="discord.log", when="d", interval=7, backupCount=0
     )
 
     file_handler.setFormatter(formatter)

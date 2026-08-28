@@ -8,8 +8,6 @@ from config import (
     OUTBOT_INVITE_LINK,
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
 )
-from utils import exception_error as exception_error
-from utils import http_error as http_error
 
 logger = logging.getLogger(__name__)
 
@@ -33,12 +31,14 @@ class LinksCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /youtube",
             )
-            await http_error(interaction, "Discord's API failed when using /youtube.")
+            await send_error_message(
+                interaction, "Discord's API failed when using /youtube."
+            )
 
         except Exception:
             logger.exception("Unexpected error in /youtube.")
 
-            await exception_error(
+            await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -60,14 +60,14 @@ class LinksCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /serverlink",
             )
-            await http_error(
+            await send_error_message(
                 interaction, "Discord's API failed when using /serverlink."
             )
 
         except Exception:
             logger.exception("Unexpected error in /serverlink.")
 
-            await exception_error(
+            await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -89,12 +89,14 @@ class LinksCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /invite",
             )
-            await http_error(interaction, "Discord's API failed when using /invite.")
+            await send_error_message(
+                interaction, "Discord's API failed when using /invite."
+            )
 
         except Exception:
             logger.exception("Unexpected error in /invite.")
 
-            await exception_error(
+            await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
