@@ -1,14 +1,19 @@
 import logging
 
+
 import discord
 from discord.ext import commands
 
+
 from utils import send_error_message
+
 
 logger = logging.getLogger(__name__)
 
 
 class RulesCommands(commands.Cog):
+
+    
     @discord.app_commands.command(
         name="outmythrules",
         description="OutMyth Discord Server Rules.",
@@ -56,6 +61,7 @@ class RulesCommands(commands.Cog):
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
+
     @discord.app_commands.command(
         name="outbotrules",
         description="OutBot's Rules!",
@@ -91,5 +97,5 @@ class RulesCommands(commands.Cog):
             )
 
 
-async def setup(bot: commands.Bot):
+async def setup(bot: OutBot):
     await bot.add_cog(RulesCommands(bot))

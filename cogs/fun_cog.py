@@ -1,21 +1,24 @@
 import logging
 
+
 import discord
 from discord.ext import commands
 
+
 from utils import send_error_message
+
 
 logger = logging.getLogger(__name__)
 
 
 class FunCommands(commands.Cog):
+
+    
     @discord.app_commands.command(
         name="rickroll",
-        description="Don't do it...",
+        description="I wonder what this command does...",
     )
-    async def rickroll(
-        self,
-        interaction: discord.Interaction,
+    async def rickroll(self,interaction: discord.Interaction,
     ) -> None:
         """Sends the user a YouTube link to Rickroll them."""
 
@@ -40,5 +43,5 @@ class FunCommands(commands.Cog):
             )
 
 
-async def setup(bot: commands.Bot) -> None:
+async def setup(bot: OutBot) -> None:
     await bot.add_cog(FunCommands(bot))

@@ -1,12 +1,14 @@
 from .bot_info import (
     BOT_VERSION,
-    CREATED_DATE,
+    DATE_CREATED,
     DEVELOPERS,
     DISCORD_SERVER_INVITE_LINK,
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
     OUTBOT_INVITE_LINK,
+    OUTBOT_LICENSE,
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
+    RETENTION,
 )
 from .emojis import emojis
 from .load_cogs import find_cogs

@@ -1,15 +1,20 @@
 import logging
 
+
 import discord
 from discord.ext import commands
 
+
 from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, emojis
 from utils import send_error_message
+
 
 logger = logging.getLogger(__name__)
 
 
 class GeneralCommands(commands.Cog):
+
+    
     @discord.app_commands.command(
         name="hello",
         description="It says hello!",
@@ -37,6 +42,7 @@ class GeneralCommands(commands.Cog):
             await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
+
 
     @discord.app_commands.command(
         name="dm",
@@ -83,6 +89,7 @@ class GeneralCommands(commands.Cog):
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
+
     @discord.app_commands.command(
         name="say",
         description="You tell the OutBot what to say!",
@@ -120,6 +127,7 @@ class GeneralCommands(commands.Cog):
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
+
     @discord.app_commands.command(
         name="ping",
         description="Pings you",
@@ -142,6 +150,7 @@ class GeneralCommands(commands.Cog):
             await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
+
 
     @discord.app_commands.command(
         name="poll",
@@ -184,11 +193,11 @@ class GeneralCommands(commands.Cog):
 
             await interaction.response.send_message(embed=embed)
 
-            poll_msg = await interaction.original_response()
+            poll_message = await interaction.original_response()
 
             try:
                 for emoji in emojis:
-                    await poll_msg.add_reaction(emoji)
+                    await poll_message.add_reaction(emoji)
 
             except discord.HTTPException:
                 logger.exception(
@@ -212,5 +221,5 @@ class GeneralCommands(commands.Cog):
             )
 
 
-async def setup(bot: commands.Bot) -> None:
+async def setup(bot: OutBot) -> None:
     await bot.add_cog(GeneralCommands(bot))

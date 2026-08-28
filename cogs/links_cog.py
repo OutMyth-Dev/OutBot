@@ -1,18 +1,24 @@
 import logging
 
+
 import discord
 from discord.ext import commands
+
 
 from config import (
     DISCORD_SERVER_INVITE_LINK,
     OUTBOT_INVITE_LINK,
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
 )
+from utils import send_error_message
+
 
 logger = logging.getLogger(__name__)
 
 
 class LinksCommands(commands.Cog):
+
+    
     @discord.app_commands.command(
         name="youtube",
         description="OutMyth's YouTube channel link",
@@ -42,6 +48,7 @@ class LinksCommands(commands.Cog):
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
+
     @discord.app_commands.command(
         name="serverlink",
         description="OutMyth's Discord server invite link.",
@@ -70,6 +77,7 @@ class LinksCommands(commands.Cog):
             await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
+
 
     @discord.app_commands.command(
         name="invite",
@@ -101,5 +109,5 @@ class LinksCommands(commands.Cog):
             )
 
 
-async def setup(bot: commands.Bot) -> None:
+async def setup(bot: OutBot) -> None:
     await bot.add_cog(LinksCommands(bot))

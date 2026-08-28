@@ -1,14 +1,18 @@
 import logging
 import os
 
+
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
+
 from config import custom_logger, find_cogs
+
 
 custom_logger()
 logger = logging.getLogger(__name__)
+
 
 load_dotenv("config/.env")
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
@@ -32,9 +36,11 @@ bot = OutBot(
     intents=discord.Intents.default(),
 )
 
+
 try:
     bot.run(DISCORD_TOKEN)
-    logger.info("Logged in.")
+    logger.info(f"Logged in.")
+
 
 except discord.LoginFailure:
     logger.critical("Please enter your Discord Bot's token.")

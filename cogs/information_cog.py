@@ -1,16 +1,23 @@
+import logging
+
+
 import discord
 from discord.ext import commands
 
+
 from config import (
     BOT_VERSION,
-    CREATED_DATE,
+    DATE_CREATED,
     DEVELOPERS,
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
 )
+from utils import send_error_message
 
 
 class InformationCommands(commands.Cog):
+
+
     @discord.app_commands.command(
         name="help",
         description="OutBot's Command Guide",
@@ -58,6 +65,7 @@ class InformationCommands(commands.Cog):
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
+
     @discord.app_commands.command(
         name="outbot",
         description="Useful Information About OutBot!",
@@ -89,6 +97,7 @@ class InformationCommands(commands.Cog):
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
+
     @discord.app_commands.command(
         name="roadmap",
         description="Planned Features For OutBot!",
@@ -119,7 +128,7 @@ class InformationCommands(commands.Cog):
             await send_error_message(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
+            
 
-
-async def setup(bot: commands.Bot) -> None:
+async def setup(bot: OutBot) -> None:
     await bot.add_cog(InformationCommands(bot))
