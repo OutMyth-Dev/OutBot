@@ -3,7 +3,7 @@ import logging
 import discord
 from discord.ext import commands
 
-from utils import exception_error, http_error
+from utils import send_error_message
 
 logger = logging.getLogger(__name__)
 
