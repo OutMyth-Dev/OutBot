@@ -4,7 +4,8 @@ import discord
 from discord.ext import commands
 
 from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, emojis
-from utils import http_error, exception_error
+from utils import exception_error as exception_error
+from utils import http_error as http_error
 
 logger = logging.getLogger(__name__)
 

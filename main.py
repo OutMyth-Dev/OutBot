@@ -36,6 +36,6 @@ try:
     bot.run(DISCORD_TOKEN)
     logger.info("Logged in.")
 
-except:
+except discord.LoginFailure:
     logger.critical("Please enter your Discord Bot's token.")
     raise RuntimeError("Bot Token could not be verfied.")

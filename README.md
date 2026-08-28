@@ -15,7 +15,7 @@ Current version: **0.4**
 | User data | ❌ No | ❌ No | None |
 | Logs | ✅ Limited | ✅ Local | 7 days |
 
-- Logs use a logging mode of **a**
+- Logs use a logging mode of **a** (append)
 - OutBot is **open source**
 - OutBot is under an MIT LICENSE: https://github.com/OutMyth-Dev/OutBot/blob/main/LICENSE
 
@@ -46,7 +46,7 @@ The following commands have Ephemeral=True:
 
 # 🤖 OutBot Commands
 OutBot currently has **14 slash commands**.
-OutBot does **not** use  prefixcommands, so there is no command prefix required.
+OutBot does **not** use  prefix  commands, so there is no command prefix required.
 
 ---
 
@@ -84,13 +84,13 @@ OutBot has *5 cogs*
 ### cogs/links.py
 
 - **`/youtube`**
-- **`serverlink`**
+- **`/serverlink`**
 - **`/invite`**
 
 ### cogs/rules.py
 
-- **`outmythrules`**
-- **`outbotrules`**
+- **`/outmythrules`**
+- **`/outbotrules`**
 
 # OutBot's Directory Tree
 

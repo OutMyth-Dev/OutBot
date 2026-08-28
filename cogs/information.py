@@ -8,7 +8,8 @@ from config import (
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
 )
-from utils import http_error, exception_error
+from utils import exception_error as exception_error
+from utils import http_error as http_error
 
 
 class InformationCommands(commands.Cog):
