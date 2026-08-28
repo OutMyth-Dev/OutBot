@@ -33,12 +33,12 @@ class LinksCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /youtube",
             )
-            http_error(interaction, "Discord's API failed when using /youtube.")
+            await http_error(interaction, "Discord's API failed when using /youtube.")
 
         except Exception:
             logger.exception("Unexpected error in /youtube.")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -60,12 +60,14 @@ class LinksCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /serverlink",
             )
-            http_error(interaction, "Discord's API failed when using /serverlink.")
+            await http_error(
+                interaction, "Discord's API failed when using /serverlink."
+            )
 
         except Exception:
             logger.exception("Unexpected error in /serverlink.")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -87,12 +89,12 @@ class LinksCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /invite",
             )
-            http_error(interaction, "Discord's API failed when using /invite.")
+            await http_error(interaction, "Discord's API failed when using /invite.")
 
         except Exception:
             logger.exception("Unexpected error in /invite.")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 

@@ -3,7 +3,7 @@ import discord
 
 async def http_error(
     interaction: discord.Interaction,
-    message,
+    message: str,
 ) -> None:
 
     if interaction.response.is_done():

@@ -49,12 +49,12 @@ class InformationCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /help",
             )
-            http_error(interaction, "Discord's API failed when using /help.")
+            await http_error(interaction, "Discord's API failed when using /help.")
 
         except Exception:
             logger.exception("Unexpected error in /help")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -78,12 +78,12 @@ class InformationCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /outbot",
             )
-            http_error(interaction, "Discord's API failed when using /outbot.")
+            await http_error(interaction, "Discord's API failed when using /outbot.")
 
         except Exception:
             logger.exception("Unexpected error in /outbot")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -107,12 +107,12 @@ class InformationCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /roadmap",
             )
-            http_error(interaction, "Discord's API failed when using /roadmap.")
+            await http_error(interaction, "Discord's API failed when using /roadmap.")
 
         except Exception:
             logger.exception("Unexpected error in /roadmap")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 

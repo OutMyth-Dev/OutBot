@@ -29,12 +29,12 @@ class GeneralCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /hello",
             )
-            http_error(interaction, "Discord's API failed when using /hello.")
+            await http_error(interaction, "Discord's API failed when using /hello.")
 
         except Exception:
             logger.exception("Unexpected error in /hello.")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -80,7 +80,7 @@ class GeneralCommands(commands.Cog):
         except Exception:
             logger.exception("Unexpected error in /dm.")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -110,12 +110,12 @@ class GeneralCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /say",
             )
-            http_error(interaction, "Discord's API failed when using /say.")
+            await http_error(interaction, "Discord's API failed when using /say.")
 
         except Exception:
             logger.exception("Unexpected error in /say.")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -131,12 +131,12 @@ class GeneralCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /ping",
             )
-            http_error(interaction, "Discord's API failed when using /ping.")
+            await http_error(interaction, "Discord's API failed when using /ping.")
 
         except Exception:
             logger.exception("Unexpected error in /ping")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -191,10 +191,12 @@ class GeneralCommands(commands.Cog):
                 logger.exception(
                     "Discord's API failed when using /poll",
                 )
-                http_error(interaction, "Poll created, but failed to add reactions. ")
+                await http_error(
+                    interaction, "Poll created, but failed to add reactions. "
+                )
 
         except discord.HTTPException:
-            logger.exception(
+            await logger.exception(
                 "Discord's API failed when using /poll",
             )
             http_error(interaction, "Discord's API failed when using /poll.")
@@ -202,7 +204,7 @@ class GeneralCommands(commands.Cog):
         except Exception:
             logger.exception("Unexpected error in /poll")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 

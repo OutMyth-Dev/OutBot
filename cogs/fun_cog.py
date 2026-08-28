@@ -30,12 +30,12 @@ class FunCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /rickroll",
             )
-            http_error(interaction, "Discord's API failed when using /rickroll.")
+            await http_error(interaction, "Discord's API failed when using /rickroll.")
 
         except Exception:
             logger.exception("Unexpected error in /rickroll.")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 

@@ -18,7 +18,7 @@ class OutBot(commands.Bot):
     async def setup_hook(self) -> None:
 
         for cog in find_cogs:
-            if cog.endswith(".py"):
+            if cog.endswith("cog.py"):
                 await self.load_extension(f"cogs.{cog[:-3]}")
 
         commands_synced = await bot.tree.sync()

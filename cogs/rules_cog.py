@@ -46,12 +46,14 @@ class RulesCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /outmythrules",
             )
-            http_error(interaction, "Discord's API failed when using /outmythrules.")
+            await http_error(
+                interaction, "Discord's API failed when using /outmythrules."
+            )
 
         except Exception:
             logger.exception("Unexpected error in /outmythrules.")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
@@ -78,12 +80,14 @@ class RulesCommands(commands.Cog):
             logger.exception(
                 "Discord's API failed when using /outbotrules",
             )
-            http_error(interaction, "Discord's API failed when using /outbotrules.")
+            await http_error(
+                interaction, "Discord's API failed when using /outbotrules."
+            )
 
         except Exception:
             logger.exception("Unexpected error in /outbotrules.")
 
-            exception_error(
+            await exception_error(
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 

@@ -53,11 +53,13 @@ OutBot does **not** use  prefix  commands, so there is no command prefix require
 # ⚙️ Cogs
 OutBot has *5 cogs*
 
-- **cogs/fun.py**         - Commands that exist for users to have fun      - eg: /rickroll
-- **cogs/general.py**     - Commands that do not fit in any other category - eg: /hello
-- **cogs/information.py** - Useful information about OutBot/OutMyth        - eg: /help
-- **cogs/links.py**       - Useful links about OutBot/OutMyth              - eg: /youtube
-- **cogs/rules.py**       - OutBot/OutMyth's Rules                         - eg: /outmythrules
+| Cog relative file path| What types of commands the cog contains | An example of that command |
+| --- | --- | --- |
+| **cogs/fun_cog.py** | - Commands that exist for users to have fun | - eg: /rickroll |
+| **cogs/general_cog.py** | - Commands that do not fit in any other category | - eg: /hello |
+| **cogs/information_cog.py** |- Useful information about OutBot/OutMyth | - eg: /help |
+| **cogs/links_cog.py** | - Useful links about OutBot/OutMyth | - eg: /youtube |
+| **cogs/rules_cog.py** |- OutBot/OutMyth's Rules | - eg: /outmythrules |
 
 ---
 
