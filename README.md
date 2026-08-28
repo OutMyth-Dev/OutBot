@@ -3,10 +3,16 @@
 OutBot is a Discord bot created by **Mythordian** and **aardapel1**, built with **Discord.py**.
 OutBot was created to replace other bots for privacy and security reasons.
 
+Current version: **0.4**
+
+---
+
+## 🔐 Privacy
+
 | Data | Collected | Stored | Retention |
 | --- | --- | --- | --- |
-| Message content | ❌ No | ❌ No | — |
-| User data | ❌ No | ❌ No | — |
+| Message content | ❌ No | ❌ No | None |
+| User data | ❌ No | ❌ No | None |
 | Logs | ✅ Limited | ✅ Local | 7 days |
 
 - Logs use a logging mode of **a**
@@ -14,8 +20,6 @@ OutBot was created to replace other bots for privacy and security reasons.
 - OutBot is under an MIT LICENSE: https://github.com/OutMyth-Dev/OutBot/blob/main/LICENSE
 
 If you have any privacy concerns please open a GitHub issue on create a ticket on OutMyth's discord server.
-
-Current version: **0.4**
 
 ---
 
