@@ -3,11 +3,12 @@
 OutBot is a Discord bot created by **Mythordian** and **aardapel1**, built with **Discord.py**.
 OutBot was created to replace other bots for privacy and security reasons.
 
-- It does **not collect user data**. 
-- Logs are kept **local**.
-- A custom logger is used so nothing logs are only used when needed.
-- Logs are **deleted weekly**.
-- Message content is **NOT** collected.
+| Data | Collected | Stored | Retention |
+| --- | --- | --- | --- |
+| Message content | ❌ No | ❌ No | — |
+| User data | ❌ No | ❌ No | — |
+| Logs | ✅ Limited | ✅ Local | 7 days |
+
 - Logs use a logging mode of **a**
 - OutBot is **open source**
 - OutBot is under an MIT LICENSE: https://github.com/OutMyth-Dev/OutBot/blob/main/LICENSE
@@ -74,7 +75,7 @@ OutBot has *5 cogs*
 
 - **`/help`**
 - **`/outbot`**
--**`/roadmap`**
+- **`/roadmap`**
 
 ### cogs/links.py
 
@@ -126,14 +127,16 @@ OutBot/
 
 ## 📝 Requirements
 
-- Python 3.14.6 +
-- discord.py 2.7.1 + 
-- Have an IDE (pycharm, vscodium, vscode, etc)
-- git
+- Python 3.14.6
+- discord.py 2.7.1
+- git (Install link - https://git-scm.com/install/) 
+- A discord bot application (It depends on what you want to do with OutBot.)
 
 ---
 
 ## ⬇️ Installing OutBot
+
+PLEASE MAKE SURE YOU HAVE GIT INSTALLED.
 
 Run the following command in your terminal:
 
@@ -157,21 +160,21 @@ pip install -r requirements.txt
 
 ## 🤫 .env
 
-You noow have a local copy of OutBot on your computer. To OutBot acutally run we will need a Discord Bot Token. Head over to Discord
+You now have a local copy of OutBot on your computer. To OutBot actually run we will need a Discord Bot Token. Head over to Discord
 Developer portal (https://discord.com/developers/applications) and sign in/create an account depending on if you have a Discord account.
-Click "new application". Create a name for your bot and accept Discord's Dev TOS/Privacy policy. Under overview click "Bot" and then click
-"Reset Token". Click yes do it to confirm; enter your password for authentication. Copy your Discord token into .env.example and paste. 
-Make sure you rename .env.example to ".env" and you  replace "YOUR_TOKEN_GOES_HERE_PLEASE_ENTER_YOUR_DISCORD_BOT_TOKEN_HERE" with your discord
-token. Finally, to install it, go to "Installation" and copy the install link. Paste the install link into your browser and choose if you want to
-add your bot to your apps or if you want to add them to your servers. You can know do whatever you want to the source code. Please read the MIt
-LICENSE for more information.
+Click "new application". Create a name for your bot and accept Discord's Dev TOS/Privacy policy. Create a new file called .env and make sure it is in 
+.gitignre. Created a variable called DISCORD_TOKEN. Under overview click "Bot" and then click"Reset Token". Click "Yes do it to" confirm; enter your 
+password for authentication. Copy your Discord token into .env.Finally, to install it, go to "Installation" and copy the install link. Paste the install 
+link into your browser and choose if you want toadd your bot to your apps or if you want to add them to your servers. You can now do whatever you want 
+to the source code. Please read the MIT LICENSE for more information. NEVER SHARE YOUR DISCORD TOKEN WITH ANYONE. IF YOU DO, YOU ARE ALLLOWING THEM TO 
+HAVE ACCESS TO YOUR BOT. THEY CAN ALSO FIND YOUR EMAIL WITH YOUR DISCORD BOT TOKEN.
 
 ---
 
 ## 🧐 I just want OutBot in my discord server/add it to my apps.
 
 To invite OutBot to your server/add it to your apps, head over to this link: https://discord.com/oauth2/authorize?client_id=1525595736706781384.
-Then choose wether you want OutBot in your Discord server; in your apps.
+Then choose whether you want OutBot in your Discord server; in your apps.
 
 ---
 
