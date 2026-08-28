@@ -120,11 +120,11 @@ OutBot/
 
 ---
 
-# How do I install OutBot?
+# 🤔 How do I install OutBot?
 
 ---
 
-## Requirements
+## 📝 Requirements
 
 - Python 3.14.6 +
 - discord.py 2.7.1 + 
@@ -133,7 +133,7 @@ OutBot/
 
 ---
 
-## Installing OutBot
+## ⬇️ Installing OutBot
 
 Run the following command in your terminal:
 
@@ -146,6 +146,34 @@ Then run:
 cd OutBot
 ```
 
+To install all dependencies, run:
+```text
+pip install -r requirements.txt
+```
+
+# 🛠️ Discord Setup
+
+---
+
+## 🤫 .env
+
+You noow have a local copy of OutBot on your computer. To OutBot acutally run we will need a Discord Bot Token. Head over to Discord
+Developer portal (https://discord.com/developers/applications) and sign in/create an account depending on if you have a Discord account.
+Click "new application". Create a name for your bot and accept Discord's Dev TOS/Privacy policy. Under overview click "Bot" and then click
+"Reset Token". Click yes do it to confirm; enter your password for authentication. Copy your Discord token into .env.example and paste. 
+Make sure you rename .env.example to ".env" and you  replace "YOUR_TOKEN_GOES_HERE_PLEASE_ENTER_YOUR_DISCORD_BOT_TOKEN_HERE" with your discord
+token. Finally, to install it, go to "Installation" and copy the install link. Paste the install link into your browser and choose if you want to
+add your bot to your apps or if you want to add them to your servers. You can know do whatever you want to the source code. Please read the MIt
+LICENSE for more information.
+
+---
+
+## 🧐 I just want OutBot in my discord server/add it to my apps.
+
+To invite OutBot to your server/add it to your apps, head over to this link: https://discord.com/oauth2/authorize?client_id=1525595736706781384.
+Then choose wether you want OutBot in your Discord server; in your apps.
+
+---
 
 To report any issues, open a ticket on OutMyth - https://discord.gg/Sc5vAvTJtc or a GitHub issue - https://github.com/OutMyth-Dev/OutBot/issues.
-Thank **you** for using OutBot!
+Thank **you** for using OutBot! ❤️
