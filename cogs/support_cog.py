@@ -19,35 +19,21 @@ class SupportCommands(commands.Cog):
         self, 
         interaction: discord.Interaction
     ) -> None:
-        try:
-            await interaction.response.send_message(
-                "# How do I report?\n\n"
-                "You should Inculde:\n"
-                "- Your discord username.\n"
-                "- What your issue is.\n"
-                "- Users username only if you're reporting a user.\n"
-                "- Make sure you provide a lot of detail.\n"
-                "- Please make sure you include a way for us to contact you.\n"
-                "MAKE SURE YOUR REPORT IS UNDER 2000 CHARACTERS",
-                ephemeral=True
-            )
-    
-        except discord.HTTPException:
-            logger.exception(
-                "Discord's API failed when using /reporthelp",
-            )
-            await http_error(
-                interaction, "Discord's API failed when using /reporthelp."
-            )
 
-        except Exception:
-            logger.exception("Unexpected error in /reporthelp.")
+        await interaction.response.send_message(
+            "# How do I report?\n\n"
+            "You should Inculde:\n"
+            "- Your discord username.\n"
+            "- What your issue is.\n"
+            "- Users username only if you're reporting a user.\n"
+            "- Make sure you provide a lot of detail.\n"
+            "- Please make sure you include a way for us to contact you.\n"
+            "MAKE SURE YOUR REPORT IS UNDER 2000 CHARACTERS",
+            ephemeral=True
+        )
 
-            await exception_error(
-                interaction, "Something went wrong :(. Please open a ticket."
-            )
 
-    """This command will be implemented."""
+    """This command will be implemented later. (Towords the end of update 0.5)"""
 
     # @discord.app_commands.command(
     #     name="report",

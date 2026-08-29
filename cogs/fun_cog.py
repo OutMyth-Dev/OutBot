@@ -24,25 +24,11 @@ class FunCommands(commands.Cog):
     ) -> None:
         """Sends a gif to rickroll the user."""
 
-        try:
-            await interaction.response.send_message(
-                "https://tenor.com/view/rick-roll-nitro-gif-21997352",
-                ephemeral=True,
-            )
 
-        except discord.HTTPException:
-            logger.exception("Discord's API failed when using /rickroll")
-
-            await send_error_message(
-                interaction, "Discord's API failed when using /rickroll."
-            )
-
-        except Exception:
-            logger.exception("Unexpected error in /rickroll.")
-
-            await send_error_message(
-                interaction, "Something went wrong :(. Please open a ticket."
-            )
+        await interaction.response.send_message(
+            "https://tenor.com/view/rick-roll-nitro-gif-21997352",
+            ephemeral=True,
+        )
 
 
     @discord.app_commands.command(

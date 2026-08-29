@@ -24,42 +24,26 @@ class RulesCommands(commands.Cog):
     ) -> None:
         """These can be found in the channel "rules", in OutMyth's Discord server."""
 
-        try:
-            await interaction.response.send_message(
-                "## :scroll: **Rules**\n\n"
-                "## 1. :x:** NO** NSFW And **NO** Malicious Content.\n\n"
-                "- :underage: Absolutely **NO** NSFW content, pornography, sexual content, or malicious links.\n\n"
-                "## 2. :x: **NO** Swearing / Offensive Language\n\n"
-                "- :speaking_head: Use common sense when chatting.\n\n"
-                "- :no_entry_sign: Check out Censored Words.\n\n"
-                "## 3. :white_check_mark: Respect Privacy\n\n"
-                "- :lock: Do **NOT** dox or share anyone’s personal information.\n\n"
-                "- :mailbox_with_mail: Do **NOT** Dm anyone without a valid reason.\n\n"
-                "## 4. :x: No Self Promotion\n\n"
-                "- :loudspeaker: **NO** advertising in Dms or channels.\n\n"
-                "- :no_entry_sign: This applies to **EVERYONE**, including staff and owners.\n\n"
-                "## 5. :white_check_mark: Use Mentions Responsibly\n\n"
-                "#- :zap: **DON’T** ping @everyone; @here; any other types of mass pinging or message spam.\n\n"
-                "## 6. :ticket: Tickets\n\n"
-                "- :tickets: Do **NOT** open tickets without a valid reason.\n\n"
-                "## 7. :people_hugging:  Behaviour\n\n"
-                "- :handshake: Be kind, respectful, and helpful to everyone."
-            )
-
-        except discord.HTTPException:
-            logger.exception(
-                "Discord's API failed when using /outmythrules",
-            )
-            await http_error(
-                interaction, "Discord's API failed when using /outmythrules."
-            )
-
-        except Exception:
-            logger.exception("Unexpected error in /outmythrules.")
-
-            await exception_error(
-                interaction, "Something went wrong :(. Please open a ticket."
-            )
+        await interaction.response.send_message(
+            "## :scroll: **Rules**\n\n"
+            "## 1. :x:** NO** NSFW And **NO** Malicious Content.\n\n"
+            "- :underage: Absolutely **NO** NSFW content, pornography, sexual content, or malicious links.\n\n"
+            "## 2. :x: **NO** Swearing / Offensive Language\n\n"
+            "- :speaking_head: Use common sense when chatting.\n\n"
+            "- :no_entry_sign: Check out Censored Words.\n\n"
+            "## 3. :white_check_mark: Respect Privacy\n\n"
+            "- :lock: Do **NOT** dox or share anyone’s personal information.\n\n"
+            "- :mailbox_with_mail: Do **NOT** Dm anyone without a valid reason.\n\n"
+            "## 4. :x: No Self Promotion\n\n"
+            "- :loudspeaker: **NO** advertising in Dms or channels.\n\n"
+            "- :no_entry_sign: This applies to **EVERYONE**, including staff and owners.\n\n"
+            "## 5. :white_check_mark: Use Mentions Responsibly\n\n"
+            "#- :zap: **DON’T** ping @everyone; @here; any other types of mass pinging or message spam.\n\n"
+            "## 6. :ticket: Tickets\n\n"
+            "- :tickets: Do **NOT** open tickets without a valid reason.\n\n"
+            "## 7. :people_hugging:  Behaviour\n\n"
+            "- :handshake: Be kind, respectful, and helpful to everyone."
+        )
 
 
     @discord.app_commands.command(
@@ -71,30 +55,14 @@ class RulesCommands(commands.Cog):
         interaction: discord.Interaction,
     ) -> None:
 
-        try:
-            await interaction.response.send_message(
-                "## Bot Rules\n\n"
-                "- 1. Use the bot for its intended purpose.\n"
-                "- 2. Only use OutBot in the channels command or chatbot.\n"
-                "- 3. Do NOT try to exploit OutBot.\n"
-                "- 4. Try to find bugs and report them by opening a ticket.\n"
-                "- 5. Do **NOT** make the OutBot DM you something offensive or make the bot say something offensive."
-            )
-
-        except discord.HTTPException:
-            logger.exception(
-                "Discord's API failed when using /outbotrules",
-            )
-            await http_error(
-                interaction, "Discord's API failed when using /outbotrules."
-            )
-
-        except Exception:
-            logger.exception("Unexpected error in /outbotrules.")
-
-            await exception_error(
-                interaction, "Something went wrong :(. Please open a ticket."
-            )
+        await interaction.response.send_message(
+            "## Bot Rules\n\n"
+            "- 1. Use the bot for its intended purpose.\n"
+            "- 2. Only use OutBot in the channels command or chatbot.\n"
+            "- 3. Do NOT try to exploit OutBot.\n"
+            "- 4. Try to find bugs and report them by opening a ticket.\n"
+            "- 5. Do **NOT** make the OutBot DM you something offensive or make the bot say something offensive."
+        )
 
 
 async def setup(bot: OutBot):

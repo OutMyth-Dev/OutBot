@@ -3,11 +3,13 @@ import os
 
 
 import discord
+from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
 
 from config import custom_logger, find_cogs
+from utils import send_error_message
 
 
 custom_logger()
@@ -25,10 +27,31 @@ class OutBot(commands.Bot):
             if cog.endswith("cog.py"):
                 await self.load_extension(f"cogs.{cog[:-3]}")
 
-        commands_synced = await bot.tree.sync()
 
-        logger.info("OutBot can now be used.")
-        logger.info(f"Synced commands {len(commands_synced)}")
+        commands_synced = await bot.tree.sync()
+        logger.info(f"OutBot is ready with {commands_synced} /commands.")
+    
+    async def on_app_command_error(
+        self, 
+        interaction: discord.Interaction,
+        error: app_commands.AppCommandError
+    ) -> None:
+
+        embed_error_message = discord.Embed(
+            title="Something went wrong.",
+            description=(
+                "An unexpected error occurred while running the command you used.",
+                "This is NOT your fault.",
+                "Please open a ticket."
+            ),
+            colour=0xe74c3c,
+        )
+
+        send_error_message(
+            interaction, embed=embed_error_message
+        )
+
+        logger.WARNING(f"This error occuered when using a command: {error}")
 
 
 bot = OutBot(
@@ -39,9 +62,8 @@ bot = OutBot(
 
 try:
     bot.run(DISCORD_TOKEN)
-    logger.info("Logged in.")
 
 
 except discord.LoginFailure:
-    logger.critical("Please enter your Discord Bot's token.")
-    raise RuntimeError("Bot Token could not be verfied.")
+    logger.CRITICAL("You entered an incorrect bot token.")
+    raise RuntimeError("Invlaid bot token.")

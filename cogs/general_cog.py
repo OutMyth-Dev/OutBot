@@ -16,32 +16,16 @@ class GeneralCommands(commands.Cog):
 
     
     @discord.app_commands.command(
-        name="hello",
-        description="It says hello!",
+        name="greet",
+        description="It greets you!",
     )
     async def hello(
         self,
         interaction: discord.Interaction,
     ) -> None:
-
-        try:
-            await interaction.response.send_message(
-                "Hello",
-            )
-
-        except discord.HTTPException:
-            logger.exception("Discord's API failed when using /hello")
-
-            await send_error_message(
-                interaction, "Discord's API failed when using /hello."
-            )
-
-        except Exception:
-            logger.exception("Unexpected error in /hello.")
-
-            await send_error_message(
-                interaction, "Something went wrong :(. Please open a ticket."
-            )
+        await interaction.response.send_message(
+            f"Hello, {interaction.user.mention}! How are you?",
+        )
 
 
     @discord.app_commands.command(
@@ -77,27 +61,18 @@ class GeneralCommands(commands.Cog):
                 ephemeral=True,
             )
 
-        except discord.HTTPException:
-            logger.exception("Discord's API failed when using /dm")
-
-            send_error_message(interaction, "Discord's API failed when using /dm.")
-
-        except Exception:
-            logger.exception("Unexpected error in /dm.")
-
-            await send_error_message(
-                interaction, "Something went wrong :(. Please open a ticket."
-            )
-
 
     @discord.app_commands.command(
         name="say",
         description="You tell the OutBot what to say!",
     )
+    @discord.app_commands.describe(
+        message="You tell OutBot what to say!"
+    )
     async def say(
         self,
         interaction: discord.Interaction,
-        you_tell_me_what_to_say: str,
+        message: str,
     ) -> None:
 
         if len(you_tell_me_what_to_say) > MAX_MESSAGE_LENGTH:
@@ -107,51 +82,26 @@ class GeneralCommands(commands.Cog):
             )
             return
 
-        try:
-            embed()
-            
-            await interaction.response.send_message(
-                f"{interaction.user.mention} Told me to say: ||{you_tell_me_what_to_say}||"
-            )
-
-        except discord.HTTPException:
-            logger.exception(
-                "Discord's API failed when using /say",
-            )
-            await send_error_message(
-                interaction, "Discord's API failed when using /say."
-            )
-
-        except Exception:
-            logger.exception("Unexpected error in /say.")
-
-            await send_error_message(
-                interaction, "Something went wrong :(. Please open a ticket."
-            )
+        embed_message(
+            title=f"{interaction.user.mention} has said: ",
+            description=f"{you_tell_me_what_to_say}",
+            colour=0x2ECC71,
+        )
+        embed_message.set_footer(
+            "You may report the user if something inappropiate was said."
+        )
+        await interaction.response.send_message(embed=embed_message)
 
 
     @discord.app_commands.command(
         name="ping",
         description="Pings you",
     )
-    async def ping(self, interaction: discord.Interaction) -> None:
-        try:
-            await interaction.response.send_message(f"{interaction.user.mention}")
-
-        except discord.HTTPException:
-            logger.exception(
-                "Discord's API failed when using /ping",
-            )
-            await send_error_message(
-                interaction, "Discord's API failed when using /ping."
-            )
-
-        except Exception:
-            logger.exception("Unexpected error in /ping")
-
-            await send_error_message(
-                interaction, "Something went wrong :(. Please open a ticket."
-            )
+    async def ping(
+        self, 
+        interaction: discord.Interaction
+    ) -> None:
+        await interaction.response.send_message(f"{interaction.user.mention}")
 
 
     @discord.app_commands.command(
@@ -190,40 +140,17 @@ class GeneralCommands(commands.Cog):
             )
             return
 
-        try:
-            embed_message = discord.Embed(
-                title=title,
-                description=question,
-            )
+        embed_message = discord.Embed(
+            title=title,
+            description=question,
+        )
 
-            await interaction.response.send_message(embed=embed_message)
+        await interaction.response.send_message(embed=embed_message)
 
-            poll_message = await interaction.original_response()
+        poll_message = await interaction.original_response()
 
-            try:
-                for emoji in emojis:
-                    await poll_message.add_reaction(emoji)
-
-            except discord.HTTPException:
-                logger.exception(
-                    "Discord's API failed when using /poll",
-                )
-                await send_error_message(
-                    interaction, "Poll created, but failed to add reactions. "
-                )
-
-        except discord.HTTPException:
-            await logger.exception(
-                "Discord's API failed when using /poll",
-            )
-            send_error_message(interaction, "Discord's API failed when using /poll.")
-
-        except Exception:
-            logger.exception("Unexpected error in /poll")
-
-            await send_error_message(
-                interaction, "Something went wrong :(. Please open a ticket."
-            )
+        for emoji in emojis:
+                await poll_message.add_reaction(emoji)
 
 
 async def setup(bot: OutBot) -> None:
