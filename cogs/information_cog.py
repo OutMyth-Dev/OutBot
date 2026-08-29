@@ -85,7 +85,7 @@ class InformationCommands(commands.Cog):
 
         try:
             embed_message = discord.Embed(
-                title="🤖 OutBot\n\n',
+                title="🤖 OutBot\n\n",
                 description=(
                     f"- {BOT_VERSION}\n"
                     f"- {CREATED_DATE}\n"

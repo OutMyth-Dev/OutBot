@@ -66,7 +66,7 @@ class PrivacyCommands(commands.Cog):
     ) -> None:
         try:
             embed_message = discord.Embed(
-                title="🗃️ What data does OutBot keep **about you** and what does it log?\n\n"
+                title="🗃️ What data does OutBot keep **about you** and what does it log?\n\n",
                 description=(
                     "Data: When an exception catches an error.\n" 
                     "eg: HTTPException. Only what the error was and what command the error occurred in is logged.\n",
@@ -101,7 +101,7 @@ class PrivacyCommands(commands.Cog):
     ) -> None:
         try:
             embed_message = discord.Embed(
-                title="⏳ How long does OutBot retain logs for?\n\n"
+                title="⏳ How long does OutBot retain logs for?\n\n",
                 description=(
                     f"OutBot retains logs for {RETENTION}.\n"
                     "OutBot uses mode a to log (logger opens the file and appends).\n"

@@ -158,6 +158,10 @@ class GeneralCommands(commands.Cog):
         name="poll",
         description="Create a poll.",
     )
+    @discord.app_commands.describe(
+        title="What is your poll's title?",
+        question="What is the question you would like to ask?"
+    )
     async def poll(
         self,
         interaction: discord.Interaction,
