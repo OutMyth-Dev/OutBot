@@ -15,16 +15,18 @@ class FunCommands(commands.Cog):
 
     
     @discord.app_commands.command(
-        name="rickroll",
-        description="I wonder what this command does...",
+        name="freenitro",
+        description="Use this command to revieve a suprise...",
     )
-    async def rickroll(self,interaction: discord.Interaction,
+    async def rickroll(
+        self,
+        interaction: discord.Interaction,
     ) -> None:
-        """Sends the user a YouTube link to Rickroll them."""
+        """Sends a gif to rickroll the user."""
 
         try:
             await interaction.response.send_message(
-                "CLICK ME ---> ||<https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1>||",
+                "https://tenor.com/view/rick-roll-nitro-gif-21997352",
                 ephemeral=True,
             )
 

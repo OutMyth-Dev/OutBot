@@ -108,6 +108,8 @@ class GeneralCommands(commands.Cog):
             return
 
         try:
+            embed()
+            
             await interaction.response.send_message(
                 f"{interaction.user.mention} Told me to say: ||{you_tell_me_what_to_say}||"
             )
@@ -154,7 +156,7 @@ class GeneralCommands(commands.Cog):
 
     @discord.app_commands.command(
         name="poll",
-        description="Create a new poll.",
+        description="Create a poll.",
     )
     async def poll(
         self,
@@ -162,7 +164,6 @@ class GeneralCommands(commands.Cog):
         title: str,
         question: str,
     ) -> None:
-        """10 reactions allow the user to pick a reaction, while still allowing them to add their own reaction/s."""
 
         if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
@@ -186,12 +187,12 @@ class GeneralCommands(commands.Cog):
             return
 
         try:
-            embed = discord.Embed(
+            embed_message = discord.Embed(
                 title=title,
                 description=question,
             )
 
-            await interaction.response.send_message(embed=embed)
+            await interaction.response.send_message(embed=embed_message)
 
             poll_message = await interaction.original_response()
 

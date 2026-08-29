@@ -5,9 +5,6 @@ import discord
 from discord.ext import commands
 
 
-from reports import reports
-
-
 logger = logging.getLogger(__name__)
 
 
@@ -50,7 +47,7 @@ class SupportCommands(commands.Cog):
                 interaction, "Something went wrong :(. Please open a ticket."
             )
 
-    # This command will be implemented. 
+    """This command will be implemented."""
 
     # @discord.app_commands.command(
     #     name="report",

@@ -17,19 +17,31 @@ class PrivacyCommands(commands.Cog):
 
     @discord.app_commands.command(
         name="privacy",
-        description="Privacy related information about OutBot."
+        description="Privacy related information about OutBot.",
     )
-    async def privacy(self, interaction: discord.Interaction) -> None:   
+    async def privacy(
+        self, 
+        interaction: discord.Interaction
+    ) -> None:   
         try:
-            await interaction.response.send_message(
-                "# 🔒 OutBot Privacy\n\n"
-                "Logs: Only used to degug and are stored locally.\n"
-                f"Retention: {RETENTION}\n"
-                f"Source: Open source ({GITHUB_LINK})\n"
-                f"OutBot's License: {OUTBOT_LICENSE}\n"
-                "Privacy Policy: Coming Out Tommorow\n"
-                "TOS: Coming Out Tommorow"
-        )
+            
+            embed_message = discord.Embed(
+                title="🔒 OutBot Privacy\n\n",
+                description=(
+                    "- Logs: Only used to degug and are stored locally.\n"
+                    f"- Retention: {RETENTION}\n"
+                    f"- Source: Open source ({GITHUB_LINK})\n"
+                    f"- OutBot's License: {OUTBOT_LICENSE}\n"
+                    "- Privacy Policy: Coming Out Tommorow\n"
+                    "- TOS: Coming Out Tommorow"),
+                    colour=0x00008B,
+                )
+            embed_message.set_footer(
+                text=f"OutBot is Open source {GITHUB_LINK}"
+            )
+            
+            await interaction.response.send_message(embed=embed_message)
+
         except discord.HTTPException:
             logger.exception(
                 "Discord's API failed when using /privacy",
@@ -53,11 +65,19 @@ class PrivacyCommands(commands.Cog):
         interaction: discord.Interaction
     ) -> None:
         try:
-            await interaction.response.send_message(
-            "# 🗃️ What data does OutBot keep **about you** and what does it log?\n\n"
-            "Data: When an exception catches an error. eg: HTTPException. Only what the error was and what command the error occurred in is logged.\n"                  
+            embed_message = discord.Embed(
+                title="🗃️ What data does OutBot keep **about you** and what does it log?\n\n"
+                description=(
+                    "Data: When an exception catches an error.\n" 
+                    "eg: HTTPException. Only what the error was and what command the error occurred in is logged.\n",
+                ),
+                colour=0x2ECC71
             )
-        except HTTPException:
+            embed_message.set_footer("OutBot does NOT collect any user data.")
+
+            await interaction.response.send_message(embed=embed_message)
+
+        except discord.HTTPException:
             logger.exception(
                 "Discord's API failed when using /data",
             )
@@ -80,14 +100,20 @@ class PrivacyCommands(commands.Cog):
         interaction: discord.Interaction
     ) -> None:
         try:
-            interaction.response.send_message(
-                "# ⏳ How long does OutBot retain logs for?\n\n"
-                f"OutBot retains logs for {RETENTION}.\n"
-                "OutBot uses mode a to log (append).\n"
-                "It does not log any user data.\n"
-                f"# OutBot is open source. You can always check out its source code/README for me information. {GITHUB_LINK}"
+            embed_message = discord.Embed(
+                title="⏳ How long does OutBot retain logs for?\n\n"
+                description=(
+                    f"OutBot retains logs for {RETENTION}.\n"
+                    "OutBot uses mode a to log (logger opens the file and appends).\n"
+                    "It does not log any user data.\n"
+                    f"# OutBot is open source. You can always check out its source code/README for more information. {GITHUB_LINK}",
+                ),
+                colour=0x1ABC9
             )
-        except HTTPException:
+
+            await interaction.response.send_message(embed=embed_message)
+
+        except discord.HTTPException:
             logger.exception(
                 "Discord's API failed when using /logs",
             )

@@ -39,7 +39,7 @@ bot = OutBot(
 
 try:
     bot.run(DISCORD_TOKEN)
-    logger.info(f"Logged in.")
+    logger.info("Logged in.")
 
 
 except discord.LoginFailure:
