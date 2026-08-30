@@ -5,7 +5,7 @@ import discord
 from discord.ext import commands
 
 
-from config import GITHUB_LINK ,OUTBOT_LICENSE, RETENTION
+from config import GITHUB_LINK ,OUTBOT_LICENSE, RETENTION, PRIVACY_POLICY
 from utils import send_error_message
 
 
@@ -31,7 +31,7 @@ class PrivacyCommands(commands.Cog):
                 f"- Retention: {RETENTION}\n"
                 f"- Source: Open source ({GITHUB_LINK})\n"
                 f"- OutBot's License: {OUTBOT_LICENSE}\n"
-                "- Privacy Policy: Coming Out Tommorow\n"
+                f"- Privacy Policy: {PRIVACY_POLICY}\n"
                 "- TOS: Coming Out Tommorow"),
                 colour=0x00008B,
             )

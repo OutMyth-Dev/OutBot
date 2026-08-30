@@ -11,6 +11,7 @@ from config import (
     DEVELOPERS,
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
+    PRIVACY_POLICY,
 )
 
 
@@ -76,6 +77,7 @@ class InformationCommands(commands.Cog):
                 f"- {LAST_MAJOR_UPDATED}\n"
                 f"- {GITHUB_LINK}\n"
                 f"- {DEVELOPERS}\n\n" 
+                f"- {PRIVACY_POLICY}"
             ),
             colour=0x7289DA
         )
@@ -94,7 +96,7 @@ class InformationCommands(commands.Cog):
                 description=(
                     "- Assign/Remove Onboarding rolesn"
                     "- Improved Error Handlingn"
-                    "- TOS & Privacy Policyn"
+                    "- TOS"
                     "- Bot Settings Commandsn"
                     "- Role Informationn"
                     "- Improved Quality Of Existing Commands"
