@@ -24,7 +24,7 @@ file_handler = logging.handlers.TimedRotatingFileHandler(
 
 If you have any privacy concerns please open a GitHub issue or create a ticket on OutMyth's discord server.
 
-THis is how logging.py is configured.
+This is how logging.py is configured.
 
 ```text
 import logging

@@ -64,7 +64,7 @@ OutBot does **NOT** use  prefix  commands, so there is no command prefix require
 
 ```text
 bot = OutBot(
-    command_prefix=None,
+    **command_prefix=None,**
     intents=discord.Intents.default(),
 )
 ```
