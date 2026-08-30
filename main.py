@@ -1,16 +1,13 @@
 import logging
 import os
 
-
 import discord
 from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
-
 from config import custom_logger, find_cogs
 from utils import send_error_message
-
 
 custom_logger()
 logger = logging.getLogger(__name__)
@@ -27,27 +24,19 @@ class OutBot(commands.Bot):
             if cog.endswith("cog.py"):
                 await self.load_extension(f"cogs.{cog[:-3]}")
 
-
         await bot.tree.sync()
-  
+
     async def on_app_command_error(
-        self, 
-        interaction: discord.Interaction,
-        error: app_commands.AppCommandError
+        self, interaction: discord.Interaction, error: app_commands.AppCommandError
     ) -> None:
 
         embed_error_message = discord.Embed(
             title="Something went wrong. :(",
-            description=(
-                "An unexpected error occurred.\n",
-                "Please create a ticket."
-            ),
-            colour=0xe74c3c,
+            description=("An unexpected error occurred.\n", "Please create a ticket."),
+            colour=0xE74C3C,
         )
 
-        send_error_message(
-            interaction, embed=embed_error_message
-        )
+        send_error_message(interaction, embed=embed_error_message)
         logger.ERROR(f"Unexpected error: {error}")
 
 
@@ -63,7 +52,7 @@ try:
 
 except TypeError:
     raise RuntimeError(
-    "Invlaid bot token. Please enter your discord bot token in a file called '.env' (you have to create it yourself) inside the folder 'config'.",
+        "Invlaid bot token. Please enter your discord bot token in a file called '.env' (you have to create it yourself) inside the folder 'config'.",
     )
 
 

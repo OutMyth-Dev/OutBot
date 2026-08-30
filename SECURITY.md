@@ -8,7 +8,7 @@ If you discover a vulnerability, please report it privately.
 
 You may report it through:
 - A ticket on OutMyth;
-- /report once it is out;
+- /report;
 - GitHub's private vulnerability reporting
 
 You may **NOT** report it through:

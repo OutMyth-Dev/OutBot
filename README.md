@@ -82,7 +82,7 @@ OutBot has **7 cogs**
 | **cogs/links_cog.py** | - Useful links about OutBot/OutMyth | - eg: /youtube |
 | **cogs/privacy_cog.py**| - User privacy information | -eg: /privacy |
 | **cogs/rules_cog.py** |- OutBot/OutMyth's Rules | - eg: /outmythrules |
-| **cogs/support_cog.py | - User support commands. | -eg: /report |
+| **cogs/support_cog.py** | - User support commands. | -eg: /report |
 
 ---
 

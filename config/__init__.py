@@ -16,4 +16,9 @@ from .bot_info import (
 from .emojis import emojis
 from .load_cogs import find_cogs
 from .logging import custom_logger
-from .max_chars import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
+from .max_chars import (
+    MAX_MESSAGE_LENGTH,
+    MAX_QUESTION_LENGTH,
+    MAX_REPORT_LENGTH,
+    MAX_TITLE_LENGTH,
+)

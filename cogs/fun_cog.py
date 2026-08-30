@@ -2,12 +2,7 @@ import discord
 from discord.ext import commands
 
 
-from utils import send_error_message
-
-
 class FunCommands(commands.Cog):
-
-    
     @discord.app_commands.command(
         name="freenitro",
         description="Free nitro!!!!",
@@ -18,23 +13,17 @@ class FunCommands(commands.Cog):
     ) -> None:
         """Sends a gif to rickroll the user."""
 
-
         await interaction.response.send_message(
             "https://tenor.com/view/rick-roll-nitro-gif-21997352",
             ephemeral=True,
         )
 
-
-    @discord.app_commands.command(
-        name="fakeban",
-        description="Fake bans a user."
-    )
-
+    @discord.app_commands.command(name="fakeban", description="Fake bans a user.")
     @discord.app_commands.describe(
-    user="Who do you want to ban?",
-    reason="Why would you like to ban them?",
-    duration="How long will you like to ban this user for?",
-    delete_messages="How many of the user's messages would you like to delete?",
+        user="Who do you want to ban?",
+        reason="Why would you like to ban them?",
+        duration="How long will you like to ban this user for?",
+        delete_messages="How many of the user's messages would you like to delete?",
     )
     async def fakeban(
         self,
@@ -50,9 +39,7 @@ class FunCommands(commands.Cog):
             description=reason,
             colour=0xFF0000,
         )
-        embed_message.set_footer(
-            text="Wait, why are they still here?"
-        )
+        embed_message.set_footer(text="Wait, why are they still here?")
 
         await interaction.response.send_message(embed=embed_message)
 

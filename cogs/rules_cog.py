@@ -2,12 +2,7 @@ import discord
 from discord.ext import commands
 
 
-from utils import send_error_message
-
-
 class RulesCommands(commands.Cog):
-
-    
     @discord.app_commands.command(
         name="outmythrules",
         description="OutMyth Discord Server Rules.",
@@ -38,7 +33,6 @@ class RulesCommands(commands.Cog):
             "## 7. :people_hugging:  Behaviour\n\n"
             "- :handshake: Be kind, respectful, and helpful to everyone."
         )
-
 
     @discord.app_commands.command(
         name="outbotrules",

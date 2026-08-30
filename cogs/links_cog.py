@@ -1,18 +1,14 @@
 import discord
 from discord.ext import commands
 
-
 from config import (
     DISCORD_SERVER_INVITE_LINK,
     OUTBOT_INVITE_LINK,
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
 )
-from utils import send_error_message
 
 
 class LinksCommands(commands.Cog):
-
-    
     @discord.app_commands.command(
         name="youtube",
         description="OutMyth's YouTube channel link",
@@ -26,7 +22,6 @@ class LinksCommands(commands.Cog):
             f"# OutMyth's YouTube Channel:\n\n{OUTMYTH_YOUTUBE_CHANNEL_LINK}\n\n"
         )
 
-
     @discord.app_commands.command(
         name="serverlink",
         description="OutMyth's Discord server invite link.",
@@ -39,8 +34,6 @@ class LinksCommands(commands.Cog):
         await interaction.response.send_message(
             f"# OutMyth's Discord Server:\n\n{DISCORD_SERVER_INVITE_LINK}"
         )
-
-
 
     @discord.app_commands.command(
         name="invite",

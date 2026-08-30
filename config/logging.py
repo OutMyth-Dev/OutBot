@@ -1,6 +1,6 @@
 import logging
-
 from logging.handlers import TimedRotatingFileHandler
+
 
 def custom_logger() -> None:
 

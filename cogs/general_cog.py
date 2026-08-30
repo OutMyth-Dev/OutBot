@@ -1,14 +1,10 @@
 import discord
 from discord.ext import commands
 
-
 from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, emojis
-from utils import send_error_message
 
 
 class GeneralCommands(commands.Cog):
-
-    
     @discord.app_commands.command(
         name="greet",
         description="It greets you!",
@@ -20,7 +16,6 @@ class GeneralCommands(commands.Cog):
         await interaction.response.send_message(
             f"Hello, {interaction.user.mention}! How are you?",
         )
-
 
     @discord.app_commands.command(
         name="dm",
@@ -54,14 +49,11 @@ class GeneralCommands(commands.Cog):
                 ephemeral=True,
             )
 
-
     @discord.app_commands.command(
         name="say",
         description="You tell the OutBot what to say!",
     )
-    @discord.app_commands.describe(
-        message="You tell OutBot what to say!"
-    )
+    @discord.app_commands.describe(message="You tell OutBot what to say!")
     async def say(
         self,
         interaction: discord.Interaction,
@@ -85,17 +77,12 @@ class GeneralCommands(commands.Cog):
         )
         await interaction.response.send_message(embed=embed_message)
 
-
     @discord.app_commands.command(
         name="ping",
         description="Pings you",
     )
-    async def ping(
-        self, 
-        interaction: discord.Interaction
-    ) -> None:
+    async def ping(self, interaction: discord.Interaction) -> None:
         await interaction.response.send_message(f"{interaction.user.mention}")
-
 
     @discord.app_commands.command(
         name="poll",
@@ -103,7 +90,7 @@ class GeneralCommands(commands.Cog):
     )
     @discord.app_commands.describe(
         title="What is your poll's title?",
-        question="What is the question you would like to ask?"
+        question="What is the question you would like to ask?",
     )
     async def poll(
         self,
@@ -143,7 +130,7 @@ class GeneralCommands(commands.Cog):
         poll_message = await interaction.original_response()
 
         for emoji in emojis:
-                await poll_message.add_reaction(emoji)
+            await poll_message.add_reaction(emoji)
 
 
 async def setup(bot: OutBot) -> None:
