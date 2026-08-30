@@ -10,10 +10,10 @@
 | User data | ❌ No | ❌ No | None |
 | Logs | ✅ Limited | ✅ Local | 7 days |
 
-**OutBot only logs errors. Logs are deleted automatically after 7 days.**
+**OutBot only logs errors. Logs are deleted automatically everyday.**
 ```text
 file_handler = logging.handlers.TimedRotatingFileHandler(
-    filename="discord.log", when="d", interval=7, backupCount=0
+    filename="discord.log", when="d", interval=1, backupCount=0
 )
 ```
 
@@ -34,7 +34,7 @@ from logging.handlers import TimedRotatingFileHandler
 def custom_logger() -> None:
 
     logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.ERROR)
 
     formatter = logging.Formatter(
         "%(asctime)s | %(levelname)s | %(name)s | %(message)s",
