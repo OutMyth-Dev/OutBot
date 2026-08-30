@@ -1,4 +1,4 @@
-# Terms of Service
+# OutBot's Terms of Service
 
 By using OutBot, you agree to comply with Discord's Terms of Service, Community Guidelines, and all applicable laws.
 
