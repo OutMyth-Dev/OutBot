@@ -4,10 +4,10 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in OutBot, please report it privately rather than opening a public GitHub issue.
+If you discover a vulnerability, please report it privately.
 
 You may report it through:
-- A ticket in OutMyth;
+- A ticket on OutMyth;
 - /report once it is out;
 - GitHub's private vulnerability reporting
 

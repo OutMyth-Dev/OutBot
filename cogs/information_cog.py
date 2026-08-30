@@ -11,7 +11,9 @@ from config import (
     DEVELOPERS,
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
+    OUTBOT_LICENSE,
     PRIVACY_POLICY,
+    SECURITY_POLICY,
 )
 
 
@@ -78,6 +80,8 @@ class InformationCommands(commands.Cog):
                 f"- {GITHUB_LINK}\n"
                 f"- {DEVELOPERS}\n\n" 
                 f"- {PRIVACY_POLICY}"
+                f"- {SECURITY_POLICY}"
+                f"- {OUTBOT_LICENSE}"
             ),
             colour=0x7289DA
         )
