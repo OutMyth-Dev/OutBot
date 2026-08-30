@@ -12,3 +12,4 @@ OUTBOT_INVITE_LINK: str = "<https://discord.com/oauth2/authorize?client_id=15255
 OUTBOT_LICENSE: str = "<https://github.com/OutMyth-Dev/OutBot?tab=MIT-1-ov-file>"
 PRIVACY_POLICY: str = "<https://github.com/OutMyth-Dev/OutBot/blob/main/PRIVACY.md>"
 SECURITY_POLICY: str = "https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file"
+TERMS_OF_SERVICE: str = "https://github.com/OutMyth-Dev/OutBot/blob/main/TERMS.md"

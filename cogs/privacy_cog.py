@@ -5,7 +5,13 @@ import discord
 from discord.ext import commands
 
 
-from config import GITHUB_LINK ,OUTBOT_LICENSE, RETENTION, PRIVACY_POLICY
+from config import (
+    GITHUB_LINK,
+    OUTBOT_LICENSE, 
+    RETENTION, 
+    PRIVACY_POLICY, 
+    TERMS_OF_SERVICE,
+)
 from utils import send_error_message
 
 
@@ -32,7 +38,7 @@ class PrivacyCommands(commands.Cog):
                 f"- Source: Open source ({GITHUB_LINK})\n"
                 f"- OutBot's License: {OUTBOT_LICENSE}\n"
                 f"- Privacy Policy: {PRIVACY_POLICY}\n"
-                "- TOS: Coming Out Tommorow"),
+                f"- TOS: {TERMS_OF_SERVICE}"),
                 colour=0x00008B,
             )
         embed_message.set_footer(

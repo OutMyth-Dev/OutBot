@@ -14,6 +14,7 @@ from config import (
     OUTBOT_LICENSE,
     PRIVACY_POLICY,
     SECURITY_POLICY,
+    TERMS_OF_SERVICE,
 )
 
 
@@ -82,6 +83,7 @@ class InformationCommands(commands.Cog):
                 f"- {PRIVACY_POLICY}"
                 f"- {SECURITY_POLICY}"
                 f"- {OUTBOT_LICENSE}"
+                f"- {TERMS_OF_SERVICE}"
             ),
             colour=0x7289DA
         )
@@ -100,7 +102,6 @@ class InformationCommands(commands.Cog):
                 description=(
                     "- Assign/Remove Onboarding rolesn"
                     "- Improved Error Handlingn"
-                    "- TOS"
                     "- Bot Settings Commandsn"
                     "- Role Informationn"
                     "- Improved Quality Of Existing Commands"
