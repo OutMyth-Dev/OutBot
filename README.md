@@ -7,22 +7,6 @@ Current version: **0.4**
 
 ---
 
-## 🔐 Privacy
-
-| Data | Collected | Stored | Retention |
-| --- | --- | --- | --- |
-| Message content | ❌ No | ❌ No | None |
-| User data | ❌ No | ❌ No | None |
-| Logs | ✅ Limited | ✅ Local | 7 days |
-
-- Logs use a logging mode of **a** (append)
-- OutBot is **open source**
-- OutBot is under an MIT LICENSE: https://github.com/OutMyth-Dev/OutBot/blob/main/LICENSE
-
-If you have any privacy concerns please open a GitHub issue on create a ticket on OutMyth's discord server.
-
----
-
 # 🔒 What are Ephemeral Messages?
 
 Some messages can **only be seen by the user who triggered the command**.*(Ephemeral=True)
