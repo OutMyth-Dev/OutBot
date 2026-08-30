@@ -39,9 +39,12 @@ class SupportCommands(commands.Cog):
 
         if len(report) > 1999:
             await interaction.response.send_message(
-                "Please make your report under 1999 character, or split it across multiple reports."
+                "Please make your report under 1999 character, or split it across multiple reports.",
+                ephemeral=True,
             )
-        await interaction.response.send_message("Report has been sent", ephemeral=True)
+        await interaction.response.send_message(
+            "Report has been sent", ephemeral=True
+        )
 
 
 async def setup(bot: OutBot) -> None:
