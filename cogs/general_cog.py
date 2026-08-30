@@ -1,15 +1,9 @@
-import logging
-
-
 import discord
 from discord.ext import commands
 
 
 from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, emojis
 from utils import send_error_message
-
-
-logger = logging.getLogger(__name__)
 
 
 class GeneralCommands(commands.Cog):
@@ -55,7 +49,6 @@ class GeneralCommands(commands.Cog):
             )
 
         except discord.Forbidden:
-            logger.exception("User had their DMs turned off.")
             await interaction.response.send_message(
                 "I could not send you a DM. This is because you have them turned off.",
                 ephemeral=True,
@@ -75,7 +68,7 @@ class GeneralCommands(commands.Cog):
         message: str,
     ) -> None:
 
-        if len(you_tell_me_what_to_say) > MAX_MESSAGE_LENGTH:
+        if len(message) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
                 f"Your message was too long. Please make it less than {MAX_MESSAGE_LENGTH} characters.",
                 ephemeral=True,
@@ -84,7 +77,7 @@ class GeneralCommands(commands.Cog):
 
         embed_message(
             title=f"{interaction.user.mention} has said: ",
-            description=f"{you_tell_me_what_to_say}",
+            description=f"{message}",
             colour=0x2ECC71,
         )
         embed_message.set_footer(

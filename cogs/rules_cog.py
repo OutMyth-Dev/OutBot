@@ -1,14 +1,8 @@
-import logging
-
-
 import discord
 from discord.ext import commands
 
 
 from utils import send_error_message
-
-
-logger = logging.getLogger(__name__)
 
 
 class RulesCommands(commands.Cog):

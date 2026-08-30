@@ -223,7 +223,7 @@ pip install -r requirements.txt
 You now have a local copy of OutBot on your computer. To OutBot actually run we will need a Discord Bot Token. Head over to Discord
 Developer portal (https://discord.com/developers/applications) and sign in/create an account depending on if you have a Discord account.
 Click "new application". Create a name for your bot; accept Discord's Developer TOS/Privacy Policy. Create a new file called .env and make sure it is in 
-.gitignre. Created a variable called DISCORD_TOKEN. Under overview click "Bot" and then click "Reset Token". Click "Yes do it to" confirm. Copy your Discord token into .env.Finally, to install it, go to the "Installation" tab; copy the install link. Paste the install link into your browser and choose if you want OutBot in your apps or if you want to add OutBot to your server/s. You can now do whatever you want to the source code. **PLEASE READ THE MIT LICENSE FOR MORE INFORMATION.** 
+.gitignre. Created a variable called DISCORD_TOKEN. Under overview click "Bot" and then click "Reset Token". Click "Yes do it to" confirm. Copy your Discord token into .env.Finally, to install it, go to the "Installation" tab; copy the install link. Paste the install link into your browser and choose if you want OutBot in your apps or if you want to add OutBot to your server/s. You can now do whatever you want to the source code. **PLEASE READ THE MIT LICENSE FOR MORE INFORMATION.** **IF YOU DO NOT ADD A DISCORD BOT TOKEN, YOU WILL GET A RUNTIME ERROR.**
 
 MIT LICENSE:
 ```text

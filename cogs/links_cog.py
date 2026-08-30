@@ -1,6 +1,3 @@
-import logging
-
-
 import discord
 from discord.ext import commands
 
@@ -11,9 +8,6 @@ from config import (
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
 )
 from utils import send_error_message
-
-
-logger = logging.getLogger(__name__)
 
 
 class LinksCommands(commands.Cog):

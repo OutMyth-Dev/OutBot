@@ -1,11 +1,5 @@
-import logging
-
-
 import discord
 from discord.ext import commands
-
-
-logger = logging.getLogger(__name__)
 
 
 class SupportCommands(commands.Cog):
@@ -22,7 +16,7 @@ class SupportCommands(commands.Cog):
 
         await interaction.response.send_message(
             "# How do I report?\n\n"
-            "You should Inculde:\n"
+            " You should Inculde:\n"
             "- Your discord username.\n"
             "- What your issue is.\n"
             "- Users username only if you're reporting a user.\n"

@@ -8,7 +8,10 @@ from .bot_info import (
     OUTBOT_INVITE_LINK,
     OUTBOT_LICENSE,
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
+    PRIVACY_POLICY,
     RETENTION,
+    SECURITY_POLICY,
+    TERMS_OF_SERVICE,
 )
 from .emojis import emojis
 from .load_cogs import find_cogs

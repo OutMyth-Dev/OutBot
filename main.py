@@ -28,9 +28,8 @@ class OutBot(commands.Bot):
                 await self.load_extension(f"cogs.{cog[:-3]}")
 
 
-        commands_synced = await bot.tree.sync()
-        logger.info(f"OutBot is ready with {commands_synced} /commands.")
-    
+        await bot.tree.sync()
+  
     async def on_app_command_error(
         self, 
         interaction: discord.Interaction,
@@ -38,11 +37,10 @@ class OutBot(commands.Bot):
     ) -> None:
 
         embed_error_message = discord.Embed(
-            title="Something went wrong.",
+            title="Something went wrong. :(",
             description=(
-                "An unexpected error occurred while running the command you used.",
-                "This is NOT your fault.",
-                "Please open a ticket."
+                "An unexpected error occurred.\n",
+                "Please create a ticket."
             ),
             colour=0xe74c3c,
         )
@@ -50,8 +48,7 @@ class OutBot(commands.Bot):
         send_error_message(
             interaction, embed=embed_error_message
         )
-
-        logger.WARNING(f"This error occuered when using a command: {error}")
+        logger.ERROR(f"Unexpected error: {error}")
 
 
 bot = OutBot(
@@ -64,6 +61,13 @@ try:
     bot.run(DISCORD_TOKEN)
 
 
+except TypeError:
+    raise RuntimeError(
+    "Invlaid bot token. Please enter your discord bot token in a file called '.env' (you have to create it yourself) inside the folder 'config'.",
+    )
+
+
 except discord.LoginFailure:
-    logger.CRITICAL("You entered an incorrect bot token.")
-    raise RuntimeError("Invlaid bot token.")
+    raise RuntimeError(
+        "Invlaid bot token. Please enter your discord bot token in a file called '.env' (you have to create it yourself) inside the folder 'config'.",
+    )
