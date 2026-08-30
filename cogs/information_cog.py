@@ -58,7 +58,7 @@ class InformationCommands(commands.Cog):
         await interaction.response.send_message(embed=embed_message)
 
     @discord.app_commands.command(
-        name="outbot",
+        name="about",
         description="Useful Information About OutBot!",
     )
     async def outbot(self, interaction: discord.Interaction) -> None:

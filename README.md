@@ -128,6 +128,7 @@ OutBot has **7 cogs**
 
 - **`/reporthelp`**
 - **`/report`**
+- **`/feedback`**
 
 ---
 
