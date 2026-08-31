@@ -91,7 +91,6 @@ class InformationCommands(commands.Cog):
             title="OutBot's Planned Features!\n\n",
             description=(
                 "- Assign/Remove Onboarding rolesn"
-                "- Improved Error Handlingn"
                 "- Bot Settings Commandsn"
                 "- Role Informationn"
                 "- Improved Quality Of Existing Commands"

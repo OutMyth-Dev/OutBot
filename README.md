@@ -148,16 +148,17 @@ OutBot/
 │   ├── __init__.py
 │   ├── .env.example
 |   ├── bot_info.py
+|   ├── censor_words.py
 │   ├── emojis.py
 │   ├── load_cogs.py
 │   ├── logging.py
 │   └── max_chars.py
 ├── information/
-│   ├── UPDATES.md
-│   └── errors.py
+│   └── UPDATES.md
 │   utils/
 │   ├── __init__.py
-│   └── errors.py
+|   ├── errors.py
+│   └── profanity.py
 ├── .gitignore
 ├── LICENSE
 ├── main.py

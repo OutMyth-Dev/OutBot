@@ -41,14 +41,15 @@ class SupportCommands(commands.Cog):
         with open("reports.txt", "a") as file:
             file.write(report + "\n")
 
+        if await send_censor_word_warning(interaction, report):
+            return
+
         if len(report) > MAX_REPORT_LENGTH:
             await interaction.response.send_message(
                 "Please make your report under 1999 character, or split it across multiple reports.",
                 ephemeral=True,
             )
-        await interaction.response.send_message(
-            "Report has been sent", ephemeral=True
-        )
+        await interaction.response.send_message("Report has been sent", ephemeral=True)
         return
 
     @discord.app_commands.command(
@@ -66,6 +67,9 @@ class SupportCommands(commands.Cog):
 
         with open("feedback.txt", "a") as file:
             file.write(feedback + "\n")
+
+        if await send_censor_word_warning(interaction, feedback):
+            return
 
         if len(feedback) > MAX_FEEFBACK_LENGTH:
             await interaction.response.send_message(

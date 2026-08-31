@@ -2,12 +2,13 @@ import discord
 from discord.ext import commands
 
 from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, EMOJIS
+from utils import send_censor_word_warning
 
 
 class GeneralCommands(commands.Cog):
     @discord.app_commands.command(
         name="greet",
-        description="It greets you!",
+        description="OutBot greets you!",
     )
     async def hello(
         self,
@@ -26,6 +27,8 @@ class GeneralCommands(commands.Cog):
         interaction: discord.Interaction,
         message: str,
     ) -> None:
+        if await send_censor_word_warning(interaction, message):
+            return
 
         if len(message) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
@@ -59,6 +62,8 @@ class GeneralCommands(commands.Cog):
         interaction: discord.Interaction,
         message: str,
     ) -> None:
+        if await send_censor_word_warning(interaction, message):
+            return
 
         if len(message) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
@@ -98,6 +103,11 @@ class GeneralCommands(commands.Cog):
         title: str,
         question: str,
     ) -> None:
+        if await send_censor_word_warning(interaction, title or question):
+            return
+
+        if await send_censor_word_warning(interaction, title and question):
+            return
 
         if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
@@ -130,7 +140,7 @@ class GeneralCommands(commands.Cog):
         poll_message = await interaction.original_response()
 
         for emoji in EMOJIS:
-            await poll_message.add_reaction(EMOJIS)
+            await poll_message.add_reaction(emoji)
 
 
 async def setup(bot: OutBot) -> None:

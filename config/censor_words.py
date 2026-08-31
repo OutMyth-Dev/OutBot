@@ -18,8 +18,7 @@ CENSOR_WORDS: tuple = (
     "smd",
     "hoe",
     "chingchong",
-    "motherfuck"
-    "fag",
+    "motherfuckfag",
     "slagger",
     "dyke",
     "niagra",
@@ -89,8 +88,7 @@ CENSOR_WORDS: tuple = (
     "mutherfucker",
     "mf",
     "fuckgirl",
-    "n1gga"
-    "d1ck",
+    "n1ggad1ck",
     "fuckme",
     "sh!t",
     "motherfcker",
