@@ -172,6 +172,7 @@ OutBot/
 ├── PRIVACY.md
 ├── README.md
 ├── requirements.txt
+├── SECURITY.md
 └── TERMS.md
 ```
 
