@@ -136,6 +136,11 @@ OutBot has **7 cogs**
 
 ```text
 OutBot/
+├── .github/
+│   └── ISSUE_TEMPLATE/
+│       ├── bug_report.md
+│       ├── feature_request.md
+│       └── custom_issue.md
 ├── cogs/
 │   ├── fun_cog.py
 │   ├── general_cog.py
@@ -160,10 +165,14 @@ OutBot/
 |   ├── errors.py
 │   └── profanity.py
 ├── .gitignore
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
 ├── LICENSE
 ├── main.py
+├── PRIVACY.md
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+└── TERMS.md
 ```
 
 ---
