@@ -2,13 +2,11 @@
 name: Bug Report
 about: Report a bug or unexpected behavior
 title: "[BUG] "
-labels: bug
-assignees: ""
 ---
 
 ## Description
 
-<!-- Describe the bug clearly. -->
+Describe the bug clearly.
 
 ## Steps to Reproduce
 
@@ -18,12 +16,12 @@ assignees: ""
 
 ## Expected Behavior
 
-<!-- What did you expect to happen? -->
+What did you expect to happen?
 
 ## Actual Behavior
 
-<!-- What actually happened? -->
+ What actually happened?
 
 ## Additional Information
 
-<!-- Add screenshots-->
+Add screenshots
