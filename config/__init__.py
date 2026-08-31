@@ -13,7 +13,7 @@ from .bot_info import (
     SECURITY_POLICY,
     TERMS_OF_SERVICE,
 )
-from .emojis import emojis
+from .emojis import EMOJIS
 from .load_cogs import find_cogs
 from .logging import custom_logger
 from .max_chars import (
@@ -23,4 +23,4 @@ from .max_chars import (
     MAX_TITLE_LENGTH,
     MAX_FEEFBACK_LENGTH,
 )
-from censor_words import censor_words
+from .censor_words import CENSOR_WORDS

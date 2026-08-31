@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 
+from config import CENSOR_WORDS
+
 
 class FunCommands(commands.Cog):
     @discord.app_commands.command(
@@ -33,6 +35,9 @@ class FunCommands(commands.Cog):
         duration: int,
         delete_messages: int,
     ) -> None:
+        if any(word in reason.lower() for word in CENSOR_WORDS):
+            await interaction.response.send_message("Your message cannot contain swear words.")
+        return
 
         embed_message = discord.Embed(
             title=f"{user} has been banned",

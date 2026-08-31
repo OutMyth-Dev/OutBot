@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, emojis
+from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, EMOJIS
 
 
 class GeneralCommands(commands.Cog):
@@ -129,8 +129,8 @@ class GeneralCommands(commands.Cog):
 
         poll_message = await interaction.original_response()
 
-        for emoji in emojis:
-            await poll_message.add_reaction(emoji)
+        for emoji in EMOJIS:
+            await poll_message.add_reaction(EMOJIS)
 
 
 async def setup(bot: OutBot) -> None:

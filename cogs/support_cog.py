@@ -46,7 +46,10 @@ class SupportCommands(commands.Cog):
                 "Please make your report under 1999 character, or split it across multiple reports.",
                 ephemeral=True,
             )
-        await interaction.response.send_message("Report has been sent", ephemeral=True)
+        await interaction.response.send_message(
+            "Report has been sent", ephemeral=True
+        )
+        return
 
     @discord.app_commands.command(
         name="feedback",
@@ -69,6 +72,7 @@ class SupportCommands(commands.Cog):
                 "Please make your feedback under 1999 character, or split it across multiple feeback messages.",
                 ephemeral=True,
             )
+            return
         await interaction.response.send_message(
             "Feedback has been sent!", ephemeral=True
         )
