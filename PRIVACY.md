@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | Message content | ❌ No | ❌ No | None |
 | User data | ❌ No | ❌ No | None |
-| Logs | ✅ Limited | ✅ Local | 7 days |
+| Logs | ✅ Limited | ✅ Local | Everyday |
 
 **OutBot only logs errors. Logs are deleted automatically everyday.**
 ```text
@@ -28,20 +28,20 @@ This is how logging.py is configured.
 
 ```text
 import logging
-
 from logging.handlers import TimedRotatingFileHandler
+
 
 def custom_logger() -> None:
 
     logger = logging.getLogger()
     logger.setLevel(logging.ERROR)
 
-    formatter = logging.Formatter(
-        "%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+    file_handler = logging.handlers.TimedRotatingFileHandler(
+        filename="discord.log", when="d", interval=1, backupCount=0
     )
 
-    file_handler = logging.handlers.TimedRotatingFileHandler(
-        filename="discord.log", when="d", interval=7, backupCount=0
+    formatter = logging.Formatter(
+        "%(asctime)s | %(levelname)s | %(name)s | %(message)s",
     )
 
     file_handler.setFormatter(formatter)

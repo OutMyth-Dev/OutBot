@@ -3,6 +3,9 @@ from discord.ext import commands
 
 from config import (
     BOT_VERSION,
+    CODE_OF_CONDUCT,
+    CONTRIBUTING_POLICY,
+    DATE_CREATED,
     DEVELOPERS,
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
@@ -23,10 +26,6 @@ class InformationCommands(commands.Cog):
         interaction: discord.Interaction,
     ) -> None:
 
-        embed_message = discord.Embed(
-            title=None,
-            description=None,
-        )
         embed_message = (
             discord.Embed(
                 title="📋 OutBot's Command List\n\n",
@@ -67,7 +66,7 @@ class InformationCommands(commands.Cog):
             title="🤖 OutBot\n\n",
             description=(
                 f"- {BOT_VERSION}\n"
-                f"- {CREATED_DATE}\n"
+                f"- {DATE_CREATED}\n"
                 f"- {LAST_MAJOR_UPDATED}\n"
                 f"- {GITHUB_LINK}\n"
                 f"- {DEVELOPERS}\n\n"
@@ -75,8 +74,13 @@ class InformationCommands(commands.Cog):
                 f"- {SECURITY_POLICY}"
                 f"- {OUTBOT_LICENSE}"
                 f"- {TERMS_OF_SERVICE}"
+                f"- {CONTRIBUTING_POLICY}"
+                f"- {CODE_OF_CONDUCT}"
             ),
             colour=0x7289DA,
+        )
+        embed_message.set_footer(
+            text="OutBot was made with python using discord.py",
         )
 
         await interaction.response.send_message(embed=embed_message)
@@ -90,9 +94,9 @@ class InformationCommands(commands.Cog):
         embed_message = discord.Embed(
             title="OutBot's Planned Features!\n\n",
             description=(
-                "- Assign/Remove Onboarding rolesn"
-                "- Bot Settings Commandsn"
-                "- Role Informationn"
+                "- Assign/Remove Onboarding roles"
+                "- Bot Settings Commands"
+                "- Role Information"
                 "- Improved Quality Of Existing Commands"
             ),
         )
