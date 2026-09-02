@@ -3,5 +3,5 @@
 *.pyc
 discord.log
 .ruff_cache/
-reports.txt
 feedback.txt
+reports.txt

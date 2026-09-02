@@ -12,6 +12,7 @@ GITHUB_LINK: str = "<https://github.com/OutMyth-Dev/OutBot/>"
 OUTMYTH_YOUTUBE_CHANNEL_LINK: str = (
     "<https://www.youtube.com/channel/UCGjkPP8sjN8WanIY6hhAeKw>"
 )
+# Todo: Create a discord server for OutBot and link it here.
 DISCORD_SERVER_INVITE_LINK: str = "<https://discord.gg/Sc5vAvTJtc>"
 OUTBOT_INVITE_LINK: str = (
     "<https://discord.com/oauth2/authorize?client_id=1525595736706781384>"

@@ -37,7 +37,7 @@ class SupportCommands(commands.Cog):
         interaction: discord.Interaction,
         report: str,
     ) -> None:
-
+        # With is used here to auto-close the file.
         with open("reports.txt", "a") as file:
             file.write(report + "\n")
 
@@ -50,7 +50,6 @@ class SupportCommands(commands.Cog):
                 ephemeral=True,
             )
         await interaction.response.send_message("Report has been sent", ephemeral=True)
-        return
 
     @discord.app_commands.command(
         name="feedback",

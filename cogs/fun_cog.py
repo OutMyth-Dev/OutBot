@@ -5,6 +5,19 @@ from config import CENSOR_WORDS
 from utils import send_censor_word_warning
 
 
+class FreeNitroButton(discord.ui.View):
+    @discord.ui.button(
+        label="Click me for free nitro!!!", style=discord.ButtonStyle.success,
+    )
+    async def nitro_button_callback(
+        self, interaction: discord.Interaction, button: discord.ui.Button,
+    ) -> None:
+        await interaction.response.send_message(
+            "https://tenor.com/view/rick-roll-nitro-gif-21997352",
+            ephemeral=True,
+        )
+
+
 class FunCommands(commands.Cog):
     @discord.app_commands.command(
         name="freenitro",
@@ -16,10 +29,8 @@ class FunCommands(commands.Cog):
     ) -> None:
         """Sends a gif to rickroll the user."""
 
-        await interaction.response.send_message(
-            "https://tenor.com/view/rick-roll-nitro-gif-21997352",
-            ephemeral=True,
-        )
+        await interaction.response.send_message(view=FreeNitroButton())
+        await interaction.followup.send("NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF.")
 
     @discord.app_commands.command(name="fakeban", description="Fake bans a user.")
     @discord.app_commands.describe(
