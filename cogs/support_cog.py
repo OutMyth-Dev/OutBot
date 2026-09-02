@@ -3,6 +3,7 @@ from discord.ext import commands
 
 
 from config import MAX_REPORT_LENGTH, MAX_FEEFBACK_LENGTH
+from utils import send_censor_word_warning
 
 
 class SupportCommands(commands.Cog):
