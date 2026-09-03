@@ -5,7 +5,7 @@
 # OutBot
 
 OutBot is a Discord bot created by **Mythordian**, using **Discord.py**.
-OutBot is a geneal utility discord bot that takes privacy and security seriously.
+OutBot is a general utility discord bot that takes privacy and security seriously.
 
 Current version: **0.4**
 
@@ -30,7 +30,7 @@ https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file
 
 OutBot's License (MIT)
 ```text
-https://github.com/OutMyth-Dev/OutBot/
+https://github.com/OutMyth-Dev/OutBot/?tab=MIT-1-ov-file
 ```
 
 OutBot's Invite link
@@ -42,8 +42,8 @@ https://discord.com/oauth2/authorize?client_id=1525595736706781384
 
 # What are Ephemeral Messages?
 
-Some messages can **only be seen by the user who triggered the command**.*(Ephemeral=True)
-**Most** messages can be seen by everyone (Ephemeral=False by default).
+Some messages can **only be seen by the user who triggered the command**.(Ephemeral=True)
+**Most** messages can be seen by everyone. (Ephemeral=False by default).
 The following commands are some examples of Ephemeral=True commands:
 
 - **`/dm`**
@@ -79,10 +79,12 @@ OutBot has **8 cogs**
 
 # OutBot's Commands
 OutBot currently has **23 slash commands**.
-OutBot does **NOT** use  prefix  commands. Therfore, OutBot does not need a command prefix as shown below.
+OutBot does **NOT** use  prefix  commands. Therefore, OutBot does not require command prefix.
+
 
 ```text
 bot = OutBot(
+    # Command prefix
     command_prefix=None,
     intents=discord.Intents.default(),
 )
@@ -105,7 +107,7 @@ bot = OutBot(
 
 - **`/hello`**
 - **`/dm`**
-- **`/say`**
+- **`/echo`**
 - **`/ping`**
 - **`/poll`**
 
@@ -198,8 +200,6 @@ OutBot/
 - Python 3.14.6 (https://www.python.org/downloads/)
 - discord.py 2.7.1
 - git (Install link - https://git-scm.com/install/)
-- A discord bot application (It depends on what you want to do with OutBot. Before creating one, please read the instructions below.)
-- git (Install link - https://git-scm.com/install/)
 
 ```text
 discord.py
@@ -215,7 +215,7 @@ These can be found in the file requirements.txt. Make sure your requirements.txt
 
 ## Installing OutBot
 
-**PLEASE MAKE SURE YOU HAVE ALL THE REQUIRMENTS LISTED ABOVE INSTALLED.**
+**PLEASE MAKE SURE YOU HAVE ALL THE REQUIREMENTS LISTED ABOVE INSTALLED.**
 
 Run the following command in your terminal to get a local copy of OutBot:
 ```text
@@ -245,7 +245,7 @@ pip install -r requirements.txt
 You now have a local copy of OutBot on your computer. To OutBot actually run we will need a Discord Bot Token. Head over to Discord
 Developer portal (https://discord.com/developers/applications) and sign in/create an account depending on if you have a Discord account.
 Click "new application". Create a name for your bot; accept Discord's Developer TOS/Privacy Policy. Create a new file called .env and make sure it is in 
-.gitignre. Created a variable called DISCORD_TOKEN. Under overview click "Bot" and then click "Reset Token". Click "Yes do it to" confirm. Copy your Discord token into .env.Finally, to install it, go to the "Installation" tab; copy the install link. Paste the install link into your browser and choose if you want OutBot in your apps or if you want to add OutBot to your server/s. You can now do whatever you want to the source code. **PLEASE READ THE MIT LICENSE FOR MORE INFORMATION.** **IF YOU DO NOT ADD A DISCORD BOT TOKEN, YOU WILL GET A RUNTIME ERROR.**
+.gitignore. Created a variable called DISCORD_TOKEN. Under overview click "Bot" and then click "Reset Token". Click "Yes do it to" confirm. Copy your Discord token into .env.Finally, to add it to your apps/discord server/s, go to the "Installation" tab; copy the install link. Paste the install link into your browser and choose if you want OutBot in your apps or if you want to add OutBot to your server/s. You can now do whatever you want to the source code. **PLEASE READ THE MIT LICENSE FOR MORE INFORMATION.** **IF YOU DO NOT ADD A DISCORD BOT TOKEN, YOU WILL GET A RUNTIME ERROR.**
 
 MIT LICENSE:
 ```text
@@ -257,7 +257,6 @@ https://github.com/OutMyth-Dev/OutBot/
 # "I just want OutBot in my discord server/add it to my apps".
 
 To invite OutBot to your server/add it to your apps, head over to this link:
-
 ```text
 https://discord.com/oauth2/authorize?client_id=1525595736706781384
 ```
@@ -266,7 +265,7 @@ Then choose whether you want OutBot in your Discord server or in your apps.
 
 ---
 
-# Developer Notes
+# A word from OutMyth's Developer Team.
 
 To report an issue other than a security related one, please open a ticket on OutMyth https://discord.gg/Sc5vAvTJtc; a GitHub issue 
 https://github.com/OutMyth-Dev/OutBot/issues; /report; /feedback. 

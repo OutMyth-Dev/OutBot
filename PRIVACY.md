@@ -4,7 +4,7 @@
 
 ## Logs
 
-| Data | Collected Data | Stored | Retention |
+| Data | Data Collected | Stored | Retained |
 | --- | --- | --- | --- |
 | Message content | No | No | N/A |
 | User data | No | No | N/A |
@@ -20,7 +20,6 @@ file_handler = logging.handlers.TimedRotatingFileHandler(
 - Logs use a logging mode of **a** (append)
 
 This is how logging.py is configured.
-
 ```text
 import logging
 from logging.handlers import TimedRotatingFileHandler
@@ -51,7 +50,8 @@ OutBot uses **NO** privileged intents. OutBot only uses discord's default intent
 ```text
 bot = OutBot(
     command_prefix=None,
-    **intents=discord.Intents.default(),**
+    # Intents
+    intents=discord.Intents.default(),
 )
 ```
 
