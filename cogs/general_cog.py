@@ -6,10 +6,30 @@ from utils import send_censor_word_warning
 
 
 class PingUserButton(discord.ui.View):
+    """
+    Creates a button that is invoked when /ping is used.
+
+    Attributes:
+        None
+
+    Methords:
+        ping_button_callback: Sends a grey button which is invoked when /ping is used.
+    """
+
     @discord.ui.button(label="Ping Yourself!", style=discord.ButtonStyle.secondary)
     async def ping_button_callback(
         self, interaction: discord.Interaction, button: discord.ui.Button
     ) -> None:
+        """
+        Pings the user when the button is clicked.
+
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+            button (discord.ui.button): The button being created.
+
+        Returns:
+            None
+        """
         await interaction.response.send_message(
             f"{interaction.user.mention}",
             ephemeral=True,
@@ -17,6 +37,20 @@ class PingUserButton(discord.ui.View):
 
 
 class GeneralCommands(commands.Cog):
+    """
+    Commands that do not fit any other catagory.
+
+    Attributes:
+        None
+
+    Methords:
+        greet: Greets the user.
+        dm: DMs the user.
+        echo: OutBot says what the user passed in.
+        ping: Pings the user when a button is pressed.
+        poll: Creates a embed with a title, question, and 10 reactions.
+    """
+
     @discord.app_commands.command(
         name="greet",
         description="OutBot greets you!",
@@ -25,6 +59,15 @@ class GeneralCommands(commands.Cog):
         self,
         interaction: discord.Interaction,
     ) -> None:
+        """
+        OutBot greets you.
+
+        Args:
+            interaction (discord.Interaction): The discord command being invoked.
+
+        Returns:
+            None
+        """
         await interaction.response.send_message(
             f"Hello, {interaction.user.mention}! How are you?",
         )
@@ -38,6 +81,16 @@ class GeneralCommands(commands.Cog):
         interaction: discord.Interaction,
         message: str,
     ) -> None:
+        """
+        DM the user who invoked the command.
+
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+            message (str): The message passed in by the user.
+
+        Returns:
+            None
+        """
         if await send_censor_word_warning(interaction, message):
             return
 
@@ -49,7 +102,7 @@ class GeneralCommands(commands.Cog):
             return
 
         try:
-            await interaction.user.send(f"Secret Message:  ||{message}||")
+            await interaction.user.send(f"||{message}||")
             (
                 await interaction.response.send_message(
                     "Check your DMs!",
@@ -64,15 +117,25 @@ class GeneralCommands(commands.Cog):
             )
 
     @discord.app_commands.command(
-        name="say",
+        name="ehco",
         description="You tell the OutBot what to say!",
     )
     @discord.app_commands.describe(message="You tell OutBot what to say!")
-    async def say(
+    async def echo(
         self,
         interaction: discord.Interaction,
         message: str,
     ) -> None:
+        """
+        Says what the user passed in.
+
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+            message (str): The message the user wants to be said that is passed.
+
+        Returns:
+            None
+        """
         if await send_censor_word_warning(interaction, message):
             return
 
@@ -86,6 +149,7 @@ class GeneralCommands(commands.Cog):
         embed_message = discord.Embed(
             title=f"{interaction.user} has said: ",
             description=f"{message}",
+            # 0x2ECC71 is Emerald
             colour=0x2ECC71,
         )
         embed_message.set_footer(
@@ -98,6 +162,14 @@ class GeneralCommands(commands.Cog):
         description="Click a magical button that pings you.",
     )
     async def ping(self, interaction: discord.Interaction) -> None:
+        """
+        Pings the user who invoked the command.
+
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+
+        Returns None.
+        """
         await interaction.response.send_message(view=PingUserButton())
 
     @discord.app_commands.command(
@@ -114,6 +186,17 @@ class GeneralCommands(commands.Cog):
         title: str,
         question: str,
     ) -> None:
+        """
+        Creates an embed with a title and a question that users can add reactions to.
+
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+            title (str): The title the user wants their embed to have.
+            question (str): The question of their poll (description).
+
+        Returns:
+            None
+        """
         if await send_censor_word_warning(interaction, title or question):
             return
 

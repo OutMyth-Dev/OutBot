@@ -66,7 +66,7 @@ OutBot has **8 cogs**
 
 | Cog relative file path| What types of commands the cog contains | An example of that command |
 | --- | --- | --- |
-| **cogs/developer_cog.py** | - Developer related commands | - eg: /developers |
+| **cogs/developer_cog.py** | - Information about OutBot's developers. | - eg: /developers |
 | **cogs/fun_cog.py** | - Commands that exist for users to have fun | - eg: /rickroll |
 | **cogs/general_cog.py** | - Commands that do not fit in any other category | - eg: /hello |
 | **cogs/information_cog.py** | - Useful information about OutBot/OutMyth | - eg: /help |

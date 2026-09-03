@@ -5,6 +5,16 @@ from utils import send_censor_word_warning
 
 
 class FreeNitroButton(discord.ui.View):
+    """
+    Creates a button that triggers when the freenitro command is invoked.
+
+    Attributes:
+        None
+
+    Methords:
+        free_nitro_button_callback: Creates a green Discord button that sends a gif when pressed.
+    """
+
     @discord.ui.button(
         label="Click me for free nitro!!!",
         style=discord.ButtonStyle.success,
@@ -14,6 +24,16 @@ class FreeNitroButton(discord.ui.View):
         interaction: discord.Interaction,
         button: discord.ui.Button,
     ) -> None:
+        """
+        Sends a gif when the when the button is clicked.
+
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+            button (discord.ui.button): The button being created.
+
+        Returns:
+            None
+        """
         await interaction.response.send_message(
             "https://tenor.com/view/rick-roll-nitro-gif-21997352",
             ephemeral=True,
@@ -21,6 +41,17 @@ class FreeNitroButton(discord.ui.View):
 
 
 class FunCommands(commands.Cog):
+    """
+    Commands for user's to have fun.
+
+    Attributes:
+        None
+
+    Methords:
+        freenitro: Sends a button; when clicked, it sends a gif that rickrolls the user.
+        fakeban: Gives users a form to fill out. When filled out, the command fakebands the user specified.
+    """
+
     @discord.app_commands.command(
         name="freenitro",
         description="Free nitro!",
@@ -33,8 +64,8 @@ class FunCommands(commands.Cog):
         Sends a gif to rickroll the user.
 
         Args:
-            interaction (discord.Interaction): The discord commmand being invoked
-        
+            interaction (discord.Interaction): The Discord commmand being invoked.
+
         Returns:
             None
         """
@@ -64,7 +95,7 @@ class FunCommands(commands.Cog):
         Fake bans the user.
 
         Args:
-            interaction (discord.Interaction): The discord command being invoked.
+            interaction (discord.Interaction): The Discord command being invoked.
             user (discord.Member): Who does the the person using the command want to ban?
             reason (str): What is the reason for banning them?
             duration (int): How long do they want the user to stay banned.
@@ -78,6 +109,7 @@ class FunCommands(commands.Cog):
         embed_message = discord.Embed(
             title=f"{user} has been banned",
             description=reason,
+            # 0xFF0000 is Red
             colour=0xFF0000,
         )
         embed_message.set_footer(text="Wait, how are they still here?")

@@ -6,11 +6,32 @@ from utils import send_censor_word_warning
 
 
 class SupportCommands(commands.Cog):
+    """
+    Commands related to user support.
+
+    Attributes:
+        None
+
+    Methords:
+        reporthelp: Tells users what a good report should contain.
+        report: The command users can use to report an issue.
+        feedbackhelp: Tells users what good feedback should look like.
+        feedback: The command users can use to give feedback.
+    """
+
     @discord.app_commands.command(
         name="reporthelp", description="Explains what a good report looks like."
     )
     async def reporthelp(self, interaction: discord.Interaction) -> None:
+        """
+        Tells the user what makes a good report.
 
+        Args:
+            interaction (discord.Interaction): The command being invoked
+
+        Returns:
+            None
+        """
         await interaction.response.send_message(
             "How do I make a good report?\n\n"
             "You should Inculde:\n"
@@ -35,9 +56,18 @@ class SupportCommands(commands.Cog):
         interaction: discord.Interaction,
         report: str,
     ) -> None:
-        # With is used here to auto-close the file.
-        with open("reports.txt", "a") as file:
-            file.write(report + "\n")
+        """
+        A command users can use to report an issue.
+
+        Args:
+            interaction (discord.Interaction): The discord command being invoked
+            report (str): What the user's report is.
+
+        Returns:
+            None
+        """
+        with open("reports.txt", "a") as report:
+            report.write(report + "\n")
 
         if await send_censor_word_warning(interaction, report):
             return
@@ -52,7 +82,16 @@ class SupportCommands(commands.Cog):
     @discord.app_commands.command(
         name="feedbackhelp", description="Explains what makes good feedback."
     )
-    async def feedbackhelp(self, interaction: discord.Interaction):
+    async def feedbackhelp(self, interaction: discord.Interaction) -> None:
+        """
+        Tells users how to create good feedback
+
+        Args:
+            interaction (discord.Interaction): The discord command being invoked
+
+        Returns:
+            None
+        """
         await interaction.response.send_message(
             "How do I give OutBot's developers good feeback?\n\n"
             "You should Inculde:\n"
@@ -72,14 +111,16 @@ class SupportCommands(commands.Cog):
     @discord.app_commands.describe(
         feedback=f"Give OutBot useful feedback. Please make sure it is under {MAX_FEEFBACK_LENGTH} characters."
     )
-    async def feedback(
-        self,
-        interaction: discord.Interaction,
-        feedback: str,
-    ) -> None:
+    async def feedback(self, interaction: discord.Interaction, feedback: str) -> None:
+        """
+        A commmand users can use to send feedback.
 
-        with open("feedback.txt", "a") as file:
-            file.write(feedback + "\n")
+        Args:
+            interaction(discord.Interaction): The discord command being invoked.
+            feedback (str): What user feedback is.
+        """
+        with open("feedback.txt", "a") as feedback:
+            feedback.write(feedback + "\n")
 
         if await send_censor_word_warning(interaction, feedback):
             return

@@ -6,17 +6,36 @@ from config import (
     OUTBOT_LICENSE,
     PRIVACY_POLICY,
     RETENTION,
-    TERMS_OF_SERVICE,
 )
 
 
 class PrivacyCommands(commands.Cog):
+    """
+    Infomration about privacy (OutBot).
+
+    Attributes:
+        None
+
+    Methords:
+        privacy: Infomraton about OutBot's privacy.
+        data: What data does Outbot collect about you?
+        logs: What does OutBot log?
+    """
+
     @discord.app_commands.command(
         name="privacy",
         description="Privacy related information about OutBot.",
     )
     async def privacy(self, interaction: discord.Interaction) -> None:
+        """
+        Privacy related information about OutBot
 
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+
+        Returns:
+            None
+        """
         embed_message = discord.Embed(
             title="🔒 OutBot Privacy\n\n",
             description=(
@@ -25,7 +44,6 @@ class PrivacyCommands(commands.Cog):
                 f"- Source: Open source ({GITHUB_LINK})\n"
                 f"- OutBot's License: {OUTBOT_LICENSE}\n"
                 f"- Privacy Policy: {PRIVACY_POLICY}\n"
-                f"- TOS: {TERMS_OF_SERVICE}"
             ),
             colour=0x00008B,
         )
@@ -38,7 +56,15 @@ class PrivacyCommands(commands.Cog):
         description="Information on what data OutBot retains.",
     )
     async def data(self, interaction: discord.Interaction) -> None:
+        """
+        What data does OutBot collect about you/process
 
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+
+        Returns:
+            None
+        """
         embed_message = discord.Embed(
             title="🗃️ What data does OutBot keep **about you** and what does it log?\n\n",
             description=(
@@ -56,7 +82,15 @@ class PrivacyCommands(commands.Cog):
         description="Information about OutBot's logs.",
     )
     async def retention(self, interaction: discord.Interaction) -> None:
+        """
+        What does Outbot log?
 
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+
+        Returns:
+            None
+        """
         embed_message = discord.Embed(
             title="⏳ How long does OutBot retain logs for?\n\n",
             description=(

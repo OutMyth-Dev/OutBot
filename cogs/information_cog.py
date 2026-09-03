@@ -17,6 +17,18 @@ from config import (
 
 
 class InformationCommands(commands.Cog):
+    """
+    General infomration about OutBot
+
+    Attributes:
+        None
+
+    Methords:
+        help: OutBot's command guide.
+        about: General information about OutBot.
+        roadmap: OutBot's planned features.
+    """
+
     @discord.app_commands.command(
         name="help",
         description="OutBot's Command Guide",
@@ -25,7 +37,15 @@ class InformationCommands(commands.Cog):
         self,
         interaction: discord.Interaction,
     ) -> None:
+        """
+        OutBot's command guide.
 
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+
+        Returns:
+            None
+        """
         # This command is currently really outdated. This only shows 13 commands whilst OutBot currently has more than 20.
         # This command will be updated just before update 0.5 releases.
         embed_message = (
@@ -51,6 +71,7 @@ class InformationCommands(commands.Cog):
                     "- 📖 outmythrules - OutMyth's Rules\n"
                     "- 📄 outbotrules - OutBot's Rules",
                 ),
+                # 0x5865F2 is Blurple
                 colour=0x5865F2,
             ),
         )
@@ -62,8 +83,16 @@ class InformationCommands(commands.Cog):
         name="about",
         description="Useful Information About OutBot!",
     )
-    async def outbot(self, interaction: discord.Interaction) -> None:
+    async def about(self, interaction: discord.Interaction) -> None:
+        """
+        General information about OutBot.
 
+        Args:
+            interactin (discord.Interaction): The Discord command being invoked.
+
+        Returns:
+            None
+        """
         embed_message = discord.Embed(
             title="🤖 OutBot\n\n",
             description=(
@@ -71,15 +100,16 @@ class InformationCommands(commands.Cog):
                 f"- {DATE_CREATED}\n"
                 f"- {LAST_MAJOR_UPDATED}\n"
                 f"- {GITHUB_LINK}\n"
-                f"- {DEVELOPERS}\n\n"
-                f"- {PRIVACY_POLICY}"
-                f"- {SECURITY_POLICY}"
-                f"- {OUTBOT_LICENSE}"
-                f"- {TERMS_OF_SERVICE}"
-                f"- {CONTRIBUTING_POLICY}"
-                f"- {CODE_OF_CONDUCT}"
+                f"- {DEVELOPERS}\n"
+                f"- {PRIVACY_POLICY}\n"
+                f"- {SECURITY_POLICY}\n"
+                f"- {OUTBOT_LICENSE}\n"
+                f"- {TERMS_OF_SERVICE}\n"
+                f"- {CONTRIBUTING_POLICY}\n"
+                f"- {CODE_OF_CONDUCT}\n"
             ),
-            colour=0x7289DA,
+            # 0x5865F2 is Blurple
+            colour=0x5865F2,
         )
         embed_message.set_footer(
             text="OutBot was made with python using discord.py",
@@ -92,7 +122,15 @@ class InformationCommands(commands.Cog):
         description="Planned Features For OutBot!",
     )
     async def roadmap(self, interaction: discord.Interaction) -> None:
+        """
+        Features OutBot will get in future updates.
 
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+
+        Returns:
+            None
+        """
         embed_message = discord.Embed(
             title="OutBot's Planned Features!\n\n",
             description=(

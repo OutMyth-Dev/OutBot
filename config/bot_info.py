@@ -6,7 +6,7 @@ RETENTION: str = "7 days"
 
 CODE_OF_CONDUCT: str = "<https://github.com/OutMyth-Dev/OutBot?tab=coc-ov-file>"
 CONTRIBUTING_POLICY: str = (
-    "<https://github.com/OutMyth-Dev/OutBot?tab=contributing-ov-file"
+    "<https://github.com/OutMyth-Dev/OutBot?tab=contributing-ov-file>"
 )
 GITHUB_LINK: str = "<https://github.com/OutMyth-Dev/OutBot/>"
 OUTMYTH_YOUTUBE_CHANNEL_LINK: str = (

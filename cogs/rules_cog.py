@@ -3,6 +3,17 @@ from discord.ext import commands
 
 
 class RulesCommands(commands.Cog):
+    """
+    Commands related to rules. Users can use to commands to find out rules they did not know about
+
+    Attributes:
+        None
+
+    Methords:
+        outmythrules: OutMyth's Discord server rules
+        outbotrules: OutBot's rules
+    """
+
     @discord.app_commands.command(
         name="outmythrules",
         description="OutMyth Discord Server Rules.",
@@ -11,7 +22,16 @@ class RulesCommands(commands.Cog):
         self,
         interaction: discord.Interaction,
     ) -> None:
-        """These can be found in the channel "rules", in OutMyth's Discord server."""
+        """
+        OutMyth's Discord server rules
+
+        Args:
+            interaction (discord.Interaction): The Discord commamnd being invoked.
+
+        Returns:
+            None
+        """
+        # These can be found in the channel "rules", in OutMyth's Discord server.
 
         await interaction.response.send_message(
             "## :scroll: **Rules**\n\n"
@@ -42,7 +62,15 @@ class RulesCommands(commands.Cog):
         self,
         interaction: discord.Interaction,
     ) -> None:
+        """
+        OutBot's rules.
 
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+
+        Returns:
+            None
+        """
         await interaction.response.send_message(
             "## Bot Rules\n\n"
             "- 1. Use the bot for its intended purpose.\n"
