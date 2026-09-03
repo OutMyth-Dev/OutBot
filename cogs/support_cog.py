@@ -61,7 +61,7 @@ class SupportCommands(commands.Cog):
 
         Args:
             interaction (discord.Interaction): The discord command being invoked
-            report (str): What the user's report is.
+            report (str): What report the user passes in.
 
         Returns:
             None
@@ -117,7 +117,7 @@ class SupportCommands(commands.Cog):
 
         Args:
             interaction(discord.Interaction): The discord command being invoked.
-            feedback (str): What user feedback is.
+            feedback (str): What feedback the user passes in.
         """
         with open("feedback.txt", "a") as feedback:
             feedback.write(feedback + "\n")
