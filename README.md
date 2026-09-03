@@ -1,13 +1,17 @@
-# 🤖 OutBot
+# OutBot's README
 
-OutBot is a Discord bot created by **Mythordian** and **aardapel1**, built with **Discord.py**.
-OutBot is a geneal utility discord bot with privacy and security in mind.
+---
+
+# OutBot
+
+OutBot is a Discord bot created by **Mythordian**, using **Discord.py**.
+OutBot is a geneal utility discord bot that takes privacy and security seriously.
 
 Current version: **0.4**
 
 ---
 
-# 🔗 Useful link
+# Useful link
 
 OutBot's TOS
 ```text
@@ -25,23 +29,22 @@ https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file
 ```
 
 OutBot's License (MIT)
-
 ```text
 https://github.com/OutMyth-Dev/OutBot/
 ```
 
-OutBot Invite link
+OutBot's Invite link
 ```text
 https://discord.com/oauth2/authorize?client_id=1525595736706781384
 ```
 
 ---
 
-# 🔒 What are Ephemeral Messages?
+# What are Ephemeral Messages?
 
 Some messages can **only be seen by the user who triggered the command**.*(Ephemeral=True)
 **Most** messages can be seen by everyone (Ephemeral=False by default).
-The following commands have Ephemeral=True:
+The following commands are some examples of Ephemeral=True commands:
 
 - **`/dm`**
 - **`/help`**
@@ -58,27 +61,15 @@ The following commands have Ephemeral=True:
 
 ---
 
-# 🤖 OutBot Commands
-OutBot currently has **20 slash commands**.
-OutBot does **NOT** use  prefix  commands, so there is no command prefix required; as shown below.
-
-```text
-bot = OutBot(
-    **command_prefix=None,**
-    intents=discord.Intents.default(),
-)
-```
-
----
-
-# ⚙️ Cogs
-OutBot has **7 cogs**
+# Cogs
+OutBot has **8 cogs**
 
 | Cog relative file path| What types of commands the cog contains | An example of that command |
 | --- | --- | --- |
+| **cogs/developer_cog.py** | - Developer related commands | - eg: /developers |
 | **cogs/fun_cog.py** | - Commands that exist for users to have fun | - eg: /rickroll |
 | **cogs/general_cog.py** | - Commands that do not fit in any other category | - eg: /hello |
-| **cogs/information_cog.py** |- Useful information about OutBot/OutMyth | - eg: /help |
+| **cogs/information_cog.py** | - Useful information about OutBot/OutMyth | - eg: /help |
 | **cogs/links_cog.py** | - Useful links about OutBot/OutMyth | - eg: /youtube |
 | **cogs/privacy_cog.py**| - User privacy information | -eg: /privacy |
 | **cogs/rules_cog.py** |- OutBot/OutMyth's Rules | - eg: /outmythrules |
@@ -86,7 +77,24 @@ OutBot has **7 cogs**
 
 ---
 
-### ❓ What commands does each cog contain?
+# OutBot's Commands
+OutBot currently has **23 slash commands**.
+OutBot does **NOT** use  prefix  commands. Therfore, OutBot does not need a command prefix as shown below.
+
+```text
+bot = OutBot(
+    command_prefix=None,
+    intents=discord.Intents.default(),
+)
+```
+
+---
+
+# What commands does each cog contain?
+
+### cogs/developer_cog.py
+
+- **`/developers`**
 
 ### cogs/fun_cog.py
 
@@ -128,11 +136,12 @@ OutBot has **7 cogs**
 
 - **`/reporthelp`**
 - **`/report`**
+- **`/feedbackhelp`**
 - **`/feedback`**
 
 ---
 
-# 🗂️ OutBot's Directory Tree
+# OutBot's Directory Tree
 
 ```text
 OutBot/
@@ -142,6 +151,7 @@ OutBot/
 │       ├── feature_request.md
 │       └── custom_issue.md
 ├── cogs/
+│   ├── developer_cog.py
 │   ├── fun_cog.py
 │   ├── general_cog.py
 │   ├── information_cog.py
@@ -160,6 +170,7 @@ OutBot/
 │   └── max_chars.py
 ├── information/
 │   └── UPDATES.md
+│   ├── test/
 │   utils/
 │   ├── __init__.py
 |   ├── errors.py
@@ -178,11 +189,11 @@ OutBot/
 
 ---
 
-# 🤔 How do I install OutBot?
+# How do I install OutBot?
 
 ---
 
-## 📝 Requirements
+## Requirements
 
 - Python 3.14.6 (https://www.python.org/downloads/)
 - discord.py 2.7.1
@@ -202,33 +213,32 @@ These can be found in the file requirements.txt. Make sure your requirements.txt
 
 ---
 
-## ⬇️ Installing OutBot
+## Installing OutBot
 
-**PLEASE MAKE SURE YOU HAVE GIT INSTALLED.**
+**PLEASE MAKE SURE YOU HAVE ALL THE REQUIRMENTS LISTED ABOVE INSTALLED.**
 
-Run the following command in your terminal to have a local copy of OutBot on your computer:
-
+Run the following command in your terminal to get a local copy of OutBot:
 ```text
 git clone https://github.com/OutMyth-Dev/OutBot.git
 ```
 
-And to switch to OutBot's directory:
+Switch to OutBot's directory:
 ```text
 cd OutBot
 ```
 
-To install all dependencies, run:
+Install all dependencies:
 ```text
 pip install -r requirements.txt
 ```
 
 ---
 
-# 🛠️ Discord Setup
+# Discord Setup
 
 ---
 
-## 🤫 .env
+## .env
 
 # DO NOT SHARE YOUR DISCORD BOT TOKEN WITH ANYONE. IF YOU DO, YOU GIVE THEM ACCESS TO YOUR BOT. THEY CAN EVEN FIND YOU EMAIL WITH IT.*
 
@@ -244,7 +254,7 @@ https://github.com/OutMyth-Dev/OutBot/
 
 ---
 
-# 🧐 "I just want OutBot in my discord server/add it to my apps".
+# "I just want OutBot in my discord server/add it to my apps".
 
 To invite OutBot to your server/add it to your apps, head over to this link:
 
@@ -256,7 +266,8 @@ Then choose whether you want OutBot in your Discord server or in your apps.
 
 ---
 
-To report an issue other than a security related one, 
-please open a ticket on OutMyth https://discord.gg/Sc5vAvTJtc 
-or a GitHub issue https://github.com/OutMyth-Dev/OutBot/issues.
+# Developer Notes
+
+To report an issue other than a security related one, please open a ticket on OutMyth https://discord.gg/Sc5vAvTJtc; a GitHub issue 
+https://github.com/OutMyth-Dev/OutBot/issues; /report; /feedback. 
 Thank **you** for using OutBot! ❤️

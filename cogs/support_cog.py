@@ -1,30 +1,27 @@
 import discord
 from discord.ext import commands
 
-
-from config import MAX_REPORT_LENGTH, MAX_FEEFBACK_LENGTH
+from config import MAX_FEEFBACK_LENGTH, MAX_REPORT_LENGTH
 from utils import send_censor_word_warning
 
 
 class SupportCommands(commands.Cog):
     @discord.app_commands.command(
-        name="reporthelp", description="Teaches you how to report."
+        name="reporthelp", description="Explains what a good report looks like."
     )
     async def reporthelp(self, interaction: discord.Interaction) -> None:
 
         await interaction.response.send_message(
-            "How do I report?\n\n"
+            "How do I make a good report?\n\n"
             "You should Inculde:\n"
             "- Your discord username.\n"
             "- What your issue is.\n"
-            "- Users username only if you're reporting a user.\n"
-            "- Make sure you provide a lot of detail.\n"
-            "- Please make sure you include a way for us to contact you.\n"
-            "MAKE SURE YOUR REPORT IS UNDER  CHARACTERS",
+            "- User's username only if you're reporting a user.\n"
+            "- Make sure you provide as much detail as possible.\n"
+            "- Please make sure you include a way for us to contact.\n"
+            f"MAKE SURE YOUR REPORT IS UNDER {MAX_REPORT_LENGTH} CHARACTERS.",
             ephemeral=True,
         )
-
-    """This command will be implemented later. (Towords the end of update 0.5)"""
 
     @discord.app_commands.command(
         name="report",
@@ -51,6 +48,22 @@ class SupportCommands(commands.Cog):
                 ephemeral=True,
             )
         await interaction.response.send_message("Report has been sent", ephemeral=True)
+
+    @discord.app_commands.command(
+        name="feedbackhelp", description="Explains what makes good feedback."
+    )
+    async def feedbackhelp(self, interaction: discord.Interaction):
+        await interaction.response.send_message(
+            "How do I give OutBot's developers good feeback?\n\n"
+            "You should Inculde:\n"
+            "- What your feedback is.\n"
+            "- Why you think it would make OutBot better.\n"
+            "- Make sure you provide as much detail as possible.\n"
+            "- Please make sure you include a way for us to contact.\n"
+            "- Your feedback can contian bug reporting and security reporting for now. You can also report a security issue using /report."
+            f"MAKE SURE YOUR FEEDBACK IS UNDER {MAX_FEEFBACK_LENGTH} CHARACTERS",
+            ephemeral=True,
+        )
 
     @discord.app_commands.command(
         name="feedback",

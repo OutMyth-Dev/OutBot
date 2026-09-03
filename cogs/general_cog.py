@@ -1,8 +1,19 @@
 import discord
 from discord.ext import commands
 
-from config import MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH, EMOJIS
+from config import EMOJIS, MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
 from utils import send_censor_word_warning
+
+
+class PingUserButton(discord.ui.View):
+    @discord.ui.button(label="Ping Yourself!", style=discord.ButtonStyle.secondary)
+    async def ping_button_callback(
+        self, interaction: discord.Interaction, button: discord.ui.Button
+    ) -> None:
+        await interaction.response.send_message(
+            f"{interaction.user.mention}",
+            ephemeral=True,
+        )
 
 
 class GeneralCommands(commands.Cog):
@@ -10,7 +21,7 @@ class GeneralCommands(commands.Cog):
         name="greet",
         description="OutBot greets you!",
     )
-    async def hello(
+    async def greet(
         self,
         interaction: discord.Interaction,
     ) -> None:
@@ -72,22 +83,22 @@ class GeneralCommands(commands.Cog):
             )
             return
 
-        embed_message(
-            title=f"{interaction.user.mention} has said: ",
+        embed_message = discord.Embed(
+            title=f"{interaction.user} has said: ",
             description=f"{message}",
             colour=0x2ECC71,
         )
         embed_message.set_footer(
-            "You may report the user if something inappropiate was said."
+            text="You may report the user if anything inappropiate was said."
         )
         await interaction.response.send_message(embed=embed_message)
 
     @discord.app_commands.command(
         name="ping",
-        description="Pings you",
+        description="Click a magical button that pings you.",
     )
     async def ping(self, interaction: discord.Interaction) -> None:
-        await interaction.response.send_message(f"{interaction.user.mention}")
+        await interaction.response.send_message(view=PingUserButton())
 
     @discord.app_commands.command(
         name="poll",
@@ -111,7 +122,7 @@ class GeneralCommands(commands.Cog):
 
         if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
             await interaction.response.send_message(
-                f"Your title and length are too long. Please make your title under {MAX_TITLE_LENGTH} characters and your question under {MAX_QUESTION_LENGTH} characters.",
+                f"Please make your title less than {MAX_TITLE_LENGTH} characters and your question less than {MAX_QUESTION_LENGTH} characters.",
                 ephemeral=True,
             )
             return

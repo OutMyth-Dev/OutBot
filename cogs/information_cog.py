@@ -26,6 +26,8 @@ class InformationCommands(commands.Cog):
         interaction: discord.Interaction,
     ) -> None:
 
+        # This command is currently really outdated. This only shows 13 commands whilst OutBot currently has more than 20.
+        # This command will be updated just before update 0.5 releases.
         embed_message = (
             discord.Embed(
                 title="📋 OutBot's Command List\n\n",
@@ -49,7 +51,7 @@ class InformationCommands(commands.Cog):
                     "- 📖 outmythrules - OutMyth's Rules\n"
                     "- 📄 outbotrules - OutBot's Rules",
                 ),
-                colour="0x5865F2",
+                colour=0x5865F2,
             ),
         )
         embed_message.set_footer(text="For more information, please open a ticket.")

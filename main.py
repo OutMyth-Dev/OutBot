@@ -7,7 +7,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 from config import custom_logger, find_cogs
-from utils import send_error_message
+from utils import error_message
 
 custom_logger()
 logger = logging.getLogger(__name__)
@@ -22,7 +22,7 @@ class OutBot(commands.Bot):
 
         for cog in find_cogs:
             if cog.endswith("cog.py"):
-                # This line filters for "cog.py" because it allows developers to add other files like __init__.py to the cogs dir.
+                # This line filters for "cog.py". This allows developers to add other files like __init__.py to the cogs directory.
                 await self.load_extension(f"cogs.{cog[:-3]}")
 
         await bot.tree.sync()
@@ -33,11 +33,14 @@ class OutBot(commands.Bot):
 
         embed_error_message = discord.Embed(
             title="Something went wrong. :(",
-            description=("An unexpected error occurred.\n", "Please create a ticket or open a GitHub issue."),
+            description=(
+                "An unexpected error occurred.\n",
+                "Please create a ticket or open a GitHub issue.",
+            ),
             colour=0xE74C3C,
         )
 
-        send_error_message(interaction, embed=embed_error_message)
+        error_message(interaction, embed=embed_error_message)
         logger.ERROR(f"Unexpected error: {error}")
 
 

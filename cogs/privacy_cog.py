@@ -60,9 +60,9 @@ class PrivacyCommands(commands.Cog):
         embed_message = discord.Embed(
             title="⏳ How long does OutBot retain logs for?\n\n",
             description=(
-                f"OutBot retains logs for {RETENTION}.\n"
-                "OutBot uses mode a to log (logger opens the file and appends).\n"
-                "It does not log any user data.\n"
+                f"OutBot retains logs for {RETENTION}."
+                "OutBot uses mode a to log (logger opens the file and appends)."
+                "It does not log any user data."
                 f"# OutBot is open source. You can always check out its source code/README for more information. {GITHUB_LINK}",
             ),
             colour=0x1ABC9,

@@ -2,13 +2,13 @@
 
 ----
 
-## 🗂️ Logs
+## Logs
 
-| Data | Collected | Stored | Retention |
+| Data | Collected Data | Stored | Retention |
 | --- | --- | --- | --- |
-| Message content | ❌ No | ❌ No | None |
-| User data | ❌ No | ❌ No | None |
-| Logs | ✅ Limited | ✅ Local | Everyday |
+| Message content | No | No | N/A |
+| User data | No | No | N/A |
+| Logs | Errors Only | Locally | Automatically deleted daily |
 
 **OutBot only logs errors. Logs are deleted automatically everyday.**
 ```text
@@ -17,12 +17,7 @@ file_handler = logging.handlers.TimedRotatingFileHandler(
 )
 ```
 
-
 - Logs use a logging mode of **a** (append)
-- OutBot is **open source**
-- OutBot is under an MIT LICENSE: https://github.com/OutMyth-Dev/OutBot/blob/main/LICENSE
-
-If you have any privacy concerns please open a GitHub issue or create a ticket on OutMyth's discord server.
 
 This is how logging.py is configured.
 
@@ -50,9 +45,9 @@ def custom_logger() -> None:
 
 ---
 
-# 👑 Privileged Intents
+# Privileged Intents
 
-OutBot uses **NO** privileged intents. OutBot only uses discord's default intents (as shows in the code below).
+OutBot uses **NO** privileged intents. OutBot only uses discord's default intents.
 ```text
 bot = OutBot(
     command_prefix=None,
@@ -60,3 +55,4 @@ bot = OutBot(
 )
 ```
 
+If you have any privacy concerns, please open a GitHub issue; create a ticket on OutMyth's discord server; /report; /feedback.

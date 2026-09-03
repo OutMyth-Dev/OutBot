@@ -15,14 +15,14 @@ from .bot_info import (
     SECURITY_POLICY,
     TERMS_OF_SERVICE,
 )
+from .censor_words import CENSOR_WORDS
 from .emojis import EMOJIS
 from .load_cogs import find_cogs
 from .logging import custom_logger
 from .max_chars import (
+    MAX_FEEFBACK_LENGTH,
     MAX_MESSAGE_LENGTH,
     MAX_QUESTION_LENGTH,
     MAX_REPORT_LENGTH,
     MAX_TITLE_LENGTH,
-    MAX_FEEFBACK_LENGTH,
 )
-from .censor_words import CENSOR_WORDS

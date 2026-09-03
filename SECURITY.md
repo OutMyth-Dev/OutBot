@@ -1,4 +1,4 @@
-# 🛡️ OutBot's Security Policy
+# OutBot's Security Policy
 
 ---
 
@@ -9,11 +9,11 @@ If you discover a vulnerability, please report it privately.
 You may report it through:
 - A ticket on OutMyth;
 - /report;
+- /feedback;
 - GitHub's private vulnerability reporting
 
 You may **NOT** report it through:
 - A public GitHub issue;
-- Comment
 - Pull Request
 
 Please include:

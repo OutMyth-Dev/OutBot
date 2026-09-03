@@ -1,16 +1,18 @@
 import discord
 from discord.ext import commands
 
-from config import CENSOR_WORDS
 from utils import send_censor_word_warning
 
 
 class FreeNitroButton(discord.ui.View):
     @discord.ui.button(
-        label="Click me for free nitro!!!", style=discord.ButtonStyle.success,
+        label="Click me for free nitro!!!",
+        style=discord.ButtonStyle.success,
     )
-    async def nitro_button_callback(
-        self, interaction: discord.Interaction, button: discord.ui.Button,
+    async def free_nitro_button_callback(
+        self,
+        interaction: discord.Interaction,
+        button: discord.ui.Button,
     ) -> None:
         await interaction.response.send_message(
             "https://tenor.com/view/rick-roll-nitro-gif-21997352",
@@ -21,16 +23,27 @@ class FreeNitroButton(discord.ui.View):
 class FunCommands(commands.Cog):
     @discord.app_commands.command(
         name="freenitro",
-        description="Free nitro!!!!",
+        description="Free nitro!",
     )
     async def rickroll(
         self,
         interaction: discord.Interaction,
     ) -> None:
-        """Sends a gif to rickroll the user."""
+        """
+        Sends a gif to rickroll the user.
+
+        Args:
+            interaction: The discord commmand being invoked
+        
+        Returns:
+            None
+        """
 
         await interaction.response.send_message(view=FreeNitroButton())
-        await interaction.followup.send("NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF.")
+        await interaction.followup.send(
+            "NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF ON THE INTERNET.",
+            ephemeral=True,
+        )
 
     @discord.app_commands.command(name="fakeban", description="Fake bans a user.")
     @discord.app_commands.describe(
@@ -47,6 +60,18 @@ class FunCommands(commands.Cog):
         duration: int,
         delete_messages: int,
     ) -> None:
+        """
+        Fake bans the user.
+
+        Args:
+            interaction: The discord command being invoked.
+            user: Who does the the person using the command want to ban?
+            reason: What is the reason for banning them?
+            duration: How long do they want the user to stay banned.
+            delete_messages: How many of their messages do they want to delete?
+        Returns:
+            None
+        """
         if await send_censor_word_warning(interaction, reason):
             return
 
@@ -55,7 +80,7 @@ class FunCommands(commands.Cog):
             description=reason,
             colour=0xFF0000,
         )
-        embed_message.set_footer(text="Wait, why are they still here?")
+        embed_message.set_footer(text="Wait, how are they still here?")
 
         await interaction.response.send_message(embed=embed_message)
 

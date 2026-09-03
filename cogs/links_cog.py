@@ -32,6 +32,7 @@ class LinksCommands(commands.Cog):
     ) -> None:
 
         await interaction.response.send_message(
+            # Todo: edit this to OutBot.
             f"# OutMyth's Discord Server:\n\n{DISCORD_SERVER_INVITE_LINK}"
         )
 
