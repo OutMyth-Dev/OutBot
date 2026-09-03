@@ -33,7 +33,7 @@ class FunCommands(commands.Cog):
         Sends a gif to rickroll the user.
 
         Args:
-            interaction: The discord commmand being invoked
+            interaction (discord.Interaction): The discord commmand being invoked
         
         Returns:
             None
@@ -64,11 +64,11 @@ class FunCommands(commands.Cog):
         Fake bans the user.
 
         Args:
-            interaction: The discord command being invoked.
-            user: Who does the the person using the command want to ban?
-            reason: What is the reason for banning them?
-            duration: How long do they want the user to stay banned.
-            delete_messages: How many of their messages do they want to delete?
+            interaction (discord.Interaction): The discord command being invoked.
+            user (discord.Member): Who does the the person using the command want to ban?
+            reason (str): What is the reason for banning them?
+            duration (int): How long do they want the user to stay banned.
+            delete_messages (int): How many of their messages do they want to delete?
         Returns:
             None
         """

@@ -13,10 +13,10 @@ class DeveloperCommands(commands.Cog):
         interaction: discord.Interaction,
     ) -> None:
         """
-        Sends the developers for OutBot.
+        Sends the developers that develop OutBot.
 
         Args:
-            interaction: The discord command being invoked.
+            interaction (discord.Interaction): The discord command being invoked.
         
         Returns:
             None
