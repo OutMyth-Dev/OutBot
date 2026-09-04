@@ -265,7 +265,7 @@ Then choose whether you want OutBot in your Discord server or in your apps.
 
 ---
 
-# A word from OutMyth's Developer Team.
+# Developer notes
 
 To report an issue other than a security related one, please open a ticket on OutMyth https://discord.gg/Sc5vAvTJtc; a GitHub issue 
 https://github.com/OutMyth-Dev/OutBot/issues; /report; /feedback. 
