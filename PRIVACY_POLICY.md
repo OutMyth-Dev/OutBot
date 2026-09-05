@@ -31,7 +31,7 @@ def custom_logger() -> None:
     logger.setLevel(logging.ERROR)
 
     file_handler = logging.handlers.TimedRotatingFileHandler(
-        filename="discord.log", when="d", interval=1, backupCount=0
+        filename="discord.log", when="d", interval=1, backupCount=1
     )
 
     formatter = logging.Formatter(
