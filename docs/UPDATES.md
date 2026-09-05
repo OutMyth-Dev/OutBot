@@ -1,4 +1,4 @@
-# ✨ OutBot - Update - 28th July 2026
+# OutBot - Update - 28th July 2026
 
 ## **Version 0.4**
 
@@ -24,7 +24,7 @@
 
 ---
 
-# 📋 Update 0.3
+# Update 0.3
 
 ## **OutBot - Update - 22nd July 2026**
 
@@ -49,9 +49,8 @@
 
 ---
 
-# 📋 Update 0.2
 
-## **OutBot - Update - 19th July 2026**
+# OutBot - Update - 19th July 2026
 
 ### **Version 0.2**
 
@@ -65,7 +64,7 @@
 
 ---
 
-# 🚀 OutBot - Update - 12th July 2026
+# OutBot - Update - 12th July 2026
 
 ## **Version: 0.1**
 

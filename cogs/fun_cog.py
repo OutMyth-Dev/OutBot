@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-from config import MAX_REASON_LENGTH
+from config import MAX_MESSAGE_LENGTH
 from utils import send_censor_word_warning
 
 
@@ -107,9 +107,9 @@ class FunCommands(commands.Cog):
         if await send_censor_word_warning(interaction, reason):
             return
 
-        if len(reason) > MAX_REASON_LENGTH:
+        if len(reason) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
-                f"Please make your report under {MAX_REASON_LENGTH} character.",
+                f"Please make your report under {MAX_MESSAGE_LENGTH} character.",
                 ephemeral=True,
             )
             return

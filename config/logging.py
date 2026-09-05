@@ -4,7 +4,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 def custom_logger() -> None:
     """
-    Creates a custom logger for OutBot to use
+    Creates a custom logger for OutBot to use.
 
     Args:
         None

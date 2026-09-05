@@ -6,7 +6,7 @@ from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from config import custom_logger, find_cogs
+from config import custom_logger
 from utils import error_message
 
 custom_logger()
@@ -39,9 +39,10 @@ class OutBot(commands.Bot):
         Returns:
             None
         """
+
+        find_cogs = os.listdir("cogs")
         for cog in find_cogs:
             if cog.endswith("cog.py"):
-                # This line filters for "cog.py". This allows developers to add other files like __init__.py to the cogs directory.
                 await self.load_extension(f"cogs.{cog[:-3]}")
 
         await self.tree.sync()
@@ -60,10 +61,8 @@ class OutBot(commands.Bot):
             None
         """
         embed_error_message = discord.Embed(
-            title="Something went wrong. :(",
-            description=(
-                "An unexpected error occurred. Please create a ticket/a GitHub issue.",
-            ),
+            title="Uh, oh! Something went wrong :(.",
+            description=("An unexpected error occurred. Please open a ticket.",),
             # 0xE74C3C is Alizarin
             colour=0xE74C3C,
         )
@@ -84,11 +83,11 @@ try:
 
 except TypeError:
     raise RuntimeError(
-        "Invalid bot token. Please enter your discord bot token in a file called '.env' (you have to create it yourself) inside the folder 'config'.",
+        'Invalid bot token. Please enter your discord bot token in a file called ".env" (you have to create it yourself) inside the folder "config".',
     )
 
 
 except discord.LoginFailure:
     raise RuntimeError(
-        "Invalid bot token. Please enter your discord bot token in a file called '.env' (you have to create it yourself) inside the folder 'config'.",
+        'Invalid bot token. Please enter your discord bot token in a file called ".env" (you have to create it yourself) inside the folder "config".',
     )

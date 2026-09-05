@@ -118,7 +118,7 @@ class GeneralCommands(commands.Cog):
             )
 
     @discord.app_commands.command(
-        name="ehco",
+        name="echo",
         description="You tell the OutBot what to say!",
     )
     @discord.app_commands.describe(your_message="What would you like OutBot to say?")

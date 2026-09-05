@@ -11,9 +11,10 @@
 
 Fork the repository, make your changes, and open a pull request explaining:
 
-- What you changed
-- Why you changed 
-- What benifits will OutBot gain
+- What did you change?
+- Why you changed what you changed?
+- What benifits OutBot will gain?
+- Will this help users have a better expirence with OutBot?
 
 Your code should follow the existing style and structure of OutBot.
 
@@ -23,7 +24,7 @@ Your code should follow the existing style and structure of OutBot.
 > 2) Open a ticket on https://discord.gg/Sc5vAvTJtc requesting to become a developer.
 > 3) If accepted you may present your changes via DMs. You **MUST** explain what you changed and why. It must fit the current structure of OutBot.
 > 4) Your code will be reviewed by a developer at OutMyth. You will be told via DMs if your contribution was accepted.
-> 5) You **CAN** still present your changes if you're rejected. The only difference being you will have to do it via a pull request instead of DMs
+> 5) You **CAN** still present your changes even if you're rejected. The only difference being you will have to do it via a pull request instead of DMs
 
-Thank **you** for contributing for OutBot.
+Thank **you** for contributing to OutBot.
 > OutMyth's developer team.

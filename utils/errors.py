@@ -14,12 +14,12 @@ async def error_message(interaction: discord.Interaction, embed: discord.Embed) 
     """
     if interaction.response.is_done():
         await interaction.followup.send(
-            message,
+            embed,
             ephemeral=True,
         )
 
     else:
         await interaction.response.send_message(
-            message,
+            embed,
             ephemeral=True,
         )

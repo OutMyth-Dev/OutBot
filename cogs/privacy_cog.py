@@ -37,7 +37,7 @@ class PrivacyCommands(commands.Cog):
             None
         """
         embed_message = discord.Embed(
-            title="🔒 OutBot Privacy\n\n",
+            title="🔒 OutBot's Privacy\n\n",
             description=(
                 "- Logs: Only used to degug and are stored locally.\n"
                 f"- Retention: {RETENTION}\n"

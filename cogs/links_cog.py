@@ -65,7 +65,7 @@ class LinksCommands(commands.Cog):
 
     @discord.app_commands.command(
         name="invite",
-        description="Invite link for OutBot",
+        description="OutBot's invite link.",
     )
     async def invite(
         self,

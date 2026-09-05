@@ -1,6 +1,6 @@
 # OutBot's TOS
 
-By using OutBot, you agree to comply with Discord's Terms of Service, and Community Guidelines.
+By using OutBot, you agree to comply with Discord's TOS, and Community Guidelines.
 
 OutBot does **NOT** impose additional terms beyond those requirements other than OutBot's license.
 

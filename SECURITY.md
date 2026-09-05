@@ -1,19 +1,15 @@
-# OutBot's Security Policy
-
----
-
-## Reporting a Vulnerability
+# Reporting a Vulnerability
 
 If you discover a vulnerability, please report it privately.
 
 You may report it through:
-- A ticket on OutMyth;
-- /report;
-- /feedback;
+- A ticket on OutMyth
+- /report
+- /feedback
 - GitHub's private vulnerability reporting
 
 You may **NOT** report it through:
-- A public GitHub issue;
+- A public GitHub issue
 - Pull Request
 
 Please include:

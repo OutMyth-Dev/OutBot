@@ -3,7 +3,7 @@ from .bot_info import (
     CODE_OF_CONDUCT,
     CONTRIBUTING_POLICY,
     DATE_CREATED,
-    DEVELOPERS,
+    DEVELOPER,
     DISCORD_SERVER_INVITE_LINK,
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
@@ -17,13 +17,9 @@ from .bot_info import (
 )
 from .censor_words import CENSOR_WORDS
 from .emojis import EMOJIS
-from .load_cogs import find_cogs
 from .logging import custom_logger
 from .max_chars import (
-    MAX_FEEFBACK_LENGTH,
     MAX_MESSAGE_LENGTH,
     MAX_QUESTION_LENGTH,
-    MAX_REASON_LENGTH,
-    MAX_REPORT_LENGTH,
     MAX_TITLE_LENGTH,
 )

@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-from config import MAX_FEEFBACK_LENGTH, MAX_REPORT_LENGTH
+from config import MAX_MESSAGE_LENGTH
 from utils import send_censor_word_warning
 
 
@@ -40,6 +40,7 @@ class SupportCommands(commands.Cog):
             "- User's username only if you're reporting a user.\n"
             "- Make sure you provide as much detail as possible.\n"
             "- Please make sure you include a way for us to contact.\n"
+            "- Your report/s are deleted as soon as they are delt with.\n"
             f"MAKE SURE YOUR REPORT IS UNDER {MAX_REPORT_LENGTH} CHARACTERS.",
             ephemeral=True,
         )
@@ -69,9 +70,9 @@ class SupportCommands(commands.Cog):
         if await send_censor_word_warning(interaction, report):
             return
 
-        if len(report) > MAX_REPORT_LENGTH:
+        if len(report) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
-                f"Please make your report under {MAX_REPORT_LENGTH} character, or split it across multiple reports.",
+                f"Please make your report under {MAX_MESSAGE_LENGTH} character, or split it across multiple reports.",
                 ephemeral=True,
             )
             return
@@ -101,8 +102,9 @@ class SupportCommands(commands.Cog):
             "- Why you think it would make OutBot better.\n"
             "- Make sure you provide as much detail as possible.\n"
             "- Please make sure you include a way for us to contact.\n"
-            "- Your feedback can contian bug reporting and security reporting for now. You can also report a security issue using /report."
-            f"MAKE SURE YOUR FEEDBACK IS UNDER {MAX_FEEFBACK_LENGTH} CHARACTERS",
+            "- Your feedback is deleted as soon as it is delt with.\n"
+            "- Your feedback can contian bug reporting and security reporting for now. You can also report a security issue using /report.\n"
+            f"MAKE SURE YOUR FEEDBACK IS UNDER {MAX_MESSAGE_LENGTH} CHARACTERS",
             ephemeral=True,
         )
 
@@ -111,7 +113,7 @@ class SupportCommands(commands.Cog):
         description="Provide OutBot useful feedback",
     )
     @discord.app_commands.describe(
-        feedback=f"Give OutBot useful feedback. Please make sure it is under {MAX_FEEFBACK_LENGTH} characters."
+        feedback=f"Give OutBot useful feedback. Please make sure it is under {MAX_MESSAGE_LENGTH} characters."
     )
     async def feedback(self, interaction: discord.Interaction, feedback: str) -> None:
         """
@@ -124,9 +126,9 @@ class SupportCommands(commands.Cog):
         if await send_censor_word_warning(interaction, feedback):
             return
 
-        if len(feedback) > MAX_FEEFBACK_LENGTH:
+        if len(feedback) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
-                f"Please make your feedback under {MAX_FEEFBACK_LENGTH} character, or split it across multiple feeback messages.",
+                f"Please make your feedback under {MAX_MESSAGE_LENGTH} character, or split it across multiple feeback messages.",
                 ephemeral=True,
             )
             return

@@ -6,7 +6,7 @@ from config import (
     CODE_OF_CONDUCT,
     CONTRIBUTING_POLICY,
     DATE_CREATED,
-    DEVELOPERS,
+    DEVELOPER,
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
     OUTBOT_INVITE_LINK,
@@ -49,38 +49,38 @@ class InformationCommands(commands.Cog):
             None
         """
         embed_message = discord.Embed(
-                title="📋 OutBot's Command List\n\n",
-                description=(
-                    "# 💻 Developer Commands\n\n"
-                    "- **/developers**: Who are OutBot's developers?\n\n"
-                    "# 🎉 Fun Commands\n\n"
-                    "- **/freenitro**: Click a button that rickrolls you.\n"
-                    "- **/fakeban**: Allows users to fakeban anyone!\n\n"
-                    "# ⚙️ General Commands\n\n"
-                    "- **/hello**: Says hello to the user.\n"
-                    "- **/dm** - OutBot DMs you.\n"
-                    "- **/ehco**: You tell the bot what to say!\n"
-                    "- **/ping**: Click a button that pings you!\n"
-                    "- **/poll**: Creates an embed with 10 default reactions.\n\n"
-                    "# 🧠 Information Commands\n\n"
-                    "-  **/help**: OutBot's Command Guide.\n"
-                    "- **/outbot**: Useful information about OutBot.\n"
-                    "- **/roadmap**: OutBot's planned features.\n\n"
-                    "# 🔗 Links Commands\n\n"
-                    "- **/youtube**: OutMyth's YouTube channel link.\n"
-                    "- **/discord**: OutMyth's Discord server invite link.\n"
-                    "- **/invite**: OutBot's invite link.**\n\n"
-                    "# ⚖️ Rules Commands\n\n"
-                    "- **outmythrules**: OutMyth's Rules.\n"
-                    "- **outbotrules**: OutBot's Rules.\n\n"
-                    "# 🙋‍♂️ Support Commands\n\n"
-                    "- **/reporthelp**: Teaches you how to create a good report.\n"
-                    "- **/report**: Report an issue. Including security related ones.\n"
-                    "- **feedbackhelp**: Teaches you how to create good feedback.\n"
-                    "- **feedback**: Give feeback to OutBot's developers.\n"
-                ),
-                # 0x5865F2 is Blurple
-                colour=0x5865F2,
+            title="📋 OutBot's Command List\n\n",
+            description=(
+                "# 💻 Developer Commands\n\n"
+                "- **/developers**: Who are OutBot's developers?\n\n"
+                "# 🎉 Fun Commands\n\n"
+                "- **/freenitro**: Click a button that rickrolls you.\n"
+                "- **/fakeban**: Allows users to fakeban anyone!\n\n"
+                "# ⚙️ General Commands\n\n"
+                "- **/hello**: Says hello to the user.\n"
+                "- **/dm** - OutBot DMs you.\n"
+                "- **/ehco**: You tell the bot what to say!\n"
+                "- **/ping**: Click a button that pings you!\n"
+                "- **/poll**: Creates an embed with 10 default reactions.\n\n"
+                "# 🧠 Information Commands\n\n"
+                "-  **/help**: OutBot's Command Guide.\n"
+                "- **/outbot**: Useful information about OutBot.\n"
+                "- **/roadmap**: OutBot's planned features.\n\n"
+                "# 🔗 Links Commands\n\n"
+                "- **/youtube**: OutMyth's YouTube channel link.\n"
+                "- **/discord**: OutMyth's Discord server invite link.\n"
+                "- **/invite**: OutBot's invite link.**\n\n"
+                "# ⚖️ Rules Commands\n\n"
+                "- **outmythrules**: OutMyth's Rules.\n"
+                "- **outbotrules**: OutBot's Rules.\n\n"
+                "# 🙋‍♂️ Support Commands\n\n"
+                "- **/reporthelp**: Teaches you how to create a good report.\n"
+                "- **/report**: Report an issue. Including security related ones.\n"
+                "- **feedbackhelp**: Teaches you how to create good feedback.\n"
+                "- **feedback**: Give feeback to OutBot's developers.\n"
+            ),
+            # 0x5865F2 is Blurple
+            colour=0x5865F2,
         )
 
         await interaction.response.send_message(embed=embed_message)
@@ -104,7 +104,7 @@ class InformationCommands(commands.Cog):
             description=(
                 "# Useful Information:\n\n"
                 f"- Bot Version: v{BOT_VERSION}\n"
-                f"- Log Retention: **{RETENTION}**\n"
+                f"- Log Retention: {RETENTION}\n"
                 f"- GitHub: {GITHUB_LINK}\n"
                 f"- Invite Link: {OUTBOT_INVITE_LINK}\n"
                 f"- License: {OUTBOT_LICENSE}\n"
@@ -122,7 +122,7 @@ class InformationCommands(commands.Cog):
             value="Outbot is a general utility bot that takes user privacy and security seriously. Most discord bots do not. You can find out more via the links above.",
         )
         embed_message.set_footer(
-            text=f"OutBot was made with python using discord.py. OutBot was developed by {DEVELOPERS}",
+            text=f"OutBot was made with python using discord.py. OutBot was developed by {DEVELOPER}",
         )
 
         await interaction.response.send_message(embed=embed_message)

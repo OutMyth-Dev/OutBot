@@ -16,14 +16,14 @@ class RulesCommands(commands.Cog):
 
     @discord.app_commands.command(
         name="outmythrules",
-        description="OutMyth Discord Server Rules.",
+        description="OutMyth's Discord Server Rules.",
     )
     async def outmythrules(
         self,
         interaction: discord.Interaction,
     ) -> None:
         """
-        OutMyth's Discord server rules
+        OutMyth's Discord server rules.
 
         Args:
             interaction (discord.Interaction): The Discord commamnd being invoked.
@@ -34,25 +34,25 @@ class RulesCommands(commands.Cog):
         # These can be found in the channel "rules", in OutMyth's Discord server.
 
         await interaction.response.send_message(
-        "# 📜 OutMyth's Rules :\n\n"
-        '# 1) ❌ NO NSFW And NO Malicious Content\n'
-        'Absolutely NO NSFW content, pornography, sexual content, or malicious links.\n\n'
-        '# 2) ❌ NO Swearing / Offensive Language\n'
-        'Use common sense when chatting.\n'
-        'Do NOT use censored words or offensive language.\n\n'
-        '# 3) 🔐 Respect Privacy\n'
-        "Do NOT dox or share anyone’s personal information.\n"
-        'Do NOT DM anyone without a valid reason.\n\n'
-        '# 4) ❌ No Self Promotion\n'
-        'NO advertising in DMs or channels.\n'
-        'This applies to EVERYONE, including staff and owners.\n\n'
-        '# 5) ✅ Use Mentions Responsibly\n\n'
-        "DON’T ping @everyone, @here, or use any other type of mass pinging or message spam.\n\n"
-        '# 6) 🎟️ Tickets\n'
-        'Do NOT open tickets without a valid reason.\n\n'
-        '# 7) 🫂 Behaviour\n'
-        'Be kind, respectful, and helpful to everyone.\n'
-        'Avoid using censored words and disruptive behaviour. This includes malicious, manipulative, rage-baiting, or otherwise disruptive behaviour.'
+            "# 📜 OutMyth's Rules :\n\n"
+            "# 1) ❌ NO NSFW And NO Malicious Content\n"
+            "- Absolutely **NO** NSFW content, pornography, sexual content, or malicious links.\n\n"
+            "# 2) 🤬 NO Swearing / Offensive Language\n"
+            "- Use common sense when chatting.\n"
+            "- Do **NOT** use censored words or other offensive language.\n\n"
+            "# 3) 🔐 Respect Privacy\n"
+            "- Do **NOT** dox or share anyone’s personal information.\n"
+            "- Do **NOT** DM anyone without a valid reason.\n\n"
+            "# 4) 🗣📢 No Self Promotion\n"
+            "- **NO** advertising in DMs or channels.\n"
+            "- This applies to EVERYONE, including staff and owners.\n\n"
+            "# 5) @️ Use Mentions Responsibly And Lessange Spam\n\n"
+            "- **DON’T** ping @everyone, @here, or use any other type of mass pinging or message spam.\n\n"
+            "# 6) 🎟️ Tickets\n"
+            "- Do NOT open tickets without a valid reason.\n\n"
+            "# 7) 🫂 Behaviour\n"
+            "- Be kind, respectful, and helpful to everyone.\n"
+            "- Avoid disruptive behaviour. This includes malicious, manipulative, rage-baiting, or otherwise disruptive behaviour."
         )
 
     @discord.app_commands.command(
