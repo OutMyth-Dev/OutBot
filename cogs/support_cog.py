@@ -77,7 +77,7 @@ class SupportCommands(commands.Cog):
             return
 
         with open("reports.txt", "a") as reports:
-            reports.write(reports + "\n")
+            reports.write(report + "\n")
 
         await interaction.response.send_message("Report has been sent", ephemeral=True)
 
@@ -132,7 +132,7 @@ class SupportCommands(commands.Cog):
             return
 
         with open("feedback.txt", "a") as user_feedback:
-            user_feedback.write(user_feedback + "\n")
+            user_feedback.write(feedback + "\n")
 
         await interaction.response.send_message(
             "Feedback has been sent!", ephemeral=True
