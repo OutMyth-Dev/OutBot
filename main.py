@@ -68,7 +68,7 @@ class OutBot(commands.Bot):
             colour=0xE74C3C,
         )
 
-        error_message(interaction, embed=embed_error_message)
+        await error_message(interaction, embed=embed_error_message)
         logger.error(f"Unexpected error: {error}")
 
 

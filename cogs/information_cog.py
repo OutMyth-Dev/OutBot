@@ -55,7 +55,7 @@ class InformationCommands(commands.Cog):
                     "- **/developers**: Who are OutBot's developers?\n\n"
                     "# 🎉 Fun Commands\n\n"
                     "- **/freenitro**: Click a button that rickrolls you.\n"
-                    "- **/freenitro**: Allows users to fakeban anyone!\n\n"
+                    "- **/fakeban**: Allows users to fakeban anyone!\n\n"
                     "# ⚙️ General Commands\n\n"
                     "- **/hello**: Says hello to the user.\n"
                     "- **/dm** - OutBot DMs you.\n"
