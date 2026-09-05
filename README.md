@@ -120,7 +120,7 @@ bot = OutBot(
 ### cogs/links_cog.py
 
 - **`/youtube`**
-- **`/serverlink`**
+- **`/discord`**
 - **`/invite`**
 
 ### cogs/privacy_cog.py

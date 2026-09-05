@@ -76,17 +76,18 @@ class GeneralCommands(commands.Cog):
         name="dm",
         description="DMs the user. Please make sure you have your DMs turned on.",
     )
+    @discord.app_commands.describe(dm="What would you like OutBot to DM you?")
     async def dm(
         self,
         interaction: discord.Interaction,
-        message: str,
+        dm: str,
     ) -> None:
         """
         DM the user who invoked the command.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-            message (str): The message passed in by the user.
+            dm (str): The message the user wants to be DMed by OutBot.
 
         Returns:
             None
@@ -94,7 +95,7 @@ class GeneralCommands(commands.Cog):
         if await send_censor_word_warning(interaction, message):
             return
 
-        if len(message) > MAX_MESSAGE_LENGTH:
+        if len(dm) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
                 f"Your message was too long. Please make it less than {MAX_MESSAGE_LENGTH} characters.",
                 ephemeral=True,
@@ -102,7 +103,7 @@ class GeneralCommands(commands.Cog):
             return
 
         try:
-            await interaction.user.send(f"||{message}||")
+            await interaction.user.send(f"||{dm}||")
             (
                 await interaction.response.send_message(
                     "Check your DMs!",
@@ -120,26 +121,26 @@ class GeneralCommands(commands.Cog):
         name="ehco",
         description="You tell the OutBot what to say!",
     )
-    @discord.app_commands.describe(message="You tell OutBot what to say!")
+    @discord.app_commands.describe(your_message="What would you like OutBot to say?")
     async def echo(
         self,
         interaction: discord.Interaction,
-        message: str,
+        your_message: str,
     ) -> None:
         """
         Says what the user passed in.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-            message (str): The message the user wants to be said that is passed.
+            your_message (str): What the user wants OutBot to say.
 
         Returns:
             None
         """
-        if await send_censor_word_warning(interaction, message):
+        if await send_censor_word_warning(interaction, your_message):
             return
 
-        if len(message) > MAX_MESSAGE_LENGTH:
+        if len(your_message) > MAX_MESSAGE_LENGTH:
             await interaction.response.send_message(
                 f"Your message was too long. Please make it less than {MAX_MESSAGE_LENGTH} characters.",
                 ephemeral=True,
@@ -147,8 +148,8 @@ class GeneralCommands(commands.Cog):
             return
 
         embed_message = discord.Embed(
-            title=f"{interaction.user} has said: ",
-            description=f"{message}",
+            title=f"{user} has said: ",
+            description=f"{your_message}",
             # 0x2ECC71 is Emerald
             colour=0x2ECC71,
         )

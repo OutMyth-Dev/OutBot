@@ -66,17 +66,19 @@ class SupportCommands(commands.Cog):
         Returns:
             None
         """
-        with open("reports.txt", "a") as report:
-            report.write(report + "\n")
-
         if await send_censor_word_warning(interaction, report):
             return
 
         if len(report) > MAX_REPORT_LENGTH:
             await interaction.response.send_message(
-                "Please make your report under 1999 character, or split it across multiple reports.",
+                f"Please make your report under {MAX_REPORT_LENGTH} character, or split it across multiple reports.",
                 ephemeral=True,
             )
+            return
+
+        with open("reports.txt", "a") as reports:
+            reports.write(reports + "\n")
+
         await interaction.response.send_message("Report has been sent", ephemeral=True)
 
     @discord.app_commands.command(
@@ -119,18 +121,19 @@ class SupportCommands(commands.Cog):
             interaction(discord.Interaction): The discord command being invoked.
             feedback (str): What feedback the user passes in.
         """
-        with open("feedback.txt", "a") as feedback:
-            feedback.write(feedback + "\n")
-
         if await send_censor_word_warning(interaction, feedback):
             return
 
         if len(feedback) > MAX_FEEFBACK_LENGTH:
             await interaction.response.send_message(
-                "Please make your feedback under 1999 character, or split it across multiple feeback messages.",
+                f"Please make your feedback under {MAX_FEEFBACK_LENGTH} character, or split it across multiple feeback messages.",
                 ephemeral=True,
             )
             return
+
+        with open("feedback.txt", "a") as user_feedback:
+            user_feedback.write(user_feedback + "\n")
+
         await interaction.response.send_message(
             "Feedback has been sent!", ephemeral=True
         )

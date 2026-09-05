@@ -34,24 +34,25 @@ class RulesCommands(commands.Cog):
         # These can be found in the channel "rules", in OutMyth's Discord server.
 
         await interaction.response.send_message(
-            "## :scroll: **Rules**\n\n"
-            "## 1. :x:** NO** NSFW And **NO** Malicious Content.\n\n"
-            "- :underage: Absolutely **NO** NSFW content, pornography, sexual content, or malicious links.\n\n"
-            "## 2. :x: **NO** Swearing / Offensive Language\n\n"
-            "- :speaking_head: Use common sense when chatting.\n\n"
-            "- :no_entry_sign: Check out Censored Words.\n\n"
-            "## 3. :white_check_mark: Respect Privacy\n\n"
-            "- :lock: Do **NOT** dox or share anyone’s personal information.\n\n"
-            "- :mailbox_with_mail: Do **NOT** Dm anyone without a valid reason.\n\n"
-            "## 4. :x: No Self Promotion\n\n"
-            "- :loudspeaker: **NO** advertising in Dms or channels.\n\n"
-            "- :no_entry_sign: This applies to **EVERYONE**, including staff and owners.\n\n"
-            "## 5. :white_check_mark: Use Mentions Responsibly\n\n"
-            "#- :zap: **DON’T** ping @everyone; @here; any other types of mass pinging or message spam.\n\n"
-            "## 6. :ticket: Tickets\n\n"
-            "- :tickets: Do **NOT** open tickets without a valid reason.\n\n"
-            "## 7. :people_hugging:  Behaviour\n\n"
-            "- :handshake: Be kind, respectful, and helpful to everyone."
+        "# 📜 OutMyth's Rules :\n\n"
+        '# 1) ❌ NO NSFW And NO Malicious Content\n'
+        'Absolutely NO NSFW content, pornography, sexual content, or malicious links.\n\n'
+        '# 2) ❌ NO Swearing / Offensive Language\n'
+        'Use common sense when chatting.\n'
+        'Do NOT use censored words or offensive language.\n\n'
+        '# 3) 🔐 Respect Privacy\n'
+        "Do NOT dox or share anyone’s personal information.\n"
+        'Do NOT DM anyone without a valid reason.\n\n'
+        '# 4) ❌ No Self Promotion\n'
+        'NO advertising in DMs or channels.\n'
+        'This applies to EVERYONE, including staff and owners.\n\n'
+        '# 5) ✅ Use Mentions Responsibly\n\n'
+        "DON’T ping @everyone, @here, or use any other type of mass pinging or message spam.\n\n"
+        '# 6) 🎟️ Tickets\n'
+        'Do NOT open tickets without a valid reason.\n\n'
+        '# 7) 🫂 Behaviour\n'
+        'Be kind, respectful, and helpful to everyone.\n'
+        'Avoid using censored words and disruptive behaviour. This includes malicious, manipulative, rage-baiting, or otherwise disruptive behaviour.'
         )
 
     @discord.app_commands.command(
@@ -72,7 +73,7 @@ class RulesCommands(commands.Cog):
             None
         """
         await interaction.response.send_message(
-            "## Bot Rules\n\n"
+            "## OutBot Rules\n\n"
             "- 1. Use the bot for its intended purpose.\n"
             "- 2. Only use OutBot in the channels command or chatbot.\n"
             "- 3. Do NOT try to exploit OutBot.\n"

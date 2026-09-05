@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-from config import DISCORD_SERVER_INVITE_LINK
+from config import DEVELOPERS, DISCORD_SERVER_INVITE_LINK
 
 
 class DeveloperCommands(commands.Cog):
@@ -33,7 +33,7 @@ class DeveloperCommands(commands.Cog):
         """
         embed_message = discord.Embed(
             title="OutBot's Developers",
-            description="Mythoridan is the only developer for OutBot currently.",
+            description=f"{DEVELOPERS} is the only developer for OutBot currently.",
             # 0xFF0000 is Red
             colour=0xFF0000,
         )

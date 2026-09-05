@@ -6,8 +6,8 @@
 
 | Data | Data Collected | Stored | Retained |
 | --- | --- | --- | --- |
-| Message content | No | No | N/A |
-| User data | No | No | N/A |
+| Message content | N/A | N/A | N/A |
+| User data | N/A | N/A | N/A |
 | Logs | Errors Only | Locally | Automatically deleted daily |
 
 **OutBot only logs errors. Logs are deleted automatically everyday.**

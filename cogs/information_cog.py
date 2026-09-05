@@ -9,8 +9,10 @@ from config import (
     DEVELOPERS,
     GITHUB_LINK,
     LAST_MAJOR_UPDATED,
+    OUTBOT_INVITE_LINK,
     OUTBOT_LICENSE,
     PRIVACY_POLICY,
+    RETENTION,
     SECURITY_POLICY,
     TERMS_OF_SERVICE,
 )
@@ -18,7 +20,7 @@ from config import (
 
 class InformationCommands(commands.Cog):
     """
-    General infomration about OutBot
+    General infomration about OutBot/OutMyth.
 
     Attributes:
         None
@@ -46,36 +48,40 @@ class InformationCommands(commands.Cog):
         Returns:
             None
         """
-        # This command is currently really outdated. This only shows 13 commands whilst OutBot currently has more than 20.
-        # This command will be updated just before update 0.5 releases.
-        embed_message = (
-            discord.Embed(
+        embed_message = discord.Embed(
                 title="📋 OutBot's Command List\n\n",
                 description=(
-                    "🎉 Fun ommands\n\n"
-                    "- **/rickroll** - Sends a youtube link to rickroll you.\n\n"
-                    "⚙️ General Commands\n\n"
-                    "- 👋 /hello - Says hello to the user\n"
-                    "- ✉️ /dm - DMs the user\n"
-                    "- 🗣️ /say - You tell the bot what to say!\n"
-                    "- 📊 /poll - Creates a poll\n\n"
-                    "🧠 Information Commands\n\n"
-                    "- ❓ /help - Command Guide\n"
-                    "- 🤖 /outbot - Useful information about OutBot.\n"
-                    "- 🗺️ /roadmap - OutBot's planned features\n\n"
-                    "🔗 Links Commands\n\n"
-                    "- ▶️ /youtube - OutMyth's YouTube channel link\n"
-                    "- 💬 /serverlink - OutMyth's D iscord server invite link\n"
-                    "- 🔗 /invite - OutBot's invite link**\n\n"
-                    "⚖️ Rules Commands\n\n"
-                    "- 📖 outmythrules - OutMyth's Rules\n"
-                    "- 📄 outbotrules - OutBot's Rules",
+                    "# 💻 Developer Commands\n\n"
+                    "- **/developers**: Who are OutBot's developers?\n\n"
+                    "# 🎉 Fun Commands\n\n"
+                    "- **/freenitro**: Click a button that rickrolls you.\n"
+                    "- **/freenitro**: Allows users to fakeban anyone!\n\n"
+                    "# ⚙️ General Commands\n\n"
+                    "- **/hello**: Says hello to the user.\n"
+                    "- **/dm** - OutBot DMs you.\n"
+                    "- **/ehco**: You tell the bot what to say!\n"
+                    "- **/ping**: Click a button that pings you!\n"
+                    "- **/poll**: Creates an embed with 10 default reactions.\n\n"
+                    "# 🧠 Information Commands\n\n"
+                    "-  **/help**: OutBot's Command Guide.\n"
+                    "- **/outbot**: Useful information about OutBot.\n"
+                    "- **/roadmap**: OutBot's planned features.\n\n"
+                    "# 🔗 Links Commands\n\n"
+                    "- **/youtube**: OutMyth's YouTube channel link.\n"
+                    "- **/discord**: OutMyth's Discord server invite link.\n"
+                    "- **/invite**: OutBot's invite link.**\n\n"
+                    "# ⚖️ Rules Commands\n\n"
+                    "- **outmythrules**: OutMyth's Rules.\n"
+                    "- **outbotrules**: OutBot's Rules.\n\n"
+                    "# 🙋‍♂️ Support Commands\n\n"
+                    "- **/reporthelp**: Teaches you how to create a good report.\n"
+                    "- **/report**: Report an issue. Including security related ones.\n"
+                    "- **feedbackhelp**: Teaches you how to create good feedback.\n"
+                    "- **feedback**: Give feeback to OutBot's developers.\n"
                 ),
                 # 0x5865F2 is Blurple
                 colour=0x5865F2,
-            ),
         )
-        embed_message.set_footer(text="For more information, please open a ticket.")
 
         await interaction.response.send_message(embed=embed_message)
 
@@ -94,25 +100,29 @@ class InformationCommands(commands.Cog):
             None
         """
         embed_message = discord.Embed(
-            title="🤖 OutBot\n\n",
+            title="About: ",
             description=(
-                f"- {BOT_VERSION}\n"
-                f"- {DATE_CREATED}\n"
-                f"- {LAST_MAJOR_UPDATED}\n"
-                f"- {GITHUB_LINK}\n"
-                f"- {DEVELOPERS}\n"
-                f"- {PRIVACY_POLICY}\n"
-                f"- {SECURITY_POLICY}\n"
-                f"- {OUTBOT_LICENSE}\n"
-                f"- {TERMS_OF_SERVICE}\n"
-                f"- {CONTRIBUTING_POLICY}\n"
-                f"- {CODE_OF_CONDUCT}\n"
+                "# Useful Information:\n\n"
+                f"- Bot Version: v{BOT_VERSION}\n"
+                f"- Log Retention: **{RETENTION}**\n"
+                f"- GitHub: {GITHUB_LINK}\n"
+                f"- Invite Link: {OUTBOT_INVITE_LINK}\n"
+                f"- License: {OUTBOT_LICENSE}\n"
+                f"- Privacy Policy: {PRIVACY_POLICY}\n"
+                f"- Security policy: {SECURITY_POLICY}\n"
+                f"- TOS: {TERMS_OF_SERVICE}\n"
+                f"- Contributing Policy: {CONTRIBUTING_POLICY}\n"
+                f"- Code Of Conduct: {CODE_OF_CONDUCT}\n"
             ),
             # 0x5865F2 is Blurple
             colour=0x5865F2,
         )
+        embed_message.add_field(
+            name="OutBot",
+            value="Outbot is a general utility bot that takes user privacy and security seriously. Most discord bots do not. You can find out more via the links above.",
+        )
         embed_message.set_footer(
-            text="OutBot was made with python using discord.py",
+            text=f"OutBot was made with python using discord.py. OutBot was developed by {DEVELOPERS}",
         )
 
         await interaction.response.send_message(embed=embed_message)
@@ -132,13 +142,17 @@ class InformationCommands(commands.Cog):
             None
         """
         embed_message = discord.Embed(
-            title="OutBot's Planned Features!\n\n",
+            title="OutBot's Planned Features!",
             description=(
-                "- Assign/Remove Onboarding roles"
-                "- Bot Settings Commands"
-                "- Role Information"
-                "- Improved Quality Of Existing Commands"
+                "# Next Update: \n"
+                "- Bot Settings Commands\n"
+                "- Role Information\n"
+                "- Improved Quality Of Existing Commands\n"
+                "- Diagnostic command (checking OutBot's config)\n"
+                "- Improved documentation\n"
             ),
+            # 0x2ECC71 is Emerald Green
+            colour=0x2ECC71,
         )
 
         await interaction.response.send_message(embed=embed_message)

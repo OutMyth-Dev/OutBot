@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 
+from config import MAX_REASON_LENGTH
 from utils import send_censor_word_warning
 
 
@@ -38,6 +39,10 @@ class FreeNitroButton(discord.ui.View):
             "https://tenor.com/view/rick-roll-nitro-gif-21997352",
             ephemeral=True,
         )
+        await interaction.followup.send(
+            "NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF ON THE INTERNET.",
+            ephemeral=True,
+        )
 
 
 class FunCommands(commands.Cog):
@@ -71,10 +76,6 @@ class FunCommands(commands.Cog):
         """
 
         await interaction.response.send_message(view=FreeNitroButton())
-        await interaction.followup.send(
-            "NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF ON THE INTERNET.",
-            ephemeral=True,
-        )
 
     @discord.app_commands.command(name="fakeban", description="Fake bans a user.")
     @discord.app_commands.describe(
@@ -106,13 +107,28 @@ class FunCommands(commands.Cog):
         if await send_censor_word_warning(interaction, reason):
             return
 
+        if len(reason) > MAX_REASON_LENGTH:
+            await interaction.response.send_message(
+                f"Please make your report under {MAX_REASON_LENGTH} character.",
+                ephemeral=True,
+            )
+            return
+
         embed_message = discord.Embed(
-            title=f"{user} has been banned",
+            title=f"{user} has been banned!",
             description=reason,
             # 0xFF0000 is Red
             colour=0xFF0000,
         )
-        embed_message.set_footer(text="Wait, how are they still here?")
+        embed_message.add_field(
+            name="Banned Duration",
+            value=f"{user} has been banned for: {duration} years.",
+        )
+        embed_message.add_field(
+            name="Amount of messages deleted",
+            value=f"{delete_messages} messages have been deleted that were from {user}.",
+        )
+        embed_message.set_footer(text="Uhhh, how are they still here?")
 
         await interaction.response.send_message(embed=embed_message)
 

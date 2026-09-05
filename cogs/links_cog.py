@@ -10,7 +10,7 @@ from config import (
 
 class LinksCommands(commands.Cog):
     """
-    Useful links about OutBot or OutMyth.
+    Useful links about OutBot/OutMyth.
 
     Attributes:
         None
@@ -39,19 +39,19 @@ class LinksCommands(commands.Cog):
             None
         """
         await interaction.response.send_message(
-            f"# OutMyth's YouTube Channel:\n\n{OUTMYTH_YOUTUBE_CHANNEL_LINK}\n\n"
+            f"# OutMyth's YouTube Channel:\n\n{OUTMYTH_YOUTUBE_CHANNEL_LINK}"
         )
 
     @discord.app_commands.command(
-        name="serverlink",
+        name="discord",
         description="OutMyth's Discord server invite link.",
     )
-    async def serverlink(
+    async def outmyth_discord_server_invite_link(
         self,
         interaction: discord.Interaction,
     ) -> None:
         """
-        OutMyth's serverlink
+        OutMyth's Discord server invite link.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
@@ -60,7 +60,6 @@ class LinksCommands(commands.Cog):
             None
         """
         await interaction.response.send_message(
-            # Todo: edit this to OutBot.
             f"# OutMyth's Discord Server:\n\n{DISCORD_SERVER_INVITE_LINK}"
         )
 
@@ -82,7 +81,7 @@ class LinksCommands(commands.Cog):
             None
         """
         await interaction.response.send_message(
-            f"Outbot Invite Link:\n\n{OUTBOT_INVITE_LINK}"
+            f"# Outbot's Invite Link:\n\n{OUTBOT_INVITE_LINK}"
         )
 
 

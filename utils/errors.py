@@ -1,13 +1,13 @@
 import discord
 
 
-async def error_message(interaction: discord.Interaction, message: str) -> None:
+async def error_message(interaction: discord.Interaction, embed: discord.Embed) -> None:
     """
     Checks if the command has been responded to.
 
     Args:
         interaction (discord.Interaction): The Discord command that triggered an error.
-        message (str): The error message the is going to be sent to the user.
+        embed (discord.Embed): The emebd error message that is going to be sent to the user.
 
     Returns:
         None

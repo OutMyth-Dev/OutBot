@@ -62,7 +62,7 @@ class OutBot(commands.Bot):
         embed_error_message = discord.Embed(
             title="Something went wrong. :(",
             description=(
-                "An unexpected error occurred. Please create a ticket or open a GitHub issue.",
+                "An unexpected error occurred. Please create a ticket/a GitHub issue.",
             ),
             # 0xE74C3C is Alizarin
             colour=0xE74C3C,
