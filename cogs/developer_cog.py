@@ -1,4 +1,5 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 from config import DEVELOPER, DISCORD_SERVER_INVITE_LINK
@@ -18,6 +19,7 @@ class DeveloperCommands(commands.Cog):
     @discord.app_commands.command(
         name="developers", description="What developers contributed to OutBot?"
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def developers(
         self,
         interaction: discord.Interaction,

@@ -1,4 +1,5 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 from config import MAX_MESSAGE_LENGTH
@@ -61,6 +62,7 @@ class FunCommands(commands.Cog):
         name="freenitro",
         description="Free nitro!",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def rickroll(
         self,
         interaction: discord.Interaction,
@@ -84,6 +86,7 @@ class FunCommands(commands.Cog):
         duration="How long will you like to ban this user for?",
         delete_messages="How many of the user's messages would you like to delete?",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def fakeban(
         self,
         interaction: discord.Interaction,

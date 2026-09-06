@@ -1,4 +1,5 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 from config import (
@@ -25,6 +26,7 @@ class LinksCommands(commands.Cog):
         name="youtube",
         description="OutMyth's YouTube channel link",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def youtube(
         self,
         interaction: discord.Interaction,
@@ -46,6 +48,7 @@ class LinksCommands(commands.Cog):
         name="discord",
         description="OutMyth's Discord server invite link.",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def outmyth_discord_server_invite_link(
         self,
         interaction: discord.Interaction,
@@ -67,6 +70,7 @@ class LinksCommands(commands.Cog):
         name="invite",
         description="OutBot's invite link.",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def invite(
         self,
         interaction: discord.Interaction,

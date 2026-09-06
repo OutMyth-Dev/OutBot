@@ -1,4 +1,5 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 from config import (
@@ -35,6 +36,7 @@ class InformationCommands(commands.Cog):
         name="help",
         description="OutBot's Command Guide",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def help(
         self,
         interaction: discord.Interaction,
@@ -89,6 +91,7 @@ class InformationCommands(commands.Cog):
         name="about",
         description="Useful Information About OutBot!",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def about(self, interaction: discord.Interaction) -> None:
         """
         General information about OutBot.
@@ -131,6 +134,7 @@ class InformationCommands(commands.Cog):
         name="roadmap",
         description="Planned Features For OutBot!",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def roadmap(self, interaction: discord.Interaction) -> None:
         """
         Features OutBot will get in future updates.

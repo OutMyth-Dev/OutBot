@@ -1,4 +1,5 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 from config import EMOJIS, MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
@@ -55,6 +56,7 @@ class GeneralCommands(commands.Cog):
         name="greet",
         description="OutBot greets you!",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def greet(
         self,
         interaction: discord.Interaction,
@@ -77,6 +79,7 @@ class GeneralCommands(commands.Cog):
         description="DMs the user. Please make sure you have your DMs turned on.",
     )
     @discord.app_commands.describe(dm="What would you like OutBot to DM you?")
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def dm(
         self,
         interaction: discord.Interaction,
@@ -92,7 +95,7 @@ class GeneralCommands(commands.Cog):
         Returns:
             None
         """
-        if await send_censor_word_warning(interaction, message):
+        if await send_censor_word_warning(interaction, dm):
             return
 
         if len(dm) > MAX_MESSAGE_LENGTH:
@@ -122,6 +125,7 @@ class GeneralCommands(commands.Cog):
         description="You tell the OutBot what to say!",
     )
     @discord.app_commands.describe(your_message="What would you like OutBot to say?")
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def echo(
         self,
         interaction: discord.Interaction,
@@ -162,6 +166,7 @@ class GeneralCommands(commands.Cog):
         name="ping",
         description="Click a magical button that pings you.",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def ping(self, interaction: discord.Interaction) -> None:
         """
         Pings the user who invoked the command.

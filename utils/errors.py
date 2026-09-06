@@ -1,7 +1,9 @@
 import discord
 
 
-async def error_message(interaction: discord.Interaction, embed: discord.Embed) -> None:
+async def error_message(
+    interaction: discord.Interaction, embed: discord.Embed, ephemeral: bool
+) -> None:
     """
     Checks if the command has been responded to.
 

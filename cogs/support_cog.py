@@ -1,4 +1,5 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 from config import MAX_MESSAGE_LENGTH
@@ -22,6 +23,7 @@ class SupportCommands(commands.Cog):
     @discord.app_commands.command(
         name="reporthelp", description="Explains what a good report looks like."
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def reporthelp(self, interaction: discord.Interaction) -> None:
         """
         Tells the user what makes a good report.
@@ -52,6 +54,7 @@ class SupportCommands(commands.Cog):
     @discord.app_commands.describe(
         report="Please describe what you would like to report. Use /reporhelp if you are unsure how to format a report."
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def report(
         self,
         interaction: discord.Interaction,
@@ -85,6 +88,7 @@ class SupportCommands(commands.Cog):
     @discord.app_commands.command(
         name="feedbackhelp", description="Explains what makes good feedback."
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def feedbackhelp(self, interaction: discord.Interaction) -> None:
         """
         Tells users how to create good feedback
@@ -115,6 +119,7 @@ class SupportCommands(commands.Cog):
     @discord.app_commands.describe(
         feedback=f"Give OutBot useful feedback. Please make sure it is under {MAX_MESSAGE_LENGTH} characters."
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def feedback(self, interaction: discord.Interaction, feedback: str) -> None:
         """
         A commmand users can use to send feedback.

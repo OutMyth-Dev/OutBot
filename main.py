@@ -47,30 +47,43 @@ class OutBot(commands.Bot):
             if cog.endswith("cog.py"):
                 await self.load_extension(f"cogs.{cog[:-3]}")
 
+        self.tree.on_error = self.on_app_command_error
         await self.tree.sync()
 
     async def on_app_command_error(
-        self, interaction: discord.Interaction, error: app_commands.AppCommandError
+        self,
+        interaction: discord.Interaction,
+        error: discord.app_commands.AppCommandError,
     ) -> None:
         """
-        Sends an embed when unexpected errors occur.
+        Sends an embed when unexpected errors occur or tells when they can use a commands again. (30 second cooldown.)
 
         Args:
             interaction (discord.Interaction): The discord that triggered the error
-            error (app_commands.AppCommandError): Checks for unexpected error.
+            error (app_commands.AppCommandError): Checks errors.
 
         Returns:
             None
         """
+        command_cooldown_error = isinstance(
+            error, discord.app_commands.CommandOnCooldown
+        )
+        if command_cooldown_error:
+            await interaction.response.send_message(
+                f"Rate limited! Try again in {error.retry_after:.2f} seconds.",
+                ephemeral=True,
+            )
+
         embed_error_message = discord.Embed(
             title="Uh, oh! Something went wrong :(.",
-            description=("An unexpected error occurred. Please open a ticket.",),
+            description="An unexpected error occurred. Please open a ticket.",
             # 0xE74C3C is Alizarin
             colour=0xE74C3C,
         )
-
-        await error_message(interaction, embed=embed_error_message)
+        await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
         logger.error(f"Unexpected error: {error}")
+
+        return None
 
 
 bot = OutBot(

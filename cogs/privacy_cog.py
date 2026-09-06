@@ -1,4 +1,5 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 from config import (
@@ -26,6 +27,7 @@ class PrivacyCommands(commands.Cog):
         name="privacy",
         description="Privacy related information about OutBot.",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def privacy(self, interaction: discord.Interaction) -> None:
         """
         Privacy related information about OutBot
@@ -55,6 +57,7 @@ class PrivacyCommands(commands.Cog):
         name="data",
         description="Information on what data OutBot retains.",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def data(self, interaction: discord.Interaction) -> None:
         """
         What data does OutBot collect about you/process
@@ -82,6 +85,7 @@ class PrivacyCommands(commands.Cog):
         name="logs",
         description="Information about OutBot's logs.",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def retention(self, interaction: discord.Interaction) -> None:
         """
         What does Outbot log?

@@ -1,4 +1,5 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 
@@ -18,6 +19,7 @@ class RulesCommands(commands.Cog):
         name="outmythrules",
         description="OutMyth's Discord Server Rules.",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def outmythrules(
         self,
         interaction: discord.Interaction,
@@ -59,6 +61,7 @@ class RulesCommands(commands.Cog):
         name="outbotrules",
         description="OutBot's Rules!",
     )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def outbotrules(
         self,
         interaction: discord.Interaction,
