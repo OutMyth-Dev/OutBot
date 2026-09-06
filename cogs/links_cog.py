@@ -18,7 +18,7 @@ class LinksCommands(commands.Cog):
 
     Methords:
         youtube: Sends OutMyth's YouTube channel link.
-        serverlink: Sends OutMyth's Discord server link.
+        discord: Sends OutMyth's Discord server link.
         invite: Sends the invite link for OutBot.
     """
 
