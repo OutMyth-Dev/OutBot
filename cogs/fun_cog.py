@@ -111,7 +111,7 @@ class FunCommands(commands.Cog):
             None
         """
         if await send_censor_word_warning(interaction, reason):
-            return None
+            return
 
         embed_message = discord.Embed(
             title=f"{user} has been banned!",

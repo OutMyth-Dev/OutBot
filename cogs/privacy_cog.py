@@ -4,7 +4,6 @@ from discord.ext import commands
 
 from config import (
     GITHUB_LINK,
-    OUTBOT_LICENSE,
     PRIVACY_POLICY,
     RETENTION,
 )

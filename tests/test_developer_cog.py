@@ -1,5 +1,6 @@
-import pytest
 from unittest.mock import AsyncMock, MagicMock
+
+import pytest
 
 from cogs import DeveloperCommands
 from config import DEVELOPER, DISCORD_SERVER_INVITE_LINK

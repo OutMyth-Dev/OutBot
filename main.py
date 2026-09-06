@@ -2,7 +2,6 @@ import logging
 import os
 
 import discord
-from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
@@ -72,7 +71,7 @@ class OutBot(commands.Bot):
                 f"Rate limited! Try again in {error.retry_after:.2f} seconds.",
                 ephemeral=True,
             )
-            return None
+            return
 
         embed_error_message = discord.Embed(
             title="Uh, oh! Something went wrong :(.",

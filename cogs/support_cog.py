@@ -72,7 +72,7 @@ class SupportCommands(commands.Cog):
             None
         """
         if await send_censor_word_warning(interaction, report):
-            return None
+            return
 
         with open("reports.txt", "a") as reports:
             reports.write(report + "\n")
@@ -110,7 +110,7 @@ class SupportCommands(commands.Cog):
         description="Provide OutBot useful feedback",
     )
     @discord.app_commands.describe(
-        feedback=f"Give OutBot useful feedback."
+        feedback="Give OutBot useful feedback."
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def feedback(
@@ -130,7 +130,7 @@ class SupportCommands(commands.Cog):
             None
         """
         if await send_censor_word_warning(interaction, feedback):
-            return None
+            return
 
         with open("feedback.txt", "a") as user_feedback:
             user_feedback.write(feedback + "\n")

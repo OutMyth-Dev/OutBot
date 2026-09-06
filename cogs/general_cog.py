@@ -99,7 +99,7 @@ class GeneralCommands(commands.Cog):
             None
         """
         if await send_censor_word_warning(interaction, dm):
-            return None
+            return
 
         try:
             await interaction.user.send(
@@ -144,7 +144,7 @@ class GeneralCommands(commands.Cog):
             None
         """
         if await send_censor_word_warning(interaction, your_message):
-            return None
+            return
 
         embed_message = discord.Embed(
             title=f"{user} has said: ",
@@ -207,10 +207,10 @@ class GeneralCommands(commands.Cog):
             None
         """
         if await send_censor_word_warning(interaction, title or question):
-            return None
+            return
 
         if await send_censor_word_warning(interaction, title and question):
-            return None
+            return
 
         embed_message = discord.Embed(
             title=title,

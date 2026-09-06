@@ -1,7 +1,6 @@
 BOT_VERSION: float = 0.4
 DATE_CREATED: str = "July 11th 2026"
 DEVELOPER: str = "mythordian"
-LAST_MAJOR_UPDATED: str = "July 28th 2026"
 RETENTION: str = "1 day"
 
 CODE_OF_CONDUCT: str = "<https://github.com/OutMyth-Dev/OutBot?tab=coc-ov-file>"
