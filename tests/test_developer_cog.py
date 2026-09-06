@@ -23,3 +23,5 @@ async def test_developer():
         text=f"You can apply here: {DISCORD_SERVER_INVITE_LINK}"
     )
     
+if __name__ == "__main__":
+    test_developer()
