@@ -61,7 +61,7 @@ https://discord.com/oauth2/authorize?client_id=1525595736706781384
 
 OutBot does **NOT** use prefix  commands. Therefore, command_prefix=None. OutBot currently has 20+ slash commands.
 
-OutBot Config
+OutBot's Config:
 ```py
 bot = OutBot(
     command_prefix=None,
@@ -79,17 +79,25 @@ bot = OutBot(
 - discord.py 2.7.1
 - git (Install link - https://git-scm.com/install/)
 
+base.txt:
 ```text
 discord.py==2.7.1
-dpytest==0.0.22
-pytest==9.1.1
-pytest-asyncio==1.4.0  
 python-dotenv==1.2.3
+```
+developer.txt
+```text
 ruff==0.16.6
 cloc==0.2.5
 ```
 
-These can be found in the file "requirements.txt". Make sure your requirements.txt has them
+test.txt
+```text
+dpytest==0.0.22
+pytest==9.1.1
+pytest-asyncio==1.4.0
+```
+
+These can be found in the directory "requirements". Make sure your base.txt, developer.txt, and test.txt has them.
 
 ## Getting A Local Copy Of OutBot.
 
@@ -118,7 +126,19 @@ Windows:
 ```
 
 ```shell
-pip install -r requirements.txt
+pip install -r requirements/base.txt
+```
+
+You can decide if you want to use tests or ruff/cloc.
+
+If you want to use tests:
+```shell
+pip install -r requirements/tests.txt
+```
+
+If you want to use ruff and cloc use:
+```shell
+pip install -r requirements/developer.txt
 ```
 
 # Discord Setup
