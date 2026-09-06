@@ -1,6 +1,1 @@
-EMOJIS: tuple(str) = (
-    "👍",
-    "👎",
-    "✅",
-    "❌",
-)
+EMOJIS: tuple(str) = ("👍", "👎", "✅", "❌")
