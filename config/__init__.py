@@ -18,8 +18,3 @@ from .bot_info import (
 from .censor_words import CENSOR_WORDS
 from .emojis import EMOJIS
 from .logging import custom_logger
-from .max_chars import (
-    MAX_MESSAGE_LENGTH,
-    MAX_QUESTION_LENGTH,
-    MAX_TITLE_LENGTH,
-)

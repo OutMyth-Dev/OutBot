@@ -7,7 +7,6 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 from config import custom_logger
-from utils import error_message
 
 custom_logger()
 logger = logging.getLogger(__name__)
@@ -73,6 +72,7 @@ class OutBot(commands.Bot):
                 f"Rate limited! Try again in {error.retry_after:.2f} seconds.",
                 ephemeral=True,
             )
+            return None
 
         embed_error_message = discord.Embed(
             title="Uh, oh! Something went wrong :(.",
@@ -80,10 +80,18 @@ class OutBot(commands.Bot):
             # 0xE74C3C is Alizarin
             colour=0xE74C3C,
         )
-        await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
-        logger.error(f"Unexpected error: {error}")
+        if interaction.response.is_done():
+            await interaction.followup.send(
+                embed=embed_error_message,
+                ephemeral=True,
+            )
 
-        return None
+        else:
+            await interaction.response.send_message(
+                embed=embed_error_message,
+                ephemeral=True,
+            )
+        logger.error(f"Unexpected error: {error}")
 
 
 bot = OutBot(

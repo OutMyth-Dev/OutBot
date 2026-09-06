@@ -4,6 +4,7 @@ from unittest.mock import AsyncMock, MagicMock
 from cogs import DeveloperCommands
 from config import DEVELOPER, DISCORD_SERVER_INVITE_LINK
 
+
 @pytest.mark.asyncio
 async def test_developer():
     developer_cog = DeveloperCommands(MagicMock())
@@ -22,6 +23,7 @@ async def test_developer():
     interaction.response.send_message.set_footer(
         text=f"You can apply here: {DISCORD_SERVER_INVITE_LINK}"
     )
-    
+
+
 if __name__ == "__main__":
     test_developer()

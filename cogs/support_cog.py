@@ -2,7 +2,6 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from config import MAX_MESSAGE_LENGTH
 from utils import send_censor_word_warning
 
 
@@ -42,8 +41,7 @@ class SupportCommands(commands.Cog):
             "- User's username only if you're reporting a user.\n"
             "- Make sure you provide as much detail as possible.\n"
             "- Please make sure you include a way for us to contact.\n"
-            "- Your report/s are deleted as soon as they are delt with.\n"
-            f"MAKE SURE YOUR REPORT IS UNDER {MAX_REPORT_LENGTH} CHARACTERS.",
+            "- Your report/s are deleted as soon as they are delt with.\n",
             ephemeral=True,
         )
 
@@ -58,27 +56,23 @@ class SupportCommands(commands.Cog):
     async def report(
         self,
         interaction: discord.Interaction,
-        report: str,
+        report: app_commands.Range[str, 1, 1999],
     ) -> None:
         """
         A command users can use to report an issue.
 
         Args:
             interaction (discord.Interaction): The discord command being invoked
-            report (str): What report the user passes in.
+            report (str): What report the user passes in. Maximum length: 1999 characters.
+
+        Allowed Mentions:
+            N/A
 
         Returns:
             None
         """
         if await send_censor_word_warning(interaction, report):
-            return
-
-        if len(report) > MAX_MESSAGE_LENGTH:
-            await interaction.response.send_message(
-                f"Please make your report under {MAX_MESSAGE_LENGTH} character, or split it across multiple reports.",
-                ephemeral=True,
-            )
-            return
+            return None
 
         with open("reports.txt", "a") as reports:
             reports.write(report + "\n")
@@ -107,8 +101,7 @@ class SupportCommands(commands.Cog):
             "- Make sure you provide as much detail as possible.\n"
             "- Please make sure you include a way for us to contact.\n"
             "- Your feedback is deleted as soon as it is delt with.\n"
-            "- Your feedback can contian bug reporting and security reporting for now. You can also report a security issue using /report.\n"
-            f"MAKE SURE YOUR FEEDBACK IS UNDER {MAX_MESSAGE_LENGTH} CHARACTERS",
+            "- Your feedback can contian bug reporting and security reporting for now. You can also report a security issue using /report.\n",
             ephemeral=True,
         )
 
@@ -117,26 +110,27 @@ class SupportCommands(commands.Cog):
         description="Provide OutBot useful feedback",
     )
     @discord.app_commands.describe(
-        feedback=f"Give OutBot useful feedback. Please make sure it is under {MAX_MESSAGE_LENGTH} characters."
+        feedback=f"Give OutBot useful feedback."
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def feedback(self, interaction: discord.Interaction, feedback: str) -> None:
+    async def feedback(
+        self, interaction: discord.Interaction, feedback: app_commands.Range[str, 1, 1999]
+    ) -> None:
         """
         A commmand users can use to send feedback.
 
         Args:
             interaction(discord.Interaction): The discord command being invoked.
-            feedback (str): What feedback the user passes in.
+            feedback (str): What feedback the user passes in. Maximum length: 1999 characters.
+
+        Allowed Mentions:
+            N/A
+
+        Retturns:
+            None
         """
         if await send_censor_word_warning(interaction, feedback):
-            return
-
-        if len(feedback) > MAX_MESSAGE_LENGTH:
-            await interaction.response.send_message(
-                f"Please make your feedback under {MAX_MESSAGE_LENGTH} character, or split it across multiple feeback messages.",
-                ephemeral=True,
-            )
-            return
+            return None
 
         with open("feedback.txt", "a") as user_feedback:
             user_feedback.write(feedback + "\n")

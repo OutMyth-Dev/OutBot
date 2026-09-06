@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from config import EMOJIS, MAX_MESSAGE_LENGTH, MAX_QUESTION_LENGTH, MAX_TITLE_LENGTH
+from config import EMOJIS
 from utils import send_censor_word_warning
 
 
@@ -83,33 +83,32 @@ class GeneralCommands(commands.Cog):
     async def dm(
         self,
         interaction: discord.Interaction,
-        dm: str,
+        dm: app_commands.Range[str, 1, 1000],
     ) -> None:
         """
         DM the user who invoked the command.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-            dm (str): The message the user wants to be DMed by OutBot.
+            dm (str): The message the user wants to be DMed by OutBot. Maximum length: 1000 characters.
+
+        Allowed Mentions:
+            None
 
         Returns:
             None
         """
         if await send_censor_word_warning(interaction, dm):
-            return
-
-        if len(dm) > MAX_MESSAGE_LENGTH:
-            await interaction.response.send_message(
-                f"Your message was too long. Please make it less than {MAX_MESSAGE_LENGTH} characters.",
-                ephemeral=True,
-            )
-            return
+            return None
 
         try:
-            await interaction.user.send(f"||{dm}||")
+            await interaction.user.send(
+                f"||{dm}||", allowed_mentions=discord.AllowedMentions.none()
+            )
+
             (
                 await interaction.response.send_message(
-                    "Check your DMs!",
+                    "DM has been sent!",
                     ephemeral=True,
                 ),
             )
@@ -129,31 +128,28 @@ class GeneralCommands(commands.Cog):
     async def echo(
         self,
         interaction: discord.Interaction,
-        your_message: str,
+        your_message: app_commands.Range[str, 1, 750],
     ) -> None:
         """
         Says what the user passed in.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-            your_message (str): What the user wants OutBot to say.
+            your_message (str): What the user wants OutBot to say. Maximum length: 750 characters.
+
+        Allowed Mention:
+            None
 
         Returns:
             None
         """
         if await send_censor_word_warning(interaction, your_message):
-            return
-
-        if len(your_message) > MAX_MESSAGE_LENGTH:
-            await interaction.response.send_message(
-                f"Your message was too long. Please make it less than {MAX_MESSAGE_LENGTH} characters.",
-                ephemeral=True,
-            )
-            return
+            return None
 
         embed_message = discord.Embed(
             title=f"{user} has said: ",
             description=f"{your_message}",
+            allowed_mentions=discord.AllowedMentions.none(),
             # 0x2ECC71 is Emerald
             colour=0x2ECC71,
         )
@@ -174,7 +170,11 @@ class GeneralCommands(commands.Cog):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
 
-        Returns None.
+        Allowed Mentions:
+            None
+
+        Returns:
+            None
         """
         await interaction.response.send_message(view=PingUserButton())
 
@@ -189,49 +189,32 @@ class GeneralCommands(commands.Cog):
     async def poll(
         self,
         interaction: discord.Interaction,
-        title: str,
-        question: str,
+        title: app_commands.Range[str, 1, 100],
+        question: app_commands.Range[str, 1, 150],
     ) -> None:
         """
         Creates an embed with a title and a question that users can add reactions to.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-            title (str): The title the user wants their embed to have.
-            question (str): The question of their poll (description).
+            title (str): The title the user wants their embed to have. Maximum length: 100 characters.
+            question (str): The question of their poll (description). Maximum length: 150 characters.
+
+        Allowed Mentions:
+            None
 
         Returns:
             None
         """
         if await send_censor_word_warning(interaction, title or question):
-            return
+            return None
 
         if await send_censor_word_warning(interaction, title and question):
-            return
-
-        if len(title) > MAX_TITLE_LENGTH and len(question) > MAX_QUESTION_LENGTH:
-            await interaction.response.send_message(
-                f"Please make your title less than {MAX_TITLE_LENGTH} characters and your question less than {MAX_QUESTION_LENGTH} characters.",
-                ephemeral=True,
-            )
-            return
-
-        if len(title) > MAX_TITLE_LENGTH:
-            await interaction.response.send_message(
-                f"Your title is too long. Please make it less than {MAX_TITLE_LENGTH} characters.",
-                ephemeral=True,
-            )
-            return
-
-        if len(question) > MAX_QUESTION_LENGTH:
-            await interaction.response.send_message(
-                f"Your question is too long. Please make it less than {MAX_QUESTION_LENGTH} characters.",
-                ephemeral=True,
-            )
-            return
+            return None
 
         embed_message = discord.Embed(
             title=title,
+            allowed_mentions=discord.AllowedMentions.none(),
             description=question,
         )
 

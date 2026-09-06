@@ -2,7 +2,6 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from config import MAX_MESSAGE_LENGTH
 from utils import send_censor_word_warning
 
 
@@ -63,7 +62,7 @@ class FunCommands(commands.Cog):
         description="Free nitro!",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def rickroll(
+    async def freenitro(
         self,
         interaction: discord.Interaction,
     ) -> None:
@@ -91,9 +90,9 @@ class FunCommands(commands.Cog):
         self,
         interaction: discord.Interaction,
         user: discord.Member,
-        reason: str,
-        duration: int,
-        delete_messages: int,
+        reason: app_commands.Range[str, 1, 200],
+        duration: app_commands.Range[int, 1, 1000],
+        delete_messages: app_commands.Range[int, 1, 1000],
     ) -> None:
         """
         Fake bans the user.
@@ -101,21 +100,18 @@ class FunCommands(commands.Cog):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
             user (discord.Member): Who does the the person using the command want to ban?
-            reason (str): What is the reason for banning them?
-            duration (int): How long do they want the user to stay banned.
-            delete_messages (int): How many of their messages do they want to delete?
+            reason (str): What is the reason for banning them? Maximum length: 200 characters.
+            duration (int): How long do they want the user to stay banned. Maximum length: Any number 1 - 1000.
+            delete_messages (int): How many of their messages do they want to delete? Maximum length: Any number 1 - 1000.
+
+        Allowed Mentions:
+            Other users
+
         Returns:
             None
         """
         if await send_censor_word_warning(interaction, reason):
-            return
-
-        if len(reason) > MAX_MESSAGE_LENGTH:
-            await interaction.response.send_message(
-                f"Please make your report under {MAX_MESSAGE_LENGTH} character.",
-                ephemeral=True,
-            )
-            return
+            return None
 
         embed_message = discord.Embed(
             title=f"{user} has been banned!",
@@ -126,6 +122,11 @@ class FunCommands(commands.Cog):
         embed_message.add_field(
             name="Banned Duration",
             value=f"{user} has been banned for: {duration} years.",
+            allowed_mentions=discord.AllowedMentions(
+                user=True,
+                roles=False,
+                everyone=False,
+            ),
         )
         embed_message.add_field(
             name="Amount of messages deleted",
