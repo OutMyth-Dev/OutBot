@@ -1,4 +1,4 @@
-CENSOR_WORDS: tuple = (
+CENSOR_WORDS: tuple(str) = (
     "fy",
     "fuking",
     "whorehouse",

@@ -14,7 +14,9 @@ logger = logging.getLogger(__name__)
 
 
 load_dotenv("config/.env")
-DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+DISCORD_TOKEN: str | None = os.getenv("DISCORD_TOKEN")
+if DISCORD_TOKEN is None:
+    raise RuntimeError("Your discord token cannot be none.")
 
 
 class OutBot(commands.Bot):
