@@ -62,7 +62,7 @@ https://discord.com/oauth2/authorize?client_id=1525595736706781384
 OutBot does **NOT** use prefix  commands. Therefore, command_prefix=None. OutBot currently has 20+ slash commands.
 
 OutBot Config
-```text
+```py
 bot = OutBot(
     command_prefix=None,
     intents=discord.Intents.default(),
@@ -80,47 +80,56 @@ bot = OutBot(
 - git (Install link - https://git-scm.com/install/)
 
 ```text
-discord.py
-dpytest
-pytest
-pytest-asyncio
-python-dotenv
+discord.py==2.7.1
+dpytest==0.0.22
+pytest==9.1.1
+pytest-asyncio==1.4.0  
+python-dotenv==1.2.3
+ruff==0.16.6
+cloc==0.2.5
 ```
 
 These can be found in the file "requirements.txt". Make sure your requirements.txt has them
 
----
+## Getting A Local Copy Of OutBot.
 
-## Installing OutBot
-
-Run the following command in your terminal to get a local copy of OutBot:
-```text
+```shell
 git clone https://github.com/OutMyth-Dev/OutBot.git
 ```
 
-Switch to OutBot's directory:
-```text
+```shell
 cd OutBot
 ```
 
-Install all dependencies:
-```text
+## Creating A Virtual Environment
+
+```shell
+python -m venv .venv
+```
+
+macOS/Linix:
+```shell
+source .venv/bin/activate
+```
+
+Windows:
+```shell
+.venv\Scripts\Activate.ps1
+```
+
+```shell
 pip install -r requirements.txt
 ```
 
----
-
 # Discord Setup
-
----
 
 # WARNING
 
 DO NOT SHARE YOUR DISCORD BOT TOKEN WITH ANYONE. IF YOU DO, YOU GIVE THEM ACCESS TO YOUR BOT. THEY CAN EVEN FIND YOU EMAIL WITH IT.
 
-### .env
+### Why Do We Need A Discord Bot Token?
 
-You now have a local copy of OutBot on your computer. For OutBot actually run, we will need a Discord Bot Token. 
+You now have a local copy of OutBot on your computer. For OutBot to actually run, we will need a Discord Bot Token. 
 
 ### Discord Developer Portal Setup.
 
@@ -136,13 +145,11 @@ On Discord Developer portal, click "Bot" and then click "Reset Token". Click "Ye
 
 ### Adding Your Bot To Your Apps/Server(s)
 
-Go to the "Installation" tab (discord developer portal); copy the install link and paste the install link into your browser.Then you can choose whether you want OutBot in your apps or if you would like to add OutBot to your server/s. 
+Go to the "Installation" tab (discord developer portal); copy the install link and paste the install link into your browser. Then, choose whether you want OutBot in your apps or if you would like to add OutBot to your server/s. 
 
-# Important
+# IMPORTANT NOTE
 
 **IF YOU DO NOT ADD YOUR DISCORD BOT TOKEN TO ".env", A RUNTIME ERROR WILL BE RAISED.**
-
----
 
 # "I just want OutBot in my discord server/add it to my apps".
 

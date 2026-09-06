@@ -5,7 +5,7 @@ Users reports and feedback **are deleted as soon as they are dealt with appropri
 - Logs use a logging mode of **a** (append).
 
 > This is how logging.py is configured.
-```text
+```py
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
@@ -27,6 +27,9 @@ def custom_logger() -> None:
     logger.addHandler(file_handler)
 ```
 
-OutBot uses **NO** privileged intents. Therefore, intents=discord.Intents.default().
+OutBot uses **NO** privileged intents. Therefore: 
+```py
+intents=discord.Intents.default().
+```
 
 If you have any privacy concerns, please open a GitHub issue, create a ticket on OutMyth's discord server, or use /report.
