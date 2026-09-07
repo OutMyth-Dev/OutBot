@@ -7,3 +7,4 @@ feedback.txt
 reports.txt
 .venv/
 .pytest_cache
+.vscode/
