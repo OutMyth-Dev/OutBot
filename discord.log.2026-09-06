@@ -1,0 +1,1579 @@
+2026-09-04 21:23:56,150 | INFO | discord.client | logging in using static token
+2026-09-04 21:24:54,146 | INFO | discord.client | logging in using static token
+2026-09-04 21:24:56,036 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: ad2dc2959f656396b3ff5d06ece19651).
+2026-09-04 21:26:22,000 | INFO | discord.client | logging in using static token
+2026-09-04 21:27:13,435 | INFO | discord.client | logging in using static token
+2026-09-04 21:28:17,081 | INFO | discord.client | logging in using static token
+2026-09-04 21:28:19,097 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 8793249fb098c08073bc1bfaed9ff80c).
+2026-09-04 21:29:12,014 | ERROR | discord.client | Attempting a reconnect in 1.00s
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1571, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1181, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1212, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 987, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\gateway.py", line 392, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\http.py", line 571, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client.py", line 1244, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client.py", line 856, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client.py", line 810, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 657, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1242, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1577, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [getaddrinfo failed]
+2026-09-04 21:29:17,295 | ERROR | discord.client | Attempting a reconnect in 0.83s
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\gateway.py", line 419, in from_client
+    await ws.poll_event()
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\gateway.py", line 644, in poll_event
+    await self.received_message(msg.data)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\gateway.py", line 556, in received_message
+    await self.send_as_json(self._keep_alive.get_payload())
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\gateway.py", line 681, in send_as_json
+    await self.send(utils._to_json(data))
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\gateway.py", line 677, in send
+    await self.socket.send_str(data)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client_ws.py", line 289, in send_str
+    await self._writer.send_frame(
+        data.encode("utf-8"), WSMsgType.TEXT, compress=compress
+    )
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\_websocket\writer.py", line 82, in send_frame
+    self._write_websocket_frame(message, opcode, 0)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\_websocket\writer.py", line 150, in _write_websocket_frame
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2026-09-04 21:29:18,183 | ERROR | discord.client | Attempting a reconnect in 2.95s
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1301, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohappyeyeballs\impl.py", line 124, in start_connection
+    raise first_exception
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohappyeyeballs\impl.py", line 75, in start_connection
+    sock = await _connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohappyeyeballs\impl.py", line 210, in _connect_sock
+    await loop.sock_connect(sock, address)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 728, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 807, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+PermissionError: [WinError 5] Access is denied
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\gateway.py", line 392, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\http.py", line 571, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client.py", line 1244, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client.py", line 856, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client.py", line 810, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 657, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1242, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1620, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1589, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1324, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Access is denied]
+2026-09-04 21:29:26,807 | ERROR | discord.client | Attempting a reconnect in 2.07s
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1316, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs, sock=sock)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 1198, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        ssl_shutdown_timeout=ssl_shutdown_timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 1231, in _create_connection_transport
+    await waiter
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\sslproto.py", line 581, in _on_handshake_complete
+    raise handshake_exc
+ConnectionResetError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\gateway.py", line 392, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\http.py", line 571, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client.py", line 1244, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client.py", line 856, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\client.py", line 810, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 657, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1242, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1620, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1589, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\aiohttp\connector.py", line 1324, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [None]
+2026-09-04 21:29:34,552 | INFO | discord.gateway | Shard ID None has successfully RESUMED session 8793249fb098c08073bc1bfaed9ff80c.
+2026-09-04 21:30:30,642 | ERROR | discord.client | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1227, in get_prefix
+    ret = list(ret)  # type: ignore
+TypeError: 'NoneType' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\client.py", line 508, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1421, in on_message
+    await self.process_commands(message)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1416, in process_commands
+    ctx = await self.get_context(message)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1315, in get_context
+    prefix = await self.get_prefix(origin)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1234, in get_prefix
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: command_prefix must be plain string, iterable of strings, or callable returning either of these, not NoneType
+2026-09-04 21:31:26,476 | INFO | discord.client | logging in using static token
+2026-09-04 21:31:29,394 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 9fcf1f912d0f6f5a1880773669457fe6).
+2026-09-04 21:31:39,847 | ERROR | discord.ui.view | Ignoring exception in view <FreeNitroButton timeout=180.0 children=1> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='Click me for free nitro!!!' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ui\view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "C:\OutBot\cogs\fun_cog.py", line 38, in free_nitro_button_callback
+    await interaction.response.send_message(
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        "https://tenor.com/view/rick-roll-nitro-gif-21997352",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF ON THE INTERNET.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ephemeral=True,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: InteractionResponse.send_message() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2026-09-04 21:32:32,116 | INFO | discord.client | logging in using static token
+2026-09-04 21:32:36,983 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: a4779518d38ff055fa0d1af0241dd3d1).
+2026-09-04 21:32:50,208 | ERROR | discord.ui.view | Ignoring exception in view <FreeNitroButton timeout=180.0 children=1> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='Click me for free nitro!!!' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ui\view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "C:\OutBot\cogs\fun_cog.py", line 38, in free_nitro_button_callback
+    await interaction.response.send_message(
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        "https://tenor.com/view/rick-roll-nitro-gif-21997352",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF ON THE INTERNET.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ephemeral=True,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: InteractionResponse.send_message() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2026-09-04 21:33:16,228 | INFO | discord.client | logging in using static token
+2026-09-04 21:33:22,076 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: f44b20d25673644de0ce8689b59e94bf).
+2026-09-04 21:33:36,338 | ERROR | discord.ui.view | Ignoring exception in view <FreeNitroButton timeout=180.0 children=1> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='Click me for free nitro!!!' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ui\view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "C:\OutBot\cogs\fun_cog.py", line 38, in free_nitro_button_callback
+    await interaction.response.send_message(
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        "https://tenor.com/view/rick-roll-nitro-gif-21997352",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF ON THE INTERNET.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ephemeral=True,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: InteractionResponse.send_message() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2026-09-04 21:33:59,864 | INFO | discord.client | logging in using static token
+2026-09-04 21:34:04,490 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: eaf5bb25d491594a9ca56403096b15dc).
+2026-09-04 21:37:19,480 | INFO | discord.gateway | Shard ID None has successfully RESUMED session eaf5bb25d491594a9ca56403096b15dc.
+2026-09-04 21:40:44,495 | INFO | discord.client | logging in using static token
+2026-09-04 21:40:48,386 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: c9824e7af465c80d91a56669aabdcf73).
+2026-09-04 21:41:02,923 | ERROR | discord.app_commands.tree | Ignoring exception in command 'fakeban'
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\cogs\fun_cog.py", line 123, in fakeban
+    embed.add_field(name="Banned Duration", value=f" They have been banned for: {duration} years")
+    ^^^^^
+NameError: name 'embed' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'fakeban' raised an exception: NameError: name 'embed' is not defined
+2026-09-04 21:41:20,653 | INFO | discord.client | logging in using static token
+2026-09-04 21:41:23,904 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 68ac044c8e54e7a14b09996c8f53a046).
+2026-09-04 21:41:55,371 | INFO | discord.client | logging in using static token
+2026-09-04 21:41:58,277 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 962403f52bd3d1b70493b85c8d40e050).
+2026-09-04 21:42:26,573 | INFO | discord.client | logging in using static token
+2026-09-04 21:42:29,612 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 7203c7f9e91d5912e2422de4781d209f).
+2026-09-04 21:43:59,281 | INFO | discord.client | logging in using static token
+2026-09-04 21:44:02,775 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: c13a00e5bb0c77de2b7f142880087e39).
+2026-09-04 21:46:27,935 | INFO | discord.client | logging in using static token
+2026-09-04 21:46:32,222 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 8967d5a5f1a5c93ac0b02c6d24c28726).
+2026-09-04 21:49:45,674 | INFO | discord.client | logging in using static token
+2026-09-04 21:49:49,024 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 3a7a948680e6761f22286acbb9a87115).
+2026-09-04 21:51:21,994 | INFO | discord.client | logging in using static token
+2026-09-04 21:51:24,902 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: dcfbec90ad255910bb5192de1d76233b).
+2026-09-04 21:55:14,828 | INFO | discord.client | logging in using static token
+2026-09-04 21:55:17,970 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 57a3b44e9e692b187a5103faa0ea48ee).
+2026-09-04 22:03:55,500 | INFO | discord.client | logging in using static token
+2026-09-04 22:04:16,793 | INFO | discord.client | logging in using static token
+2026-09-04 22:04:31,669 | INFO | discord.client | logging in using static token
+2026-09-04 22:04:50,182 | INFO | discord.client | logging in using static token
+2026-09-04 22:05:57,216 | INFO | discord.client | logging in using static token
+2026-09-04 22:06:01,969 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 66738651349027d96ef7a14892ad303f).
+2026-09-04 22:16:53,205 | INFO | discord.client | logging in using static token
+2026-09-04 22:16:56,851 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 68e23fbbb0f215a17aae8fa3cb41413e).
+2026-09-04 22:17:53,479 | INFO | discord.client | logging in using static token
+2026-09-04 22:17:58,022 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: f4476f3624a2af749f0b28d5f777ad1b).
+2026-09-04 22:18:17,024 | ERROR | discord.app_commands.tree | Ignoring exception in command 'roadmap'
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\cogs\information_cog.py", line 143, in roadmap
+    embed_message.set_footer("All of these features should be implemented into OutBot by v0.7")
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Embed.set_footer() takes 1 positional argument but 2 were given
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 873, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'roadmap' raised an exception: TypeError: Embed.set_footer() takes 1 positional argument but 2 were given
+2026-09-04 22:29:42,965 | INFO | discord.client | logging in using static token
+2026-09-04 22:29:46,117 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 287f60061aeb49b101130c30a5956ada).
+2026-09-04 22:30:47,840 | INFO | discord.client | logging in using static token
+2026-09-04 22:30:51,199 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: fab271fed34d9f946ed667922d383635).
+2026-09-04 22:33:56,040 | INFO | discord.client | logging in using static token
+2026-09-04 22:33:59,603 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: facece607dfbf508fe53f262bb9b85b9).
+2026-09-04 22:34:31,196 | INFO | discord.client | logging in using static token
+2026-09-04 22:34:34,386 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 1b931f87c4d61081a1e801dad6b633dd).
+2026-09-04 22:36:01,178 | INFO | discord.client | logging in using static token
+2026-09-04 22:36:04,847 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 9b7a2a53fc3427b349cf5c0b174a7318).
+2026-09-04 22:40:48,444 | INFO | discord.client | logging in using static token
+2026-09-04 22:40:51,817 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: da7b16fd1ecafe9e3df6e865956bed1c).
+2026-09-04 22:43:11,530 | INFO | discord.client | logging in using static token
+2026-09-04 22:43:14,524 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 53ac7b9c058366d5c3aa7e04a96906d7).
+2026-09-04 22:43:50,657 | INFO | discord.client | logging in using static token
+2026-09-04 22:43:53,847 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 0e0990403b9113f7e54224a809b2517a).
+2026-09-04 22:44:09,444 | ERROR | discord.app_commands.tree | Ignoring exception in command 'help'
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\cogs\information_cog.py", line 80, in help
+    embed_message.set_footer(text="For more information, please open a ticket.")
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'set_footer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'help' raised an exception: AttributeError: 'tuple' object has no attribute 'set_footer'
+2026-09-05 09:50:57,499 | INFO | discord.client | logging in using static token
+2026-09-05 09:51:00,757 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: cf626a6234cff0623b37eeec39e17293).
+2026-09-05 09:51:41,000 | INFO | discord.client | logging in using static token
+2026-09-05 09:51:43,919 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 339327bffad31617dab990c0526a7081).
+2026-09-05 09:52:02,226 | INFO | discord.client | logging in using static token
+2026-09-05 09:52:31,579 | INFO | discord.client | logging in using static token
+2026-09-05 09:53:14,468 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: c8c0c39610ab9d8c4e01b56278769e32).
+2026-09-05 09:54:01,190 | INFO | discord.client | logging in using static token
+2026-09-05 09:54:03,832 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 125994e15a72169feb67211029079677).
+2026-09-05 09:55:40,060 | INFO | discord.client | logging in using static token
+2026-09-05 09:55:42,080 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 45129f366fa10b05786a9ebd1cbf79fd).
+2026-09-05 09:57:23,158 | INFO | discord.client | logging in using static token
+2026-09-05 09:57:25,757 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 8fa1974f65c9913f9f858a33bd83818d).
+2026-09-05 09:58:10,737 | INFO | discord.client | logging in using static token
+2026-09-05 09:58:13,388 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 08c82211e3f9b011b59f68b51bc9e32a).
+2026-09-05 10:01:09,525 | INFO | discord.client | logging in using static token
+2026-09-05 10:01:12,810 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 71cb49e4633658b1c940e30077377ba2).
+2026-09-05 10:12:13,694 | INFO | discord.client | logging in using static token
+2026-09-05 10:12:15,941 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 8e1b072c42ec162bfe10c96e01bb3dc1).
+2026-09-05 10:12:23,270 | ERROR | discord.app_commands.tree | Ignoring exception in command 'help'
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\cogs\information_cog.py", line 84, in help
+    embed_message.set_footer(text="For more information, please open a ticket.")
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'set_footer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'help' raised an exception: AttributeError: 'tuple' object has no attribute 'set_footer'
+2026-09-05 10:13:25,399 | INFO | discord.client | logging in using static token
+2026-09-05 10:13:27,704 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 8b82baf9e1d8b92844ace975a35b7c8a).
+2026-09-05 10:28:26,929 | INFO | discord.client | logging in using static token
+2026-09-05 10:28:29,589 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 7576407d5c59ff41c363168951431df1).
+2026-09-05 10:28:56,151 | INFO | discord.client | logging in using static token
+2026-09-05 10:28:59,913 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 62d93b1654fe3671382e222dd8f6ac19).
+2026-09-05 10:29:56,546 | INFO | discord.client | logging in using static token
+2026-09-05 10:29:59,355 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 16899583ded32f802e6926d5307ecad5).
+2026-09-05 10:31:14,645 | INFO | discord.client | logging in using static token
+2026-09-05 10:31:17,245 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 997aa24947e3748f3bb3eba3069c51e2).
+2026-09-05 10:34:28,271 | INFO | discord.client | logging in using static token
+2026-09-05 10:34:30,715 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: d91f15fe979eb1154eaa774e1c2186da).
+2026-09-05 10:39:18,690 | INFO | discord.client | logging in using static token
+2026-09-05 10:40:17,519 | INFO | discord.client | logging in using static token
+2026-09-05 10:40:19,778 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 3ea32235c3581e800c8ad146fca258b9).
+2026-09-05 10:41:13,177 | INFO | discord.client | logging in using static token
+2026-09-05 10:41:31,916 | INFO | discord.client | logging in using static token
+2026-09-05 10:41:35,792 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 7d256cec6b6b3c111c71b60e14c7fe82).
+2026-09-05 10:42:52,241 | INFO | discord.client | logging in using static token
+2026-09-05 10:42:54,572 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 0d78890d4d77dda8cfd0ba4f17f60b3e).
+2026-09-05 10:43:41,569 | INFO | discord.client | logging in using static token
+2026-09-05 10:43:43,959 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 40b07a2f58b4bb786a72ce15ceea9d24).
+2026-09-05 10:44:51,905 | INFO | discord.client | logging in using static token
+2026-09-05 10:44:54,259 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 6de249a0d9a3f745386b8da412f571bc).
+2026-09-05 10:45:53,121 | INFO | discord.client | logging in using static token
+2026-09-05 10:45:55,246 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: c7adb31061555ba2b21e4ea965aca5c8).
+2026-09-05 10:47:03,072 | INFO | discord.client | logging in using static token
+2026-09-05 10:47:05,622 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 6415a4a2f8f4c524defb7c4ffed2516a).
+2026-09-05 10:48:47,498 | INFO | discord.client | logging in using static token
+2026-09-05 10:48:50,357 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: cb5df981d466d84a72ee66236ee30e9d).
+2026-09-05 10:49:26,682 | INFO | discord.client | logging in using static token
+2026-09-05 10:49:29,536 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 401037fc2db5708bad219defb37e0822).
+2026-09-05 10:49:56,379 | INFO | discord.client | logging in using static token
+2026-09-05 10:50:29,752 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: ca61ab345a9c33ac5cac19a52e4be101).
+2026-09-05 10:50:33,456 | INFO | discord.client | logging in using static token
+2026-09-05 10:50:35,634 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 0ffaaa891ff52774de065fa6a45e06e4).
+2026-09-05 10:51:10,636 | INFO | discord.client | logging in using static token
+2026-09-05 10:51:12,921 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: ad8f8e24803d574dc19a34c012923c6a).
+2026-09-05 10:52:04,185 | INFO | discord.client | logging in using static token
+2026-09-05 10:52:06,941 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: fd155fa4d047eae9fa705b931042ead2).
+2026-09-05 10:52:49,735 | INFO | discord.client | logging in using static token
+2026-09-05 10:52:52,065 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 1a6a7ff91d6ee623984af7b88929b221).
+2026-09-05 10:53:22,218 | INFO | discord.client | logging in using static token
+2026-09-05 10:53:24,893 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 4fab60896ab719d5496ec2ce9377d44d).
+2026-09-05 11:01:50,100 | INFO | discord.client | logging in using static token
+2026-09-05 11:01:52,668 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 522bb63b761951b51b3609155e247660).
+2026-09-05 11:02:55,704 | ERROR | discord.client | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1227, in get_prefix
+    ret = list(ret)  # type: ignore
+TypeError: 'NoneType' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\client.py", line 508, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1421, in on_message
+    await self.process_commands(message)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1416, in process_commands
+    ctx = await self.get_context(message)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1315, in get_context
+    prefix = await self.get_prefix(origin)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1234, in get_prefix
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: command_prefix must be plain string, iterable of strings, or callable returning either of these, not NoneType
+2026-09-05 11:03:30,855 | INFO | discord.client | logging in using static token
+2026-09-05 11:03:33,571 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: bf4c801de7bfa1a1b17861e16ce5a4c7).
+2026-09-05 11:03:44,114 | INFO | discord.client | logging in using static token
+2026-09-05 11:12:21,085 | INFO | discord.client | logging in using static token
+2026-09-05 11:12:23,317 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: d2d45542f68cab39ee6c170a23068a9f).
+2026-09-05 21:01:29,692 | INFO | discord.client | logging in using static token
+2026-09-05 21:03:01,741 | INFO | discord.client | logging in using static token
+2026-09-05 21:04:15,070 | INFO | discord.client | logging in using static token
+2026-09-05 21:04:17,780 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: d99c68f4b9438b83d27df4c82122a3f9).
+2026-09-05 21:04:59,600 | INFO | discord.client | logging in using static token
+2026-09-05 21:05:01,847 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 0d85854a72ada5eac0337145274e6518).
+2026-09-05 21:05:27,325 | ERROR | discord.client | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1227, in get_prefix
+    ret = list(ret)  # type: ignore
+TypeError: 'NoneType' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\client.py", line 508, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1421, in on_message
+    await self.process_commands(message)
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1416, in process_commands
+    ctx = await self.get_context(message)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1315, in get_context
+    prefix = await self.get_prefix(origin)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\virgo\AppData\Local\Programs\Python\Python314\Lib\site-packages\discord\ext\commands\bot.py", line 1234, in get_prefix
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: command_prefix must be plain string, iterable of strings, or callable returning either of these, not NoneType
+2026-09-06 14:48:38,878 | INFO | discord.client | logging in using static token
+2026-09-06 14:48:41,113 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 950a9821849fb2cfa8ffb5d7c3172e54).
+2026-09-06 15:10:32,815 | INFO | discord.client | logging in using static token
+2026-09-06 15:10:35,341 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: b0ab787f093af161e10ca8014eec5c44).
+2026-09-06 15:16:52,876 | INFO | discord.client | logging in using static token
+2026-09-06 15:17:07,213 | INFO | discord.client | logging in using static token
+2026-09-06 15:17:45,436 | INFO | discord.client | logging in using static token
+2026-09-06 15:17:47,991 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 7b24b8964f4a9d67186afb0699ebcaa5).
+2026-09-06 15:17:56,365 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 29.50s
+2026-09-06 15:17:59,648 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 26.27s
+2026-09-06 15:18:03,280 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 22.60s
+2026-09-06 15:18:03,621 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 22.25s
+2026-09-06 15:18:06,455 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 19.41s
+2026-09-06 15:29:15,279 | INFO | discord.client | logging in using static token
+2026-09-06 15:29:17,631 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 4a81886efbad5b4a8a0ebb461359fb5a).
+2026-09-06 15:29:22,547 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 29.51s
+2026-09-06 15:29:25,826 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 26.21s
+2026-09-06 15:29:29,119 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 22.97s
+2026-09-06 15:29:29,804 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 22.33s
+2026-09-06 15:31:32,727 | INFO | discord.client | logging in using static token
+2026-09-06 15:31:35,037 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 2315d4905bca8253991cce13f893fd08).
+2026-09-06 15:31:43,406 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 29.38s
+2026-09-06 15:31:46,264 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 26.34s
+2026-09-06 15:31:49,387 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 23.23s
+2026-09-06 15:34:24,659 | INFO | discord.client | logging in using static token
+2026-09-06 15:34:27,969 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 17771f7bd652a5037c996d07b1c80061).
+2026-09-06 15:34:36,254 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 29.21s
+2026-09-06 15:34:36,811 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 28.79s
+2026-09-06 15:34:39,888 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 25.56s
+2026-09-06 15:38:27,987 | INFO | discord.client | logging in using static token
+2026-09-06 15:38:31,707 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 69d164f4ce643db55d61278e35391956).
+2026-09-06 15:38:53,698 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 29.47s
+2026-09-06 15:38:57,171 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 25.99s
+2026-09-06 15:39:24,761 | INFO | discord.client | logging in using static token
+2026-09-06 15:39:27,091 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: ec684247cf41183b41851de99cb0516e).
+2026-09-06 15:39:32,892 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 29.60s
+2026-09-06 15:41:43,507 | INFO | discord.client | logging in using static token
+2026-09-06 15:41:47,808 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 18bdc2eb3040a5afa9642e52398397f6).
+2026-09-06 15:44:26,534 | INFO | discord.client | logging in using static token
+2026-09-06 15:44:29,301 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: bc5d24b64b6331027066184fa7bb1059).
+2026-09-06 15:44:35,408 | ERROR | discord.app_commands.tree | Ignoring exception in command 'developers'
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 28.50s
+2026-09-06 15:49:46,530 | INFO | discord.client | logging in using static token
+2026-09-06 15:49:50,448 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 57c83883f5e38bbf303b4ab6aa0bdc9e).
+2026-09-06 15:51:05,083 | INFO | discord.client | logging in using static token
+2026-09-06 15:51:06,898 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: a1aacae04a7991c700e7833c05d87ea1).
+2026-09-06 15:51:17,531 | ERROR | __main__ | Unexpected error: You are on cooldown. Try again in 29.41s
+2026-09-06 15:51:20,871 | ERROR | __main__ | Unexpected error: You are on cooldown. Try again in 26.10s
+2026-09-06 15:51:23,820 | ERROR | __main__ | Unexpected error: You are on cooldown. Try again in 23.22s
+2026-09-06 15:53:09,365 | INFO | discord.client | logging in using static token
+2026-09-06 15:53:12,682 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: a08ab8d5efc872783abbb2a2d19b4f1b).
+2026-09-06 15:53:28,954 | ERROR | discord.client | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1227, in get_prefix
+    ret = list(ret)  # type: ignore
+TypeError: 'NoneType' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\client.py", line 508, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1421, in on_message
+    await self.process_commands(message)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1416, in process_commands
+    ctx = await self.get_context(message)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1315, in get_context
+    prefix = await self.get_prefix(origin)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\ext\commands\bot.py", line 1234, in get_prefix
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: command_prefix must be plain string, iterable of strings, or callable returning either of these, not NoneType
+2026-09-06 15:54:04,043 | WARNING | discord.ext.commands.bot | Privileged message content intent is missing, commands may not work as expected.
+2026-09-06 15:54:04,043 | INFO | discord.client | logging in using static token
+2026-09-06 15:54:06,520 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: b2753dc4054e7648ff8db1132d8e8b9c).
+2026-09-06 15:57:16,309 | INFO | discord.client | logging in using static token
+2026-09-06 15:57:18,527 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 116cc8e7c67f803872761524567feb3f).
+2026-09-06 15:57:26,677 | ERROR | __main__ | Unexpected error: You are on cooldown. Try again in 28.97s
+2026-09-06 15:57:30,092 | ERROR | __main__ | Unexpected error: You are on cooldown. Try again in 25.65s
+2026-09-06 15:57:31,528 | ERROR | __main__ | Unexpected error: You are on cooldown. Try again in 24.06s
+2026-09-06 15:58:43,366 | ERROR | __main__ | Unexpected error: You are on cooldown. Try again in 29.40s
+2026-09-06 15:58:46,880 | ERROR | __main__ | Unexpected error: You are on cooldown. Try again in 25.86s
+2026-09-06 15:58:49,049 | ERROR | __main__ | Unexpected error: You are on cooldown. Try again in 23.82s
+2026-09-06 16:04:29,249 | INFO | discord.client | logging in using static token
+2026-09-06 16:04:32,581 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 9f90bc55b44a74a73fa867707ed48df3).
+2026-09-06 16:04:41,338 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 29.36s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:04:44,034 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 26.14s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:04:47,268 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 22.92s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:04:49,150 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 21.20s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:04:50,916 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 19.38s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:04:53,498 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 16.67s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:04:56,562 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 13.85s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:04:59,705 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 10.48s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:05:00,191 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 10.11s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:05:03,490 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 6.57s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:09:33,586 | INFO | discord.client | logging in using static token
+2026-09-06 16:11:03,946 | INFO | discord.client | logging in using static token
+2026-09-06 16:11:06,761 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 9d3dd0b833c5fb5d545265c413cda74a).
+2026-09-06 16:11:18,489 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\OutBot\cogs\support_cog.py", line 46, in reporthelp
+    f"MAKE SURE YOUR REPORT IS UNDER {MAX_REPORT_LENGTH} CHARACTERS.",
+                                      ^^^^^^^^^^^^^^^^^
+NameError: name 'MAX_REPORT_LENGTH' is not defined. Did you mean: 'MAX_MESSAGE_LENGTH'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'reporthelp' raised an exception: NameError: name 'MAX_REPORT_LENGTH' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "c:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:11:19,313 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 29.50s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "c:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 16:11:21,767 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'ephemeral' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 880, in _invoke_with_namespace
+    if not await self._check_can_run(interaction):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 1018, in _check_can_run
+    return await async_all(f(interaction) for f in predicates)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\utils.py", line 725, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\checks.py", line 407, in predicate
+    raise CommandOnCooldown(bucket, retry_after)
+discord.app_commands.errors.CommandOnCooldown: You are on cooldown. Try again in 26.92s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "c:\OutBot\main.py", line 83, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message, ephemeral=ephemeral)
+                                                                          ^^^^^^^^^
+NameError: name 'ephemeral' is not defined
+2026-09-06 18:51:51,717 | INFO | discord.client | logging in using static token
+2026-09-06 18:51:53,345 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: ba62e7f3ef989fc2b36b9bbd78b16104).
+2026-09-06 18:52:43,534 | ERROR | __main__ | Unexpected error: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+2026-09-06 18:56:19,908 | INFO | discord.client | logging in using static token
+2026-09-06 18:56:21,403 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 307d53431ae515a02473155bfcec6f59).
+2026-09-06 18:56:53,287 | ERROR | __main__ | Unexpected error: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+2026-09-06 19:00:24,494 | INFO | discord.client | logging in using static token
+2026-09-06 19:00:27,811 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: e8c3e7ea778c69b00743bac41a282b4f).
+2026-09-06 19:00:33,074 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'embed_error_message' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\cogs\developer_cog.py", line 52, in test_http
+    await interaction.channel.fetch_message(999999999999999999)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\abc.py", line 1772, in fetch_message
+    data = await self._state.http.get_message(channel.id, id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\http.py", line 774, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 84, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message)
+  File "C:\OutBot\utils\errors.py", line 25, in error_message
+    embed=embed_error_message,
+          ^^^^^^^^^^^^^^^^^^^
+NameError: name 'embed_error_message' is not defined
+2026-09-06 19:05:43,563 | INFO | discord.client | logging in using static token
+2026-09-06 19:05:46,289 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: eb2fef1d99ddc95c9aff7ff4cf97b741).
+2026-09-06 19:05:58,666 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'embed_error_message' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\OutBot\cogs\developer_cog.py", line 52, in test_http
+    await interaction.channel.fetch_message(999999999999999999)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\abc.py", line 1772, in fetch_message
+    data = await self._state.http.get_message(channel.id, id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\http.py", line 774, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "c:\OutBot\main.py", line 84, in on_app_command_error
+    await error_message(interaction, embed=embed_error_message)
+  File "c:\OutBot\utils\errors.py", line 25, in error_message
+    embed=embed_error_message,
+          ^^^^^^^^^^^^^^^^^^^
+NameError: name 'embed_error_message' is not defined
+2026-09-06 19:07:01,912 | INFO | discord.client | logging in using static token
+2026-09-06 19:07:04,357 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: c6ab81d26f9b811d02988804759546d3).
+2026-09-06 19:07:09,790 | ERROR | __main__ | Unexpected error: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+2026-09-06 19:08:57,611 | INFO | discord.client | logging in using static token
+2026-09-06 19:08:59,254 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 460576eabf1293e4676c0185354f4ee7).
+2026-09-06 19:09:05,181 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=TypeError("error_message() missing 1 required positional argument: 'interaction'")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\cogs\developer_cog.py", line 52, in test_http
+    await interaction.channel.fetch_message(999999999999999999)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\abc.py", line 1772, in fetch_message
+    data = await self._state.http.get_message(channel.id, id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\http.py", line 774, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 84, in on_app_command_error
+    await error_message(embed=embed_error_message)
+          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: error_message() missing 1 required positional argument: 'interaction'
+2026-09-06 19:09:43,443 | INFO | discord.client | logging in using static token
+2026-09-06 19:09:45,215 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 2959fab8afa813903436ec3bc6be2034).
+2026-09-06 19:09:59,664 | ERROR | __main__ | Unexpected error: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+2026-09-06 19:11:44,030 | INFO | discord.client | logging in using static token
+2026-09-06 19:11:46,377 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: ba346699d2e277676c290a03ac18beeb).
+2026-09-06 19:11:51,083 | ERROR | __main__ | Unexpected error: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+2026-09-06 19:12:48,766 | INFO | discord.client | logging in using static token
+2026-09-06 19:12:51,606 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 114eff8cd665f5b222b516d1be19257a).
+2026-09-06 19:12:55,701 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'embed' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\cogs\developer_cog.py", line 52, in test_http
+    await interaction.channel.fetch_message(999999999999999999)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\abc.py", line 1772, in fetch_message
+    data = await self._state.http.get_message(channel.id, id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\http.py", line 774, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 84, in on_app_command_error
+    await error_message(interaction, embed_error_message=embed)
+                                                         ^^^^^
+NameError: name 'embed' is not defined
+2026-09-06 19:16:11,377 | INFO | discord.client | logging in using static token
+2026-09-06 19:16:16,219 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: b69d54ae96a3a4110201f6d4a5b7bdaa).
+2026-09-06 19:16:23,738 | ERROR | asyncio | Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py:1136> exception=NameError("name 'embed' is not defined")>
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\cogs\developer_cog.py", line 52, in test_http
+    await interaction.channel.fetch_message(999999999999999999)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\abc.py", line 1772, in fetch_message
+    data = await self._state.http.get_message(channel.id, id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\http.py", line 774, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\OutBot\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1306, in _call
+    await self.on_error(interaction, e)
+  File "C:\OutBot\main.py", line 84, in on_app_command_error
+    await interaction.response.send_message(interaction, embed_error_message=embed)
+                                                                             ^^^^^
+NameError: name 'embed' is not defined
+2026-09-06 19:17:07,258 | INFO | discord.client | logging in using static token
+2026-09-06 19:17:09,088 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: d172d25bb00f5fd9c8784a7e74f5542c).
+2026-09-06 19:17:17,551 | ERROR | __main__ | Unexpected error: Command 'test_http' raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+2026-09-06 19:18:59,524 | ERROR | __main__ | Unexpected error: Command 'report' raised an exception: UnicodeEncodeError: 'charmap' codec can't encode characters in position 201-203: character maps to <undefined>
+2026-09-06 19:22:48,581 | ERROR | __main__ | Unexpected error: Command 'feedback' raised an exception: UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f600' in position 134: character maps to <undefined>
+2026-09-06 19:34:32,888 | INFO | discord.client | logging in using static token
+2026-09-06 19:35:00,564 | INFO | discord.client | logging in using static token
+2026-09-06 19:35:17,382 | INFO | discord.client | logging in using static token
+2026-09-06 19:35:36,087 | INFO | discord.client | logging in using static token
+2026-09-06 19:35:41,190 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: e0b5b770e971056b96926a974a68752f).
+2026-09-06 19:38:16,519 | INFO | discord.client | logging in using static token
+2026-09-06 19:38:18,078 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 32fc8c10931eef3d4c5c379e87b81411).
+2026-09-06 20:10:48,976 | INFO | discord.client | logging in using static token
+2026-09-06 20:11:37,523 | INFO | discord.client | logging in using static token
+2026-09-06 20:12:25,679 | INFO | discord.client | logging in using static token
+2026-09-06 20:13:03,492 | INFO | discord.client | logging in using static token
+2026-09-06 20:13:38,257 | INFO | discord.client | logging in using static token
+2026-09-06 20:13:40,334 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 84bc120a7c0aaaf03988ac203dd89151).
+2026-09-06 20:14:43,682 | ERROR | __main__ | Unexpected error: Command 'poll' raised an exception: TypeError: Embed.__init__() got an unexpected keyword argument 'allowed_mentions'
+2026-09-06 20:15:34,769 | ERROR | __main__ | Unexpected error: Command 'poll' raised an exception: TypeError: Embed.__init__() got an unexpected keyword argument 'allowed_mentions'
+2026-09-06 21:09:15,640 | INFO | discord.client | logging in using static token
+2026-09-06 21:09:17,485 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 822463c1e0dcce2c87887f43780d71c3).

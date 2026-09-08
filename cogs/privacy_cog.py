@@ -44,9 +44,9 @@ class PrivacyCommands(commands.Cog):
             title="🔒 OutBot's Privacy\n\n",
             description=(
                 "- Logs: Only used to degug and are stored locally.\n"
-                f"- Retention: {RETENTION}\n"
+                f"- Log Retention: {RETENTION}\n"
                 f"- Source: Open source ({GITHUB_LINK})\n"
-                f"- Privacy Policy: {PRIVACY_POLICY}\n"
+                f"- OutBot's Privacy Policy: {PRIVACY_POLICY}\n"
             ),
             # 0x00008B is Dark Blue
             colour=0x00008B,
@@ -110,6 +110,7 @@ class PrivacyCommands(commands.Cog):
                 f"OutBot retains logs for {RETENTION}.\n"
                 "OutBot uses mode a to log (logger opens the file and appends to it).\n"
                 "OutBot does **NOT** log any user data.\n"
+                "OutBot only logs errors and logs are only used to make debugging easier.\n"
                 f"OutBot is **open source. You can always check** out its source code/README for more information: {GITHUB_LINK}\n"
             ),
             # Turquoiseis 0x1ABC9

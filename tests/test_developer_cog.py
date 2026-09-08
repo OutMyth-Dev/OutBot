@@ -1,3 +1,5 @@
+# IGNORE THIS, I WILL FIX IT LATER.
+
 from unittest.mock import AsyncMock, MagicMock
 
 import pytest
@@ -15,16 +17,16 @@ async def test_developer():
 
     await developer_cog.developers.callback(developer_cog, interaction)
 
-    interaction.response.send_message(
+    interaction.response.send_message.assert_awaited_once_with(
         title="OutBot's Developers",
         description=f"{DEVELOPER} is the only developer for OutBot currently.",
         # 0xFF0000 is Red
         colour=0xFF0000,
     )
-    interaction.response.send_message.set_footer(
+
+    interaction.response.send_message.assert_awaited_once_with.set_footer(
         text=f"You can apply here: {DISCORD_SERVER_INVITE_LINK}"
     )
 
-
 if __name__ == "__main__":
-    test_developer()
+    test_freenitro()

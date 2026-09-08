@@ -152,12 +152,12 @@ class InformationCommands(commands.Cog):
         embed_message = discord.Embed(
             title="OutBot's Planned Features!",
             description=(
-                "# Next Update: \n"
-                "- Bot Settings Commands\n"
-                "- Role Information\n"
-                "- Improved Quality Of Existing Commands\n"
-                "- Diagnostic command (checking OutBot's config)\n"
-                "- Improved documentation\n"
+                "- Add more interactive and fun user commands.\n"
+                "- Write more tests and clearer docs.\n"
+                "- Add ymal files to .github.\n"
+                "- Add better way to report.\n"
+                "- More robust code.\n"
+                "- Host Outbot's privacy policy and terms of service on a website.\n"
             ),
             # 0x2ECC71 is Emerald Green
             colour=0x2ECC71,

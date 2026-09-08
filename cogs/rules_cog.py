@@ -2,6 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
+from config import TERMS_OF_SERVICE
 
 class RulesCommands(commands.Cog):
     """
@@ -83,10 +84,10 @@ class RulesCommands(commands.Cog):
         """
         await interaction.response.send_message(
             "## OutBot Rules\n\n"
-            "- 1. Use the bot for its intended purpose.\n"
-            "- 2. Only use OutBot in the channels command or chatbot.\n"
-            "- 3. Do NOT try to exploit OutBot.\n"
-            "- 4. Try to find bugs and report them by opening a ticket/report/PRIVATE GitHub reporting.\n"
+            "By using OutBot you agree to comply with Discord's Terms Of Service, Community Guidelines,OutBot's TOS and OutBot's license.\n"
+            "OutBot does **NOT** impose any additional rules.\n"
+            f"More information is available at: {TERMS_OF_SERVICE}.\n"
+            "Breaking these rules will result in a punishment. The severity of the punishment depends on how nature and seriousness of the violation.\n"
         )
 
 

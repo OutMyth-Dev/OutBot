@@ -44,7 +44,8 @@ class LinksCommands(commands.Cog):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
-            f"# OutMyth's YouTube Channel:\n\n{OUTMYTH_YOUTUBE_CHANNEL_LINK}"
+            "# OutMyth's YouTube Channel:\n\n"
+            f"{OUTMYTH_YOUTUBE_CHANNEL_LINK}"
         )
 
     @discord.app_commands.command(
@@ -66,7 +67,8 @@ class LinksCommands(commands.Cog):
             None
         """
         await interaction.response.send_message(
-            f"# OutMyth's Discord Server:\n\n{DISCORD_SERVER_INVITE_LINK}"
+            "# OutMyth's Discord Server:\n\n"
+            f"{DISCORD_SERVER_INVITE_LINK}"
         )
 
     @discord.app_commands.command(
@@ -91,7 +93,8 @@ class LinksCommands(commands.Cog):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
-            f"# Outbot's Invite Link:\n\n{OUTBOT_INVITE_LINK}"
+            "# Outbot's Invite Link:\n\n"
+            "{OUTBOT_INVITE_LINK}"
         )
 
 

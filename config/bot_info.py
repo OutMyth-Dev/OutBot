@@ -1,4 +1,4 @@
-BOT_VERSION: float = 0.4
+BOT_VERSION: float = 0.5
 DATE_CREATED: str = "July 11th 2026"
 DEVELOPER: str = "mythordian"
 RETENTION: str = "1 day"
@@ -19,4 +19,4 @@ OUTMYTH_YOUTUBE_CHANNEL_LINK: str = (
 )
 PRIVACY_POLICY: str = "<https://github.com/OutMyth-Dev/OutBot/blob/main/PRIVACY.md>"
 SECURITY_POLICY: str = "<https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file>"
-TERMS_OF_SERVICE: str = "<https://github.com/OutMyth-Dev/OutBot/blob/main/TERMS.md>"
+TERMS_OF_SERVICE: str = "<https://github.com/OutMyth-Dev/OutBot/blob/main/documentation/TERMS_OF_SERVICE.md>"
