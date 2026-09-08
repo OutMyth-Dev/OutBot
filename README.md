@@ -176,7 +176,7 @@ Go to the "Installation" tab (discord developer portal); copy the install link a
 
 To invite OutBot to your server(s)/add it to your apps, head over to this link:
 ```text
-https://discord.com/oauth2/authorize?client_id=1525595736706781384
+https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands
 ```
 
 Then choose if you want OutBot to your Discord server(s) or to your apps.
