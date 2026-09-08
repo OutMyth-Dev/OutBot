@@ -1,3 +1,43 @@
+# OutBot - Update - 9 September 2026
+
+## Version 0.5
+
+### Removed
+
+- /outmyth and /outhis
+- Removed most try except blocks and replaced it with error handling
+- Commands pinging you every time you invoke them except /ping
+- 6 poll reactions
+- ephemeral for /say (/echo)
+
+### Renamed
+
+- /rickroll ---> /freenitro
+- /outbot ---> /about
+- /say ---> /echo
+- /serverlink ---> /discord
+- /hello ---> /greet
+
+### Added / removed
+
+- type hints
+- .gitignore
+- Improved documentation
+- All commands are inside cogs
+- Centralized error handling
+- Improved code readability
+- Updated all commands and commands quality
+- Added an MIT License, contributing, code of conduct, tos, privacy policy, and security to OutBot's repository
+- New commands (/privacy, /data, /logs, /developer, /reporthelp, /report, /feedbackhelp, /feeback, /fakeban)
+- Improved ux and added buttons to the commands /ping and /freenitro
+- Created a test for /developer
+- Custom logger 
+- Logs that delete themselves daily
+
+Update 0.6 will more interactive commands. I do not think I have been adding enough features to OutBot. 
+
+---
+
 # OutBot - Update - 28th July 2026
 
 ## **Version 0.4**
