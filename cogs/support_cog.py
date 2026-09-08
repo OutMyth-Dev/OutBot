@@ -109,12 +109,12 @@ class SupportCommands(commands.Cog):
         name="feedback",
         description="Provide OutBot useful feedback",
     )
-    @discord.app_commands.describe(
-        feedback="Give OutBot useful feedback."
-    )
+    @discord.app_commands.describe(feedback="Give OutBot useful feedback.")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def feedback(
-        self, interaction: discord.Interaction, feedback: app_commands.Range[str, 1, 1999]
+        self,
+        interaction: discord.Interaction,
+        feedback: app_commands.Range[str, 1, 1999],
     ) -> None:
         """
         A commmand users can use to send feedback.

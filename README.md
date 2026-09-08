@@ -130,15 +130,17 @@ pip install -r requirements/base.txt
 
 You can decide if you want to use tests or ruff/cloc.
 
-If you want to use tests:
+(Windows) If you want to use tests:
 ```shell
 pip install -r requirements/tests.txt
 ```
 
-If you want to use ruff and cloc use:
+(Windows) If you want to use ruff and cloc use:
 ```shell
 pip install -r requirements/developer.txt
 ```
+
+Use pip3 install... if you are on linix/macOS.
 
 # Discord Setup
 

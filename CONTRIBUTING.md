@@ -1,13 +1,27 @@
 # Contribution Guidelines
 
+# OutBot's Coding standards
+
+- Use tabs instead of spaces.
+- Use consistent and descriptive names for your variables, function names, paramatars, class names, and file/directory names.
+- Try follow DRY as much as you can.
+- Use google style docstrings for all your functions, classes, and methords.
+- Try not to use emojis extensively in commands. Do NOT use them when writting documentation.
+- Try to write simple code, rather than clever code.
+- You may use ai but make sure you proofread all the code ai gives you.
+- If there is a tool that can be used to make your code simpler, use it.
+- Before submitting your code, please run your code through ruff.
+
+- MAKE SURE YOU EXPLAIN WHAT YOU CHANGED, AND WHY YOU CHANGED WHAT YOU CHANGED. IF YOU FAIL TO, YOUR CHANGES WILL BE REJECTED. THIS DOES INCLUDE DEVELOPERS
+
 ## How do I contribute?
 
 > There are two ways to contribute to OutBot:
 
-> 1. Submit a pull request.
-> 2. Become an OutMyth developer.
+> 1) Submit a pull request.
+> 2) Become an OutMyth developer.
 
-### Pull Requests
+### 1) Pull Requests
 
 Fork the repository, make your changes, and open a pull request explaining:
 
@@ -16,9 +30,9 @@ Fork the repository, make your changes, and open a pull request explaining:
 - What benifits OutBot will gain?
 - Will this help users have a better expirence with OutBot?
 
-Your code should follow the existing style and structure of OutBot.
+Your code should follow OutBot's coding standards which are listed above.
 
-### Becoming a developer at OutMyth
+### 2) Becoming a developer at OutMyth
 
 > 1) Fork the Repository and add your changes.
 > 2) Open a ticket on https://discord.gg/Sc5vAvTJtc requesting to become a developer.

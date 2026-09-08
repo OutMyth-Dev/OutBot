@@ -17,4 +17,4 @@ Please include:
 - A description of the vulnerability
 - Steps to reproduce it
 - The potential impact/s
-- Any relevant screenshots
+- Any relevant screenshots or other relevent information
