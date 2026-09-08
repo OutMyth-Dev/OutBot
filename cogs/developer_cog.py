@@ -32,6 +32,9 @@ class DeveloperCommands(commands.Cog):
 
         Returns:
             None
+
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message = discord.Embed(
             title="OutBot's Developers",

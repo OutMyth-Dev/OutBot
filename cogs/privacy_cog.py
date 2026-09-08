@@ -36,6 +36,9 @@ class PrivacyCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message = discord.Embed(
             title="🔒 OutBot's Privacy\n\n",
@@ -66,6 +69,9 @@ class PrivacyCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message = discord.Embed(
             title="🗃️ What data does OutBot keep about you and what does it log?\n\n",
@@ -94,6 +100,9 @@ class PrivacyCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message = discord.Embed(
             title="Information about what OutBot logs.\n\n",

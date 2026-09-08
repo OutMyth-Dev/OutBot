@@ -32,6 +32,9 @@ class RulesCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         # These can be found in the channel "rules", in OutMyth's Discord server.
 
@@ -74,6 +77,9 @@ class RulesCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
             "## OutBot Rules\n\n"

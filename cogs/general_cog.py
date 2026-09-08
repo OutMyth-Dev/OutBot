@@ -69,6 +69,9 @@ class GeneralCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
             f"Hello, {interaction.user.mention}! How are you?",
@@ -97,6 +100,9 @@ class GeneralCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         if await send_censor_word_warning(interaction, dm):
             return
@@ -142,6 +148,9 @@ class GeneralCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         if await send_censor_word_warning(interaction, your_message):
             return
@@ -175,6 +184,9 @@ class GeneralCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(view=PingUserButton())
 
@@ -205,6 +217,9 @@ class GeneralCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         if await send_censor_word_warning(interaction, title or question):
             return

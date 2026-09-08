@@ -32,6 +32,9 @@ class SupportCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
             "How do I make a good report?\n\n"
@@ -70,6 +73,9 @@ class SupportCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         if await send_censor_word_warning(interaction, report):
             return
@@ -92,6 +98,9 @@ class SupportCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
             "How do I give OutBot's developers good feeback?\n\n"
@@ -128,6 +137,9 @@ class SupportCommands(commands.Cog):
 
         Retturns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         if await send_censor_word_warning(interaction, feedback):
             return

@@ -39,6 +39,9 @@ class LinksCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
             f"# OutMyth's YouTube Channel:\n\n{OUTMYTH_YOUTUBE_CHANNEL_LINK}"
@@ -83,6 +86,9 @@ class LinksCommands(commands.Cog):
 
         Returns:
             None
+        
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
             f"# Outbot's Invite Link:\n\n{OUTBOT_INVITE_LINK}"
