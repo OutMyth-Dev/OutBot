@@ -34,7 +34,7 @@
 - Custom logger 
 - Logs that delete themselves daily
 
-Update 0.6 will more interactive commands. I do not think I have been adding enough features to OutBot. 
+Update 0.6 will more interactive commands. I do think I have been adding enough features to OutBot. 
 
 ---
 

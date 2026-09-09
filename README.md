@@ -8,30 +8,15 @@ OutBot's Current Version: **v0.4**
 
 # Useful Link
 
-OutBot's TOS
-```text
-https://github.com/OutMyth-Dev/OutBot/blob/main/TERMS.md
-```
+[OutBot's TOS](https://github.com/OutMyth-Dev/OutBot/blob/main/TERMS.md)  
 
-OutBot's Privacy Policy
-```text
-https://github.com/OutMyth-Dev/OutBot/blob/main/PRIVACY.md
-```
+[OutBot's Privacy Policy](https://github.com/OutMyth-Dev/OutBot/blob/main/PRIVACY.md)  
 
-OutBot's Security Policy
-```text
-https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file
-```
+[OutBot's Security Policy](https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file)  
 
-OutBot's License (MIT)
-```text
-https://github.com/OutMyth-Dev/OutBot/?tab=MIT-1-ov-file
-```
+[OutBot's License](https://github.com/OutMyth-Dev/OutBot/?tab=MIT-1-ov-file)  
 
-OutBot's Invite link
-```text
-https://discord.com/oauth2/authorize?client_id=1525595736706781384
-```
+[OutBot's Invite link](https://discord.com/oauth2/authorize?client_id=1525595736706781384)  
 
 ---
 
@@ -74,9 +59,9 @@ bot = OutBot(
 
 ## Requirements
 
-- Python 3.14.6 (https://www.python.org/downloads/)
+- Python 3.14.6 [Install Python](https://www.python.org/downloads/)
 - discord.py 2.7.1
-- git (Install link - https://git-scm.com/install/)
+- git [Install link](https://git-scm.com/install/)
 
 base.txt:
 ```text
@@ -154,7 +139,7 @@ You now have a local copy of OutBot on your computer. For OutBot to actually run
 
 ### Discord Developer Portal Setup.
 
-Head over to Discord Developer portal (https://discord.com/developers/applications) and sign in/create an account. Click "new application".  Name your bot and accept Discord's Developer TOS/Privacy Policy. 
+Head over to [Discord Developer portal](https://discord.com/developers/applications) and sign in/create an account. Click "new application".  Name your bot and accept Discord's Developer TOS/Privacy Policy. 
 
 ### Creating .env
 
@@ -175,9 +160,8 @@ Go to the "Installation" tab (discord developer portal); copy the install link a
 # "I just want OutBot in my discord server/add it to my apps".
 
 To invite OutBot to your server(s)/add it to your apps, head over to this link:
-```text
-https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands
-```
+
+[OutBot Invite Link](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands)
 
 Then choose if you want OutBot to your Discord server(s) or to your apps.
 
