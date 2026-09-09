@@ -36,16 +36,9 @@ OutBot's Current Version: **v0.5.1**
 
 ---
 
-# Built With
+# Command prefixes and privileged intents.
 
-- **Python**
-- **Discord.py**
-
----
-
-# OutBot's Commands
-
-OutBot does **NOT** use prefix  commands. Therefore, command_prefix=None.
+OutBot does **NOT** use prefix  commands. Therefore, command_prefix=None. OutBot uses **NO** privileged intents. Therefore, intents=discord.Intents.default()
 
 OutBot's Config:
 ```py
@@ -131,9 +124,9 @@ Use pip3 install... if you are on linix/macOS.
 
 ### Why Do We Need A Discord Bot Token?
 
-DO NOT SHARE YOUR DISCORD BOT TOKEN WITH ANYONE. IF YOU DO, YOU GIVE THEM ACCESS TO YOUR BOT. THEY CAN EVEN FIND YOU EMAIL WITH IT.
 
 You now have a local copy of OutBot on your computer. For OutBot to actually run, we will need a Discord Bot Token. 
+DO NOT SHARE YOUR DISCORD BOT TOKEN WITH ANYONE. IF YOU DO, YOU GIVE THEM ACCESS TO YOUR BOT. THEY CAN EVEN FIND YOU EMAIL WITH IT.
 
 ### Discord Developer Portal Setup.
 
