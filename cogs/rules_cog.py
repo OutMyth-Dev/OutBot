@@ -4,6 +4,7 @@ from discord.ext import commands
 
 from config import TERMS_OF_SERVICE
 
+
 class RulesCommands(commands.Cog):
     """
     Commands related to rules. Users can use to commands to find out rules they did not know about
@@ -33,7 +34,7 @@ class RulesCommands(commands.Cog):
 
         Returns:
             None
-        
+
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -78,7 +79,7 @@ class RulesCommands(commands.Cog):
 
         Returns:
             None
-        
+
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """

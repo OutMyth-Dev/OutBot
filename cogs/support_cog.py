@@ -32,7 +32,7 @@ class SupportCommands(commands.Cog):
 
         Returns:
             None
-        
+
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -73,7 +73,7 @@ class SupportCommands(commands.Cog):
 
         Returns:
             None
-        
+
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -98,7 +98,7 @@ class SupportCommands(commands.Cog):
 
         Returns:
             None
-        
+
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -137,7 +137,7 @@ class SupportCommands(commands.Cog):
 
         Retturns:
             None
-        
+
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
