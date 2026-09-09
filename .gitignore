@@ -1,7 +1,7 @@
 **/.env
 **/__pycache__/
 *.pyc
-discord.log
+**discord.log
 .ruff_cache/
 feedback.txt
 reports.txt
