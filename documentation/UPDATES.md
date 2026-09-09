@@ -1,6 +1,14 @@
+# OutBot Bug Fix - 10 September 2026
+
+## Version 0.5.1
+
+Fixed tests not working.
+
+---
+
 # OutBot - Update - 9 September 2026
 
-## Version 0.5
+## Version 0.5.0
 
 ### Removed
 
@@ -34,7 +42,7 @@
 - Custom logger 
 - Logs that delete themselves daily
 
-Update 0.6 will more interactive commands. I do think I have been adding enough features to OutBot. 
+Update 0.6 will more interactive commands. I think I have not been adding enough features to OutBot. 
 
 ---
 
