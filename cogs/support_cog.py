@@ -38,13 +38,13 @@ class SupportCommands(commands.Cog):
         """
         await interaction.response.send_message(
             "How do I make a good report?\n\n"
-            "You should Inculde:\n"
+            "You should Include:\n"
             "- Your discord username.\n"
             "- What your issue is.\n"
             "- User's username only if you're reporting a user.\n"
             "- Make sure you provide as much detail as possible.\n"
             "- Please make sure you include a way for us to contact.\n"
-            "- Your report/s are deleted as soon as they are delt with.\n",
+            "- Your report/s are deleted as soon as they are dealt with.\n",
             ephemeral=True,
         )
 
@@ -103,14 +103,14 @@ class SupportCommands(commands.Cog):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
-            "How do I give OutBot's developers good feeback?\n\n"
-            "You should Inculde:\n"
+            "How do I give OutBot's developers good feedback?\n\n"
+            "You should Include:\n"
             "- What your feedback is.\n"
             "- Why you think it would make OutBot better.\n"
             "- Make sure you provide as much detail as possible.\n"
             "- Please make sure you include a way for us to contact.\n"
-            "- Your feedback is deleted as soon as it is delt with.\n"
-            "- Your feedback can contian bug reporting and security reporting for now. You can also report a security issue using /report.\n",
+            "- Your feedback is deleted as soon as it is dealt with.\n"
+            "- Your feedback can contain bug reporting and security reporting for now. You can also report a security issue using /report.\n",
             ephemeral=True,
         )
 
@@ -126,7 +126,7 @@ class SupportCommands(commands.Cog):
         feedback: app_commands.Range[str, 1, 1999],
     ) -> None:
         """
-        A commmand users can use to send feedback.
+        A command users can use to send feedback.
 
         Args:
             interaction(discord.Interaction): The discord command being invoked.

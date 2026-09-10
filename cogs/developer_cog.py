@@ -7,7 +7,7 @@ from config import DEVELOPER, DISCORD_SERVER_INVITE_LINK
 
 class DeveloperCommands(commands.Cog):
     """
-    Information about OutBot's devleopers.
+    Information about OutBot's developers.
 
     Attributes:
         None

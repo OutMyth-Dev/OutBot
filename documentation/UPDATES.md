@@ -36,7 +36,7 @@ Fixed tests not working.
 - Improved code readability
 - Updated all commands and commands quality
 - Added an MIT License, contributing, code of conduct, tos, privacy policy, and security to OutBot's repository
-- New commands (/privacy, /data, /logs, /developer, /reporthelp, /report, /feedbackhelp, /feeback, /fakeban)
+- New commands (/privacy, /data, /logs, /developer, /reporthelp, /report, /feedbackhelp, /feedback, /fakeban)
 - Improved ux and added buttons to the commands /ping and /freenitro
 - Created a test for /developer
 - Custom logger 
@@ -60,7 +60,7 @@ Update 0.6 will more interactive commands. I think I have not been adding enough
 - **Log mode | w ---> a**
 - **emojis tuple is in a new file called emojis.py**
 - **Imports sorted**
-- **More braches**
+- **More branches**
 - **Member intents enabled** this is for adding/removing onboarding commands
 - **Removed /outhis command**
 - **Error handling for /dm and /say**

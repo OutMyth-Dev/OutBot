@@ -7,7 +7,7 @@
 - Try to follow DRY as much as you can
 - Use google style docstrings for all your functions, classes, and methords.
 - Make sure all your functions, classes, and methords have been documented with google style docstrings exactatly how OutBot does it
-- Try **NOT** to use emojis extensively in commands. Do **NOT** use them when writting documentation.
+- Try **NOT** to use emojis extensively in commands. Do **NOT** use them when writing documentation.
 - Try to write **SIMPLE** code, rather than **CLEVER** code
 - You may use ai but make sure you proofread all the code ai gives you
 - If there is a tool that can be used to make your code simpler, use it
@@ -27,8 +27,8 @@ Fork the repository, make your changes, and open a pull request explaining:
 
 - What did you change?
 - Why you changed what you changed?
-- What benifits OutBot will gain?
-- Will this help users have a better expirence with OutBot?
+- What benefits OutBot will gain?
+- Will this help users have a better experience with OutBot?
 
 Your code should follow OutBot's coding standards which are listed above.
 

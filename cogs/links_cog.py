@@ -35,7 +35,7 @@ class LinksCommands(commands.Cog):
         Sends the OutMyth's YouTube channel link
 
         Args:
-            interactin (discord.Interaction): The Discord command being invoked.
+            interaction (discord.Interaction): The Discord command being invoked.
 
         Returns:
             None

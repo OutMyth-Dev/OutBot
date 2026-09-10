@@ -19,7 +19,7 @@ from config import (
 
 class InformationCommands(commands.Cog):
     """
-    General infomration about OutBot/OutMyth.
+    General information about OutBot/OutMyth.
 
     Attributes:
         None
@@ -80,7 +80,7 @@ class InformationCommands(commands.Cog):
                 "- **/reporthelp**: Teaches you how to create a good report.\n"
                 "- **/report**: Report an issue. Including security related ones.\n"
                 "- **feedbackhelp**: Teaches you how to create good feedback.\n"
-                "- **feedback**: Give feeback to OutBot's developers.\n"
+                "- **feedback**: Give feedback to OutBot's developers.\n"
             ),
             # 0x5865F2 is Blurple
             colour=0x5865F2,
@@ -98,7 +98,7 @@ class InformationCommands(commands.Cog):
         General information about OutBot.
 
         Args:
-            interactin (discord.Interaction): The Discord command being invoked.
+            interaction (discord.Interaction): The Discord command being invoked.
 
         Returns:
             None
@@ -107,19 +107,21 @@ class InformationCommands(commands.Cog):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message = discord.Embed(
-            title="About: ",
+            title="About",
             description=(
-                "# Useful Information:\n\n"
-                f"- Bot Version: v{BOT_VERSION}\n"
+                "# General Information\n\n"
+                f"- Outbot's Version: v{BOT_VERSION}\n"
                 f"- Log Retention: {RETENTION}\n"
-                f"- GitHub: {GITHUB_LINK}\n"
-                f"- Invite Link: {OUTBOT_INVITE_LINK}\n"
-                f"- License: {OUTBOT_LICENSE}\n"
-                f"- Privacy Policy: {PRIVACY_POLICY}\n"
-                f"- Security policy: {SECURITY_POLICY}\n"
-                f"- TOS: {TERMS_OF_SERVICE}\n"
-                f"- Contributing Policy: {CONTRIBUTING_POLICY}\n"
-                f"- Code Of Conduct: {CODE_OF_CONDUCT}\n"
+                "- OutBot is open source under a MIT license\n\n"
+                "# Useful Links:\n\n"
+                f"- {GITHUB_LINK}\n"
+                f"- {OUTBOT_INVITE_LINK}\n"
+                f"- {OUTBOT_LICENSE}\n"
+                f"- {PRIVACY_POLICY}\n"
+                f"- {SECURITY_POLICY}\n"
+                f"- {TERMS_OF_SERVICE}\n"
+                f"- {CONTRIBUTING_POLICY}\n"
+                f"- {CODE_OF_CONDUCT}\n\n"
             ),
             # 0x5865F2 is Blurple
             colour=0x5865F2,

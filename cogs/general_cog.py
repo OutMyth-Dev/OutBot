@@ -39,7 +39,7 @@ class PingUserButton(discord.ui.View):
 
 class GeneralCommands(commands.Cog):
     """
-    Commands that do not fit any other catagory.
+    Commands that do not fit any other category.
 
     Attributes:
         None
@@ -163,7 +163,7 @@ class GeneralCommands(commands.Cog):
             colour=0x2ECC71,
         )
         embed_message.set_footer(
-            text="You may report the user if anything inappropiate was said."
+            text="You may report the user if anything inappropriate was said."
         )
         await interaction.response.send_message(embed=embed_message)
 

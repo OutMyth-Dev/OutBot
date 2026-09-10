@@ -70,7 +70,7 @@ class FunCommands(commands.Cog):
         Sends a gif to rickroll the user.
 
         Args:
-            interaction (discord.Interaction): The Discord commmand being invoked.
+            interaction (discord.Interaction): The Discord command being invoked.
 
         Returns:
             None

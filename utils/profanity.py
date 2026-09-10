@@ -11,7 +11,7 @@ async def send_censor_word_warning(
 
     args:
         interaction (discord.Interaction): Any command that OutBot has that accepts user input.
-        user_input (str): Checks what the user inputed.
+        user_input (str): Checks what the user inputted.
 
     Returns:
         bool

@@ -11,7 +11,7 @@ from config import (
 
 class PrivacyCommands(commands.Cog):
     """
-    Infomration about privacy (OutBot).
+    Information about privacy (OutBot).
 
     Attributes:
         None

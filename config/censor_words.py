@@ -82,7 +82,7 @@ CENSOR_WORDS: tuple(str) = (
     "niggertoe",
     "nignog",
     "niggerhead",
-    "retarted",
+    "restarted",
     "c.l.i.t",
     "fuckwit",
     "blacky",

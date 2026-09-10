@@ -56,27 +56,7 @@ bot = OutBot(
 
 - Python 3.14.6 [Install Python](https://www.python.org/downloads/)
 - discord.py 2.7.1
-- git [Install link](https://git-scm.com/install/)
-
-base.txt:
-```text
-discord.py==2.7.1
-python-dotenv==1.2.3
-```
-developer.txt
-```text
-ruff==0.16.6
-cloc==0.2.5
-```
-
-test.txt
-```text
-dpytest==0.0.22
-pytest==9.1.1
-pytest-asyncio==1.4.0
-```
-
-These can be found in the directory "requirements". Make sure your base.txt, developer.txt, and test.txt has them.
+- git [Install link](https://git-scm.com/install/) 
 
 ## Getting A Local Copy Of OutBot.
 
@@ -94,7 +74,7 @@ cd OutBot
 python -m venv .venv
 ```
 
-macOS/Linix:
+macOS/Linux:
 ```shell
 source .venv/bin/activate
 ```
@@ -120,10 +100,9 @@ pip install -r requirements/tests.txt
 pip install -r requirements/developer.txt
 ```
 
-Use pip3 install... if you are on linix/macOS.
+Use pip3 install... if you are on linux/macOS.
 
 ### Why Do We Need A Discord Bot Token?
-
 
 You now have a local copy of OutBot on your computer. For OutBot to actually run, we will need a Discord Bot Token. 
 DO NOT SHARE YOUR DISCORD BOT TOKEN WITH ANYONE. IF YOU DO, YOU GIVE THEM ACCESS TO YOUR BOT. THEY CAN EVEN FIND YOU EMAIL WITH IT.
