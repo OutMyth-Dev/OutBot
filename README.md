@@ -100,12 +100,12 @@ pip install -r requirements/tests.txt
 pip install -r requirements/developer.txt
 ```
 
-Use pip3 install... if you are on linux/macOS.
+Use pip3 install... if you are on Linux/macOS.
 
 ### Why Do We Need A Discord Bot Token?
 
 You now have a local copy of OutBot on your computer. For OutBot to actually run, we will need a Discord Bot Token. 
-DO NOT SHARE YOUR DISCORD BOT TOKEN WITH ANYONE. IF YOU DO, YOU GIVE THEM ACCESS TO YOUR BOT. THEY CAN EVEN FIND YOU EMAIL WITH IT.
+DO NOT SHARE YOUR DISCORD BOT TOKEN WITH ANYONE. IF YOU DO, YOU GIVE THEM ACCESS TO YOUR BOT. THEY CAN EVEN FIND YOUR EMAIL WITH IT.
 
 ### Discord Developer Portal Setup.
 
