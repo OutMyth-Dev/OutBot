@@ -13,16 +13,20 @@ class PingUserButton(discord.ui.View):
     Attributes:
         None
 
-    Methords:
+    Methods:
         ping_button_callback: Sends a grey button which is invoked when /ping is used.
     """
 
-    @discord.ui.button(label="Ping Yourself!", style=discord.ButtonStyle.secondary)
+    def __init__(self, bot: OutBot):
+        super().__init__(timeout=None)
+        self.bot = bot
+
+    @discord.ui.button(label="OutBot's Ping", style=discord.ButtonStyle.secondary)
     async def ping_button_callback(
         self, interaction: discord.Interaction, button: discord.ui.Button
     ) -> None:
         """
-        Pings the user when the button is clicked.
+        Sends OutBot's ping when the user when clicks a button.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
@@ -31,8 +35,9 @@ class PingUserButton(discord.ui.View):
         Returns:
             None
         """
+        ping: int = round(self.bot.latency * 1000)
         await interaction.response.send_message(
-            f"{interaction.user.mention}",
+            f"Pong🏓!\n OutBot's lantency: {ping}ms.",
             ephemeral=True,
         )
 
@@ -44,13 +49,16 @@ class GeneralCommands(commands.Cog):
     Attributes:
         None
 
-    Methords:
+    Methods:
         greet: Greets the user.
         dm: DMs the user.
         echo: OutBot says what the user passed in.
         ping: Pings the user when a button is pressed.
         poll: Creates a embed with a title, question, and 10 reactions.
     """
+
+    def __init__(self, bot: OutBot):
+        self.bot = bot
 
     @discord.app_commands.command(
         name="greet",
@@ -112,11 +120,9 @@ class GeneralCommands(commands.Cog):
                 f"||{dm}||", allowed_mentions=discord.AllowedMentions.none()
             )
 
-            (
-                await interaction.response.send_message(
-                    "DM has been sent!",
-                    ephemeral=True,
-                ),
+            await interaction.response.send_message(
+                "DM has been sent!",
+                ephemeral=True,
             )
 
         except discord.Forbidden:
@@ -156,25 +162,27 @@ class GeneralCommands(commands.Cog):
             return
 
         embed_message = discord.Embed(
-            title=f"{user} has said: ",
+            title=f"{interaction.user.mention} has said: ",
             description=f"{your_message}",
-            allowed_mentions=discord.AllowedMentions.none(),
             # 0x2ECC71 is Emerald
             colour=0x2ECC71,
         )
         embed_message.set_footer(
             text="You may report the user if anything inappropriate was said."
         )
-        await interaction.response.send_message(embed=embed_message)
+        await interaction.response.send_message(
+            embed=embed_message,
+            allowed_mentions=discord.AllowedMentions.none(),
+        )
 
     @discord.app_commands.command(
         name="ping",
-        description="Click a magical button that pings you.",
+        description="Click a magical button that displays Outbot's ping.",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def ping(self, interaction: discord.Interaction) -> None:
         """
-        Pings the user who invoked the command.
+        Sends Outbot's ping when a button is clicked.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
@@ -188,7 +196,7 @@ class GeneralCommands(commands.Cog):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        await interaction.response.send_message(view=PingUserButton())
+        await interaction.response.send_message(view=PingUserButton(self.bot))
 
     @discord.app_commands.command(
         name="poll",
@@ -229,11 +237,13 @@ class GeneralCommands(commands.Cog):
 
         embed_message = discord.Embed(
             title=title,
-            allowed_mentions=discord.AllowedMentions.none(),
             description=question,
         )
 
-        await interaction.response.send_message(embed=embed_message)
+        await interaction.response.send_message(
+            embed=embed_message,
+            allowed_mentions=discord.AllowedMentions.none(),
+        )
 
         poll_message = await interaction.original_response()
 

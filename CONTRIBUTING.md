@@ -5,9 +5,10 @@
 - Use tabs instead of spaces
 - Use consistent and descriptive names for your variables, function names, paramatars, class names, and file/directory names
 - Try to follow DRY as much as you can
-- Use google style docstrings for all your functions, classes, and methords.
+- Use google style docstrings for all your functions, classes, and methords
 - Make sure all your functions, classes, and methords have been documented with google style docstrings exactatly how OutBot does it
-- Try **NOT** to use emojis extensively in commands. Do **NOT** use them when writing documentation.
+- Do **NOT** add docstrings to __init__
+- Try **NOT** to use emojis extensively in commands. Do **NOT** use them when writing documentation
 - Try to write **SIMPLE** code, rather than **CLEVER** code
 - You may use ai but make sure you proofread all the code ai gives you
 - If there is a tool that can be used to make your code simpler, use it

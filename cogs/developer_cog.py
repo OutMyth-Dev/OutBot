@@ -12,7 +12,7 @@ class DeveloperCommands(commands.Cog):
     Attributes:
         None
 
-    Methords:
+    Methods:
         developers: Sends an embed of OutBot's developer's, with a link to where other developers can apply.
     """
 

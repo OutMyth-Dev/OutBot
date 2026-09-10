@@ -4,7 +4,7 @@ OutBot is a Discord bot created by **Mythordian**, using **Discord.py**. OutBot 
 
 
 
-OutBot's Current Version: **v0.5.1**
+OutBot's Current Version: **v0.5.2**
 
 ---
 

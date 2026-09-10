@@ -16,7 +16,7 @@ class PrivacyCommands(commands.Cog):
     Attributes:
         None
 
-    Methords:
+    Methods:
         privacy: Infomraton about OutBot's privacy.
         data: What data does Outbot collect about you?
         logs: What does OutBot log?

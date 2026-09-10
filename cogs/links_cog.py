@@ -16,7 +16,7 @@ class LinksCommands(commands.Cog):
     Attributes:
         None
 
-    Methords:
+    Methods:
         youtube: Sends OutMyth's YouTube channel link.
         discord: Sends OutMyth's Discord server link.
         invite: Sends the invite link for OutBot.
@@ -44,7 +44,7 @@ class LinksCommands(commands.Cog):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
-            f"# OutMyth's YouTube Channel:\n\n{OUTMYTH_YOUTUBE_CHANNEL_LINK}"
+            f"{OUTMYTH_YOUTUBE_CHANNEL_LINK}"
         )
 
     @discord.app_commands.command(
@@ -66,7 +66,7 @@ class LinksCommands(commands.Cog):
             None
         """
         await interaction.response.send_message(
-            f"# OutMyth's Discord Server:\n\n{DISCORD_SERVER_INVITE_LINK}"
+            f"{DISCORD_SERVER_INVITE_LINK}"
         )
 
     @discord.app_commands.command(
@@ -91,7 +91,7 @@ class LinksCommands(commands.Cog):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
-            "# Outbot's Invite Link:\n\n{OUTBOT_INVITE_LINK}"
+            f"{OUTBOT_INVITE_LINK}"
         )
 
 

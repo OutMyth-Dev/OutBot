@@ -12,7 +12,7 @@ class FreeNitroButton(discord.ui.View):
     Attributes:
         None
 
-    Methords:
+    Methods:
         free_nitro_button_callback: Creates a green Discord button that sends a gif when pressed.
     """
 
@@ -52,7 +52,7 @@ class FunCommands(commands.Cog):
     Attributes:
         None
 
-    Methords:
+    Methods:
         freenitro: Sends a button; when clicked, it sends a gif that rickrolls the user.
         fakeban: Gives users a form to fill out. When filled out, the command fakebands the user specified.
     """
@@ -128,11 +128,6 @@ class FunCommands(commands.Cog):
         embed_message.add_field(
             name="Banned Duration",
             value=f"{user} has been banned for: {duration} years.",
-            allowed_mentions=discord.AllowedMentions(
-                user=True,
-                roles=False,
-                everyone=False,
-            ),
         )
         embed_message.add_field(
             name="Amount of messages deleted",
@@ -140,7 +135,14 @@ class FunCommands(commands.Cog):
         )
         embed_message.set_footer(text="Uhhh, how are they still here?")
 
-        await interaction.response.send_message(embed=embed_message)
+        await interaction.response.send_message(
+            embed=embed_message,
+            allowed_mentions=discord.AllowedMentions(
+                users=True,
+                roles=False,
+                everyone=False,
+            ),
+        )
 
 
 async def setup(bot: OutBot) -> None:

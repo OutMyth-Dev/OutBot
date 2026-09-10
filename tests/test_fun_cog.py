@@ -12,7 +12,7 @@ async def test_freenitro() -> None:
 
     Args:
         None
-    
+
     Returns:
         None
     """
@@ -37,7 +37,7 @@ async def test_freenitro_button() -> None:
 
     Args:
         None
-    
+
     Returns:
         None
     """

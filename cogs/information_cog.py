@@ -24,7 +24,7 @@ class InformationCommands(commands.Cog):
     Attributes:
         None
 
-    Methords:
+    Methods:
         help: OutBot's command guide.
         about: General information about OutBot.
         roadmap: OutBot's planned features.

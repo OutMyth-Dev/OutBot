@@ -12,7 +12,7 @@ class RulesCommands(commands.Cog):
     Attributes:
         None
 
-    Methords:
+    Methods:
         outmythrules: OutMyth's Discord server rules
         outbotrules: OutBot's rules
     """

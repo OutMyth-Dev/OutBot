@@ -12,7 +12,7 @@ class SupportCommands(commands.Cog):
     Attributes:
         None
 
-    Methords:
+    Methods:
         reporthelp: Tells users what a good report should contain.
         report: The command users can use to report an issue.
         feedbackhelp: Tells users what good feedback should look like.
