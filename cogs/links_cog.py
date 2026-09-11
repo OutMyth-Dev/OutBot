@@ -43,9 +43,7 @@ class LinksCommands(commands.Cog):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        await interaction.response.send_message(
-            f"{OUTMYTH_YOUTUBE_CHANNEL_LINK}"
-        )
+        await interaction.response.send_message(f"{OUTMYTH_YOUTUBE_CHANNEL_LINK}")
 
     @discord.app_commands.command(
         name="discord",
@@ -65,9 +63,7 @@ class LinksCommands(commands.Cog):
         Returns:
             None
         """
-        await interaction.response.send_message(
-            f"{DISCORD_SERVER_INVITE_LINK}"
-        )
+        await interaction.response.send_message(f"{DISCORD_SERVER_INVITE_LINK}")
 
     @discord.app_commands.command(
         name="invite",
@@ -90,10 +86,8 @@ class LinksCommands(commands.Cog):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        await interaction.response.send_message(
-            f"{OUTBOT_INVITE_LINK}"
-        )
+        await interaction.response.send_message(f"{OUTBOT_INVITE_LINK}")
 
 
-async def setup(bot: OutBot) -> None:
+async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(LinksCommands(bot))

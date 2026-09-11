@@ -145,5 +145,5 @@ class FunCommands(commands.Cog):
         )
 
 
-async def setup(bot: OutBot) -> None:
+async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(FunCommands(bot))

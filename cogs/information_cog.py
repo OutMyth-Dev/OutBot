@@ -17,6 +17,42 @@ from config import (
 )
 
 
+class PingUserButton(discord.ui.View):
+    """
+    Creates a button that is invoked when /ping is used.
+
+    Attributes:
+        None
+
+    Methods:
+        ping_button_callback: Sends a grey button which is invoked when /ping is used.
+    """
+
+    def __init__(self, bot: OutBot):
+        super().__init__(timeout=None)
+        self.bot = bot
+
+    @discord.ui.button(label="OutBot's Ping", style=discord.ButtonStyle.secondary)
+    async def ping_button_callback(
+        self, interaction: discord.Interaction, button: discord.ui.Button
+    ) -> None:
+        """
+        Sends OutBot's ping when the user when clicks a button.
+
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+            button (discord.ui.button): The button being created.
+
+        Returns:
+            None
+        """
+        ping: int = round(self.bot.latency * 1000)
+        await interaction.response.send_message(
+            f"Pong🏓!\n OutBot's lantency: {ping}ms.",
+            ephemeral=True,
+        )
+
+
 class InformationCommands(commands.Cog):
     """
     General information about OutBot/OutMyth.
@@ -29,6 +65,31 @@ class InformationCommands(commands.Cog):
         about: General information about OutBot.
         roadmap: OutBot's planned features.
     """
+    def __init__(self, bot):
+        self.bot = bot
+    
+    @discord.app_commands.command(
+        name="ping",
+        description="Click a magical button that displays Outbot's ping.",
+    )
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
+    async def ping(self, interaction: discord.Interaction) -> None:
+        """
+        Sends Outbot's ping when a button is clicked.
+
+        Args:
+            interaction (discord.Interaction): The Discord command being invoked.
+
+        Allowed Mentions:
+            None
+
+        Returns:
+            None
+
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
+        """
+        await interaction.response.send_message(view=PingUserButton(self.bot))
 
     @discord.app_commands.command(
         name="help",
@@ -168,5 +229,5 @@ class InformationCommands(commands.Cog):
         await interaction.response.send_message(embed=embed_message)
 
 
-async def setup(bot: OutBot) -> None:
+async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(InformationCommands(bot))

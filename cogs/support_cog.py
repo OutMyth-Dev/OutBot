@@ -152,5 +152,5 @@ class SupportCommands(commands.Cog):
         )
 
 
-async def setup(bot: OutBot) -> None:
+async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(SupportCommands(bot))

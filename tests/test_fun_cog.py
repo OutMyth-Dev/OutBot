@@ -2,7 +2,7 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from cogs import FunCommands, FreeNitroButton
+from cogs import FreeNitroButton, FunCommands
 
 
 @pytest.mark.asyncio

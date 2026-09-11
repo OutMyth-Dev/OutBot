@@ -92,5 +92,5 @@ class RulesCommands(commands.Cog):
         )
 
 
-async def setup(bot: OutBot):
+async def setup(bot: commands.Bot):
     await bot.add_cog(RulesCommands(bot))

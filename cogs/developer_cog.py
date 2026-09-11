@@ -47,6 +47,14 @@ class DeveloperCommands(commands.Cog):
         )
         await interaction.response.send_message(embed=embed_message)
 
+    @discord.app_commands.command(
+        name="contribute", description="Get OutBot's contributing policy and repository link."
+    )
+    @app_command.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
+    async def contribute(self, interaction) -> None:
+        await interaction.response.send_message(
 
-async def setup(bot: OutBot) -> None:
+        )
+
+async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(DeveloperCommands(bot))
