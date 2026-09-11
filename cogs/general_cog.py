@@ -20,9 +20,6 @@ class GeneralCommands(commands.Cog):
         poll: Creates a embed with a title, question, and 10 reactions.
     """
 
-    def __init__(self, bot: OutBot):
-        self.bot = bot
-
     @discord.app_commands.command(
         name="greet",
         description="OutBot greets you!",
