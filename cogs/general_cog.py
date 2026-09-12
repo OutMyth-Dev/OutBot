@@ -1,3 +1,5 @@
+import asyncio
+
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -165,9 +167,9 @@ class GeneralCommands(commands.Cog):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        if await send_censor_word_warning(interaction, title):
-            return
-        elif await send_censor_word_warning(interaction, question):
+        if await send_censor_word_warning(
+            interaction, title
+        ) or send_censor_word_warning(interaction, question):
             return
 
         embed_message = discord.Embed(
@@ -182,8 +184,7 @@ class GeneralCommands(commands.Cog):
 
         poll_message = await interaction.original_response()
 
-        for emoji in EMOJIS:
-            await poll_message.add_reaction(emoji)
+        asyncio.gather(*(poll_message.add_reaction(emoji) for emoji in EMOJIS))
 
 
 async def setup(bot: commands.Bot) -> None:

@@ -1,3 +1,4 @@
+import anyio
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -80,8 +81,8 @@ class SupportCommands(commands.Cog):
         if await send_censor_word_warning(interaction, report):
             return
 
-        with open("reports.txt", "a") as reports:
-            reports.write(report + "\n")
+        async with await anyio.open_file("reports.txt", "a") as reports:
+            await reports.write(report + "\n")
 
         await interaction.response.send_message("Report has been sent", ephemeral=True)
 
@@ -144,8 +145,8 @@ class SupportCommands(commands.Cog):
         if await send_censor_word_warning(interaction, feedback):
             return
 
-        with open("feedback.txt", "a") as user_feedback:
-            user_feedback.write(feedback + "\n")
+        async with await anyio.open_file("feedback.txt", "a") as user_feedback:
+            await user_feedback.write(feedback + "\n")
 
         await interaction.response.send_message(
             "Feedback has been sent!", ephemeral=True
