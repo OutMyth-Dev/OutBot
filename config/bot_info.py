@@ -1,4 +1,4 @@
-BOT_VERSION: str = "0.5.3"
+BOT_VERSION: str = "0.5.4"
 DATE_CREATED: str = "July 11th 2026"
 DEVELOPER: str = "mythordian"
 RETENTION: str = "1 day"
