@@ -124,7 +124,7 @@ class GeneralCommands(commands.Cog):
             return
 
         embed_message = discord.Embed(
-            title=f"{interaction.user.mention} has said: ",
+            title=f"{interaction.user} has said: ",
             description=f"{your_message}",
             colour=discord.Colour.green(),
         )
