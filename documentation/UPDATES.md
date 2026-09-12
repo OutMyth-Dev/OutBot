@@ -1,4 +1,30 @@
+# OutBot Bug Fix - 12 September 2026
+
+## Update 0.5.4
+
+- Fixed undefined name PingUserButton and type hint OutBot
+- Added bitch to censor words
+- Command prefix set to null terminator (\0)
+
+---
+
+# OutBot Bug Fix - 11 September 2026
+
+# Update 0.5.3
+
+Fixed import bug. (cogs/information_cog.py)
+
+---
+
 # OutBot Bug Fix - 10 September 2026
+
+## Update 0.5.2
+
+Fixed messages not getting send because of allowed mentions.
+
+---
+
+# OutBot Bug Fix - 9 September 2026
 
 ## Version 0.5.1
 
