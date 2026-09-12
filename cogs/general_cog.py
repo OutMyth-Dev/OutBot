@@ -169,7 +169,7 @@ class GeneralCommands(commands.Cog):
         """
         if await send_censor_word_warning(
             interaction, title
-        ) or send_censor_word_warning(interaction, question):
+        ) or await send_censor_word_warning(interaction, question):
             return
 
         embed_message = discord.Embed(
