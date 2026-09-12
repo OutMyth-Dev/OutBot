@@ -66,12 +66,21 @@ class OutBot(commands.Bot):
         command_cooldown_error = isinstance(
             error, discord.app_commands.CommandOnCooldown
         )
-        if command_cooldown_error:
-            await interaction.response.send_message(
-                f"Rate limited! Try again in {error.retry_after:.2f} seconds.",
+        text = f"Rate limited! Try again in {error.retry_after:.2f} seconds."
+        if interaction.response.is_done():
+            await interaction.followup.send_message(
+                text,
                 ephemeral=True,
             )
             return
+        else:
+            await interaction.response.send_message(
+                text,
+                ephemeral=True,
+            )
+            return
+
+
 
         embed_error_message = discord.Embed(
             title="Something went wrong :(",

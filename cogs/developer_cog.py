@@ -46,7 +46,7 @@ class DeveloperCommands(commands.Cog):
         )
         await interaction.response.send_message(embed=embed_message)
 
-    @discord.app_commands.command(name="gihub", description="OutBot's GitHub")
+    @discord.app_commands.command(name="github", description="OutBot's GitHub")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def github(
         self,
