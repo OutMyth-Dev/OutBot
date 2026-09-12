@@ -122,8 +122,7 @@ class FunCommands(commands.Cog):
         embed_message = discord.Embed(
             title=f"{user} has been banned!",
             description=reason,
-            # 0xFF0000 is Red
-            colour=0xFF0000,
+            colour=discord.Colour.red(),
         )
         embed_message.add_field(
             name="Banned Duration",

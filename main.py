@@ -74,10 +74,9 @@ class OutBot(commands.Bot):
             return
 
         embed_error_message = discord.Embed(
-            title="Uh, oh! Something went wrong :(.",
-            description="An unexpected error occurred. Please open a ticket.",
-            # 0xE74C3C is Alizarin
-            colour=0xE74C3C,
+            title="Something went wrong :(",
+            description="An unexpected error occurred. Please open a ticket. This is may be an with OutBot's code or discord.",
+            colour=discord.Colour.dark_red(),
         )
         if interaction.response.is_done():
             await interaction.followup.send(

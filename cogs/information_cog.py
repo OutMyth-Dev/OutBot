@@ -144,8 +144,7 @@ class InformationCommands(commands.Cog):
                 "- **feedbackhelp**: Teaches you how to create good feedback.\n"
                 "- **feedback**: Give feedback to OutBot's developers.\n"
             ),
-            # 0x5865F2 is Blurple
-            colour=0x5865F2,
+            colour=discord.Colour.blurple(),
         )
 
         await interaction.response.send_message(embed=embed_message)
@@ -186,7 +185,7 @@ class InformationCommands(commands.Cog):
                 f"- {CODE_OF_CONDUCT}\n\n"
             ),
             # 0x5865F2 is Blurple
-            colour=0x5865F2,
+            colour=discord.Colour.blurple(),
         )
         embed_message.add_field(
             name="OutBot",
@@ -223,8 +222,7 @@ class InformationCommands(commands.Cog):
                 "- More robust code.\n"
                 "- Host Outbot's privacy policy and terms of service on a website.\n"
             ),
-            # 0x2ECC71 is Emerald Green
-            colour=0x2ECC71,
+            colour=discord.Colour.green(),
         )
 
         await interaction.response.send_message(embed=embed_message)

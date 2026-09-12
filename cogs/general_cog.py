@@ -124,8 +124,7 @@ class GeneralCommands(commands.Cog):
         embed_message = discord.Embed(
             title=f"{interaction.user.mention} has said: ",
             description=f"{your_message}",
-            # 0x2ECC71 is Emerald
-            colour=0x2ECC71,
+            colour=discord.Colour.green(),
         )
         embed_message.set_footer(
             text="You may report the user if anything inappropriate was said."

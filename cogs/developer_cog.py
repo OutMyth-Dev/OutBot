@@ -39,8 +39,7 @@ class DeveloperCommands(commands.Cog):
         embed_message = discord.Embed(
             title="OutBot's Developers",
             description=f"{DEVELOPER} is the only developer for OutBot currently.",
-            # 0xFF0000 is Red
-            colour=0xFF0000,
+            colour=discord.Colour.red(),
         )
         embed_message.set_footer(
             text=f"You can apply here: {DISCORD_SERVER_INVITE_LINK}"

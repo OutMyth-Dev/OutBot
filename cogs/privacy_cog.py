@@ -48,8 +48,7 @@ class PrivacyCommands(commands.Cog):
                 f"- Source: Open source ({GITHUB_LINK})\n"
                 f"- OutBot's Privacy Policy: {PRIVACY_POLICY}\n"
             ),
-            # 0x00008B is Dark Blue
-            colour=0x00008B,
+            colour=discord.Colour.dark_blue,
         )
         embed_message.set_footer(text=f"OutBot is Open source: {GITHUB_LINK}")
 
@@ -79,8 +78,7 @@ class PrivacyCommands(commands.Cog):
                 "Data: When an exception catches an error.\n"
                 "eg: HTTPException. Only what the error was is logger.\n"
             ),
-            # 0x2ECC71 is Emerald Green
-            colour=0x2ECC71,
+            colour=discord.Colour.dark_embed(),
         )
         embed_message.set_footer(text="OutBot does NOT collect any user data.")
 
@@ -113,8 +111,7 @@ class PrivacyCommands(commands.Cog):
                 "OutBot only logs errors and logs are only used to make debugging easier.\n"
                 f"OutBot is **open source. You can always check** out its source code/README for more information: {GITHUB_LINK}\n"
             ),
-            # Turquoiseis 0x1ABC9
-            colour=0x1ABC9,
+            colour=discord.Colour.green(),
         )
 
         await interaction.response.send_message(embed=embed_message)
