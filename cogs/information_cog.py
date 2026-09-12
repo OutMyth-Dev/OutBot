@@ -17,7 +17,7 @@ from config import (
 )
 
 
-class PingUserButton(discord.ui.View):
+class BotPingButton(discord.ui.View):
     """
     Creates a button that is invoked when /ping is used.
 
@@ -65,9 +65,10 @@ class InformationCommands(commands.Cog):
         about: General information about OutBot.
         roadmap: OutBot's planned features.
     """
+
     def __init__(self, bot):
         self.bot = bot
-    
+
     @discord.app_commands.command(
         name="ping",
         description="Click a magical button that displays Outbot's ping.",
