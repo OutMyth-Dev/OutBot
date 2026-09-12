@@ -1,5 +1,13 @@
 # OutBot Bug Fix - 12 September 2026
 
+## Update 0.5.5
+
+- Fixed rate limit not working
+
+---
+
+# OutBot Bug Fix - 12 September 2026
+
 ## Update 0.5.4
 
 - Fixed undefined name PingUserButton and type hint OutBot

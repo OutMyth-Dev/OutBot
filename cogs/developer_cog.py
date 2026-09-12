@@ -15,8 +15,10 @@ class DeveloperCommands(commands.Cog):
     Methods:
         developers: Sends an embed of OutBot's developer's, with a link to where other developers can apply.
     """
+
     def __init__(self, bot):
         self.bot = bot
+
     @discord.app_commands.command(
         name="developers", description="What developers contributed to OutBot?"
     )
@@ -66,14 +68,14 @@ class DeveloperCommands(commands.Cog):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(f"{GITHUB_LINK}")
-    
+
     @discord.app_commands.command(
         name="sync", description="Sync Command Tree. (Only for developers)"
     )
     @app_commands.checks.cooldown(1, 86400, key=lambda interaction: interaction.user.id)
     async def sync(self, interaction: discord.Interaction) -> None:
         """
-        Syncs Bot Command Tree 
+        Syncs Bot Command Tree
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
@@ -86,16 +88,19 @@ class DeveloperCommands(commands.Cog):
         """
         if interaction.user.id != DEVELOPER_ID:
             await interaction.response.send_message(
-                "Hey! This command is only for developers!", 
-                ephemeral=True
+                "Hey! This command is only for developers!", ephemeral=True
             )
+            return
 
-        await interaction.response.send_message(
+        await self.bot.tree.sync()
+
+        await interaction.response.defer()
+
+        await interaction.followup.send(
             "Command tree synced!",
             ephemeral=True,
-            )
-        
-        await self.bot.tree.sync()
-        
+        )
+
+
 async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(DeveloperCommands(bot))

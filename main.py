@@ -2,6 +2,7 @@ import logging
 import os
 
 import discord
+from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
@@ -51,7 +52,7 @@ class OutBot(commands.Bot):
     async def on_app_command_error(
         self,
         interaction: discord.Interaction,
-        error: discord.app_commands.AppCommandError,
+        error: discord.app_commands,
     ) -> None:
         """
         Sends an embed when unexpected errors occur or tells when they can use a commands again. (30 second cooldown.)
@@ -63,22 +64,22 @@ class OutBot(commands.Bot):
         Returns:
             None
         """
-        command_cooldown_error = isinstance(
-            error, discord.app_commands.CommandOnCooldown
-        )
-        text = f"Rate limited! Try again in {error.retry_after:.2f} seconds."
-        if interaction.response.is_done():
-            await interaction.followup.send_message(
-                text,
-                ephemeral=True,
-            )
-            return
-        else:
-            await interaction.response.send_message(
-                text,
-                ephemeral=True,
-            )
-            return
+
+        if isinstance(error, discord.app_commands.CommandOnCooldown):
+            
+            RATE_LIMIT_MESSAGE = f"Rate limited! Try again in {error.retry_after:.2f} seconds."
+            if interaction.response.is_done():
+                await interaction.followup.send_message(
+                    RATE_LIMIT_MESSAGE,
+                    ephemeral=True,
+                )
+                return
+            else:
+                await interaction.response.send_message(
+                    RATE_LIMIT_MESSAGE,
+                    ephemeral=True,
+                )
+                return
 
 
         embed_error_message = discord.Embed(
