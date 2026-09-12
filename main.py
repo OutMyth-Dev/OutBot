@@ -81,7 +81,6 @@ class OutBot(commands.Bot):
             return
 
 
-
         embed_error_message = discord.Embed(
             title="Something went wrong :(",
             description="An unexpected error occurred. Please open a ticket. This is may be an with OutBot's code or discord.",
