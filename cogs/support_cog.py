@@ -44,7 +44,7 @@ class SupportCommands(commands.Cog):
             "- What your issue is.\n"
             "- User's username only if you're reporting a user.\n"
             "- Make sure you provide as much detail as possible.\n"
-            "- Please make sure you include a way for us to contact.\n"
+            "- Please make sure you include a way for us to contact you.\n"
             "- Your report/s are deleted as soon as they are dealt with.\n",
             ephemeral=True,
         )
@@ -54,7 +54,7 @@ class SupportCommands(commands.Cog):
         description="Report an issue/user. Please use /reporthelp; OutBot's README to know how to report.",
     )
     @discord.app_commands.describe(
-        report="Please describe what you would like to report. Use /reporhelp if you are unsure how to format a report."
+        report="Please describe what you would like to report. Use /reporthelp if you are unsure how to format a report."
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def report(
@@ -109,7 +109,7 @@ class SupportCommands(commands.Cog):
             "- What your feedback is.\n"
             "- Why you think it would make OutBot better.\n"
             "- Make sure you provide as much detail as possible.\n"
-            "- Please make sure you include a way for us to contact.\n"
+            "- Please make sure you include a way for us to contact you.\n"
             "- Your feedback is deleted as soon as it is dealt with.\n"
             "- Your feedback can contain bug reporting and security reporting for now. You can also report a security issue using /report.\n",
             ephemeral=True,
@@ -117,7 +117,7 @@ class SupportCommands(commands.Cog):
 
     @discord.app_commands.command(
         name="feedback",
-        description="Provide OutBot useful feedback",
+        description="Provide useful to OutBot  feedback",
     )
     @discord.app_commands.describe(feedback="Give OutBot useful feedback.")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
@@ -136,7 +136,7 @@ class SupportCommands(commands.Cog):
         Allowed Mentions:
             N/A
 
-        Retturns:
+        Returns:
             None
 
         Cooldown:
