@@ -94,7 +94,7 @@ class OutBot(commands.Bot):
 
 
 bot = OutBot(
-    command_prefix=None,
+    command_prefix="\0",
     intents=discord.Intents.default(),
 )
 

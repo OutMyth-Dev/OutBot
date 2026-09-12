@@ -43,7 +43,7 @@ OutBot does **NOT** use prefix  commands. Therefore, command_prefix=None. OutBot
 OutBot's Config:
 ```py
 bot = OutBot(
-    command_prefix=None,
+    command_prefix="\0",
     intents=discord.Intents.default(),
 )
 ```

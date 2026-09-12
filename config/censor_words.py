@@ -10,7 +10,7 @@ CENSOR_WORDS: tuple(str) = (
     "pu$sy",
     "sluty",
     "fu",
-    "btich",
+    "bitch",
     "ni.gger",
     "slutty",
     "fck",

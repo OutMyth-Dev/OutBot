@@ -166,10 +166,9 @@ class GeneralCommands(commands.Cog):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        if await send_censor_word_warning(interaction, title or question):
+        if await send_censor_word_warning(interaction, title):
             return
-
-        if await send_censor_word_warning(interaction, title and question):
+        elif await send_censor_word_warning(interaction, question):
             return
 
         embed_message = discord.Embed(
