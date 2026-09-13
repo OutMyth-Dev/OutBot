@@ -40,7 +40,7 @@ def custom_logger() -> None:
     file_handler.rotator = delete_old_logs
 
     formatter = logging.Formatter(
-        "%(asctime)s | %(name)s | %(message)s",
+        "%(name)s | %(message)s",
     )
 
     file_handler.setFormatter(formatter)
