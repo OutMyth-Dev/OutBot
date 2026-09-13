@@ -14,7 +14,7 @@
 - [Adding Your Bot To Your Apps/Servers](#adding-your-bot-to-your-appsservers)
 - [Changing Developer Id](#changing-developer-id)
 - [IMPORTANT NOTICE](#important-notice)
-- [Inviting OutBot To Your Apps/Discord Servers](#inviting-outBot-to-your-apps-discordservers)
+- [Inviting OutBot To Your Apps/Discord Servers](#inviting-outbot-to-your-appsdiscord-servers)
 - [Developer notes](#developer-notes)
 
 ---
