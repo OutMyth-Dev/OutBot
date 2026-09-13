@@ -3,10 +3,10 @@
 # OutBot's Coding standards
 
 - Use tabs instead of spaces
-- Use consistent and descriptive names for your variables, function names, paramatars, class names, and file/directory names
+- Use consistent and descriptive names for your variables, function names, parameters, class names, and file/directory names
 - Try to follow DRY as much as you can
-- Use google style docstrings for all your functions, classes, and methords
-- Make sure all your functions, classes, and methords have been documented with google style docstrings exactatly how OutBot does it
+- Use google style docstrings for all your functions, classes, and methods
+- Make sure all your functions, classes, and methords have been documented with google style docstrings exacly how OutBot does it
 - Do **NOT** add docstrings to __init__
 - Try **NOT** to use emojis extensively in commands. Do **NOT** use them when writing documentation
 - Try to write **SIMPLE** code, rather than **CLEVER** code
@@ -37,9 +37,9 @@ Your code should follow OutBot's coding standards which are listed above.
 
 > 1) Fork the Repository and add your changes.
 > 2) Open a ticket on [OutMyth's Discord Server](https://discord.gg/Sc5vAvTJtc) requesting to become a developer.
-> 3) If accepted you may present your changes via DMs. You **MUST** explain what you changed and why. It must fit the current structure of OutBot.
-> 4) Your code will be reviewed by a developer at OutMyth. You will be told via DMs if your contribution was accepted.
-> 5) You **CAN** still present your changes even if you're rejected. The only difference being you will have to do it via a pull request instead of DMs
+> 3) If accepted you may present your changes via pull request. You **MUST** explain what you changed and why. It must fit the current structure of OutBot.
+> 4) Your code will be reviewed by a developer at OutMyth. You will be told via the ticket you opened if your contribution was accepted.
+> 5) You **CAN** still present your changes even if you're rejected.
 
 Thank **you** for contributing to OutBot.
 > OutMyth's developer team.

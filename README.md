@@ -1,18 +1,20 @@
-# Table Of Context
+# Table Of Contents
 
 - [About](#about)
 - [Useful Link](#useful-links)
 - [Ephemeral Messages](#what-are-ephemeral-messages)
 - [Command prefixes and privileged intents](#command-prefixes-and-privileged-intents)
 - [Getting Started](#getting-started)
-- [Requirements](#requirements)
-- [Getting A Local Copy Of OutBot](#getting-a-local-copy-of-outbot)
-- [Virtual Environment](#creating-a-virtual-environment)
-- [Discord Bot Token](#why-do-we-need-a-discord-bot-token)
-- [Discord Developer Portal Setup](#discord-developer-portal-setup)
-- [Creating .env](#creating-env)
-- [Adding Your Bot To Your Apps/Servers](#adding-your-bot-to-your-appsservers)
-- [Changing Developer Id](#changing-developer-id)
+    - [Requirements](#requirements)
+    - [Getting A Local Copy Of OutBot](#getting-a-local-copy-of-outbot)
+    - [Virtual Environment](#creating-a-virtual-environment)
+        - [Windows](#windows)
+        - [Linux/macOS](#linuxmacos)
+    - [Discord Bot Token](#why-do-we-need-a-discord-bot-token)
+    - [Discord Developer Portal Setup](#discord-developer-portal-setup)
+    - [Creating .env](#creating-env)
+    - [Adding Your Bot To Your Apps/Servers](#adding-your-bot-to-your-appsservers)
+    - [Changing Developer Id](#changing-developer-id)
 - [IMPORTANT NOTICE](#important-notice)
 - [Inviting OutBot To Your Apps/Discord Servers](#inviting-outbot-to-your-appsdiscord-servers)
 - [Developer notes](#developer-notes)
@@ -21,7 +23,11 @@
 
 # About
 
-OutBot is a Discord bot created by **Mythordian**, using **Discord.py**. OutBot is a general utility Discord bot that takes privacy and security seriously. **OutBot is 100% open source**. Most Discord bots like Echo, Security, and Ticketsv2 are **NOT** open source. Open Source helps users understand what they are using while allowing them to do whatever they want to do with the project (depending on the license). It can also help make your project become a lot better. Take the kernel for instance, if it were closed source, it would be nowhere near as good as it is now.
+OutBot is an open source, privacy respecting Discord utility bot built using **discord.py**. **OutBot is 100% open source**. Most popular Discord bots **NOT** open source. Open Source helps users understand what they are using while allowing them to do whatever they want to do with the project (depending on the license). It can also help make your project become a lot better. Take the kernel for instance, if it were closed source, it would be nowhere near as good as it is now.
+
+OutBot uses **NO** privileged intents. Most popular discord bots use them. Member intents allows the bot to see members joining/leaving the server. Presence intent allows the bot to see member status (idle, offline, online, do not disturb et cetera). Message content intent allows the bot to see user messages. This is intent usually used for prefix commands. However OutBot does use discor's default intents.  
+
+For more information, please read: [OutBot's Privacy Policy](https://github.com/OutMyth-Dev/OutBot/blob/main/PRIVACY.md)
 
 OutBot's Current Version: **v0.5.5**
 
@@ -41,7 +47,7 @@ OutBot's Current Version: **v0.5.5**
 
 ---
 
-# What Are ephemeral Messages?
+# What Are Ephemeral Messages?
 
 > Some messages can only be seen by the user who triggered the command. (ephemeral=True)
 > Most messages can be seen by everyone. (ephemeral=False by default).
@@ -89,38 +95,61 @@ cd OutBot
 
 ## Creating A Virtual Environment
 
-(Windows)
+Windows:
 ```shell
 python -m venv .venv
 ```
 
-macOS/Linux:
+Linix/macOS:
 ```shell
-source .venv/bin/activate
+python3 -m venv .venv
 ```
+
+Activating it:
 
 Windows:
 ```shell
 .venv\Scripts\Activate.ps1
 ```
 
+Linux/macOS:
+```shell
+source .venv/bin/activate
+```
+
+### Windows:
+
+You have to install this to allow OutBot to work:
 ```shell
 pip install -r requirements/base.txt
 ```
 
-You can decide if you want to use tests or ruff/cloc.
-
-(Windows) If you want to use tests:
-```shell
-pip install -r requirements/tests.txt
-```
-
-(Windows) If you want to use ruff and cloc use:
+If you want to use ruff and cloc:
 ```shell
 pip install -r requirements/developer.txt
 ```
 
-Use pip3 install... if you are on Linux/macOS.
+If you want to use tests:
+```shell
+pip install -r requirements/tests.txt
+```
+
+### Linux/macOS:
+
+You have to install this to allow OutBot to work:
+```shell
+pip3 install -r requirements/base.txt
+```
+
+If you want to use ruff and cloc use:
+```shell
+pip3 install -r requirements/developer.txt
+```
+
+If you want to use tests:
+```shell
+pip3 install -r requirements/tests.txt
+```
 
 ### Why Do We Need A Discord Bot Token?
 
@@ -141,7 +170,7 @@ Go to the [Discord Developer portal Installation Tab](https://discord.com/develo
 
 ## Changing Developer Id
 
-There is one final thing we need to do and that is to change the developer id. By default it is set to OutBot's developers. By keeping it that way, you will NOT be able to sync OutBot's command tree. Go to discord's settings and enable developer mode. Right click on your profile and click "copy user id". Copy that user id into config/developer_id.py
+There is one final thing we need to do and that is to change the developer id. By default it is set to OutBot's developers. By keeping it that way, you will NOT be able to sync OutBot's command tree. Go to Discord's settings and enable developer mode. Right click on your profile and click "copy user id". Copy that user id into config/developer_id.py
 
 # IMPORTANT NOTICE
 
@@ -159,6 +188,6 @@ Then choose if you want OutBot to your Discord server(s) or to your apps.
 
 # Developer notes
 
-To report any issues (other than security vulnabilities) please open a GitHub issue, a ticket on OutMyth, or use /report.  
-Before reporting a security issue please read (OutBot's Security Policy)[https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file]  
+To report any issues (other than security vulnerabilities) please open a GitHub issue, a ticket on OutMyth, or use /report.  
+Before reporting a security issue please read [OutBot's Security Policy](https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file).  
 Thank **you** for using OutBot! ❤️

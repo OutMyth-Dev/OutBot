@@ -77,7 +77,7 @@ class PrivacyCommands(commands.Cog):
             description=(
                 "Data: Errors only.\n"
                 "e.g. HTTPException: Only what command the error occurred in and the error is logged.\n"
-                "Some data | (log level) ERROR | (file name) __main__ | Unexpected error: Command 'command name' raised an exception: some exception."
+                "(name e.g. ) __main__ | Unexpected error: Command 'command name' raised an exception: some exception."
             ),
             colour=discord.Colour.dark_embed(),
         )
@@ -112,9 +112,9 @@ class PrivacyCommands(commands.Cog):
                 "OutBot only logs errors and logs are only used to make debugging easier.\n"
                 f"OutBot is **open source. You can always check** out its source code/README for more information: {GITHUB_LINK}\n"
                 "# This is what OutBot's logs actually looks like. These are 50 lines taken from OutBot's actual logs, sanitized and eaiser for non-programmers to read. Repeated logs were removed for readability.\n"
-                "Time | Log Level | Name | message\n"
-                "Time | Log Level | Name | message\n"
-                "More (Time | Log Level | Name | message)"
+                "Name | message\n"
+                "Name | message\n"
+                "More (Name | message)"
                 "Traceback Some Traceback\n"
                 "AttributeError: 'something' object has no attribute 'something else'\n"
             ),
