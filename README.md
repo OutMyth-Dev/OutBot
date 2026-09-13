@@ -6,11 +6,13 @@
 - [Command prefixes and privileged intents](#command-prefixes-and-privileged-intents)
 - [Getting Started](#getting-started)
     - [Requirements](#requirements)
-    - [Getting A Local Copy Of OutBot](#getting-a-local-copy-of-outbot)
-    - [Virtual Environment](#creating-a-virtual-environment)
         - [Windows](#windows)
         - [Linux/macOS](#linuxmacos)
-    - [Discord Bot Token](#why-do-we-need-a-discord-bot-token)
+    - [Getting A Local Copy Of OutBot](#getting-a-local-copy-of-outbot)
+    - [Virtual Environment](#creating-a-virtual-environment)
+        - [Windows Virtual Environment](#windows-virtual-environment)
+        - [Linix/macOS Virtual Environment](#linixmacos-virtual-environment)
+    - [Discord Bot Token](discord-bot-token)
     - [Discord Developer Portal Setup](#discord-developer-portal-setup)
     - [Creating .env](#creating-env)
     - [Adding Your Bot To Your Apps/Servers](#adding-your-bot-to-your-appsservers)
@@ -83,40 +85,6 @@ bot = OutBot(
 - discord.py 2.7.1
 - git [Install link](https://git-scm.com/install/) 
 
-## Getting A Local Copy Of OutBot
-
-```shell
-git clone https://github.com/OutMyth-Dev/OutBot.git
-```
-
-```shell
-cd OutBot
-```
-
-## Creating A Virtual Environment
-
-Windows:
-```shell
-python -m venv .venv
-```
-
-Linix/macOS:
-```shell
-python3 -m venv .venv
-```
-
-Activating it:
-
-Windows:
-```shell
-.venv\Scripts\Activate.ps1
-```
-
-Linux/macOS:
-```shell
-source .venv/bin/activate
-```
-
 ### Windows:
 
 You have to install this to allow OutBot to work:
@@ -151,20 +119,56 @@ If you want to use tests:
 pip3 install -r requirements/tests.txt
 ```
 
-### Why Do We Need A Discord Bot Token?
+## Getting A Local Copy Of OutBot
+
+```shell
+git clone https://github.com/OutMyth-Dev/OutBot.git
+```
+
+```shell
+cd OutBot
+```
+
+## Creating A Virtual Environment
+
+### Windows Virtual Environment
+Windows:
+```shell
+python -m venv .venv
+```
+
+Activating it:
+Windows:
+```shell
+.venv\Scripts\Activate.ps1
+```
+
+### Linix/macOS Virtual Environment
+
+Linix/macOS:
+```shell
+python3 -m venv .venv
+```
+
+Linux/macOS:
+```shell
+source .venv/bin/activate
+```
+
+## Discord Bot Token
 
 You now have a local copy of OutBot on your computer. For OutBot to actually run, we will need a Discord Bot Token. 
 DO NOT SHARE YOUR DISCORD BOT TOKEN WITH ANYONE. IF YOU DO, YOU GIVE THEM ACCESS TO YOUR BOT. THEY CAN EVEN FIND YOUR EMAIL WITH IT.
 
-### Discord Developer Portal Setup
+## Discord Developer Portal Setup
 
 Head over to [Discord Developer portal](https://discord.com/developers/applications) and sign in/create an account. Click "new application". Name your bot and accept Discord's Developer TOS/Privacy Policy. 
 
-### Creating .env
+## Creating .env
 
 Create a new file called .env and make sure it is in .gitignore. Create a variable called DISCORD_TOKEN. To get your discord bot's token. Head over to [Discord Developer Portal](https://discord.com/developers/home), click "Bot" and then click "Reset Token". Click "Yes do it to" confirm. Copy your Discord token into the file ".env".
 
-### Adding Your Bot To Your Apps/Servers
+## Adding Your Bot To Your Apps/Servers
 
 Go to the [Discord Developer portal Installation Tab](https://discord.com/developers/applications/installation); copy the install link and paste the install link into your browser. Then, choose whether you want OutBot in your apps or if you would like to add OutBot to your server/s. 
 
