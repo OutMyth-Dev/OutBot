@@ -6,15 +6,7 @@ from utils import send_censor_word_warning
 
 
 class FreeNitroButton(discord.ui.View):
-    """
-    Creates a button that triggers when the freenitro command is invoked.
-
-    Attributes:
-        None
-
-    Methods:
-        free_nitro_button_callback: Creates a green Discord button that sends a gif when pressed.
-    """
+    """Creates a button that triggers when the freenitro command is invoked."""
 
     def __init__(self) -> None:
         super().__init__(timeout=60)
@@ -51,17 +43,8 @@ class FreeNitroButton(discord.ui.View):
         )
 
 
-class FunCommands(commands.Cog):
-    """
-    Commands for user's to have fun.
-
-    Attributes:
-        None
-
-    Methods:
-        freenitro: Sends a button; when clicked, it sends a gif that rickrolls the user.
-        fakeban: Gives users a form to fill out. When filled out, the command fakebands the user specified.
-    """
+class FunCommands(commands.GroupCog, group_name="fun"):
+    """Commands for user's to have fun."""
 
     def __init__(self, bot) -> None:
         self.bot = bot

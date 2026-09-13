@@ -9,18 +9,8 @@ from utils import (
 )
 
 
-class PrivacyCommands(commands.Cog):
-    """
-    Information about privacy (OutBot).
-
-    Attributes:
-        None
-
-    Methods:
-        privacy: Information about OutBot's privacy.
-        data: What data does Outbot collect about you?
-        logs: What does OutBot log?
-    """
+class PrivacyCommands(commands.GroupCog, group_name="privacy"):
+    """Information about privacy (OutBot)."""
 
     @discord.app_commands.command(
         name="privacy",

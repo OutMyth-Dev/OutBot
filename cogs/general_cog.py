@@ -8,19 +8,8 @@ from config import EMOJIS
 from utils import send_censor_word_warning
 
 
-class GeneralCommands(commands.Cog):
-    """
-    Commands that do not fit any other category.
-
-    Attributes:
-        None
-
-    Methods:
-        greet: Greets the user.
-        dm: DMs the user.
-        echo: OutBot says what the user passed in.
-        poll: Creates a embed with a title, question, and 10 reactions.
-    """
+class GeneralCommands(commands.GroupCog, group_name="utility"):
+    """Commands that do not fit any other category."""
 
     @discord.app_commands.command(
         name="greet",

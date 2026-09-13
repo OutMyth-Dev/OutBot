@@ -18,15 +18,7 @@ from utils import (
 
 
 class BotPingButton(discord.ui.View):
-    """
-    Creates a button that is invoked when /ping is used.
-
-    Attributes:
-        None
-
-    Methods:
-        ping_button_callback: Sends a grey button which is invoked when /ping is used.
-    """
+    """Creates a button that is invoked when /ping is used."""
 
     def __init__(self, bot: commands.Bot) -> None:
         super().__init__(timeout=300)
@@ -56,18 +48,8 @@ class BotPingButton(discord.ui.View):
         )
 
 
-class InformationCommands(commands.Cog):
-    """
-    General information about OutBot/OutMyth.
-
-    Attributes:
-        None
-
-    Methods:
-        help: OutBot's command guide.
-        about: General information about OutBot.
-        roadmap: OutBot's planned features.
-    """
+class InformationCommands(commands.GroupCog, group_name="information"):
+    """General information about OutBot/OutMyth."""
 
     def __init__(self, bot):
         self.bot = bot

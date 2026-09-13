@@ -19,16 +19,7 @@ if DISCORD_TOKEN is None:
 
 
 class OutBot(commands.Bot):
-    """
-    Loads all cogs, contains centrelized error handling, and syncs all commands to the command tree.
-
-    Attributes:
-        None
-
-    Methods:
-        setup_hook: Loads all cogs and syncs all commands.
-        on_app_command_error: Sends an embed when unexpected errors occur and logs them.
-    """
+    """Loads all cogs, contains centrelized error handling, and syncs all commands to the command tree."""
 
     async def setup_hook(self) -> None:
         """

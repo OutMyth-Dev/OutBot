@@ -18,22 +18,14 @@ if DEVELOPER_ID is None:
     logger.error("Your developer id cannot be none.")
 
 
-class DeveloperCommands(commands.Cog):
-    """
-    Information about OutBot's developers.
-
-    Attributes:
-        None
-
-    Methods:
-        developers: Sends an embed of OutBot's developer's, with a link to where other developers can apply.
-    """
+class DeveloperCommands(commands.GroupCog, group_name="developer"):
+    """Information about OutBot's developers."""
 
     def __init__(self, bot):
         self.bot = bot
 
     @discord.app_commands.command(
-        name="developers", description="What developers contributed to OutBot?"
+        name="outbot_developer", description="What developers contributed to OutBot?"
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def developers(

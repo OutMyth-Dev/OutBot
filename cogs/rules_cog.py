@@ -5,20 +5,11 @@ from discord.ext import commands
 from utils import TERMS_OF_SERVICE
 
 
-class RulesCommands(commands.Cog):
-    """
-    Commands related to rules. Users can use to commands to find out rules they did not know about
-
-    Attributes:
-        None
-
-    Methods:
-        outmythrules: OutMyth's Discord server rules
-        outbotrules: OutBot's rules
-    """
+class RulesCommands(commands.GroupCog, group_name="rules"):
+    """Commands related to rules. Users can use to commands to find out rules they did not know about"""
 
     @discord.app_commands.command(
-        name="outmythrules",
+        name="outmyth",
         description="OutMyth's Discord Server Rules.",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
@@ -63,7 +54,7 @@ class RulesCommands(commands.Cog):
         )
 
     @discord.app_commands.command(
-        name="outbotrules",
+        name="outbot",
         description="OutBot's Rules!",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)

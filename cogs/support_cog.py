@@ -6,19 +6,8 @@ from discord.ext import commands
 from utils import send_censor_word_warning
 
 
-class SupportCommands(commands.Cog):
-    """
-    Commands related to user support.
-
-    Attributes:
-        None
-
-    Methods:
-        reporthelp: Tells users what a good report should contain.
-        report: The command users can use to report an issue.
-        feedbackhelp: Tells users what good feedback should look like.
-        feedback: The command users can use to give feedback.
-    """
+class SupportCommands(commands.GroupCog, group_name="help"):
+    """Commands related to user support."""
 
     @discord.app_commands.command(
         name="reporthelp", description="Explains what a good report looks like."
