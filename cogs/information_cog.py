@@ -28,8 +28,8 @@ class BotPingButton(discord.ui.View):
         ping_button_callback: Sends a grey button which is invoked when /ping is used.
     """
 
-    def __init__(self, bot: commands.Bot):
-        super().__init__(timeout=None)
+    def __init__(self, bot: commands.Bot) -> None:
+        super().__init__(timeout=300)
         self.bot = bot
 
     @discord.ui.button(label="OutBot's Ping", style=discord.ButtonStyle.secondary)
@@ -45,10 +45,13 @@ class BotPingButton(discord.ui.View):
 
         Returns:
             None
+        
+        Timeout:
+            5 Minutes (300 seconds)
         """
         ping: int = round(self.bot.latency * 1000)
         await interaction.response.send_message(
-            f"Pong🏓!\n OutBot's lantency: {ping}ms.",
+            f"Pong!\n OutBot's lantency: {ping}ms.",
             ephemeral=True,
         )
 
@@ -90,7 +93,7 @@ class InformationCommands(commands.Cog):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        await interaction.response.send_message(view=BotPingButton(self.bot))
+        await interaction.response.send_message(view=BotPingButton(bot))
 
     @discord.app_commands.command(
         name="help",

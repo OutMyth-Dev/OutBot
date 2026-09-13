@@ -16,6 +16,9 @@ class FreeNitroButton(discord.ui.View):
         free_nitro_button_callback: Creates a green Discord button that sends a gif when pressed.
     """
 
+    def __init__(self) -> None:
+        super().__init__(timeout=60)
+
     @discord.ui.button(
         label="Click me for free nitro!!!",
         style=discord.ButtonStyle.success,
@@ -34,6 +37,9 @@ class FreeNitroButton(discord.ui.View):
 
         Returns:
             None
+
+        Timeout:
+            1 minute (60 seconds)
         """
         await interaction.response.send_message(
             "https://tenor.com/view/rick-roll-nitro-gif-21997352",
@@ -56,6 +62,9 @@ class FunCommands(commands.Cog):
         freenitro: Sends a button; when clicked, it sends a gif that rickrolls the user.
         fakeban: Gives users a form to fill out. When filled out, the command fakebands the user specified.
     """
+
+    def __init__(self, bot) -> None:
+        self.bot = bot
 
     @discord.app_commands.command(
         name="freenitro",
