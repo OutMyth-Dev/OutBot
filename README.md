@@ -123,6 +123,10 @@ On Discord Developer portal, click "Bot" and then click "Reset Token". Click "Ye
 
 Go to the [Discord Developer portal Installation Tab](https://discord.com/developers/applications/installation); copy the install link and paste the install link into your browser. Then, choose whether you want OutBot in your apps or if you would like to add OutBot to your server/s. 
 
+## Changing Developer Id
+
+There is one final thing we need to do and that is to change the developer id. By default it is set to OutBot's developers. By keeping it that way, you will NOT be able to sync OutBot's command tree. Go to discord's settings and enable developer mode. Right click on your profile and click "copy user id". Copy that user id into config/developer_id.py
+
 # IMPORTANT NOTE
 
 **IF YOU DO NOT ADD YOUR DISCORD BOT TOKEN TO ".env", A RUNTIME ERROR WILL BE RAISED.**
