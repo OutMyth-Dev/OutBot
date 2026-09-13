@@ -8,13 +8,13 @@
 - [Requirements](#requirements)
 - [Getting A Local Copy Of OutBot](#getting-a-local-copy-of-outbot)
 - [Virtual Environment](#creating-a-virtual-environment)
-- [Discord Bot Token](#why-do-we-need-a-discord-bot-token?)
+- [Discord Bot Token](#why-do-we-need-a-discord-bot-token)
 - [Discord Developer Portal Setup](#discord-developer-portal-setup)
-- [Creating .env](#creating-.env)
-- [Adding Your Bot To Your Apps/Servers](#adding-your-bot-to-your-apps/servers)
+- [Creating .env](#creating-env)
+- [Adding Your Bot To Your Apps/Servers](#adding-your-bot-to-your-appsservers)
 - [Changing Developer Id](#changing-developer-id)
 - [IMPORTANT NOTICE](#important-notice)
-- [Adding OutBot To Your Apps/Discord Servers](#adding-outBot-to-your-apps/discord-servers)
+- [Inviting OutBot To Your Apps/Discord Servers](#inviting-outBot-to-your-apps-discordservers)
 - [Developer notes](#developer-notes)
 
 ---
@@ -147,7 +147,7 @@ There is one final thing we need to do and that is to change the developer id. B
 
 **IF YOU DO NOT ADD YOUR DISCORD BOT TOKEN TO ".env", A RUNTIME ERROR WILL BE RAISED.**
 
-# Adding OutBot To Your Apps/Discord Servers
+# Inviting OutBot To Your Apps/Discord Servers
 
 To invite OutBot to your server(s)/add it to your apps, head over to this link:
 
