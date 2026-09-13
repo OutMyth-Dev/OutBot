@@ -115,8 +115,9 @@ class LinksCommands(commands.Cog):
         """
         await interaction.response.send_message(f"{GITHUB_LINK}")
 
-    @discord.app_commadns.commnd(
-        name="code_of_conduct", description="OutBot's Code Of Conduct.",
+    @discord.app_commands.command(
+        name="code_of_conduct",
+        description="OutBot's Code Of Conduct.",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: disocrd.Interaction)
     async def code_of_conduct(self, interaction: discord.Interaction) -> None:
@@ -133,9 +134,10 @@ class LinksCommands(commands.Cog):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(f"{CODE_OF_CONDUCT}")
-    
+
     @discord.app_commands.command(
-        name="contributing_policy", description="OutBot's Contriburing Policy",
+        name="contributing_policy",
+        description="OutBot's Contriburing Policy",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.Interaction)
     async def contributing_policy(self, interaction: discord.Interaction) -> None:
@@ -154,7 +156,8 @@ class LinksCommands(commands.Cog):
         await interaction.response.send_message(f"{CONTRIBUTING_POLICY}")
 
     @discord.app_commands.command(
-        name="licnese", description="OutBot's License.",
+        name="licnese",
+        description="OutBot's License.",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.Interaction)
     async def licnese(self, interaction: discord.Interaction) -> None:
@@ -173,7 +176,8 @@ class LinksCommands(commands.Cog):
         await interaction.response.send_message(f"{OUTBOT_LICENSE}")
 
     @discord.app_commands.command(
-        name="privacy_policy", description="OutBot's License.",
+        name="privacy_policy",
+        description="OutBot's License.",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.Interaction)
     async def privacy_policy(self, interaction: discord.Interaction) -> None:
@@ -192,7 +196,8 @@ class LinksCommands(commands.Cog):
         await interaction.response.send_message(f"{PRIVACY_POLICY}")
 
     @discord.app_commands.command(
-        name="tos", description="OutBot's License.",
+        name="tos",
+        description="OutBot's License.",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.Interaction)
     async def tos(self, interaction: discord.Interaction) -> None:
@@ -211,7 +216,8 @@ class LinksCommands(commands.Cog):
         await interaction.response.send_message(f"{TERMS_OF_SERVICE}")
 
     @discord.app_commands.command(
-        name="security_policy", description="OutBot's License.",
+        name="security_policy",
+        description="OutBot's License.",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.Interaction)
     async def security_policy(self, interaction: discord.Interaction) -> None:
@@ -229,24 +235,6 @@ class LinksCommands(commands.Cog):
         """
         await interaction.response.send_message(f"{SECURITY_POLICY}")
 
-    @discord.app_commands.command(
-        name="privacy_policy", description="OutBot's License.",
-    )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.Interaction)
-    async def licnese(self, interaction: discord.Interaction) -> None:
-        """
-        Sends OutBot's privacy policy link.
-
-        Args:
-            interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
-
-        Cooldown:
-            1 message per user every 30 seconds. This only applies the command they just used.
-        """
-        await interaction.response.send_message(f"{PRIVACY_POLICY}")
 
 async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(LinksCommands(bot))

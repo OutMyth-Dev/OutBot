@@ -66,19 +66,21 @@ class DeveloperCommands(commands.Cog):
         Cooldown:
             1 message per user every 86400 seconds or 1 message per user every day. This only applies the command they just used.
         """
+
         if interaction.user.id != DEVELOPER_ID:
             await interaction.response.send_message(
                 "Hey! This command is only for developers!", ephemeral=True
             )
             return
 
-        await self.bot.tree.sync()
+        await interaction.response.defer(
+            ephemeral=True,
+        )
 
-        await interaction.response.defer()
+        commands_synced = await self.bot.tree.sync()
 
         await interaction.followup.send(
-            "Command tree synced!",
-            ephemeral=True,
+            f"Command tree synced! With {len(commands_synced)} /commands synced!"
         )
 
 

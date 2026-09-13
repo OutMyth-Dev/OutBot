@@ -1,5 +1,13 @@
 # OutBot Bug Fix - 12 September 2026
 
+## Update 0.5.6
+
+- Fixed /sync not working and links cog spelling errors/dupe commands
+
+---
+
+# OutBot Bug Fix - 12 September 2026
+
 ## Update 0.5.5
 
 - Fixed rate limit not working

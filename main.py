@@ -70,10 +70,7 @@ class OutBot(commands.Bot):
                 f"Rate limited! Try again in {error.retry_after:.2f} seconds."
             )
             if interaction.response.is_done():
-                await interaction.followup.send_message(
-                    RATE_LIMIT_MESSAGE,
-                    ephemeral=True,
-                )
+                await interaction.followup.send_message(RATE_LIMIT_MESSAGE, ephemeral)
                 return
             else:
                 await interaction.response.send_message(
@@ -84,19 +81,19 @@ class OutBot(commands.Bot):
 
         embed_error_message = discord.Embed(
             title="Something went wrong :(",
-            description="An unexpected error occurred. Please open a ticket. This is may be an with OutBot's code or discord.",
+            description="An unexpected error occurred. Please open a ticket.",
             colour=discord.Colour.dark_red(),
         )
         if interaction.response.is_done():
             await interaction.followup.send(
-                embed=embed_error_message,
-                ephemeral=True,
+                "Something went wrong :(. An unexpected error occurred. Please open a ticket.",
+                ephemeral=True
             )
 
         else:
             await interaction.response.send_message(
-                embed=embed_error_message,
-                ephemeral=True,
+                "Something went wrong :(. An unexpected error occurred. Please open a ticket.",
+                ephemeral=True
             )
         logger.error(f"Unexpected error: {error}")
 
