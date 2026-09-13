@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from config import (
+from utils import (
     CODE_OF_CONDUCT,
     CONTRIBUTING_POLICY,
     DISCORD_SERVER_INVITE_LINK,

@@ -87,13 +87,13 @@ class OutBot(commands.Bot):
         if interaction.response.is_done():
             await interaction.followup.send(
                 "Something went wrong :(. An unexpected error occurred. Please open a ticket.",
-                ephemeral=True
+                ephemeral=True,
             )
 
         else:
             await interaction.response.send_message(
                 "Something went wrong :(. An unexpected error occurred. Please open a ticket.",
-                ephemeral=True
+                ephemeral=True,
             )
         logger.error(f"Unexpected error: {error}")
 

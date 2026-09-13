@@ -1,20 +1,3 @@
-from .bot_info import (
-    BOT_VERSION,
-    CODE_OF_CONDUCT,
-    CONTRIBUTING_POLICY,
-    DATE_CREATED,
-    DEVELOPER,
-    DISCORD_SERVER_INVITE_LINK,
-    GITHUB_LINK,
-    OUTBOT_INVITE_LINK,
-    OUTBOT_LICENSE,
-    OUTMYTH_YOUTUBE_CHANNEL_LINK,
-    PRIVACY_POLICY,
-    RETENTION,
-    SECURITY_POLICY,
-    TERMS_OF_SERVICE,
-)
 from .censor_words import CENSOR_WORDS
 from .emojis import EMOJIS
-from .developer_id import DEVELOPER_ID
 from .logging import custom_logger

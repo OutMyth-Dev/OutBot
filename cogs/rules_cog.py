@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from config import TERMS_OF_SERVICE
+from utils import TERMS_OF_SERVICE
 
 
 class RulesCommands(commands.Cog):

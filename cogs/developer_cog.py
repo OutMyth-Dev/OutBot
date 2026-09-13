@@ -1,8 +1,21 @@
+import logging
+import os
+
 import discord
 from discord import app_commands
 from discord.ext import commands
+from dotenv import load_dotenv
 
-from config import DEVELOPER, DEVELOPER_ID, DISCORD_SERVER_INVITE_LINK
+from config import custom_logger
+from utils import DEVELOPER, DISCORD_SERVER_INVITE_LINK
+
+custom_logger()
+logger = logging.getLogger(__name__)
+
+load_dotenv("config/.env")
+DEVELOPER_ID: int | None = int(os.getenv("DEVELOPER_ID"))
+if DEVELOPER_ID is None:
+    logger.error("Your developer id cannot be none.")
 
 
 class DeveloperCommands(commands.Cog):

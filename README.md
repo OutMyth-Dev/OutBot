@@ -170,7 +170,7 @@ Go to the [Discord Developer portal Installation Tab](https://discord.com/develo
 
 ## Changing Developer Id
 
-There is one final thing we need to do and that is to change the developer id. By default it is set to OutBot's developers. By keeping it that way, you will NOT be able to sync OutBot's command tree. Go to Discord's settings and enable developer mode. Right click on your profile and click "copy user id". Copy that user id into config/developer_id.py
+There is one final thing we need to do and that is to change the developer id. By default it is set to OutBot's developers. By keeping it that way, you will NOT be able to sync OutBot's command tree. Go to Discord's settings and enable developer mode. Right click on your profile and click "copy user id". Copy that user id into config/.env (the same file with your disocrd token).
 
 # IMPORTANT NOTICE
 
