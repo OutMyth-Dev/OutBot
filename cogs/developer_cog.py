@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from config import DEVELOPER, DEVELOPER_ID, DISCORD_SERVER_INVITE_LINK, GITHUB_LINK
+from config import DEVELOPER, DEVELOPER_ID, DISCORD_SERVER_INVITE_LINK
 
 
 class DeveloperCommands(commands.Cog):
@@ -48,26 +48,6 @@ class DeveloperCommands(commands.Cog):
             text=f"You can apply here: {DISCORD_SERVER_INVITE_LINK}"
         )
         await interaction.response.send_message(embed=embed_message)
-
-    @discord.app_commands.command(name="github", description="OutBot's GitHub")
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def github(
-        self,
-        interaction: discord.Interaction,
-    ) -> None:
-        """
-        Sends Outbot's GitHub link.
-
-        Args:
-            interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
-
-        Cooldown:
-            1 message per user every 30 seconds. This only applies the command they just used.
-        """
-        await interaction.response.send_message(f"{GITHUB_LINK}")
 
     @discord.app_commands.command(
         name="sync", description="Sync Command Tree. (Only for developers)"
