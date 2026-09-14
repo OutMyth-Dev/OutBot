@@ -6,7 +6,7 @@ from utils import send_censor_word_warning
 
 
 class FreeNitroButton(discord.ui.View):
-    """Creates a button that triggers when the freenitro command is invoked."""
+    """Creates a button that triggers when the /freenitro command is invoked."""
 
     def __init__(self) -> None:
         super().__init__(timeout=60)
@@ -38,7 +38,7 @@ class FreeNitroButton(discord.ui.View):
             ephemeral=True,
         )
         await interaction.followup.send(
-            "NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF ON THE INTERNET.",
+            "NEVER CLICK ON RANDOM BUTTONS THAT 'GUARANTEE' FREE STUFF ON THE INTERNET!",
             ephemeral=True,
         )
 
@@ -51,7 +51,7 @@ class FunCommands(commands.GroupCog, group_name="fun"):
 
     @discord.app_commands.command(
         name="freenitro",
-        description="Free nitro!",
+        description="Trust me bro...",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def freenitro(
@@ -77,15 +77,15 @@ class FunCommands(commands.GroupCog, group_name="fun"):
     @discord.app_commands.describe(
         user="Who do you want to ban?",
         reason="Why would you like to ban them?",
-        duration="How long will you like to ban this user for?",
-        delete_messages="How many of the user's messages would you like to delete?",
+        duration="How long will you like to ban this user for (in years)?",
+        delete_messages="How many of their messages would you like to delete?",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def fakeban(
         self,
         interaction: discord.Interaction,
         user: discord.Member,
-        reason: app_commands.Range[str, 1, 200],
+        reason: app_commands.Range[str, 15, 100],
         duration: app_commands.Range[int, 1, 1000],
         delete_messages: app_commands.Range[int, 1, 1000],
     ) -> None:
@@ -113,26 +113,22 @@ class FunCommands(commands.GroupCog, group_name="fun"):
 
         embed_message = discord.Embed(
             title=f"{user} has been banned!",
-            description=reason,
+            description=f"Reason: {reason}",
             colour=discord.Colour.red(),
         )
         embed_message.add_field(
-            name="Banned Duration",
-            value=f"{user} has been banned for: {duration} years.",
+            name="Duration:",
+            value=f"{user} has been banned for: {duration} years!",
         )
         embed_message.add_field(
-            name="Amount of messages deleted",
+            name="Amount of messages deleted:",
             value=f"{delete_messages} messages have been deleted that were from {user}.",
         )
         embed_message.set_footer(text="Uhhh, how are they still here?")
 
         await interaction.response.send_message(
             embed=embed_message,
-            allowed_mentions=discord.AllowedMentions(
-                users=True,
-                roles=False,
-                everyone=False,
-            ),
+            allowed_mentions=discord.AllowedMentions.none(),
         )
 
 

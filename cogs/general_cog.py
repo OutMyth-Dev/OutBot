@@ -38,7 +38,7 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
 
     @discord.app_commands.command(
         name="dm",
-        description="DMs the user. Please make sure you have your DMs turned on.",
+        description="OutBot DMs you. This command requires your DMs to be turned on.",
     )
     @discord.app_commands.describe(dm="What would you like OutBot to DM you?")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
@@ -78,27 +78,27 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
 
         except discord.Forbidden:
             await interaction.response.send_message(
-                "I could not send you a DM. This is because you have them turned off.",
+                "I could not send you a DM. This may be because you have them turned off. Please try turning them on and try again. If the issue persists, please open a ticket or use /report.",
                 ephemeral=True,
             )
 
     @discord.app_commands.command(
         name="echo",
-        description="You tell the OutBot what to say!",
+        description="Make OutBot say a specific message!",
     )
-    @discord.app_commands.describe(your_message="What would you like OutBot to say?")
+    @discord.app_commands.describe(message="What would you like OutBot to say?")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def echo(
         self,
         interaction: discord.Interaction,
-        your_message: app_commands.Range[str, 1, 750],
+        message: app_commands.Range[str, 1, 750],
     ) -> None:
         """
         Says what the user passed in.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-            your_message (str): What the user wants OutBot to say. Maximum length: 750 characters.
+            message (str): What the user wants OutBot to say. Maximum length: 750 characters.
 
         Allowed Mention:
             None
@@ -109,12 +109,12 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        if await send_censor_word_warning(interaction, your_message):
+        if await send_censor_word_warning(interaction, message):
             return
 
         embed_message = discord.Embed(
             title=f"{interaction.user} has said: ",
-            description=f"{your_message}",
+            description=f"{message}",
             colour=discord.Colour.green(),
         )
         embed_message.set_footer(
@@ -136,8 +136,8 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
     async def poll(
         self,
         interaction: discord.Interaction,
-        title: app_commands.Range[str, 1, 100],
-        question: app_commands.Range[str, 1, 150],
+        title: app_commands.Range[str, 5, 100],
+        question: app_commands.Range[str, 10, 150],
     ) -> None:
         """
         Creates an embed with a title and a question that users can add reactions to.
@@ -167,6 +167,7 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         )
 
         await interaction.response.send_message(
+            
             embed=embed_message,
             allowed_mentions=discord.AllowedMentions.none(),
         )

@@ -25,10 +25,10 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         self.bot = bot
 
     @discord.app_commands.command(
-        name="outbot_developer", description="What developers contributed to OutBot?"
+        name="devs", description="What developers contributed to OutBot?"
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def developers(
+    async def devs(
         self,
         interaction: discord.Interaction,
     ) -> None:
@@ -45,17 +45,15 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message = discord.Embed(
-            title="OutBot's Developers",
-            description=f"{DEVELOPER} is the only developer for OutBot currently.",
+            title="OutBot's Developers:",
+            description=f"{DEVELOPER} are the developer/s for OutBot currently!",
             colour=discord.Colour.red(),
-        )
-        embed_message.set_footer(
-            text=f"You can apply here: {DISCORD_SERVER_INVITE_LINK}"
         )
         await interaction.response.send_message(embed=embed_message)
 
     @discord.app_commands.command(
-        name="sync", description="Sync Command Tree. (Only for developers)"
+        name="sync",
+        description="Sync Command Tree. (Only developers can use this command)",
     )
     @app_commands.checks.cooldown(1, 86400, key=lambda interaction: interaction.user.id)
     async def sync(self, interaction: discord.Interaction) -> None:
@@ -74,7 +72,7 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
 
         if interaction.user.id != DEVELOPER_ID:
             await interaction.response.send_message(
-                "Hey! This command is only for developers!", ephemeral=True
+                "Hmmm, you do not look like a developer...", ephemeral=True
             )
             return
 
@@ -85,7 +83,7 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         commands_synced = await self.bot.tree.sync()
 
         await interaction.followup.send(
-            f"Command tree synced! With {len(commands_synced)} /commands synced!"
+            f"Command tree synced With {len(commands_synced)} /commands synced!"
         )
 
 

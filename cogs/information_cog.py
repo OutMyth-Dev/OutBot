@@ -37,7 +37,7 @@ class BotPingButton(discord.ui.View):
 
         Returns:
             None
-        
+
         Timeout:
             5 Minutes (300 seconds)
         """
