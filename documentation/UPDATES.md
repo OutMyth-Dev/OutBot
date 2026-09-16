@@ -1,3 +1,13 @@
+# OutBot Bug Fix - 16 September 2026
+
+## Update 0.5.7
+
+- Fixed unexpected error handling
+- Fixed undifined ephemeral in rate limit error handling
+- interaction.followup.send_message ---> interaction.followup.send
+
+---
+
 # OutBot Bug Fix - 12 September 2026
 
 ## Update 0.5.6

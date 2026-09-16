@@ -8,10 +8,10 @@ from utils import (
     CONTRIBUTING_POLICY,
     DEVELOPER,
     GITHUB_LINK,
+    LOG_RETENTION,
     OUTBOT_INVITE_LINK,
     OUTBOT_LICENSE,
     PRIVACY_POLICY,
-    RETENTION,
     SECURITY_POLICY,
     TERMS_OF_SERVICE,
 )
@@ -35,9 +35,6 @@ class BotPingButton(discord.ui.View):
             interaction (discord.Interaction): The Discord command being invoked.
             button (discord.ui.button): The button being created.
 
-        Returns:
-            None
-
         Timeout:
             5 Minutes (300 seconds)
         """
@@ -49,7 +46,7 @@ class BotPingButton(discord.ui.View):
 
 
 class InformationCommands(commands.GroupCog, group_name="information"):
-    """General information about OutBot/OutMyth."""
+    """Information about OutBot/OutMyth."""
 
     def __init__(self, bot):
         self.bot = bot
@@ -67,9 +64,6 @@ class InformationCommands(commands.GroupCog, group_name="information"):
             interaction (discord.Interaction): The Discord command being invoked.
 
         Allowed Mentions:
-            None
-
-        Returns:
             None
 
         Cooldown:
@@ -91,9 +85,6 @@ class InformationCommands(commands.GroupCog, group_name="information"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
@@ -146,9 +137,6 @@ class InformationCommands(commands.GroupCog, group_name="information"):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -157,7 +145,7 @@ class InformationCommands(commands.GroupCog, group_name="information"):
             description=(
                 "# General Information\n\n"
                 f"- Outbot's Version: v{BOT_VERSION}\n"
-                f"- Log Retention: {RETENTION}\n"
+                f"- Log Retention: {LOG_RETENTION}\n"
                 "- OutBot is open source under a MIT license\n\n"
                 "# Useful Links:\n\n"
                 f"- {GITHUB_LINK}\n"
@@ -193,9 +181,8 @@ class InformationCommands(commands.GroupCog, group_name="information"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message = discord.Embed(
             title="OutBot's Planned Features!",

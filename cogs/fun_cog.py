@@ -27,9 +27,6 @@ class FreeNitroButton(discord.ui.View):
             interaction (discord.Interaction): The Discord command being invoked.
             button (discord.ui.button): The button being created.
 
-        Returns:
-            None
-
         Timeout:
             1 minute (60 seconds)
         """
@@ -63,9 +60,6 @@ class FunCommands(commands.GroupCog, group_name="fun"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
@@ -101,9 +95,6 @@ class FunCommands(commands.GroupCog, group_name="fun"):
 
         Allowed Mentions:
             Other users
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.

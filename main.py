@@ -2,11 +2,12 @@ import logging
 import os
 
 import discord
-from discord import app_commands
+from discord import CustomActivity, Status, app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
 from config import custom_logger
+from utils import ERROR_MESSAGE
 
 custom_logger()
 logger = logging.getLogger(__name__)
@@ -22,15 +23,7 @@ class OutBot(commands.Bot):
     """Loads all cogs, contains centrelized error handling, and syncs all commands to the command tree."""
 
     async def setup_hook(self) -> None:
-        """
-        Loads all cogs and syncs all commands to the command tree
-
-        Args:
-            None
-
-        Returns:
-            None
-        """
+        """Loads all cogs and syncs all commands to the command tree"""
 
         find_cogs = os.listdir("cogs")
         for cog in find_cogs:
@@ -43,7 +36,7 @@ class OutBot(commands.Bot):
     async def on_app_command_error(
         self,
         interaction: discord.Interaction,
-        error: discord.app_commands,
+        error: discord.AppCommandError,
     ) -> None:
         """
         Sends an embed when unexpected errors occur or tells when they can use a commands again. (30 second cooldown.)
@@ -51,9 +44,6 @@ class OutBot(commands.Bot):
         Args:
             interaction (discord.Interaction): The discord that triggered the error
             error (app_commands.AppCommandError): Checks errors.
-
-        Returns:
-            None
         """
 
         if isinstance(error, discord.app_commands.CommandOnCooldown):
@@ -61,7 +51,7 @@ class OutBot(commands.Bot):
                 f"Rate limited! Try again in {error.retry_after:.2f} seconds."
             )
             if interaction.response.is_done():
-                await interaction.followup.send_message(RATE_LIMIT_MESSAGE, ephemeral)
+                await interaction.followup.send(RATE_LIMIT_MESSAGE, ephemeral=True)
                 return
             else:
                 await interaction.response.send_message(
@@ -70,28 +60,25 @@ class OutBot(commands.Bot):
                 )
                 return
 
-        embed_error_message = discord.Embed(
-            title="Something went wrong :(",
-            description="An unexpected error occurred. Please open a ticket.",
-            colour=discord.Colour.dark_red(),
-        )
         if interaction.response.is_done():
             await interaction.followup.send(
-                "Something went wrong :(. An unexpected error occurred. Please open a ticket.",
+                ERROR_MESSAGE,
                 ephemeral=True,
             )
 
         else:
             await interaction.response.send_message(
-                "Something went wrong :(. An unexpected error occurred. Please open a ticket.",
+                ERROR_MESSAGE,
                 ephemeral=True,
             )
         logger.error(f"Unexpected error: {error}")
 
 
 bot = OutBot(
-    command_prefix="\0",
+    activity=CustomActivity(name="</>"),
+    command_prefix=None,
     intents=discord.Intents.default(),
+    status=Status.idle,
 )
 
 

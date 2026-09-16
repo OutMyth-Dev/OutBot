@@ -6,12 +6,13 @@ from .bot_info import (
     DEVELOPER,
     DISCORD_SERVER_INVITE_LINK,
     GITHUB_LINK,
+    LOG_RETENTION,
     OUTBOT_INVITE_LINK,
     OUTBOT_LICENSE,
     OUTMYTH_YOUTUBE_CHANNEL_LINK,
     PRIVACY_POLICY,
-    RETENTION,
     SECURITY_POLICY,
     TERMS_OF_SERVICE,
 )
+from .error_message import ERROR_MESSAGE
 from .profanity import send_censor_word_warning

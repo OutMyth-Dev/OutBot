@@ -8,15 +8,7 @@ from utils import DEVELOPER, DISCORD_SERVER_INVITE_LINK
 
 @pytest.mark.asyncio
 async def test_developer() -> None:
-    """
-    This tests the command /developer.
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
+    """This tests the command /developer."""
     developer_cog = DeveloperCommands(MagicMock())
 
     interaction = MagicMock()

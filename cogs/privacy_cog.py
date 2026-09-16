@@ -4,8 +4,8 @@ from discord.ext import commands
 
 from utils import (
     GITHUB_LINK,
+    LOG_RETENTION,
     PRIVACY_POLICY,
-    RETENTION,
 )
 
 
@@ -24,9 +24,6 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -34,7 +31,7 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
             title="🔒 Information About OutBot's Privacy\n\n",
             description=(
                 "- Logs: Only used to debug and are stored locally.\n"
-                f"- Log Retention: {RETENTION}\n"
+                f"- Log Retention: {LOG_RETENTION}\n"
                 f"- Source: Open source ({GITHUB_LINK})\n"
                 f"- {PRIVACY_POLICY}\n"
             ),
@@ -55,9 +52,6 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
@@ -87,16 +81,13 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message = discord.Embed(
             title="Information about what OutBot logs.\n\n",
             description=(
-                f"OutBot retains logs for {RETENTION}.\n"
+                f"OutBot retains logs for {LOG_RETENTION}.\n"
                 "OutBot uses mode a to log (logger opens the file and appends to it).\n"
                 "OutBot does **NOT** log any user data.\n"
                 "OutBot only logs errors and logs are only used to make debugging easier.\n"

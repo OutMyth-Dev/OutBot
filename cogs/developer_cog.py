@@ -38,9 +38,6 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -62,9 +59,6 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 86400 seconds or 1 message per user every day. This only applies the command they just used.

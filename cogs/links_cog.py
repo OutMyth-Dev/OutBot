@@ -34,9 +34,6 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -56,9 +53,8 @@ class LinksCommands(commands.GroupCog, group_name="link"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(DISCORD_SERVER_INVITE_LINK)
 
@@ -77,9 +73,6 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         Args:
             interaction (discord.Interaction): The Discord command being invoked
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -96,9 +89,6 @@ class LinksCommands(commands.GroupCog, group_name="link"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
@@ -117,9 +107,6 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -136,9 +123,6 @@ class LinksCommands(commands.GroupCog, group_name="link"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
@@ -157,9 +141,6 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -176,9 +157,6 @@ class LinksCommands(commands.GroupCog, group_name="link"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
@@ -197,9 +175,6 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -216,9 +191,6 @@ class LinksCommands(commands.GroupCog, group_name="link"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.

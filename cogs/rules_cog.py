@@ -23,9 +23,6 @@ class RulesCommands(commands.GroupCog, group_name="rules"):
         Args:
             interaction (discord.Interaction): The Discord commamnd being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -67,9 +64,6 @@ class RulesCommands(commands.GroupCog, group_name="rules"):
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-
-        Returns:
-            None
 
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.

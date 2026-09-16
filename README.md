@@ -31,7 +31,7 @@ OutBot uses **NO** privileged intents. Most popular discord bots use them. Membe
 
 For more information, please read: [OutBot's Privacy Policy](https://github.com/OutMyth-Dev/OutBot/blob/main/PRIVACY.md)
 
-OutBot's Current Version: **v0.5.6**
+OutBot's Current Version: **v0.5.7**
 
 ---
 
@@ -70,8 +70,10 @@ OutBot does **NOT** use prefix  commands. Therefore, command_prefix=None. OutBot
 OutBot's Config:
 ```py
 bot = OutBot(
-    command_prefix="\0",
+    activity=CustomActivity(name="</>"),
+    command_prefix=None,
     intents=discord.Intents.default(),
+    status=Status.idle,
 )
 ```
 

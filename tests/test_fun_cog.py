@@ -7,15 +7,7 @@ from cogs import FreeNitroButton, FunCommands
 
 @pytest.mark.asyncio
 async def test_freenitro() -> None:
-    """
-    Tests if the command /freenitro sends "view=FreeNitroButton()". (/freenitro)
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
+    """Tests if the command /freenitro sends "view=FreeNitroButton()". (/freenitro)"""
     fun_cog = FunCommands(MagicMock())
 
     view = FreeNitroButton()
@@ -32,15 +24,7 @@ async def test_freenitro() -> None:
 
 @pytest.mark.asyncio
 async def test_freenitro_button() -> None:
-    """
-    Tests if when the button is clicked it sends a gif and a warning. (/freenitro)
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
+    """Tests if when the button is clicked it sends a gif and a warning. (/freenitro)"""
     view = FreeNitroButton()
 
     button_interaction = MagicMock()

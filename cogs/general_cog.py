@@ -26,9 +26,6 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         Args:
             interaction (discord.Interaction): The discord command being invoked.
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -55,9 +52,6 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
             dm (str): The message the user wants to be DMed by OutBot. Maximum length: 1000 characters.
 
         Allowed Mentions:
-            None
-
-        Returns:
             None
 
         Cooldown:
@@ -101,9 +95,6 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
             message (str): What the user wants OutBot to say. Maximum length: 750 characters.
 
         Allowed Mention:
-            None
-
-        Returns:
             None
 
         Cooldown:
@@ -150,9 +141,6 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         Allowed Mentions:
             None
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -167,7 +155,6 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         )
 
         await interaction.response.send_message(
-            
             embed=embed_message,
             allowed_mentions=discord.AllowedMentions.none(),
         )
