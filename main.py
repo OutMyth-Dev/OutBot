@@ -75,7 +75,7 @@ class OutBot(commands.Bot):
 
 
 bot = OutBot(
-    activity=CustomActivity(name="</>"),
+    activity=discord.Game(name="📖 Reading binary"),
     command_prefix=None,
     intents=discord.Intents.default(),
     status=Status.idle,
