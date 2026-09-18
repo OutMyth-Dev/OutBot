@@ -6,15 +6,15 @@ from utils import send_censor_word_warning
 
 
 class ReportButton(discord.ui.View):
-    """Creates a button that triggers when the /report command is invoked. This button asks if the user would like to proceed with their report."""
+    """Creates numerous buttons when /report is invoked."""
 
     def __init__(self):
         super().__init__(timeout=300)
 
     @discord.ui.button(
         label="Proceed?",
-        emoji="➡️",
         style=discord.ButtonStyle.success,
+        emoji="➡️",
     )
     async def report_proceed_button_callback(
         self, interaction: discord.Interaction, button: discord.ui.button
@@ -29,19 +29,18 @@ class ReportButton(discord.ui.View):
         Timeout:
             5 minute (300 seconds)
         """
-        embed_message = discord.Embed(
-            title="Report", description="Who would you like to report?"
-        )
+
+        embed_message = discord.Embed(title="User")
         embed_message.add_field(
             name="You are reporting", value=f"{interaction.user}", inline=True
         )
-        embed_message.set_footer(text="Some steps remaining...")
-        await interaction.response.send_message(embed=embed_message, ephemeral=True)
+        embed_message.set_footer(text="You are currently on step 2/?.")
+        await interaction.response.edit_message(embed=embed_message)
 
     @discord.ui.button(
         label="Cancel?",
-        emoji="✖️",
         style=discord.ButtonStyle.danger,
+        emoji="✖️",
     )
     async def report_cancel_button_callback(
         self, interaction: discord.Interaction, button: discord.ui.button
@@ -59,19 +58,19 @@ class ReportButton(discord.ui.View):
         embed_message = discord.Embed(
             title="Cancelled", description="Your report has been cancelled."
         )
-        embed_message.set_footer(text="Report cancelled at step 1.")
-        await interaction.response.send_message(embed=embed_message, ephemeral=True)
+        embed_message.set_footer(text="Report cancelled")
+        await interaction.response.send_message(embed=embed_message)
 
     @discord.ui.button(
         label="Help?",
-        emoji="🤝",
         style=discord.ButtonStyle.primary,
+        emoji="🤝",
     )
-    async def help_cancel_button_callback(
+    async def report_help_button_callback(
         self, interaction: discord.Interaction, button: discord.ui.button
     ) -> None:
         """
-        Cancel the report.
+        Tells the user on how to report.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
@@ -80,11 +79,9 @@ class ReportButton(discord.ui.View):
         Timeout:
             5 minute (300 seconds)
         """
-        embed_message = discord.Embed(
-            title="Help", description="Some help"
-        )
-        embed_message.set_footer(text="SOme help")
-        await interaction.response.send_message(embed=embed_message, ephemeral=True)
+        embed_message = discord.Embed(title="Help", description="Some help")
+        embed_message.set_footer(text="Some help")
+        await interaction.response.edit_message(embed=embed_message, ephemeral=True)
 
 
 class SupportCommands(commands.GroupCog, group_name="support"):
@@ -120,7 +117,22 @@ class SupportCommands(commands.GroupCog, group_name="support"):
         # if await send_censor_word_warning(interaction):
         #     return
 
-        await interaction.response.send_message(view=ReportButton())
+        report_embed_message = discord.Embed(
+            title="Report",
+            description="# Please pick one of the options below.",
+        )
+        report_embed_message.add_field(
+            name="Proceed: ", value="Continue with your report", inline=True
+        )
+        report_embed_message.add_field(
+            name="Cancel: ", value="Stop with your report", inline=True
+        )
+        report_embed_message.add_field(name="Help: ", value="How to report", inline=True)
+        report_embed_message.set_footer(text="Buttons will time out after 5 minutes. You are currently on step 1")
+
+        await interaction.response.send_message(
+            embed=report_embed_message, view=ReportButton(), ephemeral=True
+        )
 
     # @discord.app_commands.command(
     #     name="feedback",

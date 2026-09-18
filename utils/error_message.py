@@ -1,4 +1,3 @@
 ERROR_MESSAGE: str = (
-    "# Something went wrong :(\n"
-    "An unexpected error occurred, please open a ticket."
+    "# Something went wrong :(\nAn unexpected error occurred, please open a ticket."
 )

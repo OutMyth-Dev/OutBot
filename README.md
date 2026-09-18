@@ -3,7 +3,7 @@
 - [About](#about)
 - [Useful Link](#useful-links)
 - [Ephemeral Messages](#what-are-ephemeral-messages)
-- [Command prefixes and privileged intents](#command-prefixes-and-privileged-intents)
+- [OutBot's Config](#outbots-config)
 - [Getting Started](#getting-started)
     - [Requirements](#requirements)
         - [Windows](#windows)
@@ -63,19 +63,21 @@ OutBot's Current Version: **v0.5.7**
 
 ---
 
-# Command Prefixes And Privileged Intents
+# OutBot's Config
 
-OutBot does **NOT** use prefix  commands. Therefore, command_prefix=None. OutBot uses **NO** privileged intents. Therefore, intents=discord.Intents.default()
+OutBot does **NOT** use prefix  commands. Therefore, command_prefix="NONE". OutBot uses **NO** privileged intents. Therefore, intents=discord.Intents.default()
 
 OutBot's Config:
 ```py
 bot = OutBot(
-    activity=CustomActivity(name="</>"),
-    command_prefix=None,
+    activity=discord.Game(name="📖 Reading Documentation"),
+    command_prefix="NONE",
     intents=discord.Intents.default(),
     status=Status.idle,
 )
 ```
+
+Command prefix has to be set to a string. "NONE" was used to show that OutBot uses no prefix commands. You have freedom to change that. Because OutBot uses no privillaged intents, "(current time) WARNING  discord.ext.commands.bot Privileged message content intent is missing, commands may not work as expected." will be displayed in the terminal. If you want prefix commands enable the "Message Content" privillaged intent. You can ignore it if you don't plan on using prefix commands.
 
 ---
 
