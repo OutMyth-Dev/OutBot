@@ -1,15 +1,17 @@
 # THESE COMMANDS ARE CURRENTLY BEING REWORKED IN ANOTHER BRANCH
 
 # import anyio
-# import discord
+import discord
+
 # from discord import app_commands
-# from discord.ext import commands
+from discord.ext import commands
 
 # from utils import send_censor_word_warning
 
 
-# class SupportCommands(commands.GroupCog, group_name="help"):
-#     """Commands related to user support."""
+class SupportCommands(commands.GroupCog, group_name="help"):
+    """Commands related to user support."""
+
 
 #     @discord.app_commands.command(
 #         name="reporthelp", description="Explains what a good report looks like."
@@ -144,5 +146,5 @@
 #         )
 
 
-# async def setup(bot: commands.Bot) -> None:
-#     await bot.add_cog(SupportCommands(bot))
+async def setup(bot: commands.Bot) -> None:
+    await bot.add_cog(SupportCommands(bot))
