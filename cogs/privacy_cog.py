@@ -92,7 +92,7 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
                 "OutBot does **NOT** log any user data.\n"
                 "OutBot only logs errors and logs are only used to make debugging easier.\n"
                 f"OutBot is **open source. You can always check** out its source code/README for more information: {GITHUB_LINK}\n"
-                "# This is what OutBot's logs actually looks like. These are 50 lines taken from OutBot's actual logs, sanitized and eaiser for non-programmers to read. Repeated logs were removed for readability.\n"
+                "# This is what OutBot's logs actually looks like. These are 50 lines taken from OutBot's actual logs, sanitized and easier for non-programmers to read. Repeated logs were removed for readability.\n"
                 "Name | message\n"
                 "Name | message\n"
                 "More (Name | message)"

@@ -5,7 +5,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 def delete_old_logs(current_log_file: str, _: str) -> None:
     """
-    Deletes logs after a day instad of renaming them into year-month-date discord.log.
+    Deletes logs after a day instead of renaming them into year-month-date discord.log.
 
     Args:
         current_log_file: == discord.log
