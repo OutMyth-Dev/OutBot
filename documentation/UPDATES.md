@@ -1,3 +1,11 @@
+# OutBot Bug Fix - 19 September 2026
+
+## Update 0.5.8
+
+- discord.user.id ---> interaction user.id
+
+---
+
 # OutBot Bug Fix - 16 September 2026
 
 ## Update 0.5.7

@@ -31,7 +31,7 @@ OutBot uses **NO** privileged intents. Most popular discord bots use them. Membe
 
 For more information, please read: [OutBot's Privacy Policy](https://github.com/OutMyth-Dev/OutBot/blob/main/PRIVACY.md)
 
-OutBot's Current Version: **v0.5.7**
+OutBot's Current Version: **v0.5.8**
 
 ---
 
