@@ -20,7 +20,7 @@ if DISCORD_TOKEN is None:
 
 
 class OutBot(commands.Bot):
-    """Loads all cogs, contains centrelized error handling, and syncs all commands to the command tree."""
+    """OutBot's custom setup class."""
 
     async def setup_hook(self) -> None:
         """Loads all cogs and syncs all commands to the command tree"""
@@ -54,24 +54,16 @@ class OutBot(commands.Bot):
                 await interaction.followup.send(RATE_LIMIT_MESSAGE, ephemeral=True)
                 return
             else:
-                await interaction.response.send_message(
-                    RATE_LIMIT_MESSAGE,
-                    ephemeral=True,
-                )
+                await interaction.response.send_message(RATE_LIMIT_MESSAGE,ephemeral=True,)
                 return
 
-        if interaction.response.is_done():
-            await interaction.followup.send(
-                ERROR_MESSAGE,
-                ephemeral=True,
-            )
-
         else:
-            await interaction.response.send_message(
-                ERROR_MESSAGE,
-                ephemeral=True,
-            )
-        logger.error(f"Unexpected error: {error}")
+            if interaction.response.is_done():
+                await interaction.followup.send(ERROR_MESSAGE,ephemeral=True,)
+
+            else:
+                await interaction.response.send_message(ERROR_MESSAGE, ephemeral=True,)
+            logger.error(f"Unexpected error: {error}")
 
 
 bot = OutBot(

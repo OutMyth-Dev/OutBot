@@ -29,14 +29,9 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-
-        embed_message = discord.Embed(
-            title="Hey!",
-            description=f"Hello, {interaction.user.mention}! How are you?",
-            colour=discord.Colour.blurple(),
+        await interaction.response.send_message(
+            f"Hello, {interaction.user.mention}! How are you?",
         )
-
-        await interaction.response.send_message(embed=embed_message)
 
     @discord.app_commands.command(
         name="dm",
@@ -157,10 +152,11 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         embed_message = discord.Embed(
             title=title,
             description=question,
-            colour=discord.Colour.green(),
         )
 
-        await interaction.response.send_message(
+        await interaction.response.defer()
+
+        await interaction.followup.send(
             embed=embed_message,
             allowed_mentions=discord.AllowedMentions.none(),
         )
