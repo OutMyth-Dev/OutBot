@@ -85,9 +85,9 @@ Command prefix has to be set to a string. "NONE" was used to show that OutBot us
 
 ## Requirements
 
-- Python 3.14.6 [Install Python](https://www.python.org/downloads/)
+- [Python's Latest Version](https://www.python.org/downloads/)
 - discord.py 2.7.1
-- git [Install link](https://git-scm.com/install/) 
+- git - [Git Install link](https://git-scm.com/install/) 
 
 ### Windows:
 
