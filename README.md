@@ -11,7 +11,7 @@
     - [Getting A Local Copy Of OutBot](#getting-a-local-copy-of-outbot)
     - [Virtual Environment](#creating-a-virtual-environment)
         - [Windows Virtual Environment](#windows-virtual-environment)
-        - [Linix/macOS Virtual Environment](#linixmacos-virtual-environment)
+        - [Linux/macOS Virtual Environment](#linuxmacos-virtual-environment)
     - [Discord Bot Token](discord-bot-token)
     - [Discord Developer Portal Setup](#discord-developer-portal-setup)
     - [Creating .env](#creating-env)
@@ -145,14 +145,12 @@ Windows:
 .venv\Scripts\Activate.ps1
 ```
 
-### Linix/macOS Virtual Environment
+### Linux/macOS Virtual Environment
 
-Linix/macOS:
 ```shell
 python3 -m venv .venv
 ```
 
-Linux/macOS:
 ```shell
 source .venv/bin/activate
 ```

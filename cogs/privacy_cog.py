@@ -59,13 +59,11 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
         embed_message = discord.Embed(
             title="🗃️ What data does OutBot keep about you and what does it log?\n\n",
             description=(
-                "Data: Errors only.\n"
-                "e.g. HTTPException: Only what command the error occurred in and the error is logged.\n"
-                "(name e.g. ) __main__ | Unexpected error: Command 'command name' raised an exception: some exception."
+                "Nothing. OutBot collects/logs **NOTHING** about you."
+                f"To find out more please read: {PRIVACY_POLICY}"
             ),
             colour=discord.Colour.dark_embed(),
         )
-        embed_message.set_footer(text="OutBot does NOT collect any user data.")
 
         await interaction.response.send_message(embed=embed_message)
 
@@ -88,16 +86,7 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
             title="Information about what OutBot logs.\n\n",
             description=(
                 f"OutBot retains logs for {LOG_RETENTION}.\n"
-                "OutBot uses mode a to log (logger opens the file and appends to it).\n"
-                "OutBot does **NOT** log any user data.\n"
-                "OutBot only logs errors and logs are only used to make debugging easier.\n"
-                f"OutBot is **open source. You can always check** out its source code/README for more information: {GITHUB_LINK}\n"
-                "# This is what OutBot's logs actually looks like. These are 50 lines taken from OutBot's actual logs, sanitized and eaiser for non-programmers to read. Repeated logs were removed for readability.\n"
-                "Name | message\n"
-                "Name | message\n"
-                "More (Name | message)"
-                "Traceback Some Traceback\n"
-                "AttributeError: 'something' object has no attribute 'something else'\n"
+                "OutBot does not log **ANYTHING**.",
             ),
             colour=discord.Colour.green(),
         )

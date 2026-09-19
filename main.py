@@ -1,4 +1,3 @@
-import logging
 import os
 
 import discord
@@ -6,11 +5,7 @@ from discord import CustomActivity, Status, app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from config import custom_logger
 from utils import ERROR_MESSAGE
-
-custom_logger()
-logger = logging.getLogger(__name__)
 
 
 load_dotenv("config/.env")
@@ -54,16 +49,15 @@ class OutBot(commands.Bot):
                 await interaction.followup.send(RATE_LIMIT_MESSAGE, ephemeral=True)
                 return
             else:
-                await interaction.response.send_message(RATE_LIMIT_MESSAGE,ephemeral=True,)
+                await interaction.response.send_message(RATE_LIMIT_MESSAGE, ephemeral=True)
                 return
 
         else:
             if interaction.response.is_done():
-                await interaction.followup.send(ERROR_MESSAGE,ephemeral=True,)
+                await interaction.followup.send(ERROR_MESSAGE,ephemeral=True)
 
             else:
-                await interaction.response.send_message(ERROR_MESSAGE, ephemeral=True,)
-            logger.error(f"Unexpected error: {error}")
+                await interaction.response.send_message(ERROR_MESSAGE, ephemeral=True)
 
 
 bot = OutBot(
@@ -77,7 +71,7 @@ bot = OutBot(
 try:
     bot.run(DISCORD_TOKEN)
 
-
+# DO NOT CHANGE SINGLE QUOTES TO DOUBLE QUOTES
 except TypeError:
     raise RuntimeError(
         'Invalid bot token. Please enter your discord bot token in a file called ".env" (you have to create it yourself) inside the folder "config".',
