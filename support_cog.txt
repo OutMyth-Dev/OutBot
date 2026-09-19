@@ -1,6 +1,8 @@
-import discord
+# This command will be implemented at the end of update 0.6 just before adding tests.
+
+# import discord
 # from discord import app_commands
-from discord.ext import commands
+# from discord.ext import commands
 
 # from utils import send_censor_word_warning
 
@@ -84,8 +86,8 @@ from discord.ext import commands
 #         await interaction.response.edit_message(embed=embed_message, ephemeral=True)
 
 
-class SupportCommands(commands.GroupCog, group_name="support"):
-    """Commands related to user support."""
+# class SupportCommands(commands.GroupCog, group_name="support"):
+#     """Commands related to user support."""
 
 #     @discord.app_commands.command(
 #         name="report",
@@ -169,5 +171,5 @@ class SupportCommands(commands.GroupCog, group_name="support"):
 #     #     )
 
 
-async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(SupportCommands(bot))
+# async def setup(bot: commands.Bot) -> None:
+#     await bot.add_cog(SupportCommands(bot))

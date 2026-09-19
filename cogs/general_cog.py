@@ -154,7 +154,9 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
             description=question,
         )
 
-        await interaction.response.send_message(
+        await interaction.response.defer()
+
+        await interaction.followup.send(
             embed=embed_message,
             allowed_mentions=discord.AllowedMentions.none(),
         )

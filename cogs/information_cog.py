@@ -157,7 +157,6 @@ class InformationCommands(commands.GroupCog, group_name="information"):
                 f"- {CONTRIBUTING_POLICY}\n"
                 f"- {CODE_OF_CONDUCT}\n\n"
             ),
-            # 0x5865F2 is Blurple
             colour=discord.Colour.blurple(),
         )
         embed_message.add_field(

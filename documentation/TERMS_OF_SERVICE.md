@@ -1,9 +1,47 @@
-# OutBot's TOS
+# Table of Contents
 
-By using OutBot, you agree to comply with Discord's TOS, and Community Guidelines.
+- [OutBot's Terms Of Service](#outbots-terms-of-service)
+    - [User Rules](#user-rules)
+    - [Developer Rules](#developer-rules) 
+- [Link](#links)
+- [Developer Notes](#developer-notes)
 
-OutBot does **NOT** impose any additional terms beyond those requirements other than OutBot's license.
+---
+
+# OutBot's Terms Of Service
+
+By using OutBot, you agree to comply with Discord's TOS, and Discord's Community Guidelines. 
+
+By contributing to OutBot you agree to comply with OutBot's license, OutBot's Code Of Conduct, and OutBot's Contributing Policy.
+
+---
+
+## User Rules  
+1) Follow Discord's TOS(https://discord.com/terms), and Discord's Community Guidelines(https://discord.com/guidelines).  
+2) Follow the server rules OutBot is being used in.  
+3) Do **NOT** use OutBot for illeagal activities  
+
+## Developer Rules  
+1) Do not add bugs or vulnerabilities intentially  
+2) Do not update documenation. Instead, explain what you think should be added to the docs
+3) Follow [OutBot's License](https://github.com/OutMyth-Dev/OutBot?tab=MIT-1-ov-file)
+4) Do **NOT** harrass other developers for any reason. More information available at: [OutBot's Code Of Conduct](https://github.com/OutMyth-Dev/OutBot?tab=coc-ov-file)
+5) Follow [Discord's Developer Policy](https://support-dev.discord.com/hc/en-us/articles/8563934450327-Discord-Developer-Policy)
+
+---
+
+# Links
 
 [Discord's TOS](https://discord.com/terms)  
 [Discord's Community Guidelines](https://discord.com/guidelines)  
+[Discord's Developer Policy](https://support-dev.discord.com/hc/en-us/articles/8563934450327-Discord-Developer-Policy)  
+
 [OutBot's License](https://github.com/OutMyth-Dev/OutBot?tab=MIT-1-ov-file)  
+[OutBot's Code Of Conduct](https://github.com/OutMyth-Dev/OutBot?tab=coc-ov-file )  
+[OutBot's Contributing Policy](https://github.com/OutMyth-Dev/OutBot?tab=contributing-ov-file)  
+
+---
+
+# Developer Notes
+
+Failure to comply with these rules will result in consequences.

@@ -1,18 +1,9 @@
-# Environment Variables
+# Environment
 **/.env
+.venv/
 
 # Cache
 .pytest_cache
 **/__pycache__/
 *.pyc
 .ruff_cache/
-
-# Logs
-discord.log*
-
-# User reports/feedback
-feedback.txt
-reports.txt
-
-# Virtual Environment 
-.venv/

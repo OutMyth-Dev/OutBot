@@ -1,7 +1,7 @@
-BOT_VERSION: str = "0.5.7"
+BOT_VERSION: str = "0.5.8"
 DATE_CREATED: str = "July 11th 2026"
 DEVELOPER: str = "mythordian"
-LOG_RETENTION: str = "1 day"
+LOG_RETENTION: str = "None because OutBot does not log anything!"
 
 CODE_OF_CONDUCT: str = "[OutBot's Code Of Conduct](<https://github.com/OutMyth-Dev/OutBot?tab=coc-ov-file>)"
 CONTRIBUTING_POLICY: str = "[OutBot's Contributing Policy](<https://github.com/OutMyth-Dev/OutBot?tab=contributing-ov-file>)"

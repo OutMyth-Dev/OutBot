@@ -1,4 +1,11 @@
-# Reporting a Vulnerability
+# Table Of Contents
+
+- [Reporting a Vulnerability](#reporting-a-vulnerability)
+- [Developer Notes](#developer-notes)
+
+---
+
+# Reporting A Vulnerability
 
 If you discover a vulnerability, please report it privately.
 
@@ -16,6 +23,11 @@ Please include:
 
 - A description of the vulnerability
 - Steps to reproduce it
-- The potential impact/s
+- The potential impact
 - Any relevant screenshots or other relevant information
 
+---
+
+# Developer Notes
+
+Your issues will be addressed and patched in under 48 hours. If the vulnerability does not exist, you will be banned from reporting them. This excludes misunderstanding.

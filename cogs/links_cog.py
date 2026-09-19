@@ -99,7 +99,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         name="code_of_conduct",
         description="OutBot's Code Of Conduct.",
     )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.user.id)
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def code_of_conduct(self, interaction: discord.Interaction) -> None:
         """
         Sends OutBot's code of conduct link.
@@ -116,7 +116,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         name="contributing_policy",
         description="OutBot's Contributing Policy",
     )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.user.id)
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def contributing_policy(self, interaction: discord.Interaction) -> None:
         """
         Sends OutBot's Contributing policy link.
@@ -133,7 +133,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         name="licnese",
         description="OutBot's License.",
     )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.user.id)
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def licnese(self, interaction: discord.Interaction) -> None:
         """
         Sends OutBot's licnese link.
@@ -150,7 +150,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         name="privacy_policy",
         description="OutBot's Privacy Policy.",
     )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.Interaction)
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def privacy_policy(self, interaction: discord.Interaction) -> None:
         """
         Sends OutBot's privacy policy link.
@@ -167,7 +167,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         name="tos",
         description="OutBot's Terms Of Service.",
     )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.user.id)
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def tos(self, interaction: discord.Interaction) -> None:
         """
         Sends OutBot's Terms Of Service link.
@@ -184,7 +184,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         name="security_policy",
         description="OutBot's Security Policy.",
     )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: discord.user.id)
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def security_policy(self, interaction: discord.Interaction) -> None:
         """
         Sends OutBot's security policy link.

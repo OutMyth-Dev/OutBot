@@ -1,4 +1,3 @@
-import logging
 import os
 
 import discord
@@ -6,11 +5,7 @@ from discord import CustomActivity, Status, app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from config import custom_logger
 from utils import ERROR_MESSAGE
-
-custom_logger()
-logger = logging.getLogger(__name__)
 
 
 load_dotenv("config/.env")
@@ -20,7 +15,7 @@ if DISCORD_TOKEN is None:
 
 
 class OutBot(commands.Bot):
-    """Loads all cogs, contains centrelized error handling, and syncs all commands to the command tree."""
+    """OutBot's custom setup class."""
 
     async def setup_hook(self) -> None:
         """Loads all cogs and syncs all commands to the command tree"""
@@ -54,24 +49,15 @@ class OutBot(commands.Bot):
                 await interaction.followup.send(RATE_LIMIT_MESSAGE, ephemeral=True)
                 return
             else:
-                await interaction.response.send_message(
-                    RATE_LIMIT_MESSAGE,
-                    ephemeral=True,
-                )
+                await interaction.response.send_message(RATE_LIMIT_MESSAGE, ephemeral=True)
                 return
 
-        if interaction.response.is_done():
-            await interaction.followup.send(
-                ERROR_MESSAGE,
-                ephemeral=True,
-            )
-
         else:
-            await interaction.response.send_message(
-                ERROR_MESSAGE,
-                ephemeral=True,
-            )
-        logger.error(f"Unexpected error: {error}")
+            if interaction.response.is_done():
+                await interaction.followup.send(ERROR_MESSAGE,ephemeral=True)
+
+            else:
+                await interaction.response.send_message(ERROR_MESSAGE, ephemeral=True)
 
 
 bot = OutBot(
@@ -85,7 +71,7 @@ bot = OutBot(
 try:
     bot.run(DISCORD_TOKEN)
 
-
+# DO NOT CHANGE SINGLE QUOTES TO DOUBLE QUOTES
 except TypeError:
     raise RuntimeError(
         'Invalid bot token. Please enter your discord bot token in a file called ".env" (you have to create it yourself) inside the folder "config".',

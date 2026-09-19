@@ -70,8 +70,7 @@ class RulesCommands(commands.GroupCog, group_name="rules"):
         """
         await interaction.response.send_message(
             "## OutBot Rules\n\n"
-            "By using OutBot you agree to comply with Discord's Terms Of Service, Community Guidelines,OutBot's TOS and OutBot's license.\n"
-            "OutBot does **NOT** impose any additional rules.\n"
+            "By using OutBot you agree to comply with Discord's Terms Of Service and Community Guidelines.\n"
             f"More information is available at: {TERMS_OF_SERVICE}.\n"
             "Breaking these rules will result in a punishment. The severity of the punishment depends on how nature and seriousness of the violation.\n"
         )
